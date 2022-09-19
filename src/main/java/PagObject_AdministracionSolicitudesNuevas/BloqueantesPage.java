@@ -4,12 +4,10 @@ import java.io.File;
 
 import org.openqa.selenium.WebDriver;
 
-import com.demoautomatizacion.utils.Utilidades;
-
 import MapObject_AdministracionSolicitudesNuevas.BloqueantesMaps;
 import io.qameta.allure.Step;
 
-@SuppressWarnings("unused")
+
 public class BloqueantesPage extends BloqueantesMaps {
 
 	public BloqueantesPage(WebDriver driver) {

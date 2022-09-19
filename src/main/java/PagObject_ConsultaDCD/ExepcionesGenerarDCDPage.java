@@ -1,51 +1,44 @@
 package PagObject_ConsultaDCD;
 
-import javax.swing.JScrollPane;
+import java.io.File;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 
-import com.demoautomatizacion.utils.Utilidades;
-
-import PagObject_demoautomatizacion.BasePage;
+import MapObject_ConsultaDCD.ExepcionesGenerarDCDMap;
 import io.qameta.allure.Step;
 
-public class ExepcionesGenerarDCDPage extends BasePage {
+public class ExepcionesGenerarDCDPage extends ExepcionesGenerarDCDMap {
 	
-	By btnGenerar=By.id("btnGenerar");
-	By btnOk=By.xpath("//div[7]/div/button");
-	By lblResultadoGenerar=By.xpath("//div[8]/p");
+	
 	
 	public ExepcionesGenerarDCDPage(WebDriver driver) {
 		super(driver);
+		// TODO Auto-generated constructor stub
 	}
-	
+
 	@Step("Revicion DCD")
-    public ExepcionesGenerarDCDPage GenerarDCD() {
+    public ExepcionesGenerarDCDPage GenerarDCD(File folderPath) throws Exception {
 		
-		Utilidades.time(800);
-		Utilidades.ByPixel();
-		Utilidades.time(1000);
-		click(btnGenerar);
-		Utilidades.time(1000);
+		time(800);
+		ByPixel();
+		time(1000);
+		click(btnGenerar,folderPath, "click xpath");
+		time(1000);
 		
 		return this;
 	}
 	
 	@Step("Validar Generacion DCD")
-    public ExepcionesGenerarDCDPage ValidarGeneracionDCD(String Resultado) {
+    public ExepcionesGenerarDCDPage ValidarGeneracionDCD(String Resultado, File folderPath) throws Exception {
 		
-		Utilidades.time(6000);
+		time(6000);
 		Assert.assertEquals(getElement(lblResultadoGenerar).getText(),Resultado);
-		Utilidades.screenshot();
-		Utilidades.time(1000);
-		click(btnOk);
-        Utilidades.time(2000);
-        Utilidades.screenshot();
+		captureScreen(folderPath, "Capture screen");
+		time(1000);
+		click(btnOk,folderPath, "click xpath");
+        time(2000);
+        captureScreen(folderPath, "Capture screen");
 		
 		return this;
 	}

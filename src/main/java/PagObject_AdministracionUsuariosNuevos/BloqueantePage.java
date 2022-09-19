@@ -4,8 +4,6 @@ import java.io.File;
 
 import org.openqa.selenium.WebDriver;
 
-import com.demoautomatizacion.utils.Utilidades;
-
 import MapObject_AdministracionUsuariosNuevos.BloqueanteMaps;
 import io.qameta.allure.Step;
 
@@ -327,21 +325,5 @@ public class BloqueantePage extends BloqueanteMaps {
         return this;
     }
 	
-	@Step("Desasociar Usuario")
-    public BloqueantePage Desasociar (File folderPath) throws Exception {
-		
-	        time(500);
-	        click(btnDesasociar, folderPath, "texto prueba");
-	        Utilidades.time(200);
-	        Utilidades.screenshot();
-	        Utilidades.time(800);
-	        click(btnAceptar, folderPath, "texto prueba");
-	        Utilidades.time(28000);
-	        click(btnOk, folderPath, "texto prueba");
-	        Utilidades.time(1000);
-	        Utilidades.screenshot();
-	        Utilidades.time(6000);
-        
-        return this;
-    }
+	
 }

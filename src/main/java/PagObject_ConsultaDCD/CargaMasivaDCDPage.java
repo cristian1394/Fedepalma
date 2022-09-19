@@ -2,63 +2,53 @@ package PagObject_ConsultaDCD;
 
 import java.io.File;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 
-import com.demoautomatizacion.utils.Utilidades;
-
-import PagObject_demoautomatizacion.BasePage;
+import MapObject_ConsultaDCD.CargaMasivaDCDMap;
 import io.qameta.allure.Step;
 
-public class CargaMasivaDCDPage extends BasePage {
+public class CargaMasivaDCDPage extends CargaMasivaDCDMap {
 
-	By btnCarga=By.xpath("//*[@id=\"btnCargueMasivo\"]");
-	By btnArchivo=By.id("fileElement");
-	By btnOk=By.id("acceptLoadFile");
-	By btnOkey=By.xpath("/html/body/div[8]/div[7]/div/button");
-	By lblResultadoCargaArchivo=By.xpath("//div[8]/p");
 	
 	public CargaMasivaDCDPage(WebDriver driver) {
 		super(driver);
-		
+		// TODO Auto-generated constructor stub
 	}
-	
+
 	@Step("Carga Masiva DCD")
-    public CargaMasivaDCDPage CargaDCD(String Doc) {
-        Utilidades.time(1000);
+    public CargaMasivaDCDPage CargaDCD(String Doc, File folderPath) throws Exception {
+        time(1);
         
-		Utilidades.ByPixel();
-		Utilidades.time(1000);
-		click(btnCarga);
-		Utilidades.time(2500);
-		 File file = new File(Doc);
-		 Utilidades.time(1200);
-		 WebElement ruta = driver.findElement(btnArchivo);
-		 ruta.sendKeys(file.getAbsolutePath()); 
-		 Utilidades.time(2000);
-		Utilidades.screenshot();
-		Utilidades.time(5000);
-		click(btnOk);
-		Utilidades.screenshot();
-		Utilidades.time(15000);
+		ByPixel();
+		time(1);
+		click(btnCarga,folderPath, "click xpath");
+		time(3);
+		File file = new File(Doc);
+		time(1200);
+		WebElement ruta = driver.findElement(btnArchivo);
+		ruta.sendKeys(file.getAbsolutePath()); 
+		time(2);
+		captureScreen(folderPath, "Capture screen");
+		time(5);
+		click(btnOk,folderPath, "click xpath");
+		time(15);
 		
         
         return this;
     }
 	
 	@Step("Resultado de la carga masiva del DCD")
-    public CargaMasivaDCDPage ValidarResultadoCargaDCD(String resultado) {
+    public CargaMasivaDCDPage ValidarResultadoCargaDCD(String resultado,File folderPath) throws Exception {
 		
-		Utilidades.time(1000);
+		time(1);
 		Assert.assertEquals(getElement(lblResultadoCargaArchivo).getText(),resultado);
-		Utilidades.screenshot();
-		Utilidades.time(6000);
-		click(btnOkey);
-        Utilidades.screenshot();
-        Utilidades.time(2000);
+		captureScreen(folderPath, "Capture screen");
+		time(6);
+		click(btnOkey,folderPath, "click xpath");
+		captureScreen(folderPath, "Capture screen");
+        time(2);
 		
 		return this;
 	}

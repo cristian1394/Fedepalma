@@ -1,40 +1,33 @@
 package PagObject_ConsultaDCD;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
+import java.io.File;
+
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.Select;
-import org.testng.Assert;
-
-import com.demoautomatizacion.utils.Utilidades;
-
-import PagObject_demoautomatizacion.BasePage;
+import MapObject_ConsultaDCD.ObservarDCDMap;
 import io.qameta.allure.Step;
 
-public class ObservarDCDPage extends BasePage {
+public class ObservarDCDPage extends ObservarDCDMap  {
 
-	By btnLupa=By.xpath("/html/body/div[1]/main/div/div/div[2]/div[4]/div/table/tbody/tr[1]/td[2]/div/i");
-	By btnCancelar=By.xpath("//*[@id=\"btnCancelar\"]");
+
 	
 	public ObservarDCDPage(WebDriver driver) {
 		super(driver);
-		
+		// TODO Auto-generated constructor stub
 	}
-	
+
 	@Step("Ver DCD")
-    public ObservarDCDPage ObservarDCD() {
-        Utilidades.time(6000);
+    public ObservarDCDPage ObservarDCD(File folderPath) throws Exception {
+        time(6000);
         
-        click(btnLupa);
-        Utilidades.time(2000);
-        Utilidades.screenshot();
-        Utilidades.ByPixel();
-        Utilidades.time(3000);
-        Utilidades.screenshot();
-        click(btnCancelar);
-        Utilidades.time(3000);
-        Utilidades.screenshot();
+        click(btnLupa,folderPath, "click xpath");
+        time(2000);
+        captureScreen(folderPath, "Capture screen");
+        ByPixel();
+        time(3000);
+        captureScreen(folderPath, "Capture screen");
+        click(btnCancelar,folderPath, "click xpath");
+        time(3000);
+        captureScreen(folderPath, "Capture screen");
         
         return this;
     }
