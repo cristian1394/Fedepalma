@@ -38,6 +38,7 @@ public class CrearTest extends BaseTest{
 	public void Logeo(String nameTest, File folderPath) throws Exception {
 
 		// Comentario prueba
+		// Prueba desde la rama Fedepalma2C
 		
 	 GenerarReportePdf.setRutaImagen(getProperties().getProperty("routeImageReport"));
 		//File folderPath = BasePage.createFolder(getProperties().getProperty("nameFolder"),
