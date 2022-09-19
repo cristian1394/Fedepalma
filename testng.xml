@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Demostracion Compensaciones" verbose="1" thread-count="1" configfailurepolicy="continue">
+    <listeners>
+        <listener class-name="com.demoautomatizacion.test.utils.Listeners.TestListener"/>
+    </listeners>
+    
+    <test name="Historial DCD Test">
+    <classes>
+        
+        <class name="com.ConsultaDCD.test.HistorialDCDTest"/>
+      
+    </classes>
+</test>
+<test name="Borrar DCD Test">
+    <classes>
+        
+        <class name="com.ConsultaDCD.test.BorrarDCDTest"/>
+      
+    </classes>
+</test>
+<test name="Carga Masiva DCD Test">
+    <classes>
+        
+        <class name="com.ConsultaDCD.test.CargaMasivaDCDTest"/>
+      
+    </classes>
+</test>
+<test name="Crear DCD Test">
+    <classes>
+        
+        <class name="com.ConsultaDCD.test.CrearDCDTest"/>
+      
+    </classes>
+</test>
+<test name="Editar DCD Test">
+    <classes>
+        
+        <class name="com.ConsultaDCD.test.EditarDCDTest"/>
+      
+    </classes>
+</test>
+<test name="Filtros DCD Test">
+    <classes>
+        
+        <class name="com.ConsultaDCD.test.FiltrosDCDTest"/>
+      
+    </classes>
+</test>
+<test name="Generar DCD Test">
+    <classes>
+        
+        <class name="com.ConsultaDCD.test.GenerarDCDTest"/>
+      
+    </classes>
+</test>
+<test name="Observar DCD Test">
+    <classes>
+        
+        <class name="com.ConsultaDCD.test.ObservarDCDTest"/>
+      
+    </classes>
+</test>
+<test name="Revisar DCD Test">
+    <classes>
+        
+        <class name="com.ConsultaDCD.test.RevisarDCDTest"/>
+      
+    </classes>
+</test>
+<test name="Excepcion Consulta DCD Test">
+    <classes>
+        
+        <class name="com.ConsultaDCD.test.ExepcionConsultarDCDTest"/>
+      
+    </classes>
+</test>
+<test name="Excepcion Crear DCD Test">
+    <classes>
+        
+        <class name="com.ConsultaDCD.test.ExepcionesCrearDCDTest"/>
+      
+    </classes>
+</test>
+<test name="Excepcion CM DCD Test">
+    <classes>
+        
+        <class name="com.ConsultaDCD.test.ExepcionCMDCDTest"/>
+      
+    </classes>
+</test>
+<test name="Excepcion Generar DCD Test">
+    <classes>
+        
+        <class name="com.ConsultaDCD.test.ExepcionGenerarDCDTest"/>
+      
+    </classes>
+</test>
+<test name="Excepcion Revisar DCD Test">
+    <classes>
+        
+        <class name="com.ConsultaDCD.test.ExepcionRevisarDCDTest"/>
+      
+    </classes>
+</test>
+
+<test name="Borrar FDC Test">
+    <classes>
+        
+        <class name="com.FormularioFDC.test.BorrarFDCTest"/>
+      
+    </classes>
+</test>
+<test name="Carga Masiva FDC Test" parallel="methods">
+    <classes>
+        
+        <class name="com.FormularioFDC.test.CargaMasivaFDCTest"/>
+      
+    </classes>
+</test>
+<test name="Crear FDC Test">
+    <classes>
+        
+        <class name="com.FormularioFDC.test.CrearFDCTest"/>
+      
+    </classes>
+</test>
+<test name="Editar FDC Test">
+    <classes>
+        
+        <class name="com.FormularioFDC.test.EditarFDCTest"/>
+      
+    </classes>
+</test>
+<test name="Editar FDC Borrador Test">
+    <classes>
+        
+        <class name="com.FormularioFDC.test.Editar_FDCTest"/>
+      
+    </classes>
+</test>
+<test name="Filtros FDC Test">
+    <classes>
+        
+        <class name="com.FormularioFDC.test.FiltrosFDCTest"/>
+      
+    </classes>
+</test>
+<test name="Historial FDC Test">
+    <classes>
+        
+        <class name="com.FormularioFDC.test.HistorialFDCTest"/>
+      
+    </classes>
+</test>
+<test name="Observar FDC Test">
+    <classes>
+        
+        <class name="com.FormularioFDC.test.ObservarFDCTest"/>
+      
+    </classes>
+</test>
+<test name="Excepcion CM FDC Test" parallel="methods">
+    <classes>
+        
+        <class name="com.FormularioFDC.test.CargaMasivaFDC2Test"/>
+      
+    </classes>
+</test>
+<test name="Excepcion Crear FDC Test">
+    <classes>
+        
+        <class name="com.FormularioFDC.test.ExepcionCrearFDCTest"/>
+      
+    </classes>
+</test>
+<test name="Excepciones Crear FDC Test">
+    <classes>
+        
+        <class name="com.FormularioFDC.test.ExepcionesCrearFDCTest"/>
+      
+    </classes>
+</test>
+<test name="Excepcion Revisar FDC Test">
+    <classes>
+        
+        <class name="com.FormularioFDC.test.ExepcionesRevisarFDCTest"/>
+      
+    </classes>
+</test>
+<test name="Rechazar DCD Test">
+    <classes>
+        
+        <class name="com.FormularioFDC.test.RechazarDCDTest"/>
+      
+    </classes>
+</test>
+
+<test name="Dias en proceso Trazabilidad Test">
+    <classes>
+        
+        <class name="com.Trazabilidad.test.DiasEnProcesoTrazabilidadTest"/>
+      
+    </classes>
+</test>
+<test name="Excepcion Trazabilidad Test">
+    <classes>
+        
+        <class name="com.Trazabilidad.test.ExepcionTrazabilidadTest"/>
+      
+    </classes>
+</test>
+<test name="Filtros Trazabilidad Test">
+    <classes>
+        
+        <class name="com.Trazabilidad.test.FiltrosTrazabilidadTest"/>
+      
+    </classes>
+</test>
+<test name="Observar Trazabilidad Test">
+    <classes>
+        
+        <class name="com.Trazabilidad.test.ObservarTrazabilidadTest"/>
+      
+    </classes>
+</test>
+<test name="Trazabilidad Test">
+    <classes>
+        
+        <class name="com.Trazabilidad.test.TrazabilidadTest"/>
+      
+    </classes>
+</test>
+<test name="Compensaciones Tramitadas Test">
+    <classes>
+        
+        <class name="com.Trazabilidad.test.TramitesTrazabilidadTest"/>
+      
+    </classes>
+</test>
+
+<test name="Dias En Proceso RYP Test">
+    <classes>
+        
+        <class name="com.RevicionesRYP.test.DiasEnProcesoRYPTest"/>
+      
+    </classes>
+</test>
+<test name="Excepcion Observacion RYP Test">
+    <classes>
+        
+        <class name="com.RevicionesRYP.test.ExepcionObservacionRYPTest"/>
+      
+    </classes>
+</test>
+<test name="Excepcion Revicion RYP Test">
+    <classes>
+        
+        <class name="com.RevicionesRYP.test.ExepcionRevicionRYPTest"/>
+      
+    </classes>
+</test>
+<test name="Filtros Dias En Proceso RYP Test">
+    <classes>
+        
+        <class name="com.RevicionesRYP.test.FiltrosDiasEnProcesoTest"/>
+      
+    </classes>
+</test>
+<test name="Filtros RYP Test">
+    <classes>
+        
+        <class name="com.RevicionesRYP.test.FiltrosRYPTest"/>
+      
+    </classes>
+</test>
+<test name="Observar RYP Test">
+    <classes>
+        
+        <class name="com.RevicionesRYP.test.ObservarRevicionesTest"/>
+      
+    </classes>
+</test>
+<test name="Reviciones RYP Test">
+    <classes>
+        
+        <class name="com.RevicionesRYP.test.RevicionesRYPTest"/>
+      
+    </classes>
+</test>
+<test name="Validaciones RYP Test">
+    <classes>
+        
+        <class name="com.RevicionesRYP.test.ValidacionesRYPTest"/>
+      
+    </classes>
+</test>
+<test name="Validaciones Filtros Test">
+    <classes>
+        
+        <class name="com.RevicionesRYP.test.ValidacionesFiltrosTest"/>
+      
+    </classes>
+</test>
+
+<test name="Consultar FFP Test">
+    <classes>
+        
+        <class name="com.FormularioNuevoFFP.test.ConsultarFFPTest"/>
+      
+    </classes>
+</test>
+<test name="Correccion FFP Test">
+    <classes>
+        
+        <class name="com.FormularioNuevoFFP.test.CorreccionFFPTest"/>
+      
+    </classes>
+</test>
+<test name="Creacion Nueva Declaracion FFP Test">
+    <classes>
+        
+        <class name="com.FormularioNuevoFFP.test.CreacionNuevaDeclaracionTest"/>
+      
+    </classes>
+</test>
+<test name="Declarar FFP Test">
+    <classes>
+        
+        <class name="com.FormularioNuevoFFP.test.DeclararFFPTest"/>
+      
+    </classes>
+</test>
+<test name="Edicion FFP Test">
+    <classes>
+        
+        <class name="com.FormularioNuevoFFP.test.EdicionFFPTest"/>
+      
+    </classes>
+</test>
+<test name="Filtrar FFP Test">
+    <classes>
+        
+        <class name="com.FormularioNuevoFFP.test.FiltrarFFPTest"/>
+      
+    </classes>
+</test>
+<test name="Firma Gerente Test">
+    <classes>
+        
+        <class name="com.FormularioNuevoFFP.test.FirmaGerenteTest"/>
+      
+    </classes>
+</test>
+<test name="Borrar FFP Test">
+    <classes>
+        
+        <class name="com.FormularioNuevoFFP.test.BorrarFFPTest"/>
+      
+    </classes>
+</test>
+
+<test name="Dias En Proceso Secretaria Tecnica Test">
+    <classes>
+        
+        <class name="com.SecretariaTecnica.test.DiasEnProcesoSTTest"/>
+      
+    </classes>
+</test>
+<test name="Filtros Secretaria Tecnica Test">
+    <classes>
+        
+        <class name="com.SecretariaTecnica.test.FiltrosSTTest"/>
+      
+    </classes>
+</test>
+<test name="Observar Secretaria Tecnica Test">
+    <classes>
+        
+        <class name="com.SecretariaTecnica.test.ObservarSTTest"/>
+      
+    </classes>
+</test>
+<test name="Excepcion Observacion Secretaria Tecnica Test">
+    <classes>
+        
+        <class name="com.SecretariaTecnica.test.ExepcionObservacionSTTest"/>
+      
+    </classes>
+</test>
+<test name="Excepcion Revicion Secretaria Tecnica Test">
+    <classes>
+        
+        <class name="com.SecretariaTecnica.test.ExepcionRevicionSTTest"/>
+      
+    </classes>
+</test>
+<test name="Revicion Secretaria Tecnica Test">
+    <classes>
+        
+        <class name="com.SecretariaTecnica.test.RevicionSTTest"/>
+      
+    </classes>
+</test>
+<test name="Validaciones Secretaria Tecnica Test">
+    <classes>
+        
+        <class name="com.SecretariaTecnica.test.ValidacionesSTTest"/>
+      
+    </classes>
+</test>
+<test name="Administracion Finiquitos Test" parallel="methods">
+    <classes>
+        
+        <class name="com.AdministracionFiniquitos.test.CrearTest"/>
+      
+    </classes>
+</test>
+
+</suite>
+
