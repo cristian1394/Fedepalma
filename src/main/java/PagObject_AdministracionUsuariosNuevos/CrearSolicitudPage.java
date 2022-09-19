@@ -8,8 +8,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 
-import com.demoautomatizacion.utils.Utilidades;
-
 import MapObject_AdministracionUsuariosNuevos.CrearSolicitudMaps;
 import io.qameta.allure.Step;
 
@@ -41,7 +39,7 @@ public class CrearSolicitudPage extends CrearSolicitudMaps{
 	public CrearSolicitudPage Crear(File folderPath) throws Exception {
 
 		time(5);
-		Utilidades.ByPixel();
+		ByPixel();
 		time(5);
 		click(btnCrear, folderPath, "texto prueba");
 		time(12);
@@ -141,7 +139,8 @@ public class CrearSolicitudPage extends CrearSolicitudMaps{
 	@Step("Eliminar creacion")
 	public CrearSolicitudPage EliminarCreacion(File folderPath) throws Exception {
 
-		Utilidades.time(2);
+		
+		time(2);
 		click(Eliminar, folderPath, "texto prueba");
 		time(1);
 		click(btnEliminar, folderPath, "texto prueba");
@@ -181,7 +180,7 @@ public class CrearSolicitudPage extends CrearSolicitudMaps{
 	@Step("Ingresar Observacion")
 	public CrearSolicitudPage Observacion(String observacion, File folderPath) throws Exception {
 
-		Utilidades.time(15);
+		time(15);
 		writeText(txtObservacion, observacion, folderPath, observacion);
 		time(1);
 		click(btnSi, folderPath, "texto prueba");
@@ -207,7 +206,7 @@ public class CrearSolicitudPage extends CrearSolicitudMaps{
 	@Step("Confirmar Creacion")
 	public CrearSolicitudPage ConfirmarCreacion(String resultado, File folderPath) throws Exception {
 
-		Utilidades.time(25);
+		time(25);
 		Assert.assertEquals(getElement(lblResultadoSolicitud).getText(), resultado);
 		captureScreen(folderPath, "captura Evidencia");
 		time(5);
@@ -222,7 +221,7 @@ public class CrearSolicitudPage extends CrearSolicitudMaps{
 	@Step("Confirmacion de cancelacion de la creacion")
 	public CrearSolicitudPage CancelacionCreciona(String resultado, File folderPath) throws Exception {
 
-		Utilidades.time(25);
+		time(25);
 		Assert.assertEquals(getElement(lblResultadoSolicitud).getText(), resultado);
 		captureScreen(folderPath, "captura Evidencia");
 		time(5);
