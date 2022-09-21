@@ -27,7 +27,7 @@ public class FiltrosRYPPage extends FiltrosRYPMap {
         captureScreen(folderPath, "Capture screen");
         
         String Mes = getElement(lblMes).getText();
-        time(800);
+        time(1);
         click(btnMes,folderPath, "click xpath");
         time(1);
         click(btnFiltra,folderPath, "click xpath");

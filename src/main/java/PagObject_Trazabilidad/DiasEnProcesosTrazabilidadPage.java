@@ -16,23 +16,23 @@ public class DiasEnProcesosTrazabilidadPage extends DiasEnProcesosTrazabilidadMa
 	@Step("Iniciar Menu Trazabilidad")
 	public DiasEnProcesosTrazabilidadPage DiasPTrazabilidad(File folderPath) throws Exception {
 
-		time(5000);
+		time(5);
 		click(btnConsultar,folderPath, "click xpath");
-		time(5500);
+		time(6);
 		captureScreen(folderPath, "Capture screen");
-		time(1000);
+		time(1);
 		ByPixel();
-		time(1000);
+		time(1);
 		scrollElementV(folderPath, btnDias, "scroll ");
-		time(1000);
+		time(1);
 		ByPixelA();
-		time(2000);
+		time(2);
 		click(btnDiasP,folderPath, "click xpath");
-		time(1000);
+		time(1);
 		click(btnDiasP,folderPath, "click xpath");
-		time(800);
+		time(1);
 		captureScreen(folderPath, "Capture screen");
-		time(4000);
+		time(4);
 		return this;
 	}
 

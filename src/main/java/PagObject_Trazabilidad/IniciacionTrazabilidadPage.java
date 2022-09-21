@@ -15,18 +15,18 @@ public class IniciacionTrazabilidadPage extends IniciacionTrazabilidadMap {
 
 	@Step("Iniciar Menu Trazabilidad")
 	public IniciacionTrazabilidadPage IniciarTrazabilidad(File folderPath) throws Exception {
-		time(5000);
-		time(2000);
+		time(5);
+		time(2);
 		scrollElementV(folderPath, btnDemostracion, "scroll ");
-		time(1000);
+		time(1);
 		click(btnDemostracion,folderPath, "click xpath");
-		time(2000);
+		time(2);
 		scrollElementV(folderPath, btnTrazabilidad, "scroll ");
-		time(1000);
+		time(1);
 		click(btnTrazabilidad,folderPath, "click xpath");
-		time(800);
+		time(1);
 		captureScreen(folderPath, "Capture screen");
-		time(2000);
+		time(2);
 
 		return this;
 	}

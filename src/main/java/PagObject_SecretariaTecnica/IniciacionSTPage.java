@@ -23,7 +23,7 @@ public class IniciacionSTPage extends IniciacionSTMap {
 		scrollElementV(folderPath, btnSTecnica, "scroll ");
 		time(1);
 		click(btnSTecnica,folderPath, "click xpath");
-		time(800);
+		time(1);
 		captureScreen(folderPath, "Capture screen");
 		time(2);
 

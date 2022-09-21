@@ -20,18 +20,18 @@ public class ExcepcionTrazabilidadPage extends ExcepcionTrazabilidadMap {
 	@Step("Rellenar Trazabilidad")
     public ExcepcionTrazabilidadPage RellenarTrazabilidad(File folderPath) throws Exception {
      
-        time(800);
+        time(1);
         click(btnSMes,folderPath, "click xpath");
-        time(800);
+        time(1);
         click(btnMes,folderPath, "click xpath");
-        time(800);
+        time(1);
         click(btnSAno,folderPath, "click xpath");
-        time(800);
+        time(1);
         click(btnAno,folderPath, "click xpath");
 		captureScreen(folderPath, "Capture screen");
-		time(1000);
+		time(1);
 		click(btnConsultar,folderPath, "click xpath");
-        time(2500);
+        time(3);
         captureScreen(folderPath, "Capture screen");
 
          
@@ -41,13 +41,13 @@ public class ExcepcionTrazabilidadPage extends ExcepcionTrazabilidadMap {
 	@Step("Exportar Formulario Trazabiidad")
     public ExcepcionTrazabilidadPage ValidarResultadoTrazabilidad(String resultado, File folderPath) throws Exception {
 		
-		time(1000);
+		time(1);
 		Assert.assertEquals(getElement(lblResultadoTrazabilidad).getText(),resultado);
 		captureScreen(folderPath, "Capture screen");
-        time(6000);
+        time(6);
         click(btnOk,folderPath, "click xpath");
         captureScreen(folderPath, "Capture screen");
-        time(2500);
+        time(3);
          
         return this;
     }

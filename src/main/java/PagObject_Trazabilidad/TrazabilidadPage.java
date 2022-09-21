@@ -15,26 +15,26 @@ public class TrazabilidadPage extends TrazabilidadMap {
 
 	@Step("Rellenar Trazabilidad")
 	public TrazabilidadPage Trazabilidad(File folderPath) throws Exception {
-		time(2000);
+		time(2);
 		scrollElementV(folderPath, btnDemostracion, "scroll ");
-		time(1000);
+		time(1);
 		click(btnDemostracion,folderPath, "click xpath");
-		time(2000);
+		time(2);
 		scrollElementV(folderPath, btnTrazabilidad, "scroll ");
-		time(1000);
+		time(1);
 		click(btnTrazabilidad,folderPath, "click xpath");
-		time(800);
+		time(1);
 		click(btnSMes,folderPath, "click xpath");
-		time(800);
+		time(1);
 		click(btnMes,folderPath, "click xpath");
-		time(800);
+		time(1);
 		click(btnSAno,folderPath, "click xpath");
-		time(800);
+		time(1);
 		click(btnAno,folderPath, "click xpath");
 		captureScreen(folderPath, "Capture screen");
-		time(1000);
+		time(1);
 		click(btnConsultar,folderPath, "click xpath");
-		time(2500);
+		time(3);
 		captureScreen(folderPath, "Capture screen");
 
 		return this;
@@ -43,13 +43,13 @@ public class TrazabilidadPage extends TrazabilidadMap {
 	@Step("Exportar Formulario Trazabiidad")
 	public TrazabilidadPage Exportar(File folderPath) throws Exception {
 
-		time(1000);
+		time(1);
 		click(btnExportar,folderPath, "click xpath");
-		time(10000);
+		time(10);
 		ByPixel();
-		time(500);
+		time(1);
 		captureScreen(folderPath, "Capture screen");
-		time(1000);
+		time(1);
 
 		return this;
 	}

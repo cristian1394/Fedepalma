@@ -72,7 +72,7 @@ public class FMMEsFDCPage extends FMMEsFDCMap {
     	ByPixel();
         time(1);
         captureScreen(folderPath, "Capture screen");
-        time(3500);
+        time(4);
         
         return this;
     }
