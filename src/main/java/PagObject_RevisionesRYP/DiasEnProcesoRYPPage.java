@@ -16,27 +16,27 @@ public class DiasEnProcesoRYPPage extends DiasEnProcesoRYPMap {
 	@Step("Observar Validaciones de Filtro Dias en Proceso")
 	public DiasEnProcesoRYPPage ValidarDiasEnProceso(File folderPath) throws Exception {
 
-		time(2000);
+		time(2);
 		ByPixel();
-		time(4000);
+		time(4);
 		scrollElementV(folderPath, btnlupa, "scroll ");
-		time(4000);
+		time(4);
 		ByPixelA();
-		time(4000);
+		time(4);
 		click(btnDiasP,folderPath, "click xpath");
-		time(800);
+		time(1);
 		click(btnDiasP,folderPath, "click xpath");
-		time(500);
+		time(1);
 		captureScreen(folderPath, "Capture screen");
-		time(2000);
+		time(2);
 		click(btnLupa,folderPath, "click xpath");
-		time(1000);
+		time(1);
 		captureScreen(folderPath, "Capture screen");
-		time(2500);
+		time(3);
 		click(btnSalir,folderPath, "click xpath");
-		time(1000);
+		time(1);
 		captureScreen(folderPath, "Capture screen");
-		time(2500);
+		time(3);
 
 		return this;
 	}

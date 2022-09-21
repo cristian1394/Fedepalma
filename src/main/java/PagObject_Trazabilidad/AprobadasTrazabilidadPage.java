@@ -18,84 +18,84 @@ public class AprobadasTrazabilidadPage extends AprobadasTrazabilidadMap {
 	@Step("compensaciones Aprobadas en trámite")
     public AprobadasTrazabilidadPage AprobadasTrazabilidad(File folderPath) throws Exception {
 		
-		time(300);
+		time(1);
         click(btnAprobadas,folderPath, "click xpath");
-        time(1000);
+        time(1);
         click(btnConsultar,folderPath, "click xpath");
-        time(1000);
+        time(1);
         
-        time(1500);
+        time(2);
         click(btnExportar,folderPath, "click xpath");
         
-        /*Utilidades.waitInMs(1000);
+        /*Utilidades.waitInMs(1);
         click(btnFiltra);
-        Utilidades.waitInMs(1000);
+        Utilidades.waitInMs(1);
         click(btnTermina);
         Utilidades.waitInMs(900);
         writeText(txtMes, Inicia);
-        Utilidades.waitInMs(1000);
+        Utilidades.waitInMs(1);
         click(btnfiltrar);
-        Utilidades.waitInMs(1000);
+        Utilidades.waitInMs(1);
         captureScreen(folderPath, "Capture screen");
 		
         click(btnDeclarante);
-        Utilidades.waitInMs(1000);
+        Utilidades.waitInMs(1);
         click(btnFiltro);
-        Utilidades.waitInMs(1000);
+        Utilidades.waitInMs(1);
         click(btnComienza);
         Utilidades.waitInMs(800);
         writeText(txtInicial, Declarante);
-        Utilidades.waitInMs(1000);
+        Utilidades.waitInMs(1);
         click(btnFiltrarD);
-        Utilidades.waitInMs(1000);
+        Utilidades.waitInMs(1);
         captureScreen(folderPath, "Capture screen");
         
         click(btnComprador);
         Utilidades.waitInMs(900);
         click(btnlista);
-        Utilidades.waitInMs(1000);
+        Utilidades.waitInMs(1);
         click(btnContiene);
         Utilidades.waitInMs(800);
         writeText(txtContiene, Contiene);
-        Utilidades.waitInMs(1000);
+        Utilidades.waitInMs(1);
         click(btnFiltrarC);
-        Utilidades.waitInMs(1000);
+        Utilidades.waitInMs(1);
         captureScreen(folderPath, "Capture screen");
         
         Utilidades.waitInMs(800);
         click(btnDCD);
-        Utilidades.waitInMs(1000);
+        Utilidades.waitInMs(1);
         click(btnfiltra);
-        Utilidades.waitInMs(1000);
+        Utilidades.waitInMs(1);
         click(btnDiferente);
         Utilidades.waitInMs(900);
         writeText(txtDCD, Dcd);
-        Utilidades.waitInMs(1000);
+        Utilidades.waitInMs(1);
         click(btnFiltrar);
-        Utilidades.waitInMs(1000);
+        Utilidades.waitInMs(1);
         captureScreen(folderPath, "Capture screen");
         
         String Producto = getElement(lblProducto).getText();
         click(btnProducto);
-        Utilidades.waitInMs(1000);
+        Utilidades.waitInMs(1);
         writeText(txtProducto, Producto);
-        Utilidades.waitInMs(1000);
+        Utilidades.waitInMs(1);
         click(btnFiltrarP);
-        Utilidades.waitInMs(1000);
+        Utilidades.waitInMs(1);
         captureScreen(folderPath, "Capture screen");
         
         Utilidades.waitInMs(800);
         click(btnGrupoMercado);
-        Utilidades.waitInMs(1000);
+        Utilidades.waitInMs(1);
         click(btnLista);
-        Utilidades.waitInMs(1000);
+        Utilidades.waitInMs(1);
         click(btnNoContiene);
         Utilidades.waitInMs(900);
         writeText(txtGrupo, Grupo);
-        Utilidades.waitInMs(1000);
+        Utilidades.waitInMs(1);
         click(btnFiltrarG);
         */
-        time(6000);
+        time(6);
         captureScreen(folderPath, "Capture screen");
         
         return this;
@@ -104,11 +104,11 @@ public class AprobadasTrazabilidadPage extends AprobadasTrazabilidadMap {
 	@Step("Observar Trazabilidad")
     public AprobadasTrazabilidadPage VerTrazabilidad(File folderPath) throws Exception {
 
-		time(800);
+		time(1);
 		click(btnVer,folderPath, "click xpath");
-		time(500);
+		time(1);
 		captureScreen(folderPath, "Capture screen");
-        time(10000);
+        time(10);
         
         return this;
     }

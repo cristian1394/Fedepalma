@@ -33,7 +33,7 @@ public class FiltrarFFPPage extends FiltrarFFPMap {
 
 		time(3);
 		click(btnFMes,folderPath, "click xpath");
-		time(2500);
+		time(3);
 		click(btnFiltro,folderPath, "click xpath");
 		time(1);
 		click(btnTermina,folderPath, "click xpath");

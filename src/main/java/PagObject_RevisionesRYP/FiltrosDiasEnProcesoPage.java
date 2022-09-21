@@ -36,7 +36,7 @@ public class FiltrosDiasEnProcesoPage extends FiltrosDiasEnProcesoMap {
 		click(btnFiltrar,folderPath, "click xpath");
 		time(1);
 		captureScreen(folderPath, "Capture screen");
-		time(2500);
+		time(3);
 
 		return this;
 	}

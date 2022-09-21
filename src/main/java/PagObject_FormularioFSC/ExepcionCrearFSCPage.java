@@ -19,17 +19,17 @@ public class ExepcionCrearFSCPage extends ExepcionCrearFSCMap {
 
 	@Step("Crear FSC")
     public ExepcionCrearFSCPage CrearFSC(String resultado, File folderPath) throws Exception {
-        time(8000);
+        time(8);
 		click(btnCrear,folderPath, "click xpath");
-		time(500);
+		time(1);
 		captureScreen(folderPath, "Capture screen");
-        time(1000);
+        time(1);
 		Assert.assertEquals(getElement(lblResultadoCrear).getText(),resultado);
 		captureScreen(folderPath, "Capture screen");
-        time(6000);
+        time(6);
         click(btnOK,folderPath, "click xpath");
         captureScreen(folderPath, "Capture screen");
-        time(2000);
+        time(2);
         
         return this;
     }

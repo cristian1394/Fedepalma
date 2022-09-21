@@ -18,11 +18,11 @@ public class ObservarTrazabilidadPage extends ObservarTrazabilidadMap {
 	@Step("Observar Trazabilidad")
     public ObservarTrazabilidadPage VerTrazabilidad(File folderPath) throws Exception {
 
-		time(800);
+		time(1);
 		click(btnVer,folderPath, "click xpath");
-		time(500);
+		time(1);
 		captureScreen(folderPath, "Capture screen");
-        time(10000);
+        time(10);
         
         return this;
     }

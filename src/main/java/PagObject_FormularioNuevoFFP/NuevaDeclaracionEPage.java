@@ -52,9 +52,9 @@ public class NuevaDeclaracionEPage extends NuevaDeclaracionEMap {
 		writeText(txtCompradorH, RPFH, folderPath, txtNit);
 		time(1);
 		click(btnAdicionarRPF,folderPath, "click xpath");
-		time(2500);
+		time(3);
 		File file = new File(DocRPF);
-		time(1200);
+		time(2);
 		WebElement ruta = driver.findElement(btnArchivo);
 		ruta.sendKeys(file.getAbsolutePath());
 		time(1);
@@ -194,7 +194,7 @@ public class NuevaDeclaracionEPage extends NuevaDeclaracionEMap {
 		time(1);
 		click(btnRecibidaIngresada,folderPath, "click xpath");
 
-		time(500);
+		time(1);
 		String[] Nit = { "12457001", "12516054", "816004403", "1093911400", "900754604" };
 		Random aleatorio = new Random();
 		int Nit2 = aleatorio.nextInt(Nit.length);
@@ -207,9 +207,9 @@ public class NuevaDeclaracionEPage extends NuevaDeclaracionEMap {
 		writeText(txtKg, KG, folderPath, txtNit);
 		time(1);
 		click(btnAdicionarARPM,folderPath, "click xpath");
-		time(2500);
+		time(3);
 		File file = new File(DocARPM);
-		time(1200);
+		time(2);
 		WebElement ruta = driver.findElement(btnCargaARPM);
 		ruta.sendKeys(file.getAbsolutePath());
 		time(1);
