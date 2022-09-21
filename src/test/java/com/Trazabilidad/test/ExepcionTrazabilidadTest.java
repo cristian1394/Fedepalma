@@ -7,7 +7,6 @@ import java.util.Properties;
 import io.qameta.allure.*;
 import utilities.GenerarReportePdf;
 
-import org.openqa.selenium.By;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
@@ -57,9 +56,9 @@ public class ExepcionTrazabilidadTest extends BaseTest{
 		Logeo(nomTest, folderPath);
 		
 		home.irPortal(getProperties().getProperty("url"));
-		login.ingresarCredenciales(getProperties().getProperty("usuario"),getProperties().getProperty("password"));
-		MenuTrazabilidad.IniciarTrazabilidad();
-		ETrazabilidad.RellenarTrazabilidad().ValidarResultadoTrazabilidad("No se encontraron datos.");
+		login.ingresarCredenciales(getProperties().getProperty("usuario"),getProperties().getProperty("password"), folderPath);
+		MenuTrazabilidad.IniciarTrazabilidad(folderPath);
+		ETrazabilidad.RellenarTrazabilidad(folderPath).ValidarResultadoTrazabilidad("No se encontraron datos.", folderPath);
         
 		// MyScreenRecorder.stopRecording();
      	GenerarReportePdf.closeTemplate("");

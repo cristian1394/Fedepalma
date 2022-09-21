@@ -7,7 +7,6 @@ import java.util.Properties;
 import io.qameta.allure.*;
 import utilities.GenerarReportePdf;
 
-import org.openqa.selenium.By;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
@@ -57,9 +56,9 @@ public class DiasEnProcesoRYPTest extends BaseTest{
 		Logeo(nomTest, folderPath);
 		
 		home.irPortal(getProperties().getProperty("url"));
-        login.ingresarCredenciales(getProperties().getProperty("usuario"),getProperties().getProperty("password"));
-        MenuRYP.IniciarRYP();
-        DiasPRYP.ValidarDiasEnProceso();
+        login.ingresarCredenciales(getProperties().getProperty("usuario"),getProperties().getProperty("password"), folderPath);
+        MenuRYP.IniciarRYP(folderPath);
+        DiasPRYP.ValidarDiasEnProceso(folderPath);
         
         // MyScreenRecorder.stopRecording();
      	GenerarReportePdf.closeTemplate("");

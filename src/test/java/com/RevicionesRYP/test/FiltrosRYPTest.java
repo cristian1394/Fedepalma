@@ -7,7 +7,6 @@ import java.util.Properties;
 import io.qameta.allure.*;
 import utilities.GenerarReportePdf;
 
-import org.openqa.selenium.By;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
@@ -57,10 +56,10 @@ public class FiltrosRYPTest extends BaseTest{
 		Logeo(nomTest, folderPath);
 		
 		home.irPortal(getProperties().getProperty("url"));
-		login.ingresarCredenciales(getProperties().getProperty("usuario"),getProperties().getProperty("password"));
-        MenuRYP.IniciarRYP();
+		login.ingresarCredenciales(getProperties().getProperty("usuario"),getProperties().getProperty("password"), folderPath);
+        MenuRYP.IniciarRYP(folderPath);
         FiltrosRYP.ValidarFiltrosRYP(getProperties().getProperty("Año"), getProperties().getProperty("inicial"),
-        		getProperties().getProperty("producto"),getProperties().getProperty("Grupo1")).ExportacionExcel();
+        		getProperties().getProperty("producto"),getProperties().getProperty("Grupo1"), folderPath).ExportacionExcel(folderPath);
 
         // MyScreenRecorder.stopRecording();
      	GenerarReportePdf.closeTemplate("");

@@ -7,13 +7,11 @@ import java.util.Properties;
 import io.qameta.allure.*;
 import utilities.GenerarReportePdf;
 
-import org.openqa.selenium.By;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import com.demoautomatizacion.test.BaseTest;
 import com.demoautomatizacion.test.utils.Listeners.TestListener;
-import PagObject_FormularioFSC.ExepcionCrearFSCPage;
 import PagObject_demoautomatizacion.BasePage;
 
 

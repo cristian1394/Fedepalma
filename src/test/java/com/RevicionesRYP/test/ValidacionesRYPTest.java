@@ -7,7 +7,6 @@ import java.util.Properties;
 import io.qameta.allure.*;
 import utilities.GenerarReportePdf;
 
-import org.openqa.selenium.By;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
@@ -57,9 +56,9 @@ public class ValidacionesRYPTest extends BaseTest{
 		Logeo(nomTest, folderPath);
 		
 		home.irPortal(getProperties().getProperty("url"));
-        login.ingresarCredenciales(getProperties().getProperty("usuario"),getProperties().getProperty("password"));
-        MenuRYP.IniciarRYP();
-        ValidarRYP.ValidarFormulario().ValidarDCD();
+        login.ingresarCredenciales(getProperties().getProperty("usuario"),getProperties().getProperty("password"), folderPath);
+        MenuRYP.IniciarRYP(folderPath);
+        ValidarRYP.ValidarFormulario(folderPath).ValidarDCD(folderPath);
         
         // MyScreenRecorder.stopRecording();
      	GenerarReportePdf.closeTemplate("");

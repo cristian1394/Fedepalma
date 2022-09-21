@@ -7,7 +7,6 @@ import java.util.Properties;
 import io.qameta.allure.*;
 import utilities.GenerarReportePdf;
 
-import org.openqa.selenium.By;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
@@ -57,22 +56,22 @@ public class EdicionFFPTest extends BaseTest{
 		Logeo(nomTest, folderPath);
 		
 		home.irPortal(getProperties().getProperty("url"));
-        login.ingresarCredenciales(getProperties().getProperty("usuario"),getProperties().getProperty("password"));
-        ConsultaFFP.Consulta_FFP(getProperties().getProperty("NitFFP"));
+        login.ingresarCredenciales(getProperties().getProperty("usuario"),getProperties().getProperty("password"), folderPath);
+        ConsultaFFP.Consulta_FFP(getProperties().getProperty("NitFFP"), folderPath);
         EditarFFP.EditarFFP(getProperties().getProperty("PropiosH"),getProperties().getProperty("InicialFrutoG"),
-                getProperties().getProperty("InicialFrutoH"),getProperties().getProperty("BajaFrutoG"))
-        		.ProveedoresAlmendra(getProperties().getProperty("DocRPA"),getProperties().getProperty("KG"))
+                getProperties().getProperty("InicialFrutoH"),getProperties().getProperty("BajaFrutoG"), folderPath)
+        		.ProveedoresAlmendra(getProperties().getProperty("DocRPA"),getProperties().getProperty("KG"), folderPath)
         		.AlmendraRecibida(getProperties().getProperty("DocARPM"),getProperties().getProperty("KG"), 
-                getProperties().getProperty("PalmisteRecibida"));
+                getProperties().getProperty("PalmisteRecibida"), folderPath);
         InventariosEdicion.AceitePalma(getProperties().getProperty("Palma"),getProperties().getProperty("PalmaA"),
-                getProperties().getProperty("PalmaB"),getProperties().getProperty("PalmaC"), getProperties().getProperty("PalmaD"))
+                getProperties().getProperty("PalmaB"),getProperties().getProperty("PalmaC"), getProperties().getProperty("PalmaD"), folderPath)
         		.AceitePalmaOPalmiste(getProperties().getProperty("PalmaoPalmiste"),getProperties().getProperty("PalmaoPalmisteA"),
                 getProperties().getProperty("PalmaoPalmisteB"),getProperties().getProperty("PalmaoPalmisteC"), 
-                getProperties().getProperty("PalmaoPalmisteD"))
+                getProperties().getProperty("PalmaoPalmisteD"), folderPath)
         		.AceitePalmiste(getProperties().getProperty("Palmiste"),getProperties().getProperty("PalmisteA"),
-                getProperties().getProperty("PalmisteB"),getProperties().getProperty("PalmisteC"), getProperties().getProperty("PalmisteD"))
-        		.PresentarDeclaracion()
-        		.GuardarEdicion();
+                getProperties().getProperty("PalmisteB"),getProperties().getProperty("PalmisteC"), getProperties().getProperty("PalmisteD"), folderPath)
+        		.PresentarDeclaracion(folderPath)
+        		.GuardarEdicion(folderPath);
 
         // MyScreenRecorder.stopRecording();
      	GenerarReportePdf.closeTemplate("");
