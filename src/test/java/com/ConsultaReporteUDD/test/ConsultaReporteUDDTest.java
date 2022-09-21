@@ -56,9 +56,9 @@ public class ConsultaReporteUDDTest extends BaseTest{
 		Logeo(nomTest, folderPath);
 		home.irPortal(getProperties().getProperty("url"));
         Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr"),
-        		getProperties().getProperty("pwd"));
-        ConsultaRUDD.MenuRUDD().Calendario().SeleccionarMes().SeleccionarDia().Calendario1().SeleccionarMes1()
-        .SeleccionarDia1().Buscar();
+        		getProperties().getProperty("pwd"), folderPath);
+        ConsultaRUDD.MenuRUDD(folderPath).Calendario(folderPath).SeleccionarMes(folderPath).SeleccionarDia(folderPath).Calendario1(folderPath).SeleccionarMes1(folderPath)
+        .SeleccionarDia1(folderPath).Buscar(folderPath);
         
          // MyScreenRecorder.stopRecording();
      	GenerarReportePdf.closeTemplate("");
@@ -81,9 +81,9 @@ public class ConsultaReporteUDDTest extends BaseTest{
 		Logeo(nomTest, folderPath);
 		home.irPortal(getProperties().getProperty("url"));
         Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr"),
-        		getProperties().getProperty("pwd"));
-        ConsultaRUDD.MenuRUDD().TD().FMM().Calendario().SeleccionarMes().SeleccionarDia().Calendario1().SeleccionarMes1()
-        .SeleccionarDia1().Buscar();
+        		getProperties().getProperty("pwd"), folderPath);
+        ConsultaRUDD.MenuRUDD(folderPath).TD(folderPath).FMM(folderPath).Calendario(folderPath).SeleccionarMes(folderPath).SeleccionarDia(folderPath).Calendario1(folderPath).SeleccionarMes1(folderPath)
+        .SeleccionarDia1(folderPath).Buscar(folderPath);
         
         // MyScreenRecorder.stopRecording();
      	GenerarReportePdf.closeTemplate("");
@@ -107,9 +107,9 @@ public class ConsultaReporteUDDTest extends BaseTest{
 		
 		home.irPortal(getProperties().getProperty("url"));
         Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr"),
-        		getProperties().getProperty("pwd"));
-        ConsultaRUDD.MenuRUDD().TD().Poliza().Calendario().SeleccionarMes().SeleccionarDia().Calendario1().SeleccionarMes1()
-        .SeleccionarDia1().Buscar();
+        		getProperties().getProperty("pwd"), folderPath);
+        ConsultaRUDD.MenuRUDD(folderPath).TD(folderPath).Poliza(folderPath).Calendario(folderPath).SeleccionarMes(folderPath).SeleccionarDia(folderPath).Calendario1(folderPath).SeleccionarMes1(folderPath)
+        .SeleccionarDia1(folderPath).Buscar(folderPath);
         
         // MyScreenRecorder.stopRecording();
      	GenerarReportePdf.closeTemplate("");
@@ -133,9 +133,9 @@ public class ConsultaReporteUDDTest extends BaseTest{
 		
 		home.irPortal(getProperties().getProperty("url"));
         Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr"),
-        		getProperties().getProperty("pwd"));
-        ConsultaRUDD.MenuRUDD().Buscar().FE(getProperties().getProperty("Declarante")).FDCD(getProperties().getProperty("Kg"))
-        .FProducto(getProperties().getProperty("Producto")).FPais(getProperties().getProperty("pais"));
+        		getProperties().getProperty("pwd"), folderPath);
+        ConsultaRUDD.MenuRUDD(folderPath).Buscar(folderPath).FE(getProperties().getProperty("Declarante"), folderPath).FDCD(getProperties().getProperty("Kg"), folderPath)
+        .FProducto(getProperties().getProperty("Producto"), folderPath).FPais(getProperties().getProperty("pais"), folderPath);
         
         // MyScreenRecorder.stopRecording();
      	GenerarReportePdf.closeTemplate("");
@@ -158,8 +158,8 @@ public class ConsultaReporteUDDTest extends BaseTest{
 		Logeo(nomTest, folderPath);
 		home.irPortal(getProperties().getProperty("url"));
         Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr"),
-        		getProperties().getProperty("pwd"));
-        ConsultaRUDD.MenuRUDD().TD().Poliza().Buscar().FPais(getProperties().getProperty("pais")).Exportar();
+        		getProperties().getProperty("pwd"), folderPath);
+        ConsultaRUDD.MenuRUDD(folderPath).TD(folderPath).Poliza(folderPath).Buscar(folderPath).FPais(getProperties().getProperty("pais"), folderPath).Exportar(folderPath);
         
         // MyScreenRecorder.stopRecording();
      	GenerarReportePdf.closeTemplate("");

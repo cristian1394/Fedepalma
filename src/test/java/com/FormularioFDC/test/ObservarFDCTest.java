@@ -58,9 +58,9 @@ public class ObservarFDCTest extends BaseTest{
 		
 		home.irPortal(getProperties().getProperty("url"));
         Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr1"),
-        		getProperties().getProperty("pwd"));
-        FDC.FormularioFDC();      
-        VerFDC.VerFDC();
+        		getProperties().getProperty("pwd"), folderPath);
+        FDC.FormularioFDC(folderPath);      
+        VerFDC.VerFDC(folderPath);
         
         // MyScreenRecorder.stopRecording();
      	GenerarReportePdf.closeTemplate("");

@@ -13,8 +13,6 @@ import org.testng.annotations.Test;
 
 import com.demoautomatizacion.test.BaseTest;
 import com.demoautomatizacion.test.utils.Listeners.TestListener;
-import com.demoautomatizacion.utils.Utilidades;
-
 import PagObject_FormularioFSC.ExepcionCrearFSCPage;
 import PagObject_demoautomatizacion.BasePage;
 
@@ -59,9 +57,9 @@ public class ExepcionFSCTest extends BaseTest{
 		
 		home.irPortal(getProperties().getProperty("url"));
 		Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr1"),
-			 getProperties().getProperty("pwd"));
-		FormularioFSC.FormularioFSC();
-        ECrearFSC.CrearFSC("Seleccione el año y el mes");
+			 getProperties().getProperty("pwd"), folderPath);
+		FormularioFSC.FormularioFSC(folderPath);
+        ECrearFSC.CrearFSC("Seleccione el año y el mes", folderPath);
         
         // MyScreenRecorder.stopRecording();
      	GenerarReportePdf.closeTemplate("");
@@ -84,8 +82,8 @@ public class ExepcionFSCTest extends BaseTest{
 		
 		home.irPortal(getProperties().getProperty("url"));
 		Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr1"),
-			 getProperties().getProperty("pwd"));
-		FormularioFSC.FormularioFSC().ConsultarFSC().CrearFSC().RevisarFSC().ERevisarFSC("No ha asociado todos los kilogramos a un tipo de DCD");     
+			 getProperties().getProperty("pwd"), folderPath);
+		FormularioFSC.FormularioFSC(folderPath).ConsultarFSC(folderPath).CrearFSC(folderPath).RevisarFSC(folderPath).ERevisarFSC("No ha asociado todos los kilogramos a un tipo de DCD", folderPath);     
 		
 		// MyScreenRecorder.stopRecording();
      	GenerarReportePdf.closeTemplate("");
@@ -108,9 +106,9 @@ public class ExepcionFSCTest extends BaseTest{
 		
 		home.irPortal(getProperties().getProperty("url"));
 		Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr1"),
-			 getProperties().getProperty("pwd"));
-		FormularioFSC.FormularioFSC().ConsultarFSC().CrearFSC().ConsultarDMI().SeleccionarDMI().AdicionarDMI("El formulario se guardo correctamente.")
-			 .RevisarFSC().ERevisarFSC1().SalirFSC() .ConsultarFSC().BuscarFSC().EliminarFSC().AceptarEliminarFSC().AceptarEliminarFSC();
+			 getProperties().getProperty("pwd"), folderPath);
+		FormularioFSC.FormularioFSC(folderPath).ConsultarFSC(folderPath).CrearFSC(folderPath).ConsultarDMI(folderPath).SeleccionarDMI(folderPath).AdicionarDMI("El formulario se guardo correctamente.", folderPath)
+			 .RevisarFSC(folderPath).ERevisarFSC1(folderPath).SalirFSC(folderPath) .ConsultarFSC(folderPath).BuscarFSC(folderPath).EliminarFSC(folderPath).AceptarEliminarFSC(folderPath).AceptarEliminarFSC(folderPath);
         
 		// MyScreenRecorder.stopRecording();
      	GenerarReportePdf.closeTemplate("");
@@ -133,10 +131,10 @@ public class ExepcionFSCTest extends BaseTest{
 		
 		home.irPortal(getProperties().getProperty("url"));
 		Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr1"),
-			 getProperties().getProperty("pwd"));
-		FormularioFSC.FormularioFSC().ConsultarFSC().CrearFSC().ConsultarDMI().SeleccionarDMI().AdicionarDMI("El formulario se guardo correctamente.")
-		 .CargaFMI(getProperties().getProperty("EXC"), "Solo se pueden cargar archivos con formato .pdf").SalirFSC()
-		 .ConsultarFSC().BuscarFSC().EliminarFSC().AceptarEliminarFSC().AceptarEliminarFSC();
+			 getProperties().getProperty("pwd"), folderPath);
+		FormularioFSC.FormularioFSC(folderPath).ConsultarFSC(folderPath).CrearFSC(folderPath).ConsultarDMI(folderPath).SeleccionarDMI(folderPath).AdicionarDMI("El formulario se guardo correctamente.", folderPath)
+		 .CargaFMI(getProperties().getProperty("EXC"), "Solo se pueden cargar archivos con formato .pdf", folderPath).SalirFSC(folderPath)
+		 .ConsultarFSC(folderPath).BuscarFSC(folderPath).EliminarFSC(folderPath).AceptarEliminarFSC(folderPath).AceptarEliminarFSC(folderPath);
         
 		// MyScreenRecorder.stopRecording();
      	GenerarReportePdf.closeTemplate("");
@@ -159,10 +157,10 @@ public class ExepcionFSCTest extends BaseTest{
 		
 		home.irPortal(getProperties().getProperty("url"));
 		Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr1"),
-			 getProperties().getProperty("pwd"));
-		FormularioFSC.FormularioFSC().ConsultarFSC().CrearFSC().ConsultarDMI().SeleccionarDMI().AdicionarDMI("El formulario se guardo correctamente.")
-		 .CargaCCM(getProperties().getProperty("EXC"), "Solo se pueden cargar archivos con formato .pdf").SalirFSC()
-		 .ConsultarFSC().BuscarFSC().EliminarFSC().AceptarEliminarFSC().AceptarEliminarFSC();
+			 getProperties().getProperty("pwd"), folderPath);
+		FormularioFSC.FormularioFSC(folderPath).ConsultarFSC(folderPath).CrearFSC(folderPath).ConsultarDMI(folderPath).SeleccionarDMI(folderPath).AdicionarDMI("El formulario se guardo correctamente.", folderPath)
+		 .CargaCCM(getProperties().getProperty("EXC"), "Solo se pueden cargar archivos con formato .pdf", folderPath).SalirFSC(folderPath)
+		 .ConsultarFSC(folderPath).BuscarFSC(folderPath).EliminarFSC(folderPath).AceptarEliminarFSC(folderPath).AceptarEliminarFSC(folderPath);
         
 		// MyScreenRecorder.stopRecording();
      	GenerarReportePdf.closeTemplate("");
@@ -185,10 +183,10 @@ public class ExepcionFSCTest extends BaseTest{
 		
 		home.irPortal(getProperties().getProperty("url"));
 		Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr1"),
-			 getProperties().getProperty("pwd"));
-		FormularioFSC.FormularioFSC().ConsultarFSC().CrearFSC().ConsultarDMI().SeleccionarDMI().AdicionarDMI("El formulario se guardo correctamente.")
-		 .CargaCIP(getProperties().getProperty("EXC"), "Solo se pueden cargar archivos con formato .pdf").SalirFSC()
-		 .ConsultarFSC().BuscarFSC().EliminarFSC().AceptarEliminarFSC().AceptarEliminarFSC();
+			 getProperties().getProperty("pwd"), folderPath);
+		FormularioFSC.FormularioFSC(folderPath).ConsultarFSC(folderPath).CrearFSC(folderPath).ConsultarDMI(folderPath).SeleccionarDMI(folderPath).AdicionarDMI("El formulario se guardo correctamente.", folderPath)
+		 .CargaCIP(getProperties().getProperty("EXC"), "Solo se pueden cargar archivos con formato .pdf", folderPath).SalirFSC(folderPath)
+		 .ConsultarFSC(folderPath).BuscarFSC(folderPath).EliminarFSC(folderPath).AceptarEliminarFSC(folderPath).AceptarEliminarFSC(folderPath);
         
 		// MyScreenRecorder.stopRecording();
      	GenerarReportePdf.closeTemplate("");
@@ -211,10 +209,10 @@ public class ExepcionFSCTest extends BaseTest{
 		
 		home.irPortal(getProperties().getProperty("url"));
 		Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr1"),
-			 getProperties().getProperty("pwd"));
-		FormularioFSC.FormularioFSC().ConsultarFSC().CrearFSC().ConsultarDMI().SeleccionarDMI().AdicionarDMI("El formulario se guardo correctamente.")
-		 .CargaIncumplimiento(getProperties().getProperty("EXC"), "Solo se pueden cargar archivos con formato .pdf").SalirFSC()
-		 .ConsultarFSC().BuscarFSC().EliminarFSC().AceptarEliminarFSC().AceptarEliminarFSC();
+			 getProperties().getProperty("pwd"), folderPath);
+		FormularioFSC.FormularioFSC(folderPath).ConsultarFSC(folderPath).CrearFSC(folderPath).ConsultarDMI(folderPath).SeleccionarDMI(folderPath).AdicionarDMI("El formulario se guardo correctamente.", folderPath)
+		 .CargaIncumplimiento(getProperties().getProperty("EXC"), "Solo se pueden cargar archivos con formato .pdf", folderPath).SalirFSC(folderPath)
+		 .ConsultarFSC(folderPath).BuscarFSC(folderPath).EliminarFSC(folderPath).AceptarEliminarFSC(folderPath).AceptarEliminarFSC(folderPath);
         
 		// MyScreenRecorder.stopRecording();
      	GenerarReportePdf.closeTemplate("");
@@ -237,8 +235,8 @@ public class ExepcionFSCTest extends BaseTest{
 		
 		home.irPortal(getProperties().getProperty("url"));
 		Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr1"),
-			 getProperties().getProperty("pwd"));
-		FormularioFSC.FormularioFSC().EConsultarFSC().CrearFSC().ConsultarDMI().AlertaDMI("No se encontraron registros para los parámetros de búsqueda.");
+			 getProperties().getProperty("pwd"), folderPath);
+		FormularioFSC.FormularioFSC(folderPath).EConsultarFSC(folderPath).CrearFSC(folderPath).ConsultarDMI(folderPath).AlertaDMI("No se encontraron registros para los parámetros de búsqueda.", folderPath);
         
 		// MyScreenRecorder.stopRecording();
      	GenerarReportePdf.closeTemplate("");

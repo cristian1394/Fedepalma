@@ -58,9 +58,9 @@ public class CargaMasivaFDCTest extends BaseTest{
 		
 		home.irPortal(getProperties().getProperty("url"));
         Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr1"),
-        		getProperties().getProperty("pwd"));
-        FDC.FormularioFDC();      
-        CargaDEX.CargaDEX(getProperties().getProperty("exc"), "Se cargaron los registros correctamente.");
+        		getProperties().getProperty("pwd"), folderPath);
+        FDC.FormularioFDC(folderPath);      
+        CargaDEX.CargaDEX(getProperties().getProperty("exc"), "Se cargaron los registros correctamente.", folderPath);
         
         // MyScreenRecorder.stopRecording();
      	GenerarReportePdf.closeTemplate("");
@@ -84,9 +84,9 @@ public class CargaMasivaFDCTest extends BaseTest{
 			
 			home.irPortal(getProperties().getProperty("url"));
 	        Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr1"),
-	        		getProperties().getProperty("pwd"));
-	        FDC.FormularioFDC();      
-	        CargaFMM.CargaFMM(getProperties().getProperty("exc"), "Se cargaron los registros correctamente.");
+	        		getProperties().getProperty("pwd"), folderPath);
+	        FDC.FormularioFDC(folderPath);      
+	        CargaFMM.CargaFMM(getProperties().getProperty("exc"), "Se cargaron los registros correctamente.", folderPath);
 	        
 	        // MyScreenRecorder.stopRecording();
 	     	GenerarReportePdf.closeTemplate("");

@@ -14,6 +14,8 @@ import org.testng.annotations.Test;
 import com.demoautomatizacion.test.BaseTest;
 import com.demoautomatizacion.test.utils.Listeners.TestListener;
 
+import PagObject_demoautomatizacion.BasePage;
+
 
 
 @Listeners({ TestListener.class })
@@ -56,20 +58,20 @@ public class CrearFDCTest extends BaseTest{
 		
 		home.irPortal(getProperties().getProperty("url"));
         Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr1"),
-        		getProperties().getProperty("pwd"));
-        FDC.FormularioFDC();      
-        CrearFDC.CrearFDC(getProperties().getProperty("Pais"), getProperties().getProperty("Producto"));
-        DEX.IngresarDEXPalma().CrearDEXPalmiste(getProperties().getProperty("Pais"),getProperties().getProperty("producto"))
-        	.IngresarDEXPalmiste("El formulario se guardo correctamente.");
-        FMM.CrearFMM(getProperties().getProperty("Pais"),getProperties().getProperty("Producto")).IngresarFMMPalma("El formulario se guardo correctamente.");
+        		getProperties().getProperty("pwd"), folderPath);
+        FDC.FormularioFDC(folderPath);      
+        CrearFDC.CrearFDC(getProperties().getProperty("Pais"), getProperties().getProperty("Producto"), folderPath);
+        DEX.IngresarDEXPalma(folderPath).CrearDEXPalmiste(getProperties().getProperty("Pais"),getProperties().getProperty("producto"), folderPath)
+        	.IngresarDEXPalmiste("El formulario se guardo correctamente.", folderPath);
+        FMM.CrearFMM(getProperties().getProperty("Pais"),getProperties().getProperty("Producto"), folderPath).IngresarFMMPalma("El formulario se guardo correctamente.", folderPath);
         Poliza.CrearPoliza(getProperties().getProperty("Aseguradora"), getProperties().getProperty("Fecha"),
-        		getProperties().getProperty("valor")).IngresarPoliza( getProperties().getProperty("Asociar"), "El formulario se guardo correctamente.");
-        Cargas.CargaDEX(getProperties().getProperty("doc"),"Se cargo el archivo correctamente").CargaFMM(getProperties().getProperty("doc"),
-        		"Se cargo el archivo correctamente")
-        	  .CargaCD(getProperties().getProperty("doc"),"Se cargo el archivo correctamente").CargaPoliza(getProperties().getProperty("doc"),
-        		"Se cargo el archivo correctamente")
-        	  .CargaIncumplimiento(getProperties().getProperty("doc"),"Se cargo el archivo correctamente").RevisarFDC();
-        Radicar.RadicarFDC().FirmarFDC(getProperties().getProperty("Firma")).SalirFDC();
+        		getProperties().getProperty("valor"), folderPath).IngresarPoliza( getProperties().getProperty("Asociar"), "El formulario se guardo correctamente.", folderPath);
+        Cargas.CargaDEX(getProperties().getProperty("doc"),"Se cargo el archivo correctamente", folderPath).CargaFMM(getProperties().getProperty("doc"),
+        		"Se cargo el archivo correctamente", folderPath)
+        	  .CargaCD(getProperties().getProperty("doc"),"Se cargo el archivo correctamente", folderPath).CargaPoliza(getProperties().getProperty("doc"),
+        		"Se cargo el archivo correctamente", folderPath)
+        	  .CargaIncumplimiento(getProperties().getProperty("doc"),"Se cargo el archivo correctamente", folderPath).RevisarFDC(folderPath);
+        Radicar.RadicarFDC(folderPath).FirmarFDC(getProperties().getProperty("Firma"), folderPath).SalirFDC(folderPath);
         
         // MyScreenRecorder.stopRecording();
      	GenerarReportePdf.closeTemplate("");

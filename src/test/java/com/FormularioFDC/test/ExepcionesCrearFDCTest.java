@@ -58,12 +58,12 @@ public class ExepcionesCrearFDCTest extends BaseTest{
 		
 		home.irPortal(getProperties().getProperty("url"));
         Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr1"),
-        		getProperties().getProperty("pwd"));
-        FDC.FormularioFDC();      
-        CrearFDC.CrearFDC(getProperties().getProperty("Pais"), getProperties().getProperty("Producto"));
-        DEX.IngresarDEXPalma().CrearDEXPalmiste(getProperties().getProperty("Pais"),getProperties().getProperty("producto"))
-        	.IngresarDEXPalmiste("El formulario se guardo correctamente.");
-        Cargas.CargaDEX(getProperties().getProperty("EXC"),"Solo se pueden cargar archivos con formato .pdf");
+        		getProperties().getProperty("pwd"), folderPath);
+        FDC.FormularioFDC(folderPath);      
+        CrearFDC.CrearFDC(getProperties().getProperty("Pais"), getProperties().getProperty("Producto"), folderPath);
+        DEX.IngresarDEXPalma(folderPath).CrearDEXPalmiste(getProperties().getProperty("Pais"),getProperties().getProperty("producto"), folderPath)
+        	.IngresarDEXPalmiste("El formulario se guardo correctamente.", folderPath);
+        Cargas.CargaDEX(getProperties().getProperty("EXC"),"Solo se pueden cargar archivos con formato .pdf", folderPath);
       
         // MyScreenRecorder.stopRecording();
      	GenerarReportePdf.closeTemplate("");

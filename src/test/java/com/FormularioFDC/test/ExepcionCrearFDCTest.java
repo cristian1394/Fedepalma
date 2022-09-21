@@ -58,9 +58,9 @@ public class ExepcionCrearFDCTest extends BaseTest{
 		
 		home.irPortal(getProperties().getProperty("url"));
         Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr1"),
-        		getProperties().getProperty("pwd"));
-        FDCB.FormularioExepcionFDC();      
-        ECrearFDC.CrearFDC("Seleccione el año y el mes");
+        		getProperties().getProperty("pwd"), folderPath);
+        FDCB.FormularioExepcionFDC(folderPath);      
+        ECrearFDC.CrearFDC("Seleccione el año y el mes", folderPath);
         
         // MyScreenRecorder.stopRecording();
      	GenerarReportePdf.closeTemplate("");
