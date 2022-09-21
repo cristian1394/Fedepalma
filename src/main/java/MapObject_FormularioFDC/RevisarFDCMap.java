@@ -6,11 +6,11 @@ import PagObject_demoautomatizacion.BasePage;
 
 public class RevisarFDCMap extends BasePage {
 
-	By btnCrear=By.id("btnCrear");
-	By btnRevisar=By.id("btnRevisarFdc");
-	By btnSalir=By.id("btnSalirFdc");
-	By lblResultadoRevisar=By.xpath("//div[17]/p");
-	By btnOk=By.xpath("//div[7]/div/button");
+	protected By btnCrear=By.id("btnCrear");
+	protected By btnRevisar=By.id("btnRevisarFdc");
+	protected By btnSalir=By.id("btnSalirFdc");
+	protected By lblResultadoRevisar=By.xpath("//div[17]/p");
+	protected By btnOk=By.xpath("//div[7]/div/button");
 	
 	public RevisarFDCMap(WebDriver driver) {
 		super(driver);

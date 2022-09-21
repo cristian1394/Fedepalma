@@ -6,18 +6,18 @@ import PagObject_demoautomatizacion.BasePage;
 
 public class CargeFDCMap extends BasePage {
 
-	By btnCargaDEX=By.id("CargarDex");
-	By btnOk=By.xpath("/html/body/div[17]/div[7]/div/button");
+	protected By btnCargaDEX=By.id("CargarDex");
+	protected By btnOk=By.xpath("/html/body/div[17]/div[7]/div/button");
 	
-	By btnCargaFMM=By.id("CargarDex");
-	By btnOkey=By.xpath("/html/body/div[17]/div[7]/div/button");
+	protected By btnCargaFMM=By.id("CargarDex");
+	protected By btnOkey=By.xpath("/html/body/div[17]/div[7]/div/button");
 	
-	By btnCargaCD=By.id("CargarDex");
-	By btnOkay=By.xpath("/html/body/div[17]/div[7]/div/button");
+	protected By btnCargaCD=By.id("CargarDex");
+	protected By btnOkay=By.xpath("/html/body/div[17]/div[7]/div/button");
 	
-	By btnCargaPoliza=By.id("CargarDex");
-	By btnOK=By.xpath("/html/body/div[17]/div[7]/div/button");
-	By btnRevisar=By.xpath("//*[@id=\"btnRevisarFdc\"]");
+	protected By btnCargaPoliza=By.id("CargarDex");
+	protected By btnOK=By.xpath("/html/body/div[17]/div[7]/div/button");
+	protected By btnRevisar=By.xpath("//*[@id=\"btnRevisarFdc\"]");
 	
 	public CargeFDCMap(WebDriver driver) {
 		super(driver);

@@ -6,21 +6,21 @@ import PagObject_demoautomatizacion.BasePage;
 
 public class CargarDEXMap extends BasePage {
 
-	By btnCargas=By.xpath("/html/body/div[1]/main/div/div/div[2]/section[12]/div");
+	protected By btnCargas=By.xpath("/html/body/div[1]/main/div/div/div[2]/section[12]/div");
 	
-	By btnCargaDEX=By.id("fileElementCargarDex");
-	By btnOk=By.xpath("/html/body/div[17]/div[7]/div/button");
+	protected By btnCargaDEX=By.id("fileElementCargarDex");
+	protected By btnOk=By.xpath("/html/body/div[17]/div[7]/div/button");
 	
-	By btnCargaFMM=By.id("fileElementCargarFmm");
+	protected By btnCargaFMM=By.id("fileElementCargarFmm");
 	
-	By btnCargaCD=By.id("fileElementCargarCP");
+	protected By btnCargaCD=By.id("fileElementCargarCP");
 	
-	By btnCargaPoliza=By.id("fileElementCargarPoliza");
+	protected By btnCargaPoliza=By.id("fileElementCargarPoliza");
 	
-	By btnCargaIncumplimiento=By.id("fileElementCargarIncumplimiento");
-	By btnRevisar=By.xpath("//*[@id=\"btnRevisarFdc\"]");
-	By btnSalir=By.id("btnSalirFdc");
-	By lblResultadoAdicionar=By.xpath("//div[17]/p");
+	protected By btnCargaIncumplimiento=By.id("fileElementCargarIncumplimiento");
+	protected By btnRevisar=By.xpath("//*[@id=\"btnRevisarFdc\"]");
+	protected By btnSalir=By.id("btnSalirFdc");
+	protected By lblResultadoAdicionar=By.xpath("//div[17]/p");
 	
 	
 	

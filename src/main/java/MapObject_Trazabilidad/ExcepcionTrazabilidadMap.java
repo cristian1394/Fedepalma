@@ -6,14 +6,14 @@ import PagObject_demoautomatizacion.BasePage;
 
 public class ExcepcionTrazabilidadMap extends BasePage {
 	
-	By btnSMes=By.xpath("//*[@id=\"IdMes\"]");
-	By btnMes=By.xpath("//*[@id=\"IdMes\"]/option[2]");
-	By btnSAno=By.xpath("//*[@id=\"IdAnio\"]");
-	By btnAno=By.xpath("//*[@id=\"IdAnio\"]/option[3]");
+	protected By btnSMes=By.xpath("//*[@id=\"IdMes\"]");
+	protected By btnMes=By.xpath("//*[@id=\"IdMes\"]/option[2]");
+	protected By btnSAno=By.xpath("//*[@id=\"IdAnio\"]");
+	protected By btnAno=By.xpath("//*[@id=\"IdAnio\"]/option[3]");
 	
-	By btnConsultar=By.xpath("//*[@id=\"ConsultaTrazabilidad\"]");
-	By lblResultadoTrazabilidad=By.xpath("//p");
-	By btnOk=By.xpath("//div[7]/div/button");
+	protected By btnConsultar=By.xpath("//*[@id=\"ConsultaTrazabilidad\"]");
+	protected By lblResultadoTrazabilidad=By.xpath("//p");
+	protected By btnOk=By.xpath("//div[7]/div/button");
 	
 	public ExcepcionTrazabilidadMap(WebDriver driver) {
 		super(driver);

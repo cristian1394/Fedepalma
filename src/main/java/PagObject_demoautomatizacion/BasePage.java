@@ -610,6 +610,9 @@ public class BasePage {
 		driver.manage().window().maximize();
 		js.executeScript("window.scrollBy(0,1)");
 	}
+	
+	
+	
 
 	// SALTO DE PAGINA
 	public void jumpPage(File folderPath, String steps) throws DocumentException {

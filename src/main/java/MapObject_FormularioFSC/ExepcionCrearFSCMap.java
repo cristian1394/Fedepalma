@@ -6,9 +6,9 @@ import PagObject_demoautomatizacion.BasePage;
 
 public class ExepcionCrearFSCMap extends BasePage {
 
-	By btnCrear=By.id("btnCrear");
-	By btnOK=By.xpath("//div[7]/div[7]/div/button");//Seleccione el año y el mes
-	By lblResultadoCrear=By.xpath("//div[7]/p");
+	protected By btnCrear=By.id("btnCrear");
+	protected By btnOK=By.xpath("//div[7]/div[7]/div/button");//Seleccione el año y el mes
+	protected By lblResultadoCrear=By.xpath("//div[7]/p");
 	 
 	public ExepcionCrearFSCMap(WebDriver driver) {
 		super(driver);
