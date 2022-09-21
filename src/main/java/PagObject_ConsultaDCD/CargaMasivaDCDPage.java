@@ -26,7 +26,7 @@ public class CargaMasivaDCDPage extends CargaMasivaDCDMap {
 		click(btnCarga,folderPath, "click xpath");
 		time(3);
 		File file = new File(Doc);
-		time(1200);
+		time(2);
 		WebElement ruta = driver.findElement(btnArchivo);
 		ruta.sendKeys(file.getAbsolutePath()); 
 		time(2);

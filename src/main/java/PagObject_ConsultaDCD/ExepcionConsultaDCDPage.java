@@ -18,26 +18,26 @@ public class ExepcionConsultaDCDPage extends ExepcionConsultaDCDMap {
 	@Step("Consulta DCD")
 	public ExepcionConsultaDCDPage ConsultaDCD(File folderPath) throws Exception {
 
-		time(5000);
+		time(5);
 		click(btnDemostracion,folderPath, "click xpath");
-		time(3000);
+		time(3);
 		click(btnDCD,folderPath, "click xpath");
-		time(1000);
+		time(1);
 		click(btnSAno,folderPath, "click xpath");
-		time(800);
+		time(1);
 		click(btnAno,folderPath, "click xpath");
-		time(800);
+		time(1);
 		click(btnSMes,folderPath, "click xpath");
-		time(800);
+		time(1);
 		click(btnMes,folderPath, "click xpath");
-		time(1000);
+		time(1);
 		click(btnProducto,folderPath, "click xpath");
-		time(800);
+		time(1);
 		click(btnPalma,folderPath, "click xpath");
 		captureScreen(folderPath, "Capture screen");
-		time(1000);
+		time(1);
 		click(btnBuscar,folderPath, "click xpath");
-		time(3500);
+		time(4);
 		captureScreen(folderPath, "Capture screen");
 		return this;
 	}
@@ -45,13 +45,13 @@ public class ExepcionConsultaDCDPage extends ExepcionConsultaDCDMap {
 	@Step("Resultado No existen datos en la busqueda")
 	public ExepcionConsultaDCDPage ValidarResultadoDCD(String resultado,File folderPath) throws Exception {
 
-		time(1000);
+		time(1);
 		Assert.assertEquals(getElement(lblResultadoOK).getText(), resultado);
 		captureScreen(folderPath, "Capture screen");
-		time(6000);
+		time(6);
 		click(btnOK,folderPath, "click xpath");
 		captureScreen(folderPath, "Capture screen");
-		time(2500);
+		time(3);
 
 		return this;
 	}

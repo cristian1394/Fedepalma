@@ -20,11 +20,11 @@ public class ExepcionesGenerarDCDPage extends ExepcionesGenerarDCDMap {
 	@Step("Revicion DCD")
     public ExepcionesGenerarDCDPage GenerarDCD(File folderPath) throws Exception {
 		
-		time(800);
+		time(1);
 		ByPixel();
-		time(1000);
+		time(1);
 		click(btnGenerar,folderPath, "click xpath");
-		time(1000);
+		time(1);
 		
 		return this;
 	}
@@ -32,12 +32,12 @@ public class ExepcionesGenerarDCDPage extends ExepcionesGenerarDCDMap {
 	@Step("Validar Generacion DCD")
     public ExepcionesGenerarDCDPage ValidarGeneracionDCD(String Resultado, File folderPath) throws Exception {
 		
-		time(6000);
+		time(6);
 		Assert.assertEquals(getElement(lblResultadoGenerar).getText(),Resultado);
 		captureScreen(folderPath, "Capture screen");
-		time(1000);
+		time(1);
 		click(btnOk,folderPath, "click xpath");
-        time(2000);
+        time(2);
         captureScreen(folderPath, "Capture screen");
 		
 		return this;

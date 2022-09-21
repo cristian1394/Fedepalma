@@ -288,6 +288,24 @@ public class BloqueantePage extends BloqueanteMaps {
         return this;
     }
 	
+	@Step("Desasociar Usuario")
+    public BloqueantePage Desasociar(File folderPath) throws Exception {
+		
+	        time(1);
+	        click(btnDesasociar, folderPath, "texto prueba");
+	        time(1);
+
+	        time(1);
+	        click(btnAceptar, folderPath, "texto prueba");
+	        time(28);
+	        click(btnOk, folderPath, "texto prueba");
+	        time(1);
+	        
+	        time(6);
+        
+        return this;
+    }
+	
 
 	
 	@Step("Editar Perfil")

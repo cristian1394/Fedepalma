@@ -19,38 +19,38 @@ public class ExepcionesCrearDCDPage extends ExepcionesCrearDCDMap {
 
 	@Step("Crear DCD")
     public ExepcionesCrearDCDPage CrearDCD(String nitcrear, String Kilos, File folderPath) throws Exception {
-        time(2000);
+        time(2);
         
         click(btnCrear,folderPath, "click xpath");
-        time(3000);
+        time(3);
         click(btnNit,folderPath, "click xpath");
-        time(1000);
-        writeText(txtNit, nitcrear, folderPath, Kilos);
+        time(1);
+        writeText(txtNit, nitcrear, folderPath, "texto prueba");
         click(btnDV,folderPath, "click xpath");
-        time(1000);
+        time(1);
         click(btnSMes,folderPath, "click xpath");
         click(btnMes,folderPath, "click xpath");
-        time(500);
+        time(1);
         click(btnSAno,folderPath, "click xpath");
-        time(1000);
+        time(1);
         click(btnAno,folderPath, "click xpath");
-        time(1000);
+        time(1);
         click(btnProducto,folderPath, "click xpath");
-        time(1000);
+        time(1);
         click(btnPalma,folderPath, "click xpath");
-        time(1000);
+        time(1);
         click(btnMercado,folderPath, "click xpath");
-        time(1000);
+        time(1);
         click(btnMCI,folderPath, "click xpath");
-        time(1000);
+        time(1);
         click(btnKilos,folderPath, "click xpath");
-        time(1000);
-        writeText(txtKilos, Kilos, folderPath, Kilos);
-        time(1000);
+        time(1);
+        writeText(txtKilos, Kilos, folderPath, "texto prueba");
+        time(1);
         click(btnExportar,folderPath, "click xpath");
-        time(800);
+        time(1);
         click(btnGuardar,folderPath, "click xpath");
-        captureScreen(folderPath, "Capture screen");
+        
         
         return this;
     }
@@ -58,13 +58,12 @@ public class ExepcionesCrearDCDPage extends ExepcionesCrearDCDMap {
 	@Step("Validar Creacion DCD")
     public ExepcionesCrearDCDPage ValidarCreacionDCD(String resultado, File folderPath) throws Exception {
         
-		time(1000);
+		time(1);
 		Assert.assertEquals(getElement(lblResultadoCrear).getText(),resultado);
 		captureScreen(folderPath, "Capture screen");
-        time(2000);
+        time(2);
         click(btnOk,folderPath, "click xpath");
-        captureScreen(folderPath, "Capture screen");
-        time(3500);
+        time(1);
         
         //Proceso realizado con éxito
         
