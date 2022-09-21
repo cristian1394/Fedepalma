@@ -6,8 +6,8 @@ import PagObject_demoautomatizacion.BasePage;
 
 public class IniciacionTrazabilidadMap extends BasePage {
 
-	By btnDemostracion=By.xpath("//*[@id=\"stacked-menu\"]/ul/li[25]/a");
-	By btnTrazabilidad=By.xpath("/html/body/div[1]/aside/div/section/nav/ul/li[25]/ul/li[9]/a");
+	protected By btnDemostracion=By.xpath("//*[@id=\"stacked-menu\"]/ul/li[25]/a");
+	protected By btnTrazabilidad=By.xpath("/html/body/div[1]/aside/div/section/nav/ul/li[25]/ul/li[9]/a");
 	 
 	public IniciacionTrazabilidadMap(WebDriver driver) {
 		super(driver);

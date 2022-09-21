@@ -2,36 +2,28 @@ package PagObject_FormularioFDC;
 
 import java.io.File;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.Select;
-import org.testng.Assert;
-
-import com.demoautomatizacion.utils.Utilidades;
-
-import PagObject_demoautomatizacion.BasePage;
+import MapObject_FormularioFDC.HistorialFDCMap;
 import io.qameta.allure.Step;
 
-public class HistorialFDCPage extends BasePage {
+public class HistorialFDCPage extends HistorialFDCMap {
 
-	By btnHistorial=By.xpath("/html/body/div[1]/main/div/div/div[2]/div[4]/div/table/tbody/tr[1]/td[1]/div/i");
-	By btnCerrar=By.xpath("//*[@id=\"FormFDC\"]/div/div/div[2]/div[2]/button");
-	 
+
+	
 	public HistorialFDCPage(WebDriver driver) {
 		super(driver);
-		
+		// TODO Auto-generated constructor stub
 	}
-	
+
 	@Step("Ver Historial FDC")
-    public HistorialFDCPage HistorialFDC() {
+    public HistorialFDCPage HistorialFDC(File folderPath) throws Exception {
 		
-        Utilidades.time(5000);
-		click(btnHistorial);
-        Utilidades.time(9000);
-        Utilidades.screenshot();
-        click(btnCerrar);
-        Utilidades.time(2000);
+        time(5);
+		click(btnHistorial,folderPath, "click xpath");
+        time(9);
+        captureScreen(folderPath, "Capture screen");
+        click(btnCerrar,folderPath, "click xpath");
+        time(2);
         
         return this;
     }

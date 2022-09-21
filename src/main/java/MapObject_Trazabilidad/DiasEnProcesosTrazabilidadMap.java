@@ -6,9 +6,9 @@ import PagObject_demoautomatizacion.BasePage;
 
 public class DiasEnProcesosTrazabilidadMap extends BasePage {
 
-	By btnConsultar=By.id("ConsultaTrazabilidad");
-	By btnDiasP=By.xpath("//th[18]/a[2]");
-	By btnDias=By.xpath("//tr[10]/td[18]");
+	protected By btnConsultar=By.id("ConsultaTrazabilidad");
+	protected By btnDiasP=By.xpath("//th[18]/a[2]");
+	protected By btnDias=By.xpath("//tr[10]/td[18]");
 	 
 	public DiasEnProcesosTrazabilidadMap(WebDriver driver) {
 		super(driver);

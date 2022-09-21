@@ -5,10 +5,10 @@ import org.openqa.selenium.WebDriver;
 
 public class Login_Map extends BasePage {
 	
-	By txtNit=By.xpath("//*[@id='Nit']");
-	By txtUsuario=By.id("Usuario");
-	By txtContrase_a=By.xpath("//*[@id='Contrase_a']");
-	By btnLogin=By.xpath("//*[@id='btnSave']");
+	protected By txtNit=By.xpath("//*[@id='Nit']");
+	protected By txtUsuario=By.id("Usuario");
+	protected By txtContrase_a=By.xpath("//*[@id='Contrase_a']");
+	protected By btnLogin=By.xpath("//*[@id='btnSave']");
 	
 	
 	
