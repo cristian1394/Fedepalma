@@ -62,7 +62,6 @@ public class BorrarDCDTest extends BaseTest {
 				.ValidarResultadoBorrarDCD("Proceso realizado exitosamente!", folderPath);
 
 		// MyScreenRecorder.stopRecording();
-
 		GenerarReportePdf.closeTemplate("");
 
 	}

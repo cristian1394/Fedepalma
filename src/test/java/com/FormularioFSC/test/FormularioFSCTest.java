@@ -5,6 +5,7 @@ import java.io.FileInputStream;
 import java.util.Properties;
 
 import io.qameta.allure.*;
+import utilities.GenerarReportePdf;
 
 import org.openqa.selenium.By;
 import org.testng.annotations.Listeners;
@@ -13,6 +14,8 @@ import org.testng.annotations.Test;
 import com.demoautomatizacion.test.BaseTest;
 import com.demoautomatizacion.test.utils.Listeners.TestListener;
 import com.demoautomatizacion.utils.Utilidades;
+
+import PagObject_demoautomatizacion.BasePage;
 
 
 @Listeners({ TestListener.class })
@@ -27,6 +30,16 @@ public class FormularioFSCTest extends BaseTest{
         fileprops.load(new FileInputStream(new File("src/test/resources/test.properties").getAbsolutePath()));
         return fileprops;
     }
+	
+	public void Logeo(String nameTest, File folderPath) throws Exception {
+
+		GenerarReportePdf.setRutaImagen(getProperties().getProperty("routeImageReport"));
+	
+		GenerarReportePdf.createTemplate(folderPath, nameTest, getProperties().getProperty("analista"),
+				getProperties().getProperty("url"));
+
+		GenerarReportePdf.setImgContador(0);
+	}
 		
 	@Test(priority=0, description="Validar que al ingresar al Formulario FSC y buscar la informacion arroge todos los Formularios en cualquier estado que se han creado (Usuario Externo)")
     @Severity(SeverityLevel.NORMAL)
@@ -34,10 +47,22 @@ public class FormularioFSCTest extends BaseTest{
     @Story("Arrojar informacion en el usuario Externo")
     @TmsLink("XRPRJ-1")
     public void BuscarE () throws Exception {
+		
+		// OBTENER EL NOMBRE DEL METODO A EJECUTAR
+		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();
+
+		File folderPath = BasePage.createFolder(nomTest, getProperties().getProperty("path"));
+		// MyScreenRecorder.startRecording(nomTest, folderPath);
+
+		Logeo(nomTest, folderPath);
+		
 		home.irPortal(getProperties().getProperty("url"));
 		Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr1"),
         	 getProperties().getProperty("pwd"));
         FormularioFSC.FormularioFSC().BuscarFSC();
+        
+        // MyScreenRecorder.stopRecording();
+     	GenerarReportePdf.closeTemplate("");
         
     }
 	
@@ -47,9 +72,21 @@ public class FormularioFSCTest extends BaseTest{
     @Story("Arrojar informacion en el Usuario Interno")
     @TmsLink("XRPRJ-1")
     public void BuscarI () throws Exception {
+		
+		// OBTENER EL NOMBRE DEL METODO A EJECUTAR
+		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();
+
+		File folderPath = BasePage.createFolder(nomTest, getProperties().getProperty("path"));
+		// MyScreenRecorder.startRecording(nomTest, folderPath);
+
+		Logeo(nomTest, folderPath);
+		
 		home.irPortal(getProperties().getProperty("url"));
 		login.ingresarCredenciales(getProperties().getProperty("usuario"), getProperties().getProperty("password"));
-		FormularioFSC.FormularioFSC1().BuscarFSC();     
+		FormularioFSC.FormularioFSC1().BuscarFSC();   
+		
+		// MyScreenRecorder.stopRecording();
+     	GenerarReportePdf.closeTemplate("");
     }
 	
 	@Test(priority=2, description="Validar la interfaz de creacion de un formulario FSC")
@@ -58,11 +95,22 @@ public class FormularioFSCTest extends BaseTest{
     @Story("Validar la interfaz de creacion de un formulario FSC")
     @TmsLink("XRPRJ-1")
     public void InterfazCreacion () throws Exception {
+		
+		// OBTENER EL NOMBRE DEL METODO A EJECUTAR
+		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();
+
+		File folderPath = BasePage.createFolder(nomTest, getProperties().getProperty("path"));
+		// MyScreenRecorder.startRecording(nomTest, folderPath);
+
+		Logeo(nomTest, folderPath);
+		
 		home.irPortal(getProperties().getProperty("url"));
 		Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr1"),
 			 getProperties().getProperty("pwd"));
 		FormularioFSC.FormularioFSC().ConsultarFSC().CrearFSC();
         
+		// MyScreenRecorder.stopRecording();
+     	GenerarReportePdf.closeTemplate("");
     }
 	
 	@Test(priority=3, description="Validar que en la tabla de DMI's se muestre los DIM existentes para adjuntarlo al formulario en creacion")
@@ -71,11 +119,22 @@ public class FormularioFSCTest extends BaseTest{
     @Story("DMI's Existentes")
     @TmsLink("XRPRJ-1")
     public void DMIExistentes () throws Exception {
+		
+		// OBTENER EL NOMBRE DEL METODO A EJECUTAR
+		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();
+
+		File folderPath = BasePage.createFolder(nomTest, getProperties().getProperty("path"));
+		// MyScreenRecorder.startRecording(nomTest, folderPath);
+
+		Logeo(nomTest, folderPath);
+		
 		home.irPortal(getProperties().getProperty("url"));
 		Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr1"),
 				 getProperties().getProperty("pwd"));
 		FormularioFSC.FormularioFSC().ConsultarFSC().CrearFSC().ConsultarDMI();
         
+		// MyScreenRecorder.stopRecording();
+     	GenerarReportePdf.closeTemplate("");
     }
 	
 	@Test(priority=4, description="Validar que al ingresar en el tipo de documento ya este seleccionado INCUMPLIMENTO POR CANTIDADES NO DEMOSTRADAS")
@@ -84,10 +143,22 @@ public class FormularioFSCTest extends BaseTest{
     @Story("Deteminado el tipo de documento INCUMPLIMENTO POR CANTIDADES NO DEMOSTRADAS")
     @TmsLink("XRPRJ-1")
     public void ICND () throws Exception {
+		
+		// OBTENER EL NOMBRE DEL METODO A EJECUTAR
+		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();
+
+		File folderPath = BasePage.createFolder(nomTest, getProperties().getProperty("path"));
+		// MyScreenRecorder.startRecording(nomTest, folderPath);
+
+		Logeo(nomTest, folderPath);
+		
 		home.irPortal(getProperties().getProperty("url"));
 		Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr1"),
 			 getProperties().getProperty("pwd"));
 		FormularioFSC.FormularioFSC().ConsultarFSC().CrearFSC().TD();
+		
+		// MyScreenRecorder.stopRecording();
+     	GenerarReportePdf.closeTemplate("");
         
     }
 	
@@ -97,10 +168,22 @@ public class FormularioFSCTest extends BaseTest{
     @Story("tipo de documento CERTIFICADO DE FACTURACION AL MERCADO INTERNO")
     @TmsLink("XRPRJ-1")
     public void CFMI () throws Exception {
+		
+		// OBTENER EL NOMBRE DEL METODO A EJECUTAR
+		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();
+
+		File folderPath = BasePage.createFolder(nomTest, getProperties().getProperty("path"));
+		// MyScreenRecorder.startRecording(nomTest, folderPath);
+
+		Logeo(nomTest, folderPath);
+		
 		home.irPortal(getProperties().getProperty("url"));
 		Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr1"),
 			 getProperties().getProperty("pwd"));
 		FormularioFSC.FormularioFSC().ConsultarFSC1().CrearFSC().TD().CFMI();
+		
+		// MyScreenRecorder.stopRecording();
+     	GenerarReportePdf.closeTemplate("");
         
     }
 	
@@ -110,10 +193,22 @@ public class FormularioFSCTest extends BaseTest{
     @Story("tipo de documento CERTIFICADO DE FACTURACION AL MERCADO INTERNO")
     @TmsLink("XRPRJ-1")
     public void CIP () throws Exception {
+		
+		// OBTENER EL NOMBRE DEL METODO A EJECUTAR
+		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();
+
+		File folderPath = BasePage.createFolder(nomTest, getProperties().getProperty("path"));
+		// MyScreenRecorder.startRecording(nomTest, folderPath);
+
+		Logeo(nomTest, folderPath);
+		
 		home.irPortal(getProperties().getProperty("url"));
 		Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr1"),
 			 getProperties().getProperty("pwd"));
 		FormularioFSC.FormularioFSC().ConsultarFSC2().CrearFSC().TD().CIP();
+		
+		// MyScreenRecorder.stopRecording();
+     	GenerarReportePdf.closeTemplate("");
         
     }
 	
@@ -123,11 +218,22 @@ public class FormularioFSCTest extends BaseTest{
     @Story("tipo de documento CERTIFICADO DE FACTURACION AL MERCADO INTERNO")
     @TmsLink("XRPRJ-1")
     public void CCM () throws Exception {
+		
+		// OBTENER EL NOMBRE DEL METODO A EJECUTAR
+		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();
+
+		File folderPath = BasePage.createFolder(nomTest, getProperties().getProperty("path"));
+		// MyScreenRecorder.startRecording(nomTest, folderPath);
+
+		Logeo(nomTest, folderPath);
+		
 		home.irPortal(getProperties().getProperty("url"));
 		Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr1"),
 			 getProperties().getProperty("pwd"));
 		FormularioFSC.FormularioFSC().ConsultarFSC3().CrearFSC().TD().CCM();
         
+		// MyScreenRecorder.stopRecording();
+     	GenerarReportePdf.closeTemplate("");
     }
 	
 	@Test(priority=8, description="Validar adicionar un DMI al formulario")
@@ -136,12 +242,23 @@ public class FormularioFSCTest extends BaseTest{
     @Story("Validar adicionar un DMI al formulario")
     @TmsLink("XRPRJ-1")
     public void AdicionarDMI () throws Exception {
+		
+		// OBTENER EL NOMBRE DEL METODO A EJECUTAR
+		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();
+
+		File folderPath = BasePage.createFolder(nomTest, getProperties().getProperty("path"));
+		// MyScreenRecorder.startRecording(nomTest, folderPath);
+
+		Logeo(nomTest, folderPath);
+		
 		home.irPortal(getProperties().getProperty("url"));
 		Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr1"),
 			 getProperties().getProperty("pwd"));
 		FormularioFSC.FormularioFSC().ConsultarFSC().CrearFSC().ConsultarDMI().SeleccionarDMI().AdicionarDMI("El formulario se guardo correctamente.").SalirFSC()
 			 .ConsultarFSC().BuscarFSC().EliminarFSC().AceptarEliminarFSC().AceptarEliminarFSC();
         
+		// MyScreenRecorder.stopRecording();
+     	GenerarReportePdf.closeTemplate("");
     }
 	
 	@Test(priority=9, description="Validar el carge de un FMI al formulario FSC")
@@ -150,6 +267,15 @@ public class FormularioFSCTest extends BaseTest{
     @Story("Validar el carge de un FMI al formulario FSC")
     @TmsLink("XRPRJ-1")
     public void CargeFMI () throws Exception {
+		
+		// OBTENER EL NOMBRE DEL METODO A EJECUTAR
+		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();
+
+		File folderPath = BasePage.createFolder(nomTest, getProperties().getProperty("path"));
+		// MyScreenRecorder.startRecording(nomTest, folderPath);
+
+		Logeo(nomTest, folderPath);
+		
 		home.irPortal(getProperties().getProperty("url"));
 		Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr1"),
 			 getProperties().getProperty("pwd"));
@@ -157,6 +283,8 @@ public class FormularioFSCTest extends BaseTest{
 			 .CargaFMI(getProperties().getProperty("doc"), "Se cargo el archivo correctamente").SalirFSC()
 			 .ConsultarFSC().BuscarFSC().EliminarFSC().AceptarEliminarFSC().AceptarEliminarFSC();
         
+		// MyScreenRecorder.stopRecording();
+     	GenerarReportePdf.closeTemplate("");
     }
 	
 	@Test(priority=10, description="Validar el carge de un CCM al formulario FSC")
@@ -165,12 +293,24 @@ public class FormularioFSCTest extends BaseTest{
     @Story("Validar el carge de un CCM al formulario FSC")
     @TmsLink("XRPRJ-1")
     public void CargeCCM () throws Exception {
+		
+		// OBTENER EL NOMBRE DEL METODO A EJECUTAR
+		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();
+
+		File folderPath = BasePage.createFolder(nomTest, getProperties().getProperty("path"));
+		// MyScreenRecorder.startRecording(nomTest, folderPath);
+
+		Logeo(nomTest, folderPath);
+		
 		home.irPortal(getProperties().getProperty("url"));
 		Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr1"),
 			 getProperties().getProperty("pwd"));
 		FormularioFSC.FormularioFSC().ConsultarFSC().CrearFSC().ConsultarDMI().SeleccionarDMI().AdicionarDMI("El formulario se guardo correctamente.")
 			 .CargaCCM(getProperties().getProperty("doc"), "Se cargo el archivo correctamente").SalirFSC()
 			 .ConsultarFSC().BuscarFSC().EliminarFSC().AceptarEliminarFSC().AceptarEliminarFSC();
+		
+		// MyScreenRecorder.stopRecording();
+     	GenerarReportePdf.closeTemplate("");
         
     }
 	
@@ -180,13 +320,24 @@ public class FormularioFSCTest extends BaseTest{
     @Story("Validar el carge de un CIP al formulario FSC")
     @TmsLink("XRPRJ-1")
     public void CargeCIP () throws Exception {
+		
+		// OBTENER EL NOMBRE DEL METODO A EJECUTAR
+		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();
+
+		File folderPath = BasePage.createFolder(nomTest, getProperties().getProperty("path"));
+		// MyScreenRecorder.startRecording(nomTest, folderPath);
+
+		Logeo(nomTest, folderPath);
+		
 		home.irPortal(getProperties().getProperty("url"));
 		Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr1"),
 			 getProperties().getProperty("pwd"));
 		FormularioFSC.FormularioFSC().ConsultarFSC().CrearFSC().ConsultarDMI().SeleccionarDMI().AdicionarDMI("El formulario se guardo correctamente.")
 			 .CargaCIP(getProperties().getProperty("doc"), "Se cargo el archivo correctamente").SalirFSC()
 			 .ConsultarFSC().BuscarFSC().EliminarFSC().AceptarEliminarFSC().AceptarEliminarFSC();
-        
+		
+		// MyScreenRecorder.stopRecording();
+     	GenerarReportePdf.closeTemplate("");
     }
 	
 	@Test(priority=12, description="Validar el carge de un Incumplimiento al formulario FSC")
@@ -195,13 +346,24 @@ public class FormularioFSCTest extends BaseTest{
     @Story("Validar el carge de un Incumplimiento al formulario FSC")
     @TmsLink("XRPRJ-1")
     public void CargeIncumplimento () throws Exception {
+		
+		// OBTENER EL NOMBRE DEL METODO A EJECUTAR
+		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();
+
+		File folderPath = BasePage.createFolder(nomTest, getProperties().getProperty("path"));
+		// MyScreenRecorder.startRecording(nomTest, folderPath);
+
+		Logeo(nomTest, folderPath);
+		
 		home.irPortal(getProperties().getProperty("url"));
 		Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr1"),
 			 getProperties().getProperty("pwd"));
 		FormularioFSC.FormularioFSC().ConsultarFSC().CrearFSC().ConsultarDMI().SeleccionarDMI().AdicionarDMI("El formulario se guardo correctamente.")
 			 .CargaIncumplimiento(getProperties().getProperty("doc"), "Se cargo el archivo correctamente").SalirFSC()
 			 .ConsultarFSC().BuscarFSC().EliminarFSC().AceptarEliminarFSC().AceptarEliminarFSC();
-        
+		
+		// MyScreenRecorder.stopRecording();
+     	GenerarReportePdf.closeTemplate("");
     }
 	
 	@Test(priority=13, description="Validar el Resumen de demostracion del formulario FSC despues de adicionar un DMI")
@@ -210,6 +372,15 @@ public class FormularioFSCTest extends BaseTest{
     @Story("Resumen de demostracion")
     @TmsLink("XRPRJ-1")
     public void ResumenDemostracion () throws Exception {
+		
+		// OBTENER EL NOMBRE DEL METODO A EJECUTAR
+		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();
+
+		File folderPath = BasePage.createFolder(nomTest, getProperties().getProperty("path"));
+		// MyScreenRecorder.startRecording(nomTest, folderPath);
+
+		Logeo(nomTest, folderPath);
+		
 		home.irPortal(getProperties().getProperty("url"));
 		Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr1"),
 			 getProperties().getProperty("pwd"));
@@ -220,6 +391,8 @@ public class FormularioFSCTest extends BaseTest{
 			 .CargaIncumplimiento(getProperties().getProperty("doc"), "Se cargo el archivo correctamente")
 			 .ResumenDemostracion().SalirFSC().ConsultarFSC().BuscarFSC().EliminarFSC().AceptarEliminarFSC().AceptarEliminarFSC();
         
+		// MyScreenRecorder.stopRecording();
+     	GenerarReportePdf.closeTemplate("");
     }
 	
 	@Test(priority=14, description="Validar el boton Salir dentro de la creacion de un Formulario FSC")
@@ -228,10 +401,22 @@ public class FormularioFSCTest extends BaseTest{
     @Story("Validar el boton Salir dentro de la creacion de un Formulario FSC")
     @TmsLink("XRPRJ-1")
     public void SalirFSC () throws Exception {
+		
+		// OBTENER EL NOMBRE DEL METODO A EJECUTAR
+		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();
+
+		File folderPath = BasePage.createFolder(nomTest, getProperties().getProperty("path"));
+		// MyScreenRecorder.startRecording(nomTest, folderPath);
+
+		Logeo(nomTest, folderPath);
+		
 		home.irPortal(getProperties().getProperty("url"));
 		Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr1"),
 			 getProperties().getProperty("pwd"));
 		FormularioFSC.FormularioFSC().ConsultarFSC().CrearFSC().SalirFSC();
+		
+		// MyScreenRecorder.stopRecording();
+     	GenerarReportePdf.closeTemplate("");
         
     }
 	
@@ -241,6 +426,15 @@ public class FormularioFSCTest extends BaseTest{
     @Story("Validar la revicion del formulario FSC")
     @TmsLink("XRPRJ-1")
     public void RevisarFSC () throws Exception {
+		
+		// OBTENER EL NOMBRE DEL METODO A EJECUTAR
+		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();
+
+		File folderPath = BasePage.createFolder(nomTest, getProperties().getProperty("path"));
+		// MyScreenRecorder.startRecording(nomTest, folderPath);
+
+		Logeo(nomTest, folderPath);
+		
 		home.irPortal(getProperties().getProperty("url"));
 		Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr1"),
 			 getProperties().getProperty("pwd"));
@@ -251,6 +445,8 @@ public class FormularioFSCTest extends BaseTest{
 			 .CargaIncumplimiento(getProperties().getProperty("doc"), "Se cargo el archivo correctamente")
 			 .RevisarFSC().SalirFSC();
         
+		// MyScreenRecorder.stopRecording();
+     	GenerarReportePdf.closeTemplate("");
     }
 	
 	@Test(priority=16, description="Validar el Historial de Formulario")
@@ -259,10 +455,22 @@ public class FormularioFSCTest extends BaseTest{
     @Story("Validar el Historial de Formulario")
     @TmsLink("XRPRJ-1")
     public void VerHistorial () throws Exception {
+		
+		// OBTENER EL NOMBRE DEL METODO A EJECUTAR
+		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();
+
+		File folderPath = BasePage.createFolder(nomTest, getProperties().getProperty("path"));
+		// MyScreenRecorder.startRecording(nomTest, folderPath);
+
+		Logeo(nomTest, folderPath);
+		
 		home.irPortal(getProperties().getProperty("url"));
 		Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr1"),
 		     getProperties().getProperty("pwd"));
-		FormularioFSC.FormularioFSC().BuscarFSC().Historial().CerrarHistorial();     
+		FormularioFSC.FormularioFSC().BuscarFSC().Historial().CerrarHistorial();  
+		
+		// MyScreenRecorder.stopRecording();
+     	GenerarReportePdf.closeTemplate("");
     }
 	
 	@Test(priority=17, description="Validar el Exportar a Excel del Historial")
@@ -271,10 +479,22 @@ public class FormularioFSCTest extends BaseTest{
     @Story("Validar el Exportar a Excel del Historial")
     @TmsLink("XRPRJ-1")
     public void ExportarHistorial () throws Exception {
+		
+		// OBTENER EL NOMBRE DEL METODO A EJECUTAR
+		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();
+
+		File folderPath = BasePage.createFolder(nomTest, getProperties().getProperty("path"));
+		// MyScreenRecorder.startRecording(nomTest, folderPath);
+
+		Logeo(nomTest, folderPath);
+		
 		home.irPortal(getProperties().getProperty("url"));
 		Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr1"),
 			 getProperties().getProperty("pwd"));
-		FormularioFSC.FormularioFSC().BuscarFSC().Historial().ExportarHistorial().CerrarHistorial();     
+		FormularioFSC.FormularioFSC().BuscarFSC().Historial().ExportarHistorial().CerrarHistorial(); 
+		
+		// MyScreenRecorder.stopRecording();
+     	GenerarReportePdf.closeTemplate("");
     }
 	
 	@Test(priority=18, description="Validar que la lupa muestre el formulario FSC creado")
@@ -283,10 +503,22 @@ public class FormularioFSCTest extends BaseTest{
     @Story("Validar que la lupa muestre el formulario FSC creado")
     @TmsLink("XRPRJ-1")
     public void VerFSC () throws Exception {
+		
+		// OBTENER EL NOMBRE DEL METODO A EJECUTAR
+		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();
+
+		File folderPath = BasePage.createFolder(nomTest, getProperties().getProperty("path"));
+		// MyScreenRecorder.startRecording(nomTest, folderPath);
+
+		Logeo(nomTest, folderPath);
+		
 		home.irPortal(getProperties().getProperty("url"));
 		Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr1"),
 			 getProperties().getProperty("pwd"));
-		FormularioFSC.FormularioFSC().BuscarFSC().VerFSC();     
+		FormularioFSC.FormularioFSC().BuscarFSC().VerFSC();    
+		
+		// MyScreenRecorder.stopRecording();
+     	GenerarReportePdf.closeTemplate("");
     }
 	
 	@Test(priority=19, description="Validar la interfaz de Editar Formulario FSC")
@@ -295,10 +527,22 @@ public class FormularioFSCTest extends BaseTest{
     @Story("Validar la interfaz de Editar Formulario FSC")
     @TmsLink("XRPRJ-1")
     public void VerEdicionFSC () throws Exception {
+		
+		// OBTENER EL NOMBRE DEL METODO A EJECUTAR
+		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();
+
+		File folderPath = BasePage.createFolder(nomTest, getProperties().getProperty("path"));
+		// MyScreenRecorder.startRecording(nomTest, folderPath);
+
+		Logeo(nomTest, folderPath);
+		
 		home.irPortal(getProperties().getProperty("url"));
 		Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr1"),
 			 getProperties().getProperty("pwd"));
-		FormularioFSC.FormularioFSC().BuscarFSC().EditarFSC().SalirFSC1();     
+		FormularioFSC.FormularioFSC().BuscarFSC().EditarFSC().SalirFSC1();   
+		
+		// MyScreenRecorder.stopRecording();
+     	GenerarReportePdf.closeTemplate("");
     }
 	
 	@Test(priority=20, description="Validar la Edicion del Formulario FSC")
@@ -307,11 +551,23 @@ public class FormularioFSCTest extends BaseTest{
     @Story("Validar la Edicion del Formulario FSC")
     @TmsLink("XRPRJ-1")
     public void EdicionFSC () throws Exception {
+		
+		// OBTENER EL NOMBRE DEL METODO A EJECUTAR
+		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();
+
+		File folderPath = BasePage.createFolder(nomTest, getProperties().getProperty("path"));
+		// MyScreenRecorder.startRecording(nomTest, folderPath);
+
+		Logeo(nomTest, folderPath);
+		
 		home.irPortal(getProperties().getProperty("url"));
 		Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr1"),
 			 getProperties().getProperty("pwd"));
 		FormularioFSC.FormularioFSC().BuscarFSC().EditarFSC().CargaFMI(getProperties().getProperty("doc"), "Se cargo el archivo correctamente")
-			 .SalirFSC1();     
+			 .SalirFSC1();   
+		
+		// MyScreenRecorder.stopRecording();
+     	GenerarReportePdf.closeTemplate("");
     }
 	
 	@Test(priority=21, description="Validar la Eliminacion de un Formulario FSC")
@@ -320,9 +576,21 @@ public class FormularioFSCTest extends BaseTest{
     @Story("Validar la Eliminacion de un Formulario FSC")
     @TmsLink("XRPRJ-1")
     public void EliminarFSC () throws Exception {
+		
+		// OBTENER EL NOMBRE DEL METODO A EJECUTAR
+		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();
+
+		File folderPath = BasePage.createFolder(nomTest, getProperties().getProperty("path"));
+		// MyScreenRecorder.startRecording(nomTest, folderPath);
+
+		Logeo(nomTest, folderPath);
+		
 		home.irPortal(getProperties().getProperty("url"));
 		Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr1"),
 			 getProperties().getProperty("pwd"));
-		FormularioFSC.FormularioFSC().BuscarFSC().EliminarFSC().AceptarEliminarFSC();     
+		FormularioFSC.FormularioFSC().BuscarFSC().EliminarFSC().AceptarEliminarFSC(); 
+		
+		// MyScreenRecorder.stopRecording();
+     	GenerarReportePdf.closeTemplate("");
     }
 }

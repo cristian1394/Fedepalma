@@ -30,7 +30,7 @@ public class ConsultaDCDPage extends ConsultaDCDMap {
 	@Step("Revicion DCD")
 	public ConsultaDCDPage RevicionDCD(File folderPath) throws Exception {
 
-		time(800);
+		time(1);
 		ByPixel();
 		time(1);
 		click(btnRevisar, folderPath, "click xpath");

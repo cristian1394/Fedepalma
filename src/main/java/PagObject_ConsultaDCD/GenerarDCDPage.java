@@ -19,30 +19,30 @@ public class GenerarDCDPage extends GenerarDCDMap {
 
 	@Step("Generar DCD")
     public GenerarDCDPage GenerarDCD(File folderPath) throws Exception {
-        time(1000);
+        time(1);
         
-         click(btnDemostracion,folderPath, "click xpath");
-         captureScreen(folderPath, "Capture screen");
-          time(1000);
-         click(btnDCD,folderPath, "click xpath");
-         time(800);
+        click(btnDemostracion,folderPath, "click xpath");
+        captureScreen(folderPath, "Capture screen");
+        time(1);
+        click(btnDCD,folderPath, "click xpath");
+        time(1);
 		click(btnEstado,folderPath, "click xpath");
-		time(1000);
+		time(1);
 		click(btnRevisado,folderPath, "click xpath");
 		captureScreen(folderPath, "Capture screen");
-		time(1000);
+		time(1);
         click(btnSMes,folderPath, "click xpath");
-        time(800);
+        time(1);
         click(btnMes,folderPath, "click xpath");
 		click(btnBuscar,folderPath, "click xpath");
-		time(8000);
+		time(10);
 		click(btnSeleccion,folderPath, "click xpath");
 		captureScreen(folderPath, "Capture screen");
 		ByPixel();
-		time(1000);
+		time(1);
 		click(btnGenerar,folderPath, "click xpath");
 		captureScreen(folderPath, "Capture screen");
-		time(1500);
+		time(2);
 		click(btnFirmar,folderPath, "click xpath");
 		captureScreen(folderPath, "Capture screen");
 		
@@ -55,17 +55,17 @@ public class GenerarDCDPage extends GenerarDCDMap {
 		
 		ArrayList<String> ventana = new ArrayList<String>(driver.getWindowHandles());
 		driver.switchTo().window((String) ventana.get(1));
-		time(20000);
+		time(20);
 		click(btnFirma,folderPath, "click xpath");
-		time(1000);
+		time(1);
 		writeText(txtFirma, Firma, folderPath, Resultado);
 		captureScreen(folderPath, "Capture screen");
-		time(1000);
+		time(1);
 		click(btnEnviar,folderPath, "click xpath");
-		time(5000);
+		time(5);
 		Assert.assertEquals(getElement(lblResultadoFirma).getText(),Resultado);
 		captureScreen(folderPath, "Capture screen");
-		time(3000);
+		time(3);
 		click(btnSeguir,folderPath, "click xpath");
 		driver.switchTo().window((String) ventana.get(0));
         
@@ -75,13 +75,13 @@ public class GenerarDCDPage extends GenerarDCDMap {
 	@Step("Salto de Pagina DCD")
 	public GenerarDCDPage confirmar(String Resultado, File folderPath) throws Exception {
 		
-		time(9000);
+		time(9);
 		Assert.assertEquals(getElement(lblResultadoGenerar).getText(),Resultado);
 		captureScreen(folderPath, "Capture screen");
-		time(2000);
+		time(2);
 		click(btnOk,folderPath, "click xpath");
         captureScreen(folderPath, "Capture screen");
-        time(2000);
+        time(2);
         
 		return this;
 		

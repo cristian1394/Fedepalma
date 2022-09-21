@@ -17,14 +17,14 @@ public class HistorialDCDPage extends HistorialDCDMap {
 
 	@Step("Ver Historial DCD")
     public HistorialDCDPage HistorialDCD(File folderPath) throws Exception {
-        time(1000);
+        time(1);
         
         click(btnHistorial,folderPath, "click xpath");
-        time(1000);
+        time(1);
         captureScreen(folderPath, "Capture screen");
-        time(15000);
+        time(15);
         click(btnDCD,folderPath, "click xpath");
-        time(3000);
+        time(3);
         
         return this;
     }

@@ -55,6 +55,8 @@ public class CrearDCDTest extends BaseTest{
 		File folderPath = BasePage.createFolder(nomTest, getProperties().getProperty("path"));
 
 		// MyScreenRecorder.startRecording(nomTest, folderPath);
+		Logeo(nomTest, folderPath);
+		
 		home.irPortal(getProperties().getProperty("url"));
         Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr1"),
         		getProperties().getProperty("pwd"), folderPath);

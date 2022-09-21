@@ -18,22 +18,22 @@ public class ExepcionCMDCDPage extends ExepcionCMDCDMap {
 
 	@Step("Carga Masiva DCD")
 	public ExepcionCMDCDPage CargaDCD(String DocACM, File folderPath) throws Exception {
-		time(1000);
+		time(1);
 
 		ByPixel();
-		time(1000);
+		time(1);
 		click(btnCarga,folderPath, "click xpath");
-		time(2500);
+		time(3);
 		File file = new File(DocACM);
-		time(1200);
+		time(2);
 		WebElement ruta = driver.findElement(btnArchivo);
 		ruta.sendKeys(file.getAbsolutePath());
-		time(2000);
+		time(2);
 		captureScreen(folderPath, "Capture screen");
-		time(5000);
+		time(5);
 		click(btnOk,folderPath, "click xpath");
 		captureScreen(folderPath, "Capture screen");
-		time(8000);
+		time(8);
 
 		return this;
 	}
@@ -43,10 +43,10 @@ public class ExepcionCMDCDPage extends ExepcionCMDCDMap {
 
 		Assert.assertEquals(getElement(lblResultadoCargaArchivo).getText(), resultado);
 		captureScreen(folderPath, "Capture screen");
-		time(6000);
+		time(6);
 		click(btnOkey,folderPath, "click xpath");
 		captureScreen(folderPath, "Capture screen");
-		time(2000);
+		time(2);
 
 		return this;
 	}

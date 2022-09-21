@@ -17,16 +17,16 @@ public class ObservarDCDPage extends ObservarDCDMap  {
 
 	@Step("Ver DCD")
     public ObservarDCDPage ObservarDCD(File folderPath) throws Exception {
-        time(6000);
+        time(6);
         
         click(btnLupa,folderPath, "click xpath");
-        time(2000);
+        time(2);
         captureScreen(folderPath, "Capture screen");
         ByPixel();
-        time(3000);
+        time(3);
         captureScreen(folderPath, "Capture screen");
         click(btnCancelar,folderPath, "click xpath");
-        time(3000);
+        time(3);
         captureScreen(folderPath, "Capture screen");
         
         return this;
