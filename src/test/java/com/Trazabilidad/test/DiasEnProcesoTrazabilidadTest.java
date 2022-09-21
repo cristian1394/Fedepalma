@@ -7,12 +7,13 @@ import java.util.Properties;
 import io.qameta.allure.*;
 import utilities.GenerarReportePdf;
 
-import org.openqa.selenium.By;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import com.demoautomatizacion.test.BaseTest;
 import com.demoautomatizacion.test.utils.Listeners.TestListener;
+
+import PagObject_demoautomatizacion.BasePage;
 
 
 
@@ -55,9 +56,9 @@ public class DiasEnProcesoTrazabilidadTest extends BaseTest{
 		Logeo(nomTest, folderPath);
 		
 		home.irPortal(getProperties().getProperty("url"));
-		login.ingresarCredenciales(getProperties().getProperty("usuario"),getProperties().getProperty("password"));
-		MenuTrazabilidad.IniciarTrazabilidad();
-		DiasPT.DiasPTrazabilidad();
+		login.ingresarCredenciales(getProperties().getProperty("usuario"),getProperties().getProperty("password"), folderPath);
+		MenuTrazabilidad.IniciarTrazabilidad(folderPath);
+		DiasPT.DiasPTrazabilidad(folderPath);
 		
 		// MyScreenRecorder.stopRecording();
      	GenerarReportePdf.closeTemplate("");

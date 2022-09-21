@@ -7,7 +7,6 @@ import java.util.Properties;
 import io.qameta.allure.*;
 import utilities.GenerarReportePdf;
 
-import org.openqa.selenium.By;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
@@ -57,8 +56,8 @@ public class ReporteCCertificadoTest extends BaseTest{
 		
 		home.irPortal(getProperties().getProperty("url"));
         Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr"),
-        		getProperties().getProperty("pwd"));
-        ReporteCCertificado.MenuRCCertificado();
+        		getProperties().getProperty("pwd"), folderPath);
+        ReporteCCertificado.MenuRCCertificado(folderPath);
         
         // MyScreenRecorder.stopRecording();
      	GenerarReportePdf.closeTemplate("");
@@ -82,8 +81,8 @@ public class ReporteCCertificadoTest extends BaseTest{
 		
 		home.irPortal(getProperties().getProperty("url"));
         Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr"),
-        		getProperties().getProperty("pwd"));
-        ReporteCCertificado.MenuRCCertificado().Exportar();
+        		getProperties().getProperty("pwd"), folderPath);
+        ReporteCCertificado.MenuRCCertificado(folderPath).Exportar(folderPath);
         
         // MyScreenRecorder.stopRecording();
      	GenerarReportePdf.closeTemplate("");
@@ -107,8 +106,8 @@ public class ReporteCCertificadoTest extends BaseTest{
 		
 		home.irPortal(getProperties().getProperty("url"));
         Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr"),
-        		getProperties().getProperty("pwd"));
-        ReporteCCertificado.MenuRCCertificado().FNIT1(getProperties().getProperty("NitReporteCC")).ScrollDerecha().Evidencia();
+        		getProperties().getProperty("pwd"), folderPath);
+        ReporteCCertificado.MenuRCCertificado(folderPath).FNIT1(getProperties().getProperty("NitReporteCC"), folderPath).ScrollDerecha(folderPath).Evidencia(folderPath);
 		
         // MyScreenRecorder.stopRecording();
      	GenerarReportePdf.closeTemplate("");
@@ -131,8 +130,8 @@ public class ReporteCCertificadoTest extends BaseTest{
 		
 		home.irPortal(getProperties().getProperty("url"));
         Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr"),
-        		getProperties().getProperty("pwd"));
-        ReporteCCertificado.MenuRCCertificado().FNIT1(getProperties().getProperty("NitReporteCC")).ScrollDerecha1().Evidencia();
+        		getProperties().getProperty("pwd"), folderPath);
+        ReporteCCertificado.MenuRCCertificado(folderPath).FNIT1(getProperties().getProperty("NitReporteCC"), folderPath).ScrollDerecha1(folderPath).Evidencia(folderPath);
 		
         // MyScreenRecorder.stopRecording();
      	GenerarReportePdf.closeTemplate("");
@@ -155,9 +154,9 @@ public class ReporteCCertificadoTest extends BaseTest{
 		
 		home.irPortal(getProperties().getProperty("url"));
         Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr"),
-        		getProperties().getProperty("pwd"));
-        ReporteCCertificado.MenuRCCertificado().FP(getProperties().getProperty("Inicial")).FNIT(getProperties().getProperty("Kg"))
-        .FSCPalma(getProperties().getProperty("Creacion")).FSCPalmiste(getProperties().getProperty("Kg")).ScrollDerecha1().Evidencia();
+        		getProperties().getProperty("pwd"), folderPath);
+        ReporteCCertificado.MenuRCCertificado(folderPath).FP(getProperties().getProperty("Inicial"), folderPath).FNIT(getProperties().getProperty("Kg"), folderPath)
+        .FSCPalma(getProperties().getProperty("Creacion"), folderPath).FSCPalmiste(getProperties().getProperty("Kg"), folderPath).ScrollDerecha1(folderPath).Evidencia(folderPath);
 		
         // MyScreenRecorder.stopRecording();
      	GenerarReportePdf.closeTemplate("");
@@ -180,8 +179,8 @@ public class ReporteCCertificadoTest extends BaseTest{
 		
 		home.irPortal(getProperties().getProperty("url"));
         Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr"),
-        		getProperties().getProperty("pwd"));
-        ReporteCCertificado.MenuRCCertificado().ScrollAbajo1().Paginacion();
+        		getProperties().getProperty("pwd"), folderPath);
+        ReporteCCertificado.MenuRCCertificado(folderPath).ScrollAbajo1(folderPath).Paginacion(folderPath);
         
         // MyScreenRecorder.stopRecording();
      	GenerarReportePdf.closeTemplate("");

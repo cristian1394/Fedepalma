@@ -7,7 +7,6 @@ import java.util.Properties;
 import io.qameta.allure.*;
 import utilities.GenerarReportePdf;
 
-import org.openqa.selenium.By;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
@@ -57,10 +56,10 @@ public class FiltrosSTTest extends BaseTest{
 		Logeo(nomTest, folderPath);
 		
 		home.irPortal(getProperties().getProperty("url"));
-		login.ingresarCredenciales(getProperties().getProperty("usuario"),getProperties().getProperty("password"));
-        MenuST.IniciarST();
+		login.ingresarCredenciales(getProperties().getProperty("usuario"),getProperties().getProperty("password"), folderPath);
+        MenuST.IniciarST(folderPath);
         FiltrosST.ValidarFiltrosST(getProperties().getProperty("Termina"), getProperties().getProperty("Declarante"),
-        		getProperties().getProperty("DCD")).ExportacionExcel();
+        		getProperties().getProperty("DCD"), folderPath).ExportacionExcel(folderPath);
      
         // MyScreenRecorder.stopRecording();
      	GenerarReportePdf.closeTemplate("");

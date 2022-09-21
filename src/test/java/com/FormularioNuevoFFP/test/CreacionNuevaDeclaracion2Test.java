@@ -7,7 +7,6 @@ import java.util.Properties;
 import io.qameta.allure.*;
 import utilities.GenerarReportePdf;
 
-import org.openqa.selenium.By;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
@@ -57,26 +56,26 @@ public class CreacionNuevaDeclaracion2Test extends BaseTest{
 		Logeo(nomTest, folderPath);
 		
 		home.irPortal(getProperties().getProperty("url"));
-        login.ingresarCredenciales(getProperties().getProperty("usuario"),getProperties().getProperty("password"));
-        Consulta_FFP.ConsultaFFP();
+        login.ingresarCredenciales(getProperties().getProperty("usuario"),getProperties().getProperty("password"), folderPath);
+        Consulta_FFP.ConsultaFFP(folderPath);
         NuevaDeclaracionE.NuevaDeclaracionFFP1(getProperties().getProperty("DocRPF"),getProperties().getProperty("PropiosG"),
-        		getProperties().getProperty("PropiosH"),getProperties().getProperty("RPFG"), getProperties().getProperty("RPFH"))
-        		.FrutoVendidoFFP(getProperties().getProperty("InicialFrutoG"), getProperties().getProperty("InicialFrutoH"))
+        		getProperties().getProperty("PropiosH"),getProperties().getProperty("RPFG"), getProperties().getProperty("RPFH"), folderPath)
+        		.FrutoVendidoFFP(getProperties().getProperty("InicialFrutoG"), getProperties().getProperty("InicialFrutoH"), folderPath)
         		.FrutoEnviadoFFP(getProperties().getProperty("BajaFrutoG"), getProperties().getProperty("BajaFrutoH"), 
-                getProperties().getProperty("NoProcesadoG"))
+                getProperties().getProperty("NoProcesadoG"), folderPath)
         		.ProveedoresAlmendra(getProperties().getProperty("DocRPA"),getProperties().getProperty("PPalmaIngresada"),
-                getProperties().getProperty("RPalmaIngresada"),getProperties().getProperty("KG"))
+                getProperties().getProperty("RPalmaIngresada"),getProperties().getProperty("KG"), folderPath)
         		.AlmendraRecibida(getProperties().getProperty("DocARPM"),getProperties().getProperty("KG"),
                 getProperties().getProperty("PalmaProcesada"),getProperties().getProperty("PalmaRecibida"),
-                getProperties().getProperty("PalmisteRecibida"));
+                getProperties().getProperty("PalmisteRecibida"), folderPath);
         Inventarios.AceitePalma(getProperties().getProperty("Palma"),getProperties().getProperty("PalmaA"),
-                getProperties().getProperty("PalmaB"),getProperties().getProperty("PalmaC"), getProperties().getProperty("PalmaD"))
+                getProperties().getProperty("PalmaB"),getProperties().getProperty("PalmaC"), getProperties().getProperty("PalmaD"), folderPath)
         		.AceitePalmaOPalmiste(getProperties().getProperty("PalmaoPalmiste"),getProperties().getProperty("PalmaoPalmisteA"),
                 getProperties().getProperty("PalmaoPalmisteB"),getProperties().getProperty("PalmaoPalmisteC"), 
-                getProperties().getProperty("PalmaoPalmisteD"))
+                getProperties().getProperty("PalmaoPalmisteD"), folderPath)
         		.AceitePalmiste(getProperties().getProperty("Palmiste"),getProperties().getProperty("PalmisteA"),
-                getProperties().getProperty("PalmisteB"),getProperties().getProperty("PalmisteC"), getProperties().getProperty("PalmisteD"))
-        		.Total_Plama1(getProperties().getProperty("TotalPalma"));
+                getProperties().getProperty("PalmisteB"),getProperties().getProperty("PalmisteC"), getProperties().getProperty("PalmisteD"), folderPath)
+        		.Total_Plama1(getProperties().getProperty("TotalPalma"), folderPath);
 
          // MyScreenRecorder.stopRecording();
      	 GenerarReportePdf.closeTemplate("");

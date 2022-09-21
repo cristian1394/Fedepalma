@@ -7,7 +7,6 @@ import java.util.Properties;
 import io.qameta.allure.*;
 import utilities.GenerarReportePdf;
 
-import org.openqa.selenium.By;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
@@ -57,10 +56,10 @@ public class AprobadasTrazabilidadTest extends BaseTest{
 		Logeo(nomTest, folderPath);
 		
 		home.irPortal(getProperties().getProperty("url"));
-		login.ingresarCredenciales(getProperties().getProperty("usuario"),getProperties().getProperty("password"));
-        MenuTrazabilidad.IniciarTrazabilidad();
-        Aprobadas.AprobadasTrazabilidad()
-        		.VerTrazabilidad();
+		login.ingresarCredenciales(getProperties().getProperty("usuario"),getProperties().getProperty("password"), folderPath);
+        MenuTrazabilidad.IniciarTrazabilidad(folderPath);
+        Aprobadas.AprobadasTrazabilidad(folderPath)
+        		.VerTrazabilidad(folderPath);
      
         // MyScreenRecorder.stopRecording();
      	GenerarReportePdf.closeTemplate("");

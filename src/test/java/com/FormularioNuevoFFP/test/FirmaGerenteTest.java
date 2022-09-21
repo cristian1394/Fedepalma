@@ -7,7 +7,6 @@ import java.util.Properties;
 import io.qameta.allure.*;
 import utilities.GenerarReportePdf;
 
-import org.openqa.selenium.By;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
@@ -58,10 +57,10 @@ public class FirmaGerenteTest extends BaseTest{
 		
 		home.irPortal(getProperties().getProperty("url"));
 		Login.ingresarCredencialesConNit(getProperties().getProperty("NitA"), getProperties().getProperty("UsrG"),
-        		getProperties().getProperty("pwd"));
+        		getProperties().getProperty("pwd"), folderPath);
         FirmaG.DeclararFFP(getProperties().getProperty("RPFH"), getProperties().getProperty("PalmisteE"),
-        		getProperties().getProperty("PPalmaIngresada")).Firma(getProperties().getProperty("Firma"))
-        		.confirmar();
+        		getProperties().getProperty("PPalmaIngresada"), folderPath).Firma(getProperties().getProperty("Firma"), folderPath)
+        		.confirmar(folderPath);
         
         // MyScreenRecorder.stopRecording();
      	GenerarReportePdf.closeTemplate("");

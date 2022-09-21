@@ -7,7 +7,6 @@ import java.util.Properties;
 import io.qameta.allure.*;
 import utilities.GenerarReportePdf;
 
-import org.openqa.selenium.By;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
@@ -57,8 +56,8 @@ public class ReporteCCuotasTest extends BaseTest{
 		
 		home.irPortal(getProperties().getProperty("url"));
         Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr"),
-        		getProperties().getProperty("pwd"));
-        ReporteCCuotas.MenuRCCuotas();
+        		getProperties().getProperty("pwd"), folderPath);
+        ReporteCCuotas.MenuRCCuotas(folderPath);
         
         // MyScreenRecorder.stopRecording();
      	GenerarReportePdf.closeTemplate("");
@@ -81,8 +80,8 @@ public class ReporteCCuotasTest extends BaseTest{
 		
 		home.irPortal(getProperties().getProperty("url"));
         Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr"),
-        		getProperties().getProperty("pwd"));
-        ReporteCCuotas.MenuRCCuotas().Exportar();
+        		getProperties().getProperty("pwd"), folderPath);
+        ReporteCCuotas.MenuRCCuotas(folderPath).Exportar(folderPath);
         
         // MyScreenRecorder.stopRecording();
      	GenerarReportePdf.closeTemplate("");
@@ -106,8 +105,8 @@ public class ReporteCCuotasTest extends BaseTest{
 		
 		home.irPortal(getProperties().getProperty("url"));
         Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr"),
-        		getProperties().getProperty("pwd"));
-        ReporteCCuotas.MenuRCCuotas().FNIT1(getProperties().getProperty("nitReporteCC")).ScrollDerecha().Evidencia();
+        		getProperties().getProperty("pwd"), folderPath);
+        ReporteCCuotas.MenuRCCuotas(folderPath).FNIT1(getProperties().getProperty("nitReporteCC"), folderPath).ScrollDerecha(folderPath).Evidencia(folderPath);
         
         // MyScreenRecorder.stopRecording();
      	GenerarReportePdf.closeTemplate("");
@@ -131,8 +130,8 @@ public class ReporteCCuotasTest extends BaseTest{
 		
 		home.irPortal(getProperties().getProperty("url"));
         Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr"),
-        		getProperties().getProperty("pwd"));
-        ReporteCCuotas.MenuRCCuotas().FNIT1(getProperties().getProperty("nitReporteCC1")).ScrollDerecha1().Evidencia();
+        		getProperties().getProperty("pwd"), folderPath);
+        ReporteCCuotas.MenuRCCuotas(folderPath).FNIT1(getProperties().getProperty("nitReporteCC1"), folderPath).ScrollDerecha1(folderPath).Evidencia(folderPath);
         
         // MyScreenRecorder.stopRecording();
      	GenerarReportePdf.closeTemplate("");
@@ -155,9 +154,9 @@ public class ReporteCCuotasTest extends BaseTest{
 		
 		home.irPortal(getProperties().getProperty("url"));
         Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr"),
-        		getProperties().getProperty("pwd"));
-        ReporteCCuotas.MenuRCCuotas().FP(getProperties().getProperty("Inicia")).FNIT(getProperties().getProperty("numero"))
-        .FSCPalma(getProperties().getProperty("contiene")).FSCPalmiste(getProperties().getProperty("Kg")).ScrollDerecha1().Evidencia();
+        		getProperties().getProperty("pwd"), folderPath);
+        ReporteCCuotas.MenuRCCuotas(folderPath).FP(getProperties().getProperty("Inicia"), folderPath).FNIT(getProperties().getProperty("numero"), folderPath)
+        .FSCPalma(getProperties().getProperty("contiene"), folderPath).FSCPalmiste(getProperties().getProperty("Kg"), folderPath).ScrollDerecha1(folderPath).Evidencia(folderPath);
 		
         // MyScreenRecorder.stopRecording();
      	GenerarReportePdf.closeTemplate("");
@@ -180,8 +179,8 @@ public class ReporteCCuotasTest extends BaseTest{
 		
 		home.irPortal(getProperties().getProperty("url"));
         Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr"),
-        		getProperties().getProperty("pwd"));
-        ReporteCCuotas.MenuRCCuotas().ScrollAbajo1().Paginacion();
+        		getProperties().getProperty("pwd"), folderPath);
+        ReporteCCuotas.MenuRCCuotas(folderPath).ScrollAbajo1().Paginacion(folderPath);
 		
         // MyScreenRecorder.stopRecording();
      	GenerarReportePdf.closeTemplate("");

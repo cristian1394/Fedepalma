@@ -7,7 +7,6 @@ import java.util.Properties;
 import io.qameta.allure.*;
 import utilities.GenerarReportePdf;
 
-import org.openqa.selenium.By;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
@@ -384,10 +383,10 @@ public class FormularioFSCTest extends BaseTest{
 			 getProperties().getProperty("pwd"), folderPath);
 		FormularioFSC.FormularioFSC(folderPath).ConsultarFSC(folderPath).CrearFSC(folderPath).ConsultarDMI(folderPath).SeleccionarDMI(folderPath).AdicionarDMI("El formulario se guardo correctamente.", folderPath)
 		 	 .CargaFMI(getProperties().getProperty("doc"), "Se cargo el archivo correctamente", folderPath)
-		 	 .CargaCCM(getProperties().getProperty("doc"), "Se cargo el archivo correctamente")
-		 	 .CargaCIP(getProperties().getProperty("doc"), "Se cargo el archivo correctamente")
-			 .CargaIncumplimiento(getProperties().getProperty("doc"), "Se cargo el archivo correctamente")
-			 .ResumenDemostracion().SalirFSC().ConsultarFSC().BuscarFSC().EliminarFSC().AceptarEliminarFSC().AceptarEliminarFSC();
+		 	 .CargaCCM(getProperties().getProperty("doc"), "Se cargo el archivo correctamente", folderPath)
+		 	 .CargaCIP(getProperties().getProperty("doc"), "Se cargo el archivo correctamente", folderPath)
+			 .CargaIncumplimiento(getProperties().getProperty("doc"), "Se cargo el archivo correctamente", folderPath)
+			 .ResumenDemostracion(folderPath).SalirFSC(folderPath).ConsultarFSC(folderPath).BuscarFSC(folderPath).EliminarFSC(folderPath).AceptarEliminarFSC(folderPath).AceptarEliminarFSC(folderPath);
         
 		// MyScreenRecorder.stopRecording();
      	GenerarReportePdf.closeTemplate("");
@@ -410,8 +409,8 @@ public class FormularioFSCTest extends BaseTest{
 		
 		home.irPortal(getProperties().getProperty("url"));
 		Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr1"),
-			 getProperties().getProperty("pwd"));
-		FormularioFSC.FormularioFSC().ConsultarFSC().CrearFSC().SalirFSC();
+			 getProperties().getProperty("pwd"), folderPath);
+		FormularioFSC.FormularioFSC(folderPath).ConsultarFSC(folderPath).CrearFSC(folderPath).SalirFSC(folderPath);
 		
 		// MyScreenRecorder.stopRecording();
      	GenerarReportePdf.closeTemplate("");
@@ -435,13 +434,13 @@ public class FormularioFSCTest extends BaseTest{
 		
 		home.irPortal(getProperties().getProperty("url"));
 		Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr1"),
-			 getProperties().getProperty("pwd"));
-		FormularioFSC.FormularioFSC().ConsultarFSC().CrearFSC().ConsultarDMI().SeleccionarDMI().AdicionarDMI("El formulario se guardo correctamente.")
-		 	 .CargaFMI(getProperties().getProperty("doc"), "Se cargo el archivo correctamente")
-		 	 .CargaCCM(getProperties().getProperty("doc"), "Se cargo el archivo correctamente")
-		 	 .CargaCIP(getProperties().getProperty("doc"), "Se cargo el archivo correctamente")
-			 .CargaIncumplimiento(getProperties().getProperty("doc"), "Se cargo el archivo correctamente")
-			 .RevisarFSC().SalirFSC();
+			 getProperties().getProperty("pwd"), folderPath);
+		FormularioFSC.FormularioFSC(folderPath).ConsultarFSC(folderPath).CrearFSC(folderPath).ConsultarDMI(folderPath).SeleccionarDMI(folderPath).AdicionarDMI("El formulario se guardo correctamente.", folderPath)
+		 	 .CargaFMI(getProperties().getProperty("doc"), "Se cargo el archivo correctamente", folderPath)
+		 	 .CargaCCM(getProperties().getProperty("doc"), "Se cargo el archivo correctamente", folderPath)
+		 	 .CargaCIP(getProperties().getProperty("doc"), "Se cargo el archivo correctamente", folderPath)
+			 .CargaIncumplimiento(getProperties().getProperty("doc"), "Se cargo el archivo correctamente", folderPath)
+			 .RevisarFSC(folderPath).SalirFSC(folderPath);
         
 		// MyScreenRecorder.stopRecording();
      	GenerarReportePdf.closeTemplate("");
@@ -464,8 +463,8 @@ public class FormularioFSCTest extends BaseTest{
 		
 		home.irPortal(getProperties().getProperty("url"));
 		Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr1"),
-		     getProperties().getProperty("pwd"));
-		FormularioFSC.FormularioFSC().BuscarFSC().Historial().CerrarHistorial();  
+		     getProperties().getProperty("pwd"), folderPath);
+		FormularioFSC.FormularioFSC(folderPath).BuscarFSC(folderPath).Historial(folderPath).CerrarHistorial(folderPath);  
 		
 		// MyScreenRecorder.stopRecording();
      	GenerarReportePdf.closeTemplate("");
@@ -488,8 +487,8 @@ public class FormularioFSCTest extends BaseTest{
 		
 		home.irPortal(getProperties().getProperty("url"));
 		Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr1"),
-			 getProperties().getProperty("pwd"));
-		FormularioFSC.FormularioFSC().BuscarFSC().Historial().ExportarHistorial().CerrarHistorial(); 
+			 getProperties().getProperty("pwd"), folderPath);
+		FormularioFSC.FormularioFSC(folderPath).BuscarFSC(folderPath).Historial(folderPath).ExportarHistorial(folderPath).CerrarHistorial(folderPath); 
 		
 		// MyScreenRecorder.stopRecording();
      	GenerarReportePdf.closeTemplate("");
@@ -512,8 +511,8 @@ public class FormularioFSCTest extends BaseTest{
 		
 		home.irPortal(getProperties().getProperty("url"));
 		Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr1"),
-			 getProperties().getProperty("pwd"));
-		FormularioFSC.FormularioFSC().BuscarFSC().VerFSC();    
+			 getProperties().getProperty("pwd"), folderPath);
+		FormularioFSC.FormularioFSC(folderPath).BuscarFSC(folderPath).VerFSC(folderPath);    
 		
 		// MyScreenRecorder.stopRecording();
      	GenerarReportePdf.closeTemplate("");
@@ -536,8 +535,8 @@ public class FormularioFSCTest extends BaseTest{
 		
 		home.irPortal(getProperties().getProperty("url"));
 		Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr1"),
-			 getProperties().getProperty("pwd"));
-		FormularioFSC.FormularioFSC().BuscarFSC().EditarFSC().SalirFSC1();   
+			 getProperties().getProperty("pwd"), folderPath);
+		FormularioFSC.FormularioFSC(folderPath).BuscarFSC(folderPath).EditarFSC(folderPath).SalirFSC1(folderPath);   
 		
 		// MyScreenRecorder.stopRecording();
      	GenerarReportePdf.closeTemplate("");
@@ -560,9 +559,9 @@ public class FormularioFSCTest extends BaseTest{
 		
 		home.irPortal(getProperties().getProperty("url"));
 		Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr1"),
-			 getProperties().getProperty("pwd"));
-		FormularioFSC.FormularioFSC().BuscarFSC().EditarFSC().CargaFMI(getProperties().getProperty("doc"), "Se cargo el archivo correctamente")
-			 .SalirFSC1();   
+			 getProperties().getProperty("pwd"), folderPath);
+		FormularioFSC.FormularioFSC(folderPath).BuscarFSC(folderPath).EditarFSC(folderPath).CargaFMI(getProperties().getProperty("doc"), "Se cargo el archivo correctamente", folderPath)
+			 .SalirFSC1(folderPath);   
 		
 		// MyScreenRecorder.stopRecording();
      	GenerarReportePdf.closeTemplate("");
@@ -585,8 +584,8 @@ public class FormularioFSCTest extends BaseTest{
 		
 		home.irPortal(getProperties().getProperty("url"));
 		Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr1"),
-			 getProperties().getProperty("pwd"));
-		FormularioFSC.FormularioFSC().BuscarFSC().EliminarFSC().AceptarEliminarFSC(); 
+			 getProperties().getProperty("pwd"), folderPath);
+		FormularioFSC.FormularioFSC(folderPath).BuscarFSC(folderPath).EliminarFSC(folderPath).AceptarEliminarFSC(folderPath); 
 		
 		// MyScreenRecorder.stopRecording();
      	GenerarReportePdf.closeTemplate("");
