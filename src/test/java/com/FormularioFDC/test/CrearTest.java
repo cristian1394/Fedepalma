@@ -58,12 +58,12 @@ public class CrearTest extends BaseTest{
 //		for(int a=0;a<50 ;a++) {
 		home.irPortal(getProperties().getProperty("url"));
         Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr1"),
-        		getProperties().getProperty("pwd"));
-        FDC.FormularioFDC();
-        DEXFDC.CrearDEX("El formulario se guardo correctamente.");
-        Cargas.CargaDEX(getProperties().getProperty("doc"),"Se cargo el archivo correctamente")
-        	  .CargaCD(getProperties().getProperty("doc"),"Se cargo el archivo correctamente")
-        	  .CargaIncumplimiento(getProperties().getProperty("doc"),"Se cargo el archivo correctamente").RevisarFDC().SalirFDC();
+        		getProperties().getProperty("pwd"), folderPath);
+        FDC.FormularioFDC(folderPath);
+        DEXFDC.CrearDEX("El formulario se guardo correctamente.", folderPath);
+        Cargas.CargaDEX(getProperties().getProperty("doc"),"Se cargo el archivo correctamente", folderPath)
+        	  .CargaCD(getProperties().getProperty("doc"),"Se cargo el archivo correctamente", folderPath)
+        	  .CargaIncumplimiento(getProperties().getProperty("doc"),"Se cargo el archivo correctamente", folderPath).RevisarFDC(folderPath).SalirFDC(folderPath);
         
 //        System.out.println("Caso Numero:"+a); 
         // MyScreenRecorder.stopRecording();
@@ -88,12 +88,12 @@ public class CrearTest extends BaseTest{
 //		for(int a=0;a<50 ;a++) {
 		home.irPortal(getProperties().getProperty("url"));
 		Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr1"),
-        		getProperties().getProperty("pwd"));
-        FDC.FormularioFDC();
-        FMMFDC.CrearFDC().CrearFMM("El formulario se guardo correctamente.");
-        Cargas.CargaFMM(getProperties().getProperty("doc"),"Se cargo el archivo correctamente")
-        	  .CargaCD(getProperties().getProperty("doc"),"Se cargo el archivo correctamente")
-        	  .CargaIncumplimiento(getProperties().getProperty("doc"),"Se cargo el archivo correctamente").RevisarFDC().SalirFDC();
+        		getProperties().getProperty("pwd"), folderPath);
+        FDC.FormularioFDC(folderPath);
+        FMMFDC.CrearFDC(folderPath).CrearFMM("El formulario se guardo correctamente.", folderPath);
+        Cargas.CargaFMM(getProperties().getProperty("doc"),"Se cargo el archivo correctamente", folderPath)
+        	  .CargaCD(getProperties().getProperty("doc"),"Se cargo el archivo correctamente", folderPath)
+        	  .CargaIncumplimiento(getProperties().getProperty("doc"),"Se cargo el archivo correctamente", folderPath).RevisarFDC(folderPath).SalirFDC(folderPath);
         
 //        System.out.println("Caso Numero:"+a); 
         // MyScreenRecorder.stopRecording();
@@ -120,12 +120,12 @@ public class CrearTest extends BaseTest{
 		for(int a=0;a<10 ;a++) {
 		home.irPortal(getProperties().getProperty("url"));
 		Login.ingresarCredencialesConNit(getProperties().getProperty("NitA"), getProperties().getProperty("Usr"),
-        		getProperties().getProperty("pwd"));
-        FDC.FormularioFDC();
-        PolizaFDC.CrearFDC().CrearPoliza("El formulario se guardo correctamente.");
-        Cargas.CargaCD(getProperties().getProperty("doc"),"Se cargo el archivo correctamente").CargaPoliza(getProperties().getProperty("doc"),
-        		"Se cargo el archivo correctamente")
-        	  .CargaIncumplimiento(getProperties().getProperty("doc"),"Se cargo el archivo correctamente").RevisarFDC().SalirFDC();
+        		getProperties().getProperty("pwd"), folderPath);
+        FDC.FormularioFDC(folderPath);
+        PolizaFDC.CrearFDC(folderPath).CrearPoliza("El formulario se guardo correctamente.", folderPath);
+        Cargas.CargaCD(getProperties().getProperty("doc"),"Se cargo el archivo correctamente", folderPath).CargaPoliza(getProperties().getProperty("doc"),
+        		"Se cargo el archivo correctamente", folderPath)
+        	  .CargaIncumplimiento(getProperties().getProperty("doc"),"Se cargo el archivo correctamente", folderPath).RevisarFDC(folderPath).SalirFDC(folderPath);
         
         // MyScreenRecorder.stopRecording();
      	GenerarReportePdf.closeTemplate("");
@@ -152,11 +152,11 @@ public class CrearTest extends BaseTest{
 //		for(int a=0;a<50 ;a++) {
 		home.irPortal(getProperties().getProperty("url"));
 		Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr1"),
-        		getProperties().getProperty("pwd"));
-        FDC.FormularioFDC();
-        Incumplimiento1.CrearFDC().GenerarIncumplimiento();
-        Cargas.CargaCD(getProperties().getProperty("doc"),"Se cargo el archivo correctamente")
-        	  .CargaIncumplimiento(getProperties().getProperty("doc"),"Se cargo el archivo correctamente").RevisarFDC().SalirFDC();
+        		getProperties().getProperty("pwd"), folderPath);
+        FDC.FormularioFDC(folderPath);
+        Incumplimiento1.CrearFDC(folderPath).GenerarIncumplimiento(folderPath);
+        Cargas.CargaCD(getProperties().getProperty("doc"),"Se cargo el archivo correctamente", folderPath)
+        	  .CargaIncumplimiento(getProperties().getProperty("doc"),"Se cargo el archivo correctamente", folderPath).RevisarFDC(folderPath).SalirFDC(folderPath);
         
         // MyScreenRecorder.stopRecording();
      	GenerarReportePdf.closeTemplate("");

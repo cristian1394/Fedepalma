@@ -57,9 +57,9 @@ public class CargaMasivaFDC2Test extends BaseTest{
 		Logeo(nomTest, folderPath);
 		home.irPortal(getProperties().getProperty("url"));
         Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr1"),
-        		getProperties().getProperty("pwd"));
-        FDC.FormularioFDC();      
-        CMDEX.CargaDEX(getProperties().getProperty("DocACM"), "Se encontraron errores en el archivo por favor validar.");
+        		getProperties().getProperty("pwd"), folderPath);
+        FDC.FormularioFDC(folderPath);      
+        CMDEX.CargaDEX(getProperties().getProperty("DocACM"), "Se encontraron errores en el archivo por favor validar.", folderPath);
         
         // MyScreenRecorder.stopRecording();
      	GenerarReportePdf.closeTemplate("");
@@ -82,9 +82,9 @@ public class CargaMasivaFDC2Test extends BaseTest{
 			
 			home.irPortal(getProperties().getProperty("url"));
 	        Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr1"),
-	        		getProperties().getProperty("pwd"));
-	        FDC.FormularioFDC();      
-	        CMFMM.CargaFMM(getProperties().getProperty("DocACM"), "Se encontraron errores en el archivo por favor validar.");
+	        		getProperties().getProperty("pwd"), folderPath);
+	        FDC.FormularioFDC(folderPath);      
+	        CMFMM.CargaFMM(getProperties().getProperty("DocACM"), "Se encontraron errores en el archivo por favor validar.", folderPath);
 	        
 	        // MyScreenRecorder.stopRecording();
 	     	GenerarReportePdf.closeTemplate("");

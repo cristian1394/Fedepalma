@@ -59,8 +59,8 @@ public class ExepcionesRevisarFDCTest extends BaseTest{
 		home.irPortal(getProperties().getProperty("url"));
         Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr1"),
         		getProperties().getProperty("pwd"), folderPath);
-        FDC.FormularioFDC();
-        RevisarFDC.CrearFDC().RevisarFDC("No ha asociado todos los kilogramos a un tipo de DCD").SalirFDC();
+        FDC.FormularioFDC(folderPath);
+        RevisarFDC.CrearFDC(folderPath).RevisarFDC("No ha asociado todos los kilogramos a un tipo de DCD", folderPath).SalirFDC(folderPath);
       
         // MyScreenRecorder.stopRecording();
      	GenerarReportePdf.closeTemplate("");     

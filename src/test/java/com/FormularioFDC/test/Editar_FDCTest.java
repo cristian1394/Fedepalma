@@ -58,13 +58,13 @@ public class Editar_FDCTest extends BaseTest{
 		
 		home.irPortal(getProperties().getProperty("url"));
         Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr1"),
-        		getProperties().getProperty("pwd"));      
-        Editar_FDC.FormularioFDC().EditarFDC();
-        Carga.CargaDEX(getProperties().getProperty("doc"),"Se cargo el archivo correctamente").CargaFMM(getProperties().getProperty("doc"),
-        		"Se cargo el archivo correctamente")
-        	  .CargaCD(getProperties().getProperty("doc"),"Se cargo el archivo correctamente").CargaPoliza(getProperties().getProperty("doc"),
-        		"Se cargo el archivo correctamente")
-        	  .CargaIncumplimiento(getProperties().getProperty("doc"),"Se cargo el archivo correctamente").RevisarFDC().SalirFDC();
+        		getProperties().getProperty("pwd"), folderPath);      
+        Editar_FDC.FormularioFDC(folderPath).EditarFDC(folderPath);
+        Carga.CargaDEX(getProperties().getProperty("doc"),"Se cargo el archivo correctamente", folderPath).CargaFMM(getProperties().getProperty("doc"),
+        		"Se cargo el archivo correctamente", folderPath)
+        	  .CargaCD(getProperties().getProperty("doc"),"Se cargo el archivo correctamente", folderPath).CargaPoliza(getProperties().getProperty("doc"),
+        		"Se cargo el archivo correctamente", folderPath)
+        	  .CargaIncumplimiento(getProperties().getProperty("doc"),"Se cargo el archivo correctamente", folderPath).RevisarFDC(folderPath).SalirFDC(folderPath);
         
         // MyScreenRecorder.stopRecording();
      	GenerarReportePdf.closeTemplate("");

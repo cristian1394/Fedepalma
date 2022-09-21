@@ -58,9 +58,9 @@ public class BorrarFDCTest extends BaseTest{
 		
 		home.irPortal(getProperties().getProperty("url"));
         Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr1"),
-        		getProperties().getProperty("pwd"));
-        FDCB.FormularioFDC();      
-        BorrarFDC.BorrarFDC("Operación Exitosa");
+        		getProperties().getProperty("pwd"), folderPath);
+        FDCB.FormularioFDC(folderPath);      
+        BorrarFDC.BorrarFDC("Operación Exitosa", folderPath);
         
      // MyScreenRecorder.stopRecording();
      	GenerarReportePdf.closeTemplate("");

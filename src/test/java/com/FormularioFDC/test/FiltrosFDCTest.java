@@ -60,8 +60,8 @@ public class FiltrosFDCTest extends BaseTest{
         Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr1"),
         		getProperties().getProperty("pwd"), folderPath);
         FiltrosFDC.ValidarFiltrosFDC(getProperties().getProperty("numero"), getProperties().getProperty("Kg"),
-        		getProperties().getProperty("Creacion"), getProperties().getProperty("Estado"))
-        		.ExportacionExcel();
+        		getProperties().getProperty("Creacion"), getProperties().getProperty("Estado"), folderPath)
+        		.ExportacionExcel(folderPath);
         
         // MyScreenRecorder.stopRecording();
      	GenerarReportePdf.closeTemplate("");
