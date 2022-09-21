@@ -40,7 +40,7 @@ public class CrearSolicitudMaps extends BasePage {
 	protected By btnEliminar=By.xpath("//div[7]/div/button");
 	//html/body/div[11]/div[7]/div/button
 	
-	
+	//Cambios
 		
 	}
 	
