@@ -19,5 +19,6 @@ public class HomePage extends BasePage {
         time(1);
         return new HomePage(driver);
     }
+//cambios
 
 }
