@@ -430,7 +430,7 @@ public class FormularioFSCPage extends FormularioFSCMap  {
         ByPixel();
         time(1);
 		click(btnSalir1,folderPath, "click xpath");
-		time(2500);
+		time(3);
         captureScreen(folderPath, "Capture screen");
         time(2);
         
@@ -482,7 +482,7 @@ public class FormularioFSCPage extends FormularioFSCMap  {
         captureScreen(folderPath, "Capture screen");
         time(3);
         driver.findElement(Scape).sendKeys(Keys.ESCAPE); 
-        time(1500);
+        time(2);
         captureScreen(folderPath, "Capture screen");
         time(1);
         

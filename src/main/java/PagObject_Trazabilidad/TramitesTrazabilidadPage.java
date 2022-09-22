@@ -23,7 +23,7 @@ public class TramitesTrazabilidadPage extends TramitesTrazabilidadMap {
         click(btnConsultar,folderPath, "click xpath");
         time(1);
         
-        time(1500);
+        time(2);
         click(btnMes,folderPath, "click xpath");
         time(1);
         click(btnFiltra,folderPath, "click xpath");

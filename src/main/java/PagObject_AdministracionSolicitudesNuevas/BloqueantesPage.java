@@ -338,17 +338,17 @@ public class BloqueantesPage extends BloqueantesMaps {
 	@Step("Desasociar Usuario")
     public BloqueantesPage Desasociar(File folderPath) throws Exception {
 		
-	        time(500);
+	        time(1);
 	        click(btnDesasociar,folderPath, "click xpath");
-	        time(200);
+	        time(1);
 	        captureScreen(folderPath, "Capture screen");
-	        time(800);
+	        time(1);
 	        click(btnAceptar,folderPath, "click xpath");
-	        time(28000);
+	        time(28);
 	        click(btnOk,folderPath, "click xpath");
-	        time(1000);
+	        time(1);
 	        captureScreen(folderPath, "Capture screen");
-	        time(6000);
+	        time(6);
         
         return this;
     }

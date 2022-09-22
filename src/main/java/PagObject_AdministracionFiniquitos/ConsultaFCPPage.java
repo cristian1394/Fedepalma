@@ -17,7 +17,7 @@ public class ConsultaFCPPage extends MapObject_AdministracionFiniquitos.Consulta
 		super(driver);
 	}
 	
-	
+	// comenta
 	
 	@Step("Evidencia")
 	public ConsultaFCPPage Evidencia() throws InterruptedException {
@@ -423,7 +423,7 @@ public class ConsultaFCPPage extends MapObject_AdministracionFiniquitos.Consulta
  		
  		time(1);
 		click(btnBuscar, folderPath, "texto prueba");
-        time(2500);
+        time(3);
         
         time(1);
         click(btnCrear, folderPath, "texto prueba");
