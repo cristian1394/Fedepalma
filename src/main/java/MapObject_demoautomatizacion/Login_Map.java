@@ -3,6 +3,8 @@ package MapObject_demoautomatizacion;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+import PagObject_demoautomatizacion.BasePage;
+
 public class Login_Map extends BasePage {
 	
 	protected By txtNit=By.xpath("//*[@id='Nit']");

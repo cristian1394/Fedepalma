@@ -5,9 +5,9 @@
     <classes>
       <class name="com.AdministracionFiniquitos.test.CrearTest">
         <methods>
+          <include name="CrearDEXPortalFedepalma"/>
           <include name="tearDown"/>
           <include name="inicializar"/>
-          <include name="ConsultarFCPPortalFedepalma"/>
         </methods>
       </class> <!-- com.AdministracionFiniquitos.test.CrearTest -->
     </classes>
