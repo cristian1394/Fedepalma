@@ -21,25 +21,25 @@ public class FormularioFCPPage extends FormularioFCPMap {
 	
 
 	@Step("Evidencia")
-	public FormularioFCPPage Evidencia(File folderPath) throws Exception {
+	public FormularioFCPPage Evidencia(File folderPath, String Evidencia) throws Exception {
 
 		time(3);
-		captureScreen(folderPath, "captura Evidencia");
+		captureScreen(folderPath, "captura Evidencia",Evidencia);
 		time(3);
 
 		return this;
 	}
 	
 	@Step("Consulta FDC")
-    public FormularioFCPPage FormularioFCP(File folderPath) throws Exception {
+    public FormularioFCPPage FormularioFCP(File folderPath, String Evidencia) throws Exception {
         time(2);
-        scrollElementV(folderPath, btnAdminFiniquitos,"scroll hacia btn bajar");
+        scrollElementV(folderPath, btnAdminFiniquitos,"scroll hacia btn bajar",Evidencia);
         time(1);
-        click(btnAdminFiniquitos, folderPath, "click admin finiquitos");
+        click(btnAdminFiniquitos, folderPath, "click admin finiquitos",Evidencia);
         time(1);
-        scrollElementV(folderPath, btnFormularioFCP,"scroll hacia btn bajar");
+        scrollElementV(folderPath, btnFormularioFCP,"scroll hacia btn bajar",Evidencia);
         time(1);
-        click(btnFormularioFCP, folderPath, "click formulario fcp");
+        click(btnFormularioFCP, folderPath, "click formulario fcp",Evidencia);
         time(1);
 		time(1);
         
@@ -47,10 +47,10 @@ public class FormularioFCPPage extends FormularioFCPMap {
     }
 	
 	@Step("Digitar Comprador")
-    public FormularioFCPPage Comprador(File folderPath,String Comprador) throws Exception {
+    public FormularioFCPPage Comprador(File folderPath,String Comprador, String Evidencia) throws Exception {
        
 		time(2);
-        writeText(txtComprador, Comprador, folderPath, "Escribe comprador");
+        writeText(txtComprador, Comprador, folderPath, "Escribe comprador",Evidencia);
         time(1);
         time(2);
         
@@ -58,10 +58,10 @@ public class FormularioFCPPage extends FormularioFCPMap {
     }
 	
 	@Step("Seleccionar Comprador")
-    public FormularioFCPPage SComprador(File folderPath) throws Exception {
+    public FormularioFCPPage SComprador(File folderPath, String Evidencia) throws Exception {
 		
         time(1);
-		click(btnComprador, folderPath, "click comprador");
+		click(btnComprador, folderPath, "click comprador",Evidencia);
         time(2);
         
         time(1);
@@ -69,10 +69,10 @@ public class FormularioFCPPage extends FormularioFCPMap {
     }
 	
 	@Step("Seleccionar Año")
-    public FormularioFCPPage SeleccionarAño(File folderPath) throws Exception {
+    public FormularioFCPPage SeleccionarAño(File folderPath, String Evidencia) throws Exception {
 		
         time(1);
-		click(btnAno, folderPath, "click año");
+		click(btnAno, folderPath, "click año",Evidencia);
         time(2);
         
         time(1);
@@ -80,10 +80,10 @@ public class FormularioFCPPage extends FormularioFCPMap {
     }
 	
 	@Step("Seleccionar Mes")
-    public FormularioFCPPage SeleccionarMes(File folderPath) throws Exception {
+    public FormularioFCPPage SeleccionarMes(File folderPath, String Evidencia) throws Exception {
 		
         time(1);
-		click(btnMes, folderPath, "click mes");
+		click(btnMes, folderPath, "click mes",Evidencia);
         time(2);
         
         time(1);
@@ -91,10 +91,10 @@ public class FormularioFCPPage extends FormularioFCPMap {
     }
 	
 	@Step("Seleccionar Estado")
-    public FormularioFCPPage SeleccionarEstado(File folderPath) throws Exception {
+    public FormularioFCPPage SeleccionarEstado(File folderPath, String Evidencia) throws Exception {
 		
         time(1);
-		click(btnEstado, folderPath, "click estado");
+		click(btnEstado, folderPath, "click estado",Evidencia);
         time(2);
         
         time(1);
@@ -102,10 +102,10 @@ public class FormularioFCPPage extends FormularioFCPMap {
     }
 	
 	@Step("Filtro Numero DCD")
-    public FormularioFCPPage FNumeroDCD(File folderPath) throws Exception {
+    public FormularioFCPPage FNumeroDCD(File folderPath, String Evidencia) throws Exception {
 		
         time(1);
-		click(btnFiltroN, folderPath, "click filtro");
+		click(btnFiltroN, folderPath, "click filtro",Evidencia);
         time(1);
         
         time(1);
@@ -113,10 +113,10 @@ public class FormularioFCPPage extends FormularioFCPMap {
     }
 	
 	@Step("Buscar")
-    public FormularioFCPPage Buscar(File folderPath) throws Exception {
+    public FormularioFCPPage Buscar(File folderPath, String Evidencia) throws Exception {
 		
         time(1);
-		click(btnBuscar, folderPath, "click buscar");
+		click(btnBuscar, folderPath, "click buscar",Evidencia);
         time(1);
         
         time(1);
@@ -124,10 +124,10 @@ public class FormularioFCPPage extends FormularioFCPMap {
     }
 	
 	@Step("Seleccionar Ok")
-    public FormularioFCPPage SeleccionarOk(File folderPath) throws Exception {
+    public FormularioFCPPage SeleccionarOk(File folderPath, String Evidencia) throws Exception {
 		
         time(1);
-		click(btnOk, folderPath, "click ok");
+		click(btnOk, folderPath, "click ok",Evidencia);
         time(1);
         
         time(1);
@@ -135,10 +135,10 @@ public class FormularioFCPPage extends FormularioFCPMap {
     }
 	
 	@Step("Crear FCP")
-    public FormularioFCPPage CrearFCP(File folderPath) throws Exception {
+    public FormularioFCPPage CrearFCP(File folderPath, String Evidencia) throws Exception {
 		
         time(2);
-        click(btnCrear, folderPath, "click crear");
+        click(btnCrear, folderPath, "click crear",Evidencia);
         time(1);
         
         time(1);
@@ -147,42 +147,42 @@ public class FormularioFCPPage extends FormularioFCPMap {
     }
 	
 	@Step("Digitar DEX")
-    public FormularioFCPPage DigitarDex(File folderPath) throws Exception {
+    public FormularioFCPPage DigitarDex(File folderPath, String Evidencia) throws Exception {
        
         time(3);
-        click(btnDEX, folderPath, "click Dex");
+        click(btnDEX, folderPath, "click Dex",Evidencia);
         time(1);
         numeroAleatorio();
         time(1);
-        captureScreen(folderPath, "captura Screen");
+        captureScreen(folderPath, "captura Screen",Evidencia);
         time(1);
         
         return this;
     }
 	
 	@Step("Digitar FMM")
-    public FormularioFCPPage DigitarFmm(File folderPath) throws Exception {
+    public FormularioFCPPage DigitarFmm(File folderPath, String Evidencia) throws Exception {
        
         time(3);
-        click(btnTipoDemo, folderPath, "click tipodemo");
+        click(btnTipoDemo, folderPath, "click tipodemo",Evidencia);
         time(1);
-        click(btnFMM, folderPath, "click fmm");
+        click(btnFMM, folderPath, "click fmm",Evidencia);
         time(1);
         numeroAleatorio1();
         time(1);
-        captureScreen(folderPath, "captura Screen");
+        captureScreen(folderPath, "captura Screen",Evidencia);
         time(1);
         
         return this;
     }
 	
 	@Step("Digitar Incumplimiento")
-    public FormularioFCPPage DigitarIncumplimiento(File folderPath) throws Exception {
+    public FormularioFCPPage DigitarIncumplimiento(File folderPath, String Evidencia) throws Exception {
        
         time(3);
-        click(btnTipoDemo2, folderPath, "click tipodemo2");
+        click(btnTipoDemo2, folderPath, "click tipodemo2",Evidencia);
         time(1);
-        click(btnIncumplimiento, folderPath, "click incumplimiento");
+        click(btnIncumplimiento, folderPath, "click incumplimiento",Evidencia);
         time(1);
         
         time(1);
@@ -191,16 +191,16 @@ public class FormularioFCPPage extends FormularioFCPMap {
     }
 	
 	@Step("Calendario")
-    public FormularioFCPPage Calendario(File folderPath) throws Exception{
+    public FormularioFCPPage Calendario(File folderPath, String Evidencia) throws Exception{
        
 		time(4);
-        click(btnCalendario, folderPath, "click calendario");
+        click(btnCalendario, folderPath, "click calendario",Evidencia);
         time(1);
-        click(btnSmes, folderPath, "click smes");
+        click(btnSmes, folderPath, "click smes",Evidencia);
         time(1);
-        click(btnmes, folderPath, "click mes");
+        click(btnmes, folderPath, "click mes",Evidencia);
         time(1);
-        click(btnDia, folderPath, "click dia");
+        click(btnDia, folderPath, "click dia",Evidencia);
         time(1);
        
         time(2);
@@ -209,16 +209,16 @@ public class FormularioFCPPage extends FormularioFCPMap {
     }
 	
 	@Step("Calendario")
-    public FormularioFCPPage Calendario1(File folderPath) throws Exception{
+    public FormularioFCPPage Calendario1(File folderPath, String Evidencia) throws Exception{
        
 		time(4);
-        click(btnCalendario1, folderPath, "click calendario1");
+        click(btnCalendario1, folderPath, "click calendario1",Evidencia);
         time(1);
-        click(btnSmes1, folderPath, "click smes1 ");
+        click(btnSmes1, folderPath, "click smes1 ",Evidencia);
         time(1);
-        click(btnmes1, folderPath, "click mes1");
+        click(btnmes1, folderPath, "click mes1",Evidencia);
         time(1);
-        click(btnDia1, folderPath, "click dia1");
+        click(btnDia1, folderPath, "click dia1",Evidencia);
         time(1);
         
         time(2);
@@ -227,10 +227,10 @@ public class FormularioFCPPage extends FormularioFCPMap {
     }
 	
 	@Step("Digitar Pais")
-    public FormularioFCPPage Pais(File folderPath,String Pais) throws Exception {
+    public FormularioFCPPage Pais(File folderPath,String Pais, String Evidencia) throws Exception {
        
 		time(2);
-        writeText(txtPais, Pais, folderPath, "escribir pais");
+        writeText(txtPais, Pais, folderPath, "escribir pais",Evidencia);
         time(1);
         
         time(2);
@@ -239,10 +239,10 @@ public class FormularioFCPPage extends FormularioFCPMap {
     }
 	
 	@Step("Digitar Pais")
-    public FormularioFCPPage Pais1(File folderPath,String Pais) throws Exception {
+    public FormularioFCPPage Pais1(File folderPath,String Pais, String Evidencia) throws Exception {
        
 		time(2);
-        writeText(txtPais1, Pais, folderPath, "escribir pais1");
+        writeText(txtPais1, Pais, folderPath, "escribir pais1",Evidencia);
         time(1);
        
         time(2);
@@ -251,10 +251,10 @@ public class FormularioFCPPage extends FormularioFCPMap {
     }
 	
 	@Step("Productos Exportados")
-    public FormularioFCPPage ProductosExportados(File folderPath) throws Exception {
+    public FormularioFCPPage ProductosExportados(File folderPath, String Evidencia) throws Exception {
        
         time(2);
-        click(btnPExpo, folderPath, "click peexpo");
+        click(btnPExpo, folderPath, "click peexpo",Evidencia);
         time(1);
         
         time(2);
@@ -263,10 +263,10 @@ public class FormularioFCPPage extends FormularioFCPMap {
     }
 	
 	@Step("Productos Relacionados")
-    public FormularioFCPPage ProductosRelacionados(File folderPath) throws Exception {
+    public FormularioFCPPage ProductosRelacionados(File folderPath, String Evidencia) throws Exception {
        
         time(2);
-        click(btnPRela, folderPath, "click prela");
+        click(btnPRela, folderPath, "click prela",Evidencia);
         time(1);
         
         time(2);
@@ -275,12 +275,12 @@ public class FormularioFCPPage extends FormularioFCPMap {
     }
 	
 	@Step("Productos Exportados")
-    public FormularioFCPPage DigitarProducto(File folderPath,String Producto) throws Exception {
+    public FormularioFCPPage DigitarProducto(File folderPath,String Producto, String Evidencia) throws Exception {
        
 		time(1);
-	    writeText(txtProducto, Producto, folderPath, "escribe producto");
+	    writeText(txtProducto, Producto, folderPath, "escribe producto",Evidencia);
 	    time(1);
-	    click(btnPalma, folderPath, "click palma");
+	    click(btnPalma, folderPath, "click palma",Evidencia);
         time(1);
         
         time(2);
@@ -289,10 +289,10 @@ public class FormularioFCPPage extends FormularioFCPMap {
     }
 	
 	@Step("Kilos Exportados")
-    public FormularioFCPPage KilosExportados(File folderPath,String KilosExpo) throws Exception {
+    public FormularioFCPPage KilosExportados(File folderPath,String KilosExpo, String Evidencia) throws Exception {
        
 		time(1);
-        writeText(txtKilos, KilosExpo, folderPath, "escribe kilos");
+        writeText(txtKilos, KilosExpo, folderPath, "escribe kilos",Evidencia);
         time(1);
         
         time(2);
@@ -301,10 +301,10 @@ public class FormularioFCPPage extends FormularioFCPMap {
     }
 	
 	@Step("Adicionar")
-    public FormularioFCPPage Adicionar(File folderPath) throws Exception {
+    public FormularioFCPPage Adicionar(File folderPath, String Evidencia) throws Exception {
        
 		time(1);
-		click(btnAdicionar, folderPath, "click adicionar");
+		click(btnAdicionar, folderPath, "click adicionar",Evidencia);
         time(1);
         
         time(2);
@@ -313,10 +313,10 @@ public class FormularioFCPPage extends FormularioFCPMap {
     }
 	
 	@Step("Guardar")
-    public FormularioFCPPage Guardar(File folderPath) throws Exception {
+    public FormularioFCPPage Guardar(File folderPath, String Evidencia) throws Exception {
        
 		time(1);
-		click(btnGuardar, folderPath, "click guardar");
+		click(btnGuardar, folderPath, "click guardar",Evidencia);
         time(1);
         
         time(2);
@@ -325,10 +325,10 @@ public class FormularioFCPPage extends FormularioFCPMap {
     }
 	
 	@Step("Consultar DCD")
-    public FormularioFCPPage ConsultarDCD(File folderPath) throws Exception {
+    public FormularioFCPPage ConsultarDCD(File folderPath, String Evidencia) throws Exception {
        
 		time(1);
-		click(btnConsultar, folderPath, "click consultar");
+		click(btnConsultar, folderPath, "click consultar",Evidencia);
         time(2);
         
         time(1);
@@ -337,10 +337,10 @@ public class FormularioFCPPage extends FormularioFCPMap {
     }
 	
 	@Step("Filtro Demostracion")
-    public FormularioFCPPage FiltroD(File folderPath) throws Exception {
+    public FormularioFCPPage FiltroD(File folderPath, String Evidencia) throws Exception {
        
 		time(1);
-		click(btnFiltroD, folderPath, "click filtro");
+		click(btnFiltroD, folderPath, "click filtro",Evidencia);
         time(1);
         
         time(2);
@@ -349,10 +349,10 @@ public class FormularioFCPPage extends FormularioFCPMap {
     }
 	
 	@Step("Check para Asociar")
-    public FormularioFCPPage Check(File folderPath) throws Exception {
+    public FormularioFCPPage Check(File folderPath, String Evidencia) throws Exception {
        
 		time(1);
-		click(btnCheck, folderPath, "click check");
+		click(btnCheck, folderPath, "click check",Evidencia);
         time(1);
         
         time(2);
@@ -361,10 +361,10 @@ public class FormularioFCPPage extends FormularioFCPMap {
     }
 	
 	@Step("Filtro Demostrados")
-    public FormularioFCPPage FDemostrados(File folderPath) throws Exception {
+    public FormularioFCPPage FDemostrados(File folderPath, String Evidencia) throws Exception {
        
 		time(1);
-		click(btnDemostrados, folderPath, "click demostrados");
+		click(btnDemostrados, folderPath, "click demostrados",Evidencia);
         time(1);
         
         time(2);
@@ -373,12 +373,12 @@ public class FormularioFCPPage extends FormularioFCPMap {
     }
 
 	@Step("Asociar DCD a FCP")
-    public FormularioFCPPage Asociar(File folderPath) throws Exception {
+    public FormularioFCPPage Asociar(File folderPath, String Evidencia) throws Exception {
        
 		time(1);
         String Totales = getElement(lblTotales).getText();
         time(1);
-        writeText(txtAsociar, Totales, folderPath, "escribe asociar");
+        writeText(txtAsociar, Totales, folderPath, "escribe asociar",Evidencia);
         time(1);
         
         time(2);
@@ -387,14 +387,14 @@ public class FormularioFCPPage extends FormularioFCPMap {
     }
 	
 	@Step("Adicionar FCP")
-    public FormularioFCPPage AdicionarFCP(File folderPath) throws Exception {
+    public FormularioFCPPage AdicionarFCP(File folderPath, String Evidencia) throws Exception {
        
 		time(1);
-		click(btnAdi, folderPath, "click adi");
+		click(btnAdi, folderPath, "click adi",Evidencia);
         time(1);
         
         time(2);
-        click(btnOK, folderPath, "click ok");
+        click(btnOK, folderPath, "click ok",Evidencia);
         time(1);
         
         return this;
@@ -402,10 +402,10 @@ public class FormularioFCPPage extends FormularioFCPMap {
 	
 	
 	@Step("Cagar DEX")
-    public FormularioFCPPage CargaDEX(File folderPath,String doc, String resultado) throws Exception {
+    public FormularioFCPPage CargaDEX(File folderPath,String doc, String resultado, String Evidencia) throws Exception {
         
 		time(2);
-		scrollElementV(folderPath, btnCargas,"scroll hacia btn bajar");
+		scrollElementV(folderPath, btnCargas,"scroll hacia btn bajar",Evidencia);
         time(8);
 		File file = new File(doc);
 		time(3);
@@ -414,9 +414,9 @@ public class FormularioFCPPage extends FormularioFCPMap {
 		ruta.sendKeys(file.getAbsolutePath()); 
 		time(7);
 		Assert.assertEquals(getElement(lblResultadoAdicionar).getText(),resultado);
-		captureScreen(folderPath, "captura Screen");
+		captureScreen(folderPath, "captura Screen",Evidencia);
 	    time(3);
-		click(btnOk1, folderPath, "click ok1");
+		click(btnOk1, folderPath, "click ok1",Evidencia);
         
         time(1);
         
@@ -424,9 +424,9 @@ public class FormularioFCPPage extends FormularioFCPMap {
     }
 	
 	@Step("Cagar FMM")
-	public FormularioFCPPage CargaFMM(File folderPath,String doc, String resultado) throws Exception {
+	public FormularioFCPPage CargaFMM(File folderPath,String doc, String resultado, String Evidencia) throws Exception {
 		
-		scrollElementV(folderPath, btnCargas,"scroll hacia btn bajar");
+		scrollElementV(folderPath, btnCargas,"scroll hacia btn bajar",Evidencia);
 	    time(8);
 		File file = new File(doc);
 		time(3);
@@ -434,9 +434,9 @@ public class FormularioFCPPage extends FormularioFCPMap {
 		ruta.sendKeys(file.getAbsolutePath()); 
 		time(7);
 		Assert.assertEquals(getElement(lblResultadoAdicionar).getText(),resultado);
-		captureScreen(folderPath, "captura Screen");
+		captureScreen(folderPath, "captura Screen",Evidencia);
 		time(3);
-		click(btnOk1, folderPath, "click ok1");
+		click(btnOk1, folderPath, "click ok1",Evidencia);
 		time(1);
 			
 		return this;
@@ -444,7 +444,7 @@ public class FormularioFCPPage extends FormularioFCPMap {
 	}
 	
 	@Step("Cagar Incumplimiento")
-	public FormularioFCPPage CargaIncumplimiento(File folderPath,String doc, String resultado) throws Exception {
+	public FormularioFCPPage CargaIncumplimiento(File folderPath,String doc, String resultado, String Evidencia) throws Exception {
 		
 	    time(8);
 		File file = new File(doc);
@@ -453,22 +453,22 @@ public class FormularioFCPPage extends FormularioFCPMap {
 		ruta.sendKeys(file.getAbsolutePath()); 
 		time(7);
 		Assert.assertEquals(getElement(lblResultadoAdicionar).getText(),resultado);
-		captureScreen(folderPath, "captura Screen");
+		captureScreen(folderPath, "captura Screen",Evidencia);
 		time(3);
-		click(btnOk1, folderPath, "click ok1");
+		click(btnOk1, folderPath, "click ok1",Evidencia);
 		time(1);
 			
 		return this;
 	}
 	
 	@Step("Revisar FCP")
-	public FormularioFCPPage RevisarFCP(File folderPath) throws Exception {
+	public FormularioFCPPage RevisarFCP(File folderPath, String Evidencia) throws Exception {
 		
 		time(1);
-		click(btnRevisar, folderPath, "click revisar");
+		click(btnRevisar, folderPath, "click revisar",Evidencia);
 		time(1);
 		time(1);
-		click(btnOk1, folderPath, "click ok1");
+		click(btnOk1, folderPath, "click ok1",Evidencia);
 		time(1);
 		
 		time(1);
@@ -477,42 +477,42 @@ public class FormularioFCPPage extends FormularioFCPMap {
 	}
 
 	@Step("Salir FCP")
-	public FormularioFCPPage SalirFCP(File folderPath) throws Exception {
+	public FormularioFCPPage SalirFCP(File folderPath, String Evidencia) throws Exception {
 		
 		time(1);
-		captureScreen(folderPath, "captura Screen");
+		captureScreen(folderPath, "captura Screen",Evidencia);
 		time(2);
-		click(btnSalir, folderPath, "click salir");
+		click(btnSalir, folderPath, "click salir",Evidencia);
 		time(8);
 		
 		return this;
 	}
 	
 	@Step("Radicar FCP")
-	public FormularioFCPPage RadicarFCP(File folderPath) throws Exception {
+	public FormularioFCPPage RadicarFCP(File folderPath, String Evidencia) throws Exception {
 
 		time(3);
-		click(btnRadicar, folderPath, "click redicar");
+		click(btnRadicar, folderPath, "click redicar",Evidencia);
 		time(1);
 			
 		return this;
 	}
 
 	@Step("Firmar FCP")
-	public FormularioFCPPage FirmarFCP(File folderPath,String Firma) throws Exception {
+	public FormularioFCPPage FirmarFCP(File folderPath,String Firma, String Evidencia) throws Exception {
 		
 		ArrayList<String> ventana = new ArrayList<String>(driver.getWindowHandles());
 		driver.switchTo().window((String) ventana.get(1));
 		time(1);
-		click(btnFirma, folderPath, "click firma");
+		click(btnFirma, folderPath, "click firma",Evidencia);
 		time(1);
-		writeText(txtFirma, Firma, folderPath, "escribe firma");
-		captureScreen(folderPath, "captura Screen");
+		writeText(txtFirma, Firma, folderPath, "escribe firma",Evidencia);
+		captureScreen(folderPath, "captura Screen",Evidencia);
 		time(1);
-		click(btnEnviar, folderPath, "click enviar");
+		click(btnEnviar, folderPath, "click enviar",Evidencia);
 		time(3);
-		captureScreen(folderPath, "captura Screen");
-		click(btnSeguir, folderPath, "click seguir");
+		captureScreen(folderPath, "captura Screen",Evidencia);
+		click(btnSeguir, folderPath, "click seguir",Evidencia);
 		driver.switchTo().window((String) ventana.get(0));
 		
 		return this;
