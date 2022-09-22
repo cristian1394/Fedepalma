@@ -25,7 +25,7 @@ public class CargaMasivaDEX2Page extends CargaMasivaDEX2Map {
 		click(btnCarga,folderPath, "click xpath");
 		time(3);
 		File file = new File(DocACM);
-		time(1200);
+		time(2);
 		WebElement ruta = driver.findElement(btnArchivo);
 		ruta.sendKeys(file.getAbsolutePath());
 		time(1);

@@ -482,7 +482,7 @@ public class FormularioFSCPage extends FormularioFSCMap  {
         captureScreen(folderPath, "Capture screen");
         time(3);
         driver.findElement(Scape).sendKeys(Keys.ESCAPE); 
-        time(1500);
+        time(2);
         captureScreen(folderPath, "Capture screen");
         time(1);
         

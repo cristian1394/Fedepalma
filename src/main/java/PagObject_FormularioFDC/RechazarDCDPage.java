@@ -160,7 +160,7 @@ public class RechazarDCDPage extends RechazarDCDMap {
 		time(1);
 		click(btnFDCa,folderPath, "click xpath");
 		//por confirmar tiempo
-		time(0);
+		time(1);
 		click(btnSAno,folderPath, "click xpath");
 		time(1);
 		click(btnAno,folderPath, "click xpath");
