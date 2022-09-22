@@ -18,51 +18,51 @@ public class ExepcionesCrearDCDPage extends ExepcionesCrearDCDMap {
 	}
 
 	@Step("Crear DCD")
-    public ExepcionesCrearDCDPage CrearDCD(String nitcrear, String Kilos, File folderPath) throws Exception {
+    public ExepcionesCrearDCDPage CrearDCD(String nitcrear, String Kilos, File folderPath, String Evidencia) throws Exception {
         time(2);
         
-        click(btnCrear,folderPath, "click xpath");
+        click(btnCrear,folderPath, "click xpath" , Evidencia);
         time(3);
-        click(btnNit,folderPath, "click xpath");
+        click(btnNit,folderPath, "click xpath" , Evidencia);
         time(1);
-        writeText(txtNit, nitcrear, folderPath, "texto prueba");
-        click(btnDV,folderPath, "click xpath");
+        writeText(txtNit, nitcrear, folderPath, "texto prueba" , Evidencia);
+        click(btnDV,folderPath, "click xpath" , Evidencia);
         time(1);
-        click(btnSMes,folderPath, "click xpath");
-        click(btnMes,folderPath, "click xpath");
+        click(btnSMes,folderPath, "click xpath" , Evidencia);
+        click(btnMes,folderPath, "click xpath" , Evidencia);
         time(1);
-        click(btnSAno,folderPath, "click xpath");
+        click(btnSAno,folderPath, "click xpath" , Evidencia);
         time(1);
-        click(btnAno,folderPath, "click xpath");
+        click(btnAno,folderPath, "click xpath" , Evidencia);
         time(1);
-        click(btnProducto,folderPath, "click xpath");
+        click(btnProducto,folderPath, "click xpath" , Evidencia);
         time(1);
-        click(btnPalma,folderPath, "click xpath");
+        click(btnPalma,folderPath, "click xpath" , Evidencia);
         time(1);
-        click(btnMercado,folderPath, "click xpath");
+        click(btnMercado,folderPath, "click xpath" , Evidencia);
         time(1);
-        click(btnMCI,folderPath, "click xpath");
+        click(btnMCI,folderPath, "click xpath" , Evidencia);
         time(1);
-        click(btnKilos,folderPath, "click xpath");
+        click(btnKilos,folderPath, "click xpath" , Evidencia);
         time(1);
-        writeText(txtKilos, Kilos, folderPath, "texto prueba");
+        writeText(txtKilos, Kilos, folderPath, "texto prueba" , Evidencia);
         time(1);
-        click(btnExportar,folderPath, "click xpath");
+        click(btnExportar,folderPath, "click xpath" , Evidencia);
         time(1);
-        click(btnGuardar,folderPath, "click xpath");
+        click(btnGuardar,folderPath, "click xpath" , Evidencia);
         
         
         return this;
     }
 	
 	@Step("Validar Creacion DCD")
-    public ExepcionesCrearDCDPage ValidarCreacionDCD(String resultado, File folderPath) throws Exception {
+    public ExepcionesCrearDCDPage ValidarCreacionDCD(String resultado, File folderPath, String Evidencia) throws Exception {
         
 		time(1);
 		Assert.assertEquals(getElement(lblResultadoCrear).getText(),resultado);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
         time(2);
-        click(btnOk,folderPath, "click xpath");
+        click(btnOk,folderPath, "click xpath" , Evidencia);
         time(1);
         
         //Proceso realizado con éxito

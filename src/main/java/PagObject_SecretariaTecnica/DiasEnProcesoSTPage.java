@@ -15,26 +15,26 @@ public class DiasEnProcesoSTPage extends DiasEnProcesoSTMap {
 	}
 
 	@Step("Observar Revicion RYP")
-	public DiasEnProcesoSTPage ValidarST(File folderPath) throws Exception {
+	public DiasEnProcesoSTPage ValidarST(File folderPath, String Evidencia) throws Exception {
 
 		time(1);
 		ByPixel();
 		time(4);
-		scrollElementV(folderPath, btnlupa, "scroll ");
+		scrollElementV(folderPath, btnlupa, "scroll " , Evidencia);
 		time(4);
 		ByPixelA();
 		time(2);
-		click(btnDias,folderPath, "click xpath");
+		click(btnDias,folderPath, "click xpath" , Evidencia);
 		time(2);
-		click(btnDias,folderPath, "click xpath");
+		click(btnDias,folderPath, "click xpath" , Evidencia);
 		time(2);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(2);
-		click(btnLupa,folderPath, "click xpath");
+		click(btnLupa,folderPath, "click xpath" , Evidencia);
 		time(1);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(3);
-		click(btnSalir,folderPath, "click xpath");
+		click(btnSalir,folderPath, "click xpath" , Evidencia);
 		time(3);
 
 		return this;

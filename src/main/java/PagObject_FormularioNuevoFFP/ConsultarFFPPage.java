@@ -13,28 +13,28 @@ public class ConsultarFFPPage extends ConsultarFFPMap {
 	}
 
 	@Step("Consulta FFP")
-	public ConsultarFFPPage Consulta_FFP(File folderPath) throws Exception {
+	public ConsultarFFPPage Consulta_FFP(File folderPath, String Evidencia) throws Exception {
 
 		time(7);
-		click(btnFFP,folderPath, "click xpath");
+		click(btnFFP,folderPath, "click xpath" , Evidencia);
 		time(3);
-		click(btnNuevoFFP,folderPath, "click xpath");
+		click(btnNuevoFFP,folderPath, "click xpath" , Evidencia);
 		time(2);
-		click(btnSMes,folderPath, "click xpath");
+		click(btnSMes,folderPath, "click xpath" , Evidencia);
 		time(1);
-		click(btnMes,folderPath, "click xpath");
+		click(btnMes,folderPath, "click xpath" , Evidencia);
 		time(1);
-		click(btnSAno,folderPath, "click xpath");
+		click(btnSAno,folderPath, "click xpath" , Evidencia);
 		time(1);
-		click(btnAno,folderPath, "click xpath");
+		click(btnAno,folderPath, "click xpath" , Evidencia);
 		time(1);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(1);
-		click(btnBuscar,folderPath, "click xpath");
+		click(btnBuscar,folderPath, "click xpath" , Evidencia);
 		time(2);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(3);
-		click(btnOk,folderPath, "click xpath");
+		click(btnOk,folderPath, "click xpath" , Evidencia);
 		time(3);
 
 		return this;

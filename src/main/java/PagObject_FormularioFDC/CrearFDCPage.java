@@ -17,58 +17,58 @@ public class CrearFDCPage extends CrearFDCMap {
 	}
 
 	@Step("Crear FDC")
-    public CrearFDCPage CrearFDC(String Pais, String Producto, File folderPath) throws Exception {
+    public CrearFDCPage CrearFDC(String Pais, String Producto, File folderPath, String Evidencia) throws Exception {
         time(2);
         
-        click(btnCrear,folderPath, "click xpath");
+        click(btnCrear,folderPath, "click xpath" , Evidencia);
         time(3);
-        click(btnDEX,folderPath, "click xpath");
+        click(btnDEX,folderPath, "click xpath" , Evidencia);
         time(1);
         numeroAleatorio();
         time(1);
-        click(btnCalendario,folderPath, "click xpath");
+        click(btnCalendario,folderPath, "click xpath" , Evidencia);
         time(1);
-        click(btnSMes,folderPath, "click xpath");
+        click(btnSMes,folderPath, "click xpath" , Evidencia);
         time(1);
-        click(btnAño,folderPath, "click xpath");
+        click(btnAño,folderPath, "click xpath" , Evidencia);
         time(1);
-        click(btnMes,folderPath, "click xpath");
+        click(btnMes,folderPath, "click xpath" , Evidencia);
         time(1);
-        click(btnDia,folderPath, "click xpath");
+        click(btnDia,folderPath, "click xpath" , Evidencia);
         time(2);
-        click(btnPais,folderPath, "click xpath");
+        click(btnPais,folderPath, "click xpath" , Evidencia);
         time(1);
-        writeText(txtPais, Pais, folderPath, Producto);
+        writeText(txtPais, Pais, folderPath, Producto, Evidencia);
         time(1);
-        click(btnTipoPro,folderPath, "click xpath");
+        click(btnTipoPro,folderPath, "click xpath" , Evidencia);
         time(4);
-        click(btnSPalma,folderPath, "click xpath");
+        click(btnSPalma,folderPath, "click xpath" , Evidencia);
         time(1);
-        click(btnConsultar,folderPath, "click xpath");
+        click(btnConsultar,folderPath, "click xpath" , Evidencia);
         time(2);
-        click(btnDemostrados,folderPath, "click xpath");
+        click(btnDemostrados,folderPath, "click xpath" , Evidencia);
         time(1);
         String Total = getElement(lblTotal).getText();
         
-        click(btnPExpo,folderPath, "click xpath");
+        click(btnPExpo,folderPath, "click xpath" , Evidencia);
         time(1);
-        click(btnProducto,folderPath, "click xpath");
+        click(btnProducto,folderPath, "click xpath" , Evidencia);
         time(1);
-        writeText(txtProducto, Producto, folderPath, Total);
+        writeText(txtProducto, Producto, folderPath, Total, Evidencia);
         time(1);
-        click(btnPalma,folderPath, "click xpath");
+        click(btnPalma,folderPath, "click xpath" , Evidencia);
         time(1);
-        click(btnKilos,folderPath, "click xpath");
+        click(btnKilos,folderPath, "click xpath" , Evidencia);
         time(1);
-        writeText(txtKilos, Total, folderPath, Total);
+        writeText(txtKilos, Total, folderPath, Total, Evidencia);
         time(1);
-        click(btnAdicionar,folderPath, "click xpath");
+        click(btnAdicionar,folderPath, "click xpath" , Evidencia);
         time(1);
-        click(btnGuardar,folderPath, "click xpath");
-       captureScreen(folderPath, "Capture screen");
+        click(btnGuardar,folderPath, "click xpath" , Evidencia);
+       captureScreen(folderPath, "Capture screen" , Evidencia);
        
         
-       captureScreen(folderPath, "Capture screen");
+       captureScreen(folderPath, "Capture screen" , Evidencia);
         time(4);
         
         return this;

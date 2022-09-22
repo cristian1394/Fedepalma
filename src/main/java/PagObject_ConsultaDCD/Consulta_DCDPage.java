@@ -16,35 +16,35 @@ public class Consulta_DCDPage extends Consulta_DCDMap {
 	}
 
 	@Step("Consulta DCD")
-    public Consulta_DCDPage ConsultaDCD(String Proveedor, File folderPath) throws Exception {
+    public Consulta_DCDPage ConsultaDCD(String Proveedor, File folderPath, String Evidencia) throws Exception {
         
         time(5);
-        click(btnDemostracion,folderPath, "click xpath");
+        click(btnDemostracion,folderPath, "click xpath" , Evidencia);
         time(3);
-        click(btnDCD,folderPath, "click xpath");
+        click(btnDCD,folderPath, "click xpath" , Evidencia);
         time(1);
-        click(btnProveedor,folderPath, "click xpath");
+        click(btnProveedor,folderPath, "click xpath" , Evidencia);
         time(1);
-        writeText(txtProveedor, Proveedor, folderPath, "write");
+        writeText(txtProveedor, Proveedor, folderPath, "write" , Evidencia);
         time(1);
-        click(btnCI,folderPath, "click xpath");
+        click(btnCI,folderPath, "click xpath" , Evidencia);
         time(2);
-        click(btnSAno,folderPath, "click xpath");
+        click(btnSAno,folderPath, "click xpath" , Evidencia);
         time(1);
-        click(btnAno,folderPath, "click xpath");
+        click(btnAno,folderPath, "click xpath" , Evidencia);
         time(1);
-        click(btnSMes,folderPath, "click xpath");
+        click(btnSMes,folderPath, "click xpath" , Evidencia);
         time(1);
-        click(btnMes,folderPath, "click xpath");
+        click(btnMes,folderPath, "click xpath" , Evidencia);
         time(1);
-        click(btnProducto,folderPath, "click xpath");
+        click(btnProducto,folderPath, "click xpath" , Evidencia);
         time(1);
-        click(btnPalma,folderPath, "click xpath");
+        click(btnPalma,folderPath, "click xpath" , Evidencia);
 		
 		time(1);
-		click(btnBuscar,folderPath, "click xpath");
+		click(btnBuscar,folderPath, "click xpath" , Evidencia);
         time(4);
-        captureScreen(folderPath, "Capture screen");
+        captureScreen(folderPath, "Capture screen" , Evidencia);
         return this;
     }
 	

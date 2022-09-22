@@ -15,39 +15,39 @@ public class RellenarDCDPage extends RellenarDCDMap {
 	}
 
 	@Step("Rellenar Formulario DCD")
-    public RellenarDCDPage RellenarDCD(File folderPath) throws Exception {
+    public RellenarDCDPage RellenarDCD(File folderPath, String Evidencia) throws Exception {
         
 //		Utilidades.waitInMs(5000);
 //		WebElement Element = driver.findElement(btnDemostracion);
 //        JavascriptExecutor js = (JavascriptExecutor) driver;
 //        js.executeScript("arguments[0].scrollIntoView();", Element);
         time(1);
-        click(btnDemostracion,folderPath, "click xpath");
+        click(btnDemostracion,folderPath, "click xpath" , Evidencia);
 //        Utilidades.waitInMs(1);
 //        WebElement Elements = driver.findElement(btnDCD);
 //        JavascriptExecutor Js = (JavascriptExecutor) driver;
 //        Js.executeScript("arguments[0].scrollIntoView();", Elements);
         time(1);
-        captureScreen(folderPath, "Capture screen");
+        captureScreen(folderPath, "Capture screen" , Evidencia);
         time(1);
-        click(btnDCD,folderPath, "click xpath");
+        click(btnDCD,folderPath, "click xpath" , Evidencia);
         time(3);
-        click(btnEstado,folderPath, "click xpath");
+        click(btnEstado,folderPath, "click xpath" , Evidencia);
         time(1);
-        click(btnBorrador,folderPath, "click xpath");
+        click(btnBorrador,folderPath, "click xpath" , Evidencia);
         time(1);
-        click(btnSAno,folderPath, "click xpath");
+        click(btnSAno,folderPath, "click xpath" , Evidencia);
         time(1);
-        click(btnAno,folderPath, "click xpath");
+        click(btnAno,folderPath, "click xpath" , Evidencia);
         time(1);
-        click(btnMesN,folderPath, "click xpath");
+        click(btnMesN,folderPath, "click xpath" , Evidencia);
         time(1);
-        click(btnFebrero,folderPath, "click xpath");
-		captureScreen(folderPath, "Capture screen");
+        click(btnFebrero,folderPath, "click xpath" , Evidencia);
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(1);
-		click(btnBuscar,folderPath, "click xpath");
+		click(btnBuscar,folderPath, "click xpath" , Evidencia);
 		time(7);
-        captureScreen(folderPath, "Capture screen");
+        captureScreen(folderPath, "Capture screen" , Evidencia);
         
         return this;
     }

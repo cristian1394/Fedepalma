@@ -14,7 +14,7 @@ public class CargeFDCPage extends CargeFDCMap {
 	}
 
 	@Step("Cagar DEX")
-	public CargeFDCPage CagarDEX(String doc, File folderPath) throws Exception {
+	public CargeFDCPage CagarDEX(String doc, File folderPath, String Evidencia) throws Exception {
 		time(2);
 
 		time(8);
@@ -23,63 +23,63 @@ public class CargeFDCPage extends CargeFDCMap {
 		WebElement ruta = driver.findElement(btnCargaDEX);
 		ruta.sendKeys(file.getAbsolutePath());
 		time(1);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(3);
-		click(btnOk,folderPath, "click xpath");
+		click(btnOk,folderPath, "click xpath" , Evidencia);
 		time(1);
-		click(btnOkey,folderPath, "click xpath");
-		captureScreen(folderPath, "Capture screen");
+		click(btnOkey,folderPath, "click xpath" , Evidencia);
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(3);
 
 		return this;
 	}
 
 	@Step("Cagar FMM")
-	public CargeFDCPage CargaFMM(String doc, File folderPath) throws Exception {
+	public CargeFDCPage CargaFMM(String doc, File folderPath, String Evidencia) throws Exception {
 		time(8);
 		File file = new File(doc);
 		time(3);
 		WebElement ruta = driver.findElement(btnCargaFMM);
 		ruta.sendKeys(file.getAbsolutePath());
 		time(1);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(3);
-		click(btnOk,folderPath, "click xpath");
-		captureScreen(folderPath, "Capture screen");
+		click(btnOk,folderPath, "click xpath" , Evidencia);
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(3);
 
 		return this;
 	}
 
 	@Step("Cagar CD")
-	public CargeFDCPage CargaCD(String doc, File folderPath) throws Exception {
+	public CargeFDCPage CargaCD(String doc, File folderPath, String Evidencia) throws Exception {
 		time(8);
 		File file = new File(doc);
 		time(3);
 		WebElement ruta = driver.findElement(btnCargaCD);
 		ruta.sendKeys(file.getAbsolutePath());
 		time(1);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(3);
-		click(btnOk,folderPath, "click xpath");
+		click(btnOk,folderPath, "click xpath" , Evidencia);
 		time(3);
 
 		return this;
 	}
 
 	@Step("Cagar Poliza")
-	public CargeFDCPage CargaPoliza(String doc, File folderPath) throws Exception {
+	public CargeFDCPage CargaPoliza(String doc, File folderPath, String Evidencia) throws Exception {
 		time(8);
 		File file = new File(doc);
 		time(3);
 		WebElement ruta = driver.findElement(btnCargaPoliza);
 		ruta.sendKeys(file.getAbsolutePath());
 		time(1);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(3);
-		click(btnOk,folderPath, "click xpath");
+		click(btnOk,folderPath, "click xpath" , Evidencia);
 		time(3);
-		click(btnRevisar,folderPath, "click xpath");
+		click(btnRevisar,folderPath, "click xpath" , Evidencia);
 		time(3);
 
 		return this;

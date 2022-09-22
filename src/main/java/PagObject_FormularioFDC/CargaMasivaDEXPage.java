@@ -17,30 +17,30 @@ public class CargaMasivaDEXPage extends CargaMasivaDEXMap {
 	}
 
 	@Step("Carga Masiva DEX")
-	public CargaMasivaDEXPage CargaDEX(String exc, String resultado, File folderPath) throws Exception {
+	public CargaMasivaDEXPage CargaDEX(String exc, String resultado, File folderPath, String Evidencia) throws Exception {
 		time(1);
 
 		ByPixel();
 		time(1);
-		click(btnCarga,folderPath, "click xpath");
+		click(btnCarga,folderPath, "click xpath" , Evidencia);
 		time(2);
 		File file = new File(exc);
 		time(2);
 		WebElement ruta = driver.findElement(btnArchivo);
 		ruta.sendKeys(file.getAbsolutePath());
 		time(1);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(3);
-		click(btnOk,folderPath, "click xpath");
+		click(btnOk,folderPath, "click xpath" , Evidencia);
 		time(6);
 		Assert.assertEquals(getElement(lblResultadoBorrar).getText(), resultado);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(2);
-		click(btnOkey,folderPath, "click xpath");
-		captureScreen(folderPath, "Capture screen");
+		click(btnOkey,folderPath, "click xpath" , Evidencia);
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(1);
-		click(btnCancelar,folderPath, "click xpath");
-		captureScreen(folderPath, "Capture screen");
+		click(btnCancelar,folderPath, "click xpath" , Evidencia);
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(2);
 
 		return this;

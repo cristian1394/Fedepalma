@@ -17,20 +17,20 @@ public class NuevaDeclaracionEPage extends NuevaDeclaracionEMap {
 
 	@Step("Nueva Declaracion FFP")
 	public NuevaDeclaracionEPage NuevaDeclaracionFFP(String DocRPF, String PropiosG, String PropiosH, String RPFG,
-			String RPFH,  File folderPath ) throws Exception {
+			String RPFH,  File folderPath, String Evidencia ) throws Exception {
 
 		time(5);
-		click(btnNuevo,folderPath, "click xpath");
+		click(btnNuevo,folderPath, "click xpath" , Evidencia);
 		time(8);
-		writeText(txtCultivosG, PropiosG, folderPath, RPFH);
+		writeText(txtCultivosG, PropiosG, folderPath, RPFH, Evidencia);
 		time(1);
-		writeText(txtCultivosH, PropiosH, folderPath, RPFH);
+		writeText(txtCultivosH, PropiosH, folderPath, RPFH, Evidencia);
 		time(1);
-		click(btnComprado,folderPath, "click xpath");
+		click(btnComprado,folderPath, "click xpath" , Evidencia);
 		time(1);
-		click(btnTipoPersona,folderPath, "click xpath");
+		click(btnTipoPersona,folderPath, "click xpath" , Evidencia);
 		time(1);
-		click(btnNatural,folderPath, "click xpath");
+		click(btnNatural,folderPath, "click xpath" , Evidencia);
 
 		time(1);
 		String[] Nit = { "12641866", "57280085", "30929115", "36932674", "13842995" };
@@ -40,27 +40,27 @@ public class NuevaDeclaracionEPage extends NuevaDeclaracionEMap {
 		String txtNit = String.valueOf(Nit[Nit2]);
 
 		time(1);
-		writeText(txtNitA, txtNit, folderPath, txtNit);
+		writeText(txtNitA, txtNit, folderPath, txtNit, Evidencia);
 		time(1);
-		click(btnPredio,folderPath, "click xpath");
+		click(btnPredio,folderPath, "click xpath" , Evidencia);
 		time(2);
-		click(btnOpcionA,folderPath, "click xpath");
+		click(btnOpcionA,folderPath, "click xpath" , Evidencia);
 		time(1);
 		time(1);
-		writeText(txtCompradorG, RPFG, folderPath, txtNit);
+		writeText(txtCompradorG, RPFG, folderPath, txtNit, Evidencia);
 		time(1);
-		writeText(txtCompradorH, RPFH, folderPath, txtNit);
+		writeText(txtCompradorH, RPFH, folderPath, txtNit, Evidencia);
 		time(1);
-		click(btnAdicionarRPF,folderPath, "click xpath");
+		click(btnAdicionarRPF,folderPath, "click xpath" , Evidencia);
 		time(3);
 		File file = new File(DocRPF);
 		time(2);
 		WebElement ruta = driver.findElement(btnArchivo);
 		ruta.sendKeys(file.getAbsolutePath());
 		time(1);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(3);
-		click(btnGuardarRPF,folderPath, "click xpath");
+		click(btnGuardarRPF,folderPath, "click xpath" , Evidencia);
 		time(2);
 
 		return this;
@@ -68,20 +68,20 @@ public class NuevaDeclaracionEPage extends NuevaDeclaracionEMap {
 
 	@Step("Nueva Declaracion FFP")
 	public NuevaDeclaracionEPage NuevaDeclaracionFFP1(String DocRPF, String PropiosG, String PropiosH, String RPFG,
-			String RPFH,  File folderPath) throws Exception {
+			String RPFH,  File folderPath, String Evidencia) throws Exception {
 
 		time(5);
-		click(btnNuevo,folderPath, "click xpath");
+		click(btnNuevo,folderPath, "click xpath" , Evidencia);
 		time(8);
-		writeText(txtCultivosG, PropiosG, folderPath, RPFH);
+		writeText(txtCultivosG, PropiosG, folderPath, RPFH, Evidencia);
 		time(1);
-		writeText(txtCultivosH, PropiosH, folderPath, RPFH);
+		writeText(txtCultivosH, PropiosH, folderPath, RPFH, Evidencia);
 		time(1);
-		click(btnComprado,folderPath, "click xpath");
+		click(btnComprado,folderPath, "click xpath" , Evidencia);
 		time(1);
-		click(btnTipoPersona,folderPath, "click xpath");
+		click(btnTipoPersona,folderPath, "click xpath" , Evidencia);
 		time(1);
-		click(btnNatural,folderPath, "click xpath");
+		click(btnNatural,folderPath, "click xpath" , Evidencia);
 
 		time(1);
 		String[] Nit = { "12641866", "57280085", "30929115", "36932674", "13842995" };
@@ -91,57 +91,57 @@ public class NuevaDeclaracionEPage extends NuevaDeclaracionEMap {
 		String txtNit = String.valueOf(Nit[Nit2]);
 
 		time(1);
-		writeText(txtNitA, txtNit, folderPath, txtNit);
+		writeText(txtNitA, txtNit, folderPath, txtNit, Evidencia);
 		time(1);
-		click(btnPredio,folderPath, "click xpath");
+		click(btnPredio,folderPath, "click xpath" , Evidencia);
 		time(2);
-		click(btnOpcionA1,folderPath, "click xpath");
+		click(btnOpcionA1,folderPath, "click xpath" , Evidencia);
 		time(1);
 		time(1);
-		writeText(txtCompradorG, RPFG, folderPath, txtNit);
+		writeText(txtCompradorG, RPFG, folderPath, txtNit, Evidencia);
 		time(1);
-		writeText(txtCompradorH, RPFH, folderPath, txtNit);
+		writeText(txtCompradorH, RPFH, folderPath, txtNit, Evidencia);
 		time(1);
-		click(btnAdicionarRPF,folderPath, "click xpath");
+		click(btnAdicionarRPF,folderPath, "click xpath" , Evidencia);
 		time(3);
 		File file = new File(DocRPF);
 		time(2);
 		WebElement ruta = driver.findElement(btnArchivo);
 		ruta.sendKeys(file.getAbsolutePath());
 		time(1);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(3);
-		click(btnGuardarRPF,folderPath, "click xpath");
+		click(btnGuardarRPF,folderPath, "click xpath" , Evidencia);
 		time(2);
 
 		return this;
 	}
 
 	@Step("Fruto Vendido FFP")
-	public NuevaDeclaracionEPage FrutoVendidoFFP(String InicialFrutoG, String InicialFrutoH ,File folderPath) throws Exception {
+	public NuevaDeclaracionEPage FrutoVendidoFFP(String InicialFrutoG, String InicialFrutoH ,File folderPath, String Evidencia) throws Exception {
 
 		time(1);
-		writeText(txtInicialFrutoG, InicialFrutoG, folderPath, InicialFrutoH);
+		writeText(txtInicialFrutoG, InicialFrutoG, folderPath, InicialFrutoH, Evidencia);
 		time(1);
-		writeText(txtInicialFrutoH, InicialFrutoH, folderPath, InicialFrutoH);
+		writeText(txtInicialFrutoH, InicialFrutoH, folderPath, InicialFrutoH, Evidencia);
 		time(1);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(3);
 
 		return this;
 	}
 
 	@Step("Fruto Enviado a Maquilar FFP")
-	public NuevaDeclaracionEPage FrutoEnviadoFFP(String BajaFrutoG, String BajaFrutoH, String NoProcesadoH, File folderPath) throws Exception {
+	public NuevaDeclaracionEPage FrutoEnviadoFFP(String BajaFrutoG, String BajaFrutoH, String NoProcesadoH, File folderPath, String Evidencia) throws Exception {
 
 		time(1);
-		writeText(txtBajaFrutoG, BajaFrutoG, folderPath, NoProcesadoH);
+		writeText(txtBajaFrutoG, BajaFrutoG, folderPath, NoProcesadoH, Evidencia);
 		time(1);
-		writeText(txtBajaFrutoH, BajaFrutoH, folderPath, NoProcesadoH);
+		writeText(txtBajaFrutoH, BajaFrutoH, folderPath, NoProcesadoH, Evidencia);
 		time(2);
-		writeText(txtFrutoNoProcesadoH, NoProcesadoH, folderPath, NoProcesadoH);
+		writeText(txtFrutoNoProcesadoH, NoProcesadoH, folderPath, NoProcesadoH, Evidencia);
 		time(1);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(2);
 
 		return this;
@@ -149,16 +149,16 @@ public class NuevaDeclaracionEPage extends NuevaDeclaracionEMap {
 
 	@Step("Proveedores de Almendra FFP")
 	public NuevaDeclaracionEPage ProveedoresAlmendra(String DocRPA, String PPalmaIngresada, String RPalmaIngresada,
-			String KG, File folderPath) throws Exception {
+			String KG, File folderPath, String Evidencia) throws Exception {
 
 		time(1);
-		writeText(txtPPalmaIngresada, PPalmaIngresada, folderPath, KG);
+		writeText(txtPPalmaIngresada, PPalmaIngresada, folderPath, KG, Evidencia);
 		time(2);
-		writeText(txtRPalmaIngresada, RPalmaIngresada, folderPath, KG);
+		writeText(txtRPalmaIngresada, RPalmaIngresada, folderPath, KG, Evidencia);
 		time(1);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(3);
-		click(btnCompraIngresada,folderPath, "click xpath");
+		click(btnCompraIngresada,folderPath, "click xpath" , Evidencia);
 
 		time(1);
 		String[] Nit = { "10050467882", "6088235", "860002527", "2155004", "32005286" };
@@ -168,20 +168,20 @@ public class NuevaDeclaracionEPage extends NuevaDeclaracionEMap {
 		String txtNit = String.valueOf(Nit[Nit2]);
 
 		time(1);
-		writeText(txtNitE, txtNit, folderPath, txtNit);
+		writeText(txtNitE, txtNit, folderPath, txtNit, Evidencia);
 		time(1);
-		writeText(txtkg, KG, folderPath, txtNit);
+		writeText(txtkg, KG, folderPath, txtNit, Evidencia);
 		time(1);
-		click(btnAdicionarRPA,folderPath, "click xpath");
+		click(btnAdicionarRPA,folderPath, "click xpath" , Evidencia);
 		time(3);
 		File file = new File(DocRPA);
 		time(2);
 		WebElement ruta = driver.findElement(btnCargaRPA);
 		ruta.sendKeys(file.getAbsolutePath());
 		time(1);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(3);
-		click(btnGuardarRPA,folderPath, "click xpath");
+		click(btnGuardarRPA,folderPath, "click xpath" , Evidencia);
 		time(2);
 
 		return this;
@@ -189,10 +189,10 @@ public class NuevaDeclaracionEPage extends NuevaDeclaracionEMap {
 
 	@Step("Almendra Recibida FFP")
 	public NuevaDeclaracionEPage AlmendraRecibida(String DocARPM, String KG, String PalmaProcesada,
-			String PalmaRecibida, String PalmisteRecibida, File folderPath) throws Exception {
+			String PalmaRecibida, String PalmisteRecibida, File folderPath, String Evidencia) throws Exception {
 
 		time(1);
-		click(btnRecibidaIngresada,folderPath, "click xpath");
+		click(btnRecibidaIngresada,folderPath, "click xpath" , Evidencia);
 
 		time(1);
 		String[] Nit = { "12457001", "12516054", "816004403", "1093911400", "900754604" };
@@ -202,33 +202,33 @@ public class NuevaDeclaracionEPage extends NuevaDeclaracionEMap {
 		String txtNit = String.valueOf(Nit[Nit2]);
 
 		time(1);
-		writeText(txtNitF, txtNit, folderPath, txtNit);
+		writeText(txtNitF, txtNit, folderPath, txtNit, Evidencia);
 		time(1);
-		writeText(txtKg, KG, folderPath, txtNit);
+		writeText(txtKg, KG, folderPath, txtNit, Evidencia);
 		time(1);
-		click(btnAdicionarARPM,folderPath, "click xpath");
+		click(btnAdicionarARPM,folderPath, "click xpath" , Evidencia);
 		time(3);
 		File file = new File(DocARPM);
 		time(2);
 		WebElement ruta = driver.findElement(btnCargaARPM);
 		ruta.sendKeys(file.getAbsolutePath());
 		time(1);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(3);
-		click(btnGuardarARPM,folderPath, "click xpath");
+		click(btnGuardarARPM,folderPath, "click xpath" , Evidencia);
 		time(2);
 
 		time(1);
-		writeText(txtPalmaProcesada, PalmaProcesada, file, txtNit);
+		writeText(txtPalmaProcesada, PalmaProcesada, file, txtNit, Evidencia);
 		time(1);
-		writeText(txtRecibidaProcesada, PalmaRecibida, file, txtNit);
+		writeText(txtRecibidaProcesada, PalmaRecibida, file, txtNit, Evidencia);
 		time(1);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(3);
 
-		writeText(txtProducidaRecibida, PalmisteRecibida, file, txtNit);
+		writeText(txtProducidaRecibida, PalmisteRecibida, file, txtNit, Evidencia);
 		time(1);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(3);
 
 		return this;

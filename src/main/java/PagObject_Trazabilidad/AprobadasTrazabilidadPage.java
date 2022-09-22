@@ -16,16 +16,16 @@ public class AprobadasTrazabilidadPage extends AprobadasTrazabilidadMap {
 	}
 
 	@Step("compensaciones Aprobadas en trámite")
-    public AprobadasTrazabilidadPage AprobadasTrazabilidad(File folderPath) throws Exception {
+    public AprobadasTrazabilidadPage AprobadasTrazabilidad(File folderPath, String Evidencia) throws Exception {
 		
 		time(1);
-        click(btnAprobadas,folderPath, "click xpath");
+        click(btnAprobadas,folderPath, "click xpath" , Evidencia);
         time(1);
-        click(btnConsultar,folderPath, "click xpath");
+        click(btnConsultar,folderPath, "click xpath" , Evidencia);
         time(1);
         
         time(2);
-        click(btnExportar,folderPath, "click xpath");
+        click(btnExportar,folderPath, "click xpath" , Evidencia);
         
         /*Utilidades.waitInMs(1);
         click(btnFiltra);
@@ -36,7 +36,7 @@ public class AprobadasTrazabilidadPage extends AprobadasTrazabilidadMap {
         Utilidades.waitInMs(1);
         click(btnfiltrar);
         Utilidades.waitInMs(1);
-        captureScreen(folderPath, "Capture screen");
+        captureScreen(folderPath, "Capture screen" , Evidencia);
 		
         click(btnDeclarante);
         Utilidades.waitInMs(1);
@@ -48,7 +48,7 @@ public class AprobadasTrazabilidadPage extends AprobadasTrazabilidadMap {
         Utilidades.waitInMs(1);
         click(btnFiltrarD);
         Utilidades.waitInMs(1);
-        captureScreen(folderPath, "Capture screen");
+        captureScreen(folderPath, "Capture screen" , Evidencia);
         
         click(btnComprador);
         Utilidades.waitInMs(900);
@@ -60,7 +60,7 @@ public class AprobadasTrazabilidadPage extends AprobadasTrazabilidadMap {
         Utilidades.waitInMs(1);
         click(btnFiltrarC);
         Utilidades.waitInMs(1);
-        captureScreen(folderPath, "Capture screen");
+        captureScreen(folderPath, "Capture screen" , Evidencia);
         
         Utilidades.waitInMs(800);
         click(btnDCD);
@@ -73,7 +73,7 @@ public class AprobadasTrazabilidadPage extends AprobadasTrazabilidadMap {
         Utilidades.waitInMs(1);
         click(btnFiltrar);
         Utilidades.waitInMs(1);
-        captureScreen(folderPath, "Capture screen");
+        captureScreen(folderPath, "Capture screen" , Evidencia);
         
         String Producto = getElement(lblProducto).getText();
         click(btnProducto);
@@ -82,7 +82,7 @@ public class AprobadasTrazabilidadPage extends AprobadasTrazabilidadMap {
         Utilidades.waitInMs(1);
         click(btnFiltrarP);
         Utilidades.waitInMs(1);
-        captureScreen(folderPath, "Capture screen");
+        captureScreen(folderPath, "Capture screen" , Evidencia);
         
         Utilidades.waitInMs(800);
         click(btnGrupoMercado);
@@ -96,18 +96,18 @@ public class AprobadasTrazabilidadPage extends AprobadasTrazabilidadMap {
         click(btnFiltrarG);
         */
         time(6);
-        captureScreen(folderPath, "Capture screen");
+        captureScreen(folderPath, "Capture screen" , Evidencia);
         
         return this;
     }
 	
 	@Step("Observar Trazabilidad")
-    public AprobadasTrazabilidadPage VerTrazabilidad(File folderPath) throws Exception {
+    public AprobadasTrazabilidadPage VerTrazabilidad(File folderPath, String Evidencia) throws Exception {
 
 		time(1);
-		click(btnVer,folderPath, "click xpath");
+		click(btnVer,folderPath, "click xpath" , Evidencia);
 		time(1);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
         time(10);
         
         return this;

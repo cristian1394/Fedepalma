@@ -15,96 +15,96 @@ public class TramitesTrazabilidadPage extends TramitesTrazabilidadMap {
 	}
 
 	@Step("compensaciones en trámite")
-    public TramitesTrazabilidadPage EnTramiteTrazabilidad(String Termina, String Declarante, String Contiene, String Dcd, String Grupo,File folderPath) throws Exception {
+    public TramitesTrazabilidadPage EnTramiteTrazabilidad(String Termina, String Declarante, String Contiene, String Dcd, String Grupo,File folderPath, String Evidencia) throws Exception {
 		
 		time(1);
-        click(btnEnTramite,folderPath, "click xpath");
+        click(btnEnTramite,folderPath, "click xpath" , Evidencia);
         time(1);
-        click(btnConsultar,folderPath, "click xpath");
+        click(btnConsultar,folderPath, "click xpath" , Evidencia);
         time(1);
         
         time(2);
-        click(btnMes,folderPath, "click xpath");
+        click(btnMes,folderPath, "click xpath" , Evidencia);
         time(1);
-        click(btnFiltra,folderPath, "click xpath");
+        click(btnFiltra,folderPath, "click xpath" , Evidencia);
         time(1);
-        click(btnTermina,folderPath, "click xpath");
+        click(btnTermina,folderPath, "click xpath" , Evidencia);
         time(1);
-        writeText(txtMes, Termina, folderPath, Grupo);
+        writeText(txtMes, Termina, folderPath, Grupo, Evidencia);
         time(1);
-        click(btnfiltrar,folderPath, "click xpath");
+        click(btnfiltrar,folderPath, "click xpath" , Evidencia);
         time(1);
-        captureScreen(folderPath, "Capture screen");
+        captureScreen(folderPath, "Capture screen" , Evidencia);
 		
-        click(btnDeclarante,folderPath, "click xpath");
+        click(btnDeclarante,folderPath, "click xpath" , Evidencia);
         time(1);
-        click(btnFiltro,folderPath, "click xpath");
+        click(btnFiltro,folderPath, "click xpath" , Evidencia);
         time(1);
-        click(btnComienza,folderPath, "click xpath");
+        click(btnComienza,folderPath, "click xpath" , Evidencia);
         time(1);
-        writeText(txtInicial, Declarante, folderPath, Grupo);
+        writeText(txtInicial, Declarante, folderPath, Grupo, Evidencia);
         time(1);
-        click(btnFiltrarD,folderPath, "click xpath");
+        click(btnFiltrarD,folderPath, "click xpath" , Evidencia);
         time(1);
-        captureScreen(folderPath, "Capture screen");
+        captureScreen(folderPath, "Capture screen" , Evidencia);
         
-        click(btnComprador,folderPath, "click xpath");
+        click(btnComprador,folderPath, "click xpath" , Evidencia);
         time(1);
-        click(btnlista,folderPath, "click xpath");
+        click(btnlista,folderPath, "click xpath" , Evidencia);
         time(1);
-        click(btnContiene,folderPath, "click xpath");
+        click(btnContiene,folderPath, "click xpath" , Evidencia);
         time(1);
-        writeText(txtContiene, Contiene, folderPath, Grupo);
+        writeText(txtContiene, Contiene, folderPath, Grupo, Evidencia);
         time(1);
-        click(btnFiltrarC,folderPath, "click xpath");
+        click(btnFiltrarC,folderPath, "click xpath" , Evidencia);
         time(1);
-        captureScreen(folderPath, "Capture screen");
+        captureScreen(folderPath, "Capture screen" , Evidencia);
         
         time(1);
-        click(btnDCD,folderPath, "click xpath");
+        click(btnDCD,folderPath, "click xpath" , Evidencia);
         time(1);
-        click(btnfiltra,folderPath, "click xpath");
+        click(btnfiltra,folderPath, "click xpath" , Evidencia);
         time(1);
-        click(btnDiferente,folderPath, "click xpath");
+        click(btnDiferente,folderPath, "click xpath" , Evidencia);
         time(1);
-        writeText(txtDCD, Dcd, folderPath, Grupo);
+        writeText(txtDCD, Dcd, folderPath, Grupo, Evidencia);
         time(1);
-        click(btnFiltrar,folderPath, "click xpath");
+        click(btnFiltrar,folderPath, "click xpath" , Evidencia);
         time(1);
-        captureScreen(folderPath, "Capture screen");
+        captureScreen(folderPath, "Capture screen" , Evidencia);
         
         String Producto = getElement(lblProducto).getText();
-        click(btnProducto,folderPath, "click xpath");
+        click(btnProducto,folderPath, "click xpath" , Evidencia);
         time(1);
-        writeText(txtProducto, Producto, folderPath, Producto);
+        writeText(txtProducto, Producto, folderPath, Producto, Evidencia);
         time(1);
-        click(btnFiltrarP,folderPath, "click xpath");
+        click(btnFiltrarP,folderPath, "click xpath" , Evidencia);
         time(1);
-        captureScreen(folderPath, "Capture screen");
+        captureScreen(folderPath, "Capture screen" , Evidencia);
         
         time(1);
-        click(btnGrupoMercado,folderPath, "click xpath");
+        click(btnGrupoMercado,folderPath, "click xpath" , Evidencia);
         time(1);
-        click(btnLista,folderPath, "click xpath");
+        click(btnLista,folderPath, "click xpath" , Evidencia);
         time(1);
-        click(btnNoContiene,folderPath, "click xpath");
+        click(btnNoContiene,folderPath, "click xpath" , Evidencia);
         time(1);
-        writeText(txtGrupo, Grupo, folderPath, Producto);
+        writeText(txtGrupo, Grupo, folderPath, Producto, Evidencia);
         time(1);
-        click(btnFiltrarG,folderPath, "click xpath");
+        click(btnFiltrarG,folderPath, "click xpath" , Evidencia);
         time(8);
-        captureScreen(folderPath, "Capture screen");
+        captureScreen(folderPath, "Capture screen" , Evidencia);
         
         return this;
     }
 	
 	@Step("Observar Trazabilidad")
-    public TramitesTrazabilidadPage VerTrazabilidad(File folderPath) throws Exception {
+    public TramitesTrazabilidadPage VerTrazabilidad(File folderPath, String Evidencia) throws Exception {
 
 		time(1);
-		click(btnVer,folderPath, "click xpath");
+		click(btnVer,folderPath, "click xpath" , Evidencia);
 		time(1);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
         time(10);
         
         return this;

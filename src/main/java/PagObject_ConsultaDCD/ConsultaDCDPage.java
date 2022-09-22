@@ -16,39 +16,39 @@ public class ConsultaDCDPage extends ConsultaDCDMap {
 	}
 
 	@Step("Consulta DCD")
-	public ConsultaDCDPage ConsultaDCD(File folderPath) throws Exception {
+	public ConsultaDCDPage ConsultaDCD(File folderPath, String Evidencia) throws Exception {
 
 		time(5);
-		click(btnDemostracion, folderPath, "click xpath");
+		click(btnDemostracion, folderPath, "click xpath" , Evidencia);
 		time(3);
-		click(btnDCD, folderPath, "click xpath");
+		click(btnDCD, folderPath, "click xpath" , Evidencia);
 		time(1);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		return this;
 	}
 
 	@Step("Revicion DCD")
-	public ConsultaDCDPage RevicionDCD(File folderPath) throws Exception {
+	public ConsultaDCDPage RevicionDCD(File folderPath, String Evidencia) throws Exception {
 
 		time(1);
 		ByPixel();
 		time(1);
-		click(btnRevisar, folderPath, "click xpath");
+		click(btnRevisar, folderPath, "click xpath" , Evidencia);
 		time(1);
 
 		return this;
 	}
 
 	@Step("Validar Revicion DCD")
-	public ConsultaDCDPage ValidarRevicionDCD(String Resultado,File folderPath) throws Exception {
+	public ConsultaDCDPage ValidarRevicionDCD(String Resultado,File folderPath, String Evidencia) throws Exception {
 
 		time(6);
 		Assert.assertEquals(getElement(lblResultadoRevicion).getText(), Resultado);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(1);
-		click(btnOk, folderPath, "click xpath");
+		click(btnOk, folderPath, "click xpath" , Evidencia);
 		time(2);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		return this;
 	}
 

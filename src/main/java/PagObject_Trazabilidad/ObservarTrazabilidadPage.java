@@ -16,12 +16,12 @@ public class ObservarTrazabilidadPage extends ObservarTrazabilidadMap {
 	}
 
 	@Step("Observar Trazabilidad")
-    public ObservarTrazabilidadPage VerTrazabilidad(File folderPath) throws Exception {
+    public ObservarTrazabilidadPage VerTrazabilidad(File folderPath, String Evidencia) throws Exception {
 
 		time(1);
-		click(btnVer,folderPath, "click xpath");
+		click(btnVer,folderPath, "click xpath" , Evidencia);
 		time(1);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
         time(10);
         
         return this;

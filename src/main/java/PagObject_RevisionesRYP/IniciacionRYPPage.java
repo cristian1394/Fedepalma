@@ -14,19 +14,19 @@ public class IniciacionRYPPage extends IniciacionRYMap {
 	}
 
 	@Step("Iniciar Menu RYP")
-	public IniciacionRYPPage IniciarRYP(File folderPath) throws Exception {
+	public IniciacionRYPPage IniciarRYP(File folderPath, String Evidencia) throws Exception {
 		time(5);
-		scrollElementV(folderPath, btnDemostracion, "scroll ");
+		scrollElementV(folderPath, btnDemostracion, "scroll " , Evidencia);
 		time(1);
-		click(btnDemostracion,folderPath, "click xpath");
+		click(btnDemostracion,folderPath, "click xpath" , Evidencia);
 		time(2);
-		scrollElementV(folderPath, btnRYP, "scroll ");
+		scrollElementV(folderPath, btnRYP, "scroll " , Evidencia);
 		time(1);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(1);
-		click(btnRYP,folderPath, "click xpath");
+		click(btnRYP,folderPath, "click xpath" , Evidencia);
 		time(1);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(3);
 
 		return this;

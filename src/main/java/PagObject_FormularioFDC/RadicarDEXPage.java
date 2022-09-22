@@ -16,47 +16,47 @@ public RadicarDEXPage(WebDriver driver) {
 	}
 
 @Step("Radicar FDC")
-public RadicarDEXPage RadicarFDC(File folderPath) throws Exception {
+public RadicarDEXPage RadicarFDC(File folderPath, String Evidencia) throws Exception {
 
 	time(3);
-	click(btnRadicar,folderPath, "click xpath");
+	click(btnRadicar,folderPath, "click xpath" , Evidencia);
 	time(1);
-	click(btnOk,folderPath, "click xpath");
+	click(btnOk,folderPath, "click xpath" , Evidencia);
 	time(1);
-	click(btnCerrar,folderPath, "click xpath");
+	click(btnCerrar,folderPath, "click xpath" , Evidencia);
 	time(1);
 		
 	return this;
 }
 
 @Step("Firmar FDC")
-public RadicarDEXPage FirmarFDC(String Firma, File folderPath) throws Exception {
+public RadicarDEXPage FirmarFDC(String Firma, File folderPath, String Evidencia) throws Exception {
 	
 	ArrayList<String> ventana = new ArrayList<String>(driver.getWindowHandles());
 	driver.switchTo().window((String) ventana.get(1));
 	time(25);
-	click(btnFirma,folderPath, "click xpath");
+	click(btnFirma,folderPath, "click xpath" , Evidencia);
 	time(1);
-	writeText(txtFirma, Firma, folderPath, Firma);
-	captureScreen(folderPath, "Capture screen");
+	writeText(txtFirma, Firma, folderPath, Firma, Evidencia);
+	captureScreen(folderPath, "Capture screen" , Evidencia);
 	time(1);
-	click(btnEnviar,folderPath, "click xpath");
+	click(btnEnviar,folderPath, "click xpath" , Evidencia);
 	time(3);
-	captureScreen(folderPath, "Capture screen");
-	click(btnSeguir,folderPath, "click xpath");
+	captureScreen(folderPath, "Capture screen" , Evidencia);
+	click(btnSeguir,folderPath, "click xpath" , Evidencia);
 	driver.switchTo().window((String) ventana.get(0));
 	
 	return this;
 }
 
 @Step("Salir FDC")
-public RadicarDEXPage SalirFDC(File folderPath) throws Exception {
+public RadicarDEXPage SalirFDC(File folderPath, String Evidencia) throws Exception {
 	
 	time(9);
-    captureScreen(folderPath, "Capture screen");
-    click(btnSalir,folderPath, "click xpath");
+    captureScreen(folderPath, "Capture screen" , Evidencia);
+    click(btnSalir,folderPath, "click xpath" , Evidencia);
     time(5);
-    captureScreen(folderPath, "Capture screen");
+    captureScreen(folderPath, "Capture screen" , Evidencia);
 	
 	return this;
 }

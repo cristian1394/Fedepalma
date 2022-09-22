@@ -14,17 +14,17 @@ public class IniciacionSTPage extends IniciacionSTMap {
 	}
 
 	@Step("Iniciar Menu Secretaria Tecnica")
-	public IniciacionSTPage IniciarST(File folderPath) throws Exception {
+	public IniciacionSTPage IniciarST(File folderPath, String Evidencia) throws Exception {
 		time(5);
 		time(2);
-		scrollElementV(folderPath, btnDemostracion, "scroll ");
-		click(btnDemostracion,folderPath, "click xpath");
+		scrollElementV(folderPath, btnDemostracion, "scroll " , Evidencia);
+		click(btnDemostracion,folderPath, "click xpath" , Evidencia);
 		time(2);
-		scrollElementV(folderPath, btnSTecnica, "scroll ");
+		scrollElementV(folderPath, btnSTecnica, "scroll " , Evidencia);
 		time(1);
-		click(btnSTecnica,folderPath, "click xpath");
+		click(btnSTecnica,folderPath, "click xpath" , Evidencia);
 		time(1);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(2);
 
 		return this;

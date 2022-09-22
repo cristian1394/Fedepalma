@@ -14,110 +14,110 @@ public class FirmaGerentePage extends FirmaGerenteMap {
 	}
 
 	@Step("Declaracion gerente FFP")
-	public FirmaGerentePage DeclararFFP(String RPFH, String PalmisteE, String PPalmaIngresada, File folderPath) throws Exception {
+	public FirmaGerentePage DeclararFFP(String RPFH, String PalmisteE, String PPalmaIngresada, File folderPath, String Evidencia) throws Exception {
 
 		time(5);
-		click(btnFFP,folderPath, "click xpath");
+		click(btnFFP,folderPath, "click xpath" , Evidencia);
 		time(3);
-		click(btnNuevoFFP,folderPath, "click xpath");
+		click(btnNuevoFFP,folderPath, "click xpath" , Evidencia);
 		time(2);
-		click(btnSMes,folderPath, "click xpath");
+		click(btnSMes,folderPath, "click xpath" , Evidencia);
 		time(1);
-		click(btnMes,folderPath, "click xpath");
+		click(btnMes,folderPath, "click xpath" , Evidencia);
 		time(1);
-		click(btnSAno,folderPath, "click xpath");
+		click(btnSAno,folderPath, "click xpath" , Evidencia);
 		time(1);
-		click(btnAno,folderPath, "click xpath");
+		click(btnAno,folderPath, "click xpath" , Evidencia);
 		time(1);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(1);
-		click(btnBuscar,folderPath, "click xpath");
+		click(btnBuscar,folderPath, "click xpath" , Evidencia);
 		time(2);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(3);
-		click(btnEditar,folderPath, "click xpath");
+		click(btnEditar,folderPath, "click xpath" , Evidencia);
 		time(19);
-		clear(txtFrutoBaja,folderPath, "click xpath");
+		clear(txtFrutoBaja,folderPath, "click xpath" , Evidencia);
 		time(1);
-		writeText(txtFrutoBaja, RPFH, folderPath, PPalmaIngresada);
+		writeText(txtFrutoBaja, RPFH, folderPath, PPalmaIngresada, Evidencia);
 		time(3);
-		clear(txtPalma,folderPath, "click xpath");
+		clear(txtPalma,folderPath, "click xpath" , Evidencia);
 		time(1);
-		writeText(txtPalma, PalmisteE, folderPath, PPalmaIngresada);
+		writeText(txtPalma, PalmisteE, folderPath, PPalmaIngresada, Evidencia);
 		time(1);
-		clear(txtPalmiste,folderPath, "click xpath");
+		clear(txtPalmiste,folderPath, "click xpath" , Evidencia);
 		time(1);
-		writeText(txtPalmiste, PPalmaIngresada, folderPath, PPalmaIngresada);
+		writeText(txtPalmiste, PPalmaIngresada, folderPath, PPalmaIngresada, Evidencia);
 		time(2);
-		click(btnGuardar,folderPath, "click xpath");
+		click(btnGuardar,folderPath, "click xpath" , Evidencia);
 		time(5);
-		click(btnsi,folderPath, "click xpath");
+		click(btnsi,folderPath, "click xpath" , Evidencia);
 		time(1);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(3);
-		click(btnsi,folderPath, "click xpath");
+		click(btnsi,folderPath, "click xpath" , Evidencia);
 		time(1);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(3);
-		click(btnOK,folderPath, "click xpath");
+		click(btnOK,folderPath, "click xpath" , Evidencia);
 		time(15);
-		click(btnSMes,folderPath, "click xpath");
+		click(btnSMes,folderPath, "click xpath" , Evidencia);
 		time(1);
-		click(btnMes,folderPath, "click xpath");
+		click(btnMes,folderPath, "click xpath" , Evidencia);
 		time(1);
-		click(btnSAno,folderPath, "click xpath");
+		click(btnSAno,folderPath, "click xpath" , Evidencia);
 		time(1);
-		click(btnAno,folderPath, "click xpath");
+		click(btnAno,folderPath, "click xpath" , Evidencia);
 		time(1);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(1);
-		click(btnBuscar,folderPath, "click xpath");
+		click(btnBuscar,folderPath, "click xpath" , Evidencia);
 		time(2);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(3);
-		click(btnEditar,folderPath, "click xpath");
+		click(btnEditar,folderPath, "click xpath" , Evidencia);
 		time(5);
-		click(btnDeclarar,folderPath, "click xpath");
+		click(btnDeclarar,folderPath, "click xpath" , Evidencia);
 		time(3);
-		click(btnok,folderPath, "click xpath");
+		click(btnok,folderPath, "click xpath" , Evidencia);
 		time(2);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(1);
-		click(btnok,folderPath, "click xpath");
-		captureScreen(folderPath, "Capture screen");
+		click(btnok,folderPath, "click xpath" , Evidencia);
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 
 		return this;
 	}
 
 	@Step("Firma FFP")
-	public FirmaGerentePage Firma(String Firma, File folderPath) throws Exception {
+	public FirmaGerentePage Firma(String Firma, File folderPath, String Evidencia) throws Exception {
 
 		ArrayList<String> ventana = new ArrayList<String>(driver.getWindowHandles());
 		driver.switchTo().window((String) ventana.get(1));
 		time(15);
-		click(btnFirma,folderPath, "click xpath");
+		click(btnFirma,folderPath, "click xpath" , Evidencia);
 		time(1);
-		writeText(txtFirma, Firma, folderPath, Firma);
-		captureScreen(folderPath, "Capture screen");
+		writeText(txtFirma, Firma, folderPath, Firma, Evidencia);
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(1);
-		click(btnEnviar,folderPath, "click xpath");
+		click(btnEnviar,folderPath, "click xpath" , Evidencia);
 		time(5);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(2);
-		click(btnSeguir,folderPath, "click xpath");
+		click(btnSeguir,folderPath, "click xpath" , Evidencia);
 		driver.switchTo().window((String) ventana.get(0));
 
 		return this;
 	}
 
 	@Step("Confirmar Declaracion")
-	public FirmaGerentePage confirmar(File folderPath) throws Exception {
+	public FirmaGerentePage confirmar(File folderPath, String Evidencia) throws Exception {
 
 		time(9);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(9);
-		click(btnOk,folderPath, "click xpath");
-		captureScreen(folderPath, "Capture screen");
+		click(btnOk,folderPath, "click xpath" , Evidencia);
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(2);
 
 		return this;

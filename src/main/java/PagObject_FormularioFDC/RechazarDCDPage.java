@@ -17,160 +17,160 @@ public class RechazarDCDPage extends RechazarDCDMap {
 	}
 
 	@Step("Ingresar a FDC")
-	public RechazarDCDPage IngresarFDC(File folderPath) throws Exception {
+	public RechazarDCDPage IngresarFDC(File folderPath, String Evidencia) throws Exception {
 		time(2);
-		scrollElementV(folderPath, btnDemostracion, "scroll ");
+		scrollElementV(folderPath, btnDemostracion, "scroll " , Evidencia);
 
 		time(1);
-		click(btnDemostracion,folderPath, "click xpath");
+		click(btnDemostracion,folderPath, "click xpath" , Evidencia);
 		time(1);
-		scrollElementV(folderPath, btnFDC, "scroll ");
+		scrollElementV(folderPath, btnFDC, "scroll " , Evidencia);
 
 		time(1);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(1);
-		click(btnFDC,folderPath, "click xpath" );
+		click(btnFDC,folderPath, "click xpath" ,Evidencia);
 		time(1);
 		return this;
 	}
 
 	@Step("Consultar FDC")
-	public RechazarDCDPage ConsultarFDC(String NitB, File folderPath) throws Exception {
+	public RechazarDCDPage ConsultarFDC(String NitB, File folderPath, String Evidencia) throws Exception {
 
 		time(1);
-		writeText(Comprador, NitB, folderPath, NitB);
+		writeText(Comprador, NitB, folderPath, NitB, Evidencia);
 		time(2);
-		click(Comprador,folderPath, "click xpath");
+		click(Comprador,folderPath, "click xpath" , Evidencia);
 		time(3);
-		click(btnComprador,folderPath, "click xpath");
+		click(btnComprador,folderPath, "click xpath" , Evidencia);
 		time(1);
-		click(Estado,folderPath, "click xpath");
+		click(Estado,folderPath, "click xpath" , Evidencia);
 		time(1);
-		click(Radicado,folderPath, "click xpath");
+		click(Radicado,folderPath, "click xpath" , Evidencia);
 		time(1);
-		click(btnSAno,folderPath, "click xpath");
+		click(btnSAno,folderPath, "click xpath" , Evidencia);
 		time(1);
-		click(btnAno,folderPath, "click xpath");
+		click(btnAno,folderPath, "click xpath" , Evidencia);
 		time(1);
-		click(btnSMes,folderPath, "click xpath");
+		click(btnSMes,folderPath, "click xpath" , Evidencia);
 		time(1);
-		click(btnMes,folderPath, "click xpath");
-		captureScreen(folderPath, "Capture screen");
+		click(btnMes,folderPath, "click xpath" , Evidencia);
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(1);
-		click(btnBuscar,folderPath, "click xpath");
+		click(btnBuscar,folderPath, "click xpath" , Evidencia);
 		time(4);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		return this;
 	}
 
 	@Step("Revisar FDC")
-	public RechazarDCDPage RevisarFDC(File folderPath) throws Exception {
+	public RechazarDCDPage RevisarFDC(File folderPath, String Evidencia) throws Exception {
 
 		time(1);
-		click(NumeroFDC,folderPath, "click xpath");
+		click(NumeroFDC,folderPath, "click xpath" , Evidencia);
 		time(1);
-		click(NumeroFDC,folderPath, "click xpath");
+		click(NumeroFDC,folderPath, "click xpath" , Evidencia);
 		time(1);
-		click(Revisar,folderPath, "click xpath");
+		click(Revisar,folderPath, "click xpath" , Evidencia);
 		time(4);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		return this;
 	}
 
 	@Step("Rechazar FDC")
-	public RechazarDCDPage RechazarFDC(String Obs, File folderPath) throws Exception {
+	public RechazarDCDPage RechazarFDC(String Obs, File folderPath, String Evidencia) throws Exception {
 
 		time(1);
-		click(Seleccionar,folderPath, "click xpath");
+		click(Seleccionar,folderPath, "click xpath" , Evidencia);
 		time(2);
-		click(Rechazar,folderPath, "click xpath");
+		click(Rechazar,folderPath, "click xpath" , Evidencia);
 		time(3);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(2);
-		click(Aceptar,folderPath, "click xpath");
+		click(Aceptar,folderPath, "click xpath" , Evidencia);
 		time(1);
-		click(Casuales,folderPath, "click xpath");
+		click(Casuales,folderPath, "click xpath" , Evidencia);
 		time(1);
 //        click(Causal);
 //        Utilidades.waitInMs(1);
-		click(Causal,folderPath, "click xpath");
+		click(Causal,folderPath, "click xpath" , Evidencia);
 		time(1);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(1);
-		click(Ok,folderPath, "click xpath");
+		click(Ok,folderPath, "click xpath" , Evidencia);
 		time(1);
-		click(Observacion,folderPath, "click xpath");
+		click(Observacion,folderPath, "click xpath" , Evidencia);
 		time(1);
-		writeText(txtObservacion, Obs, folderPath, Obs);
+		writeText(txtObservacion, Obs, folderPath, Obs, Evidencia);
 		time(1);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(1);
-		click(OK,folderPath, "click xpath");
+		click(OK,folderPath, "click xpath" , Evidencia);
 		time(1);
 
 		return this;
 	}
 
 	@Step("Guardar FDC")
-	public RechazarDCDPage GuardarFDC(String resultado, File folderPath) throws Exception {
+	public RechazarDCDPage GuardarFDC(String resultado, File folderPath, String Evidencia) throws Exception {
 
 		time(1);
 		ByPixel();
 		time(1);
-		click(Guardar,folderPath, "click xpath");
+		click(Guardar,folderPath, "click xpath" , Evidencia);
 		time(28);
 		Assert.assertEquals(getElement(lblResultadoGuardar).getText(), resultado);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(2);
-		click(btnOk,folderPath, "click xpath");
+		click(btnOk,folderPath, "click xpath" , Evidencia);
 		time(3);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		return this;
 	}
 
 	@Step("Numero DCD")
-	public RechazarDCDPage NumeroDCD(String nit, String usr, String pwd, File folderPath) throws Exception {
+	public RechazarDCDPage NumeroDCD(String nit, String usr, String pwd, File folderPath, String Evidencia) throws Exception {
 
 		time(2);
-		scrollElementV(folderPath, Desplegar, "scroll ");
+		scrollElementV(folderPath, Desplegar, "scroll " , Evidencia);
 
 		time(1);
 		String DCD = getElement(lblDCD).getText();
 		time(2);
 		ByPixel();
 		time(1);
-		click(Salir,folderPath, "click xpath");
+		click(Salir,folderPath, "click xpath" , Evidencia);
 		time(1);
-		click(usuario,folderPath, "click xpath");
+		click(usuario,folderPath, "click xpath" , Evidencia);
 		time(1);
-		click(CerrarSesion,folderPath, "click xpath");
+		click(CerrarSesion,folderPath, "click xpath" , Evidencia);
 		time(1);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(1);
-		writeText(txtNit, nit, folderPath, DCD);
+		writeText(txtNit, nit, folderPath, DCD, Evidencia);
 		time(1);
-		writeText(txtUsuario, usr, folderPath, DCD);
+		writeText(txtUsuario, usr, folderPath, DCD, Evidencia);
 		time(1);
-		writeText(txtContrase_a, pwd, folderPath, DCD);
-		captureScreen(folderPath, "Capture screen");
+		writeText(txtContrase_a, pwd, folderPath, DCD, Evidencia);
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(1);
-		click(btnLogin,folderPath, "click xpath");
+		click(btnLogin,folderPath, "click xpath" , Evidencia);
 		time(6);
-		click(btnDemostracionA,folderPath, "click xpath");
+		click(btnDemostracionA,folderPath, "click xpath" , Evidencia);
 		time(1);
-		click(btnFDCa,folderPath, "click xpath");
+		click(btnFDCa,folderPath, "click xpath" , Evidencia);
 		//por confirmar tiempo
 		time(1);
-		click(btnSAno,folderPath, "click xpath");
+		click(btnSAno,folderPath, "click xpath" , Evidencia);
 		time(1);
-		click(btnAno,folderPath, "click xpath");
+		click(btnAno,folderPath, "click xpath" , Evidencia);
 		time(1);
-		click(btnSMes,folderPath, "click xpath");
+		click(btnSMes,folderPath, "click xpath" , Evidencia);
 		time(1);
-		click(btnMes,folderPath, "click xpath");
-		captureScreen(folderPath, "Capture screen");
+		click(btnMes,folderPath, "click xpath" , Evidencia);
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(1);
-		click(Crear,folderPath, "click xpath");
+		click(Crear,folderPath, "click xpath" , Evidencia);
 		time(5);
 		String[] Dex = { "12345678", "181900157", "92929", "92001" };
 		Random aleatorio = new Random();
@@ -178,34 +178,34 @@ public class RechazarDCDPage extends RechazarDCDMap {
 		System.out.println(Dex[Dex2]);
 		String txtDex = String.valueOf(Dex[Dex2]);
 		time(1);
-		writeText(txtDEX, txtDex, folderPath, txtDex);
+		writeText(txtDEX, txtDex, folderPath, txtDex, Evidencia);
 		time(1);
-		writeText(txtNumeroDCD, DCD, folderPath, txtDex);
+		writeText(txtNumeroDCD, DCD, folderPath, txtDex, Evidencia);
 		time(1);
-		click(Consultar,folderPath, "click xpath");
+		click(Consultar,folderPath, "click xpath" , Evidencia);
 		time(1);
 
 		return this;
 	}
 
 	@Step("Seleccionar un DCD")
-	public RechazarDCDPage SeleccionarDCD(String resultado, File folderPath) throws Exception {
+	public RechazarDCDPage SeleccionarDCD(String resultado, File folderPath, String Evidencia) throws Exception {
 
 		time(3);
-		click(Select,folderPath, "click xpath");
+		click(Select,folderPath, "click xpath" , Evidencia);
 		time(2);
 		String Total = getElement(lblTotal).getText();
 		time(2);
-		writeText(Asociar, Total, folderPath, Total);
+		writeText(Asociar, Total, folderPath, Total, Evidencia);
 		time(3);
-		click(btnAdicionar,folderPath, "click xpath");
+		click(btnAdicionar,folderPath, "click xpath" , Evidencia);
 		time(18);
 		Assert.assertEquals(getElement(lblResultadoAdicionar).getText(), resultado);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(1);
-		click(btnOK,folderPath, "click xpath");
+		click(btnOK,folderPath, "click xpath" , Evidencia);
 		time(1);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(4);
 		return this;
 	}

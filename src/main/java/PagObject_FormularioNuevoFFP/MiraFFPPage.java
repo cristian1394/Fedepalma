@@ -13,44 +13,44 @@ public class MiraFFPPage extends MiraFFPMap {
 	}
 
 	@Step("Ver FFP")
-	public MiraFFPPage MirarFFP(File folderPath) throws Exception {
+	public MiraFFPPage MirarFFP(File folderPath, String Evidencia) throws Exception {
 
 		time(5);
-		click(btnConsultar,folderPath, "click xpath");
+		click(btnConsultar,folderPath, "click xpath" , Evidencia);
 		time(3);
-		scrollElementV(folderPath, btnLiquidacionFP, "scroll ");
+		scrollElementV(folderPath, btnLiquidacionFP, "scroll " , Evidencia);
 		time(1);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(2);
-		scrollElementV(folderPath, btnRProveedorFruto, "scroll ");
+		scrollElementV(folderPath, btnRProveedorFruto, "scroll " , Evidencia);
 		time(1);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(2);
-		scrollElementV(folderPath, btnACM, "scroll ");
+		scrollElementV(folderPath, btnACM, "scroll " , Evidencia);
 		time(1);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(2);
-		scrollElementV(folderPath, btnRFV, "scroll ");
+		scrollElementV(folderPath, btnRFV, "scroll " , Evidencia);
 		time(1);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(2);
-		scrollElementV(folderPath, btnRFEM, "scroll ");
+		scrollElementV(folderPath, btnRFEM, "scroll " , Evidencia);
 		time(1);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(2);
-		scrollElementV(folderPath, btnRPA, "scroll ");
+		scrollElementV(folderPath, btnRPA, "scroll " , Evidencia);
 		time(1);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(2);
-		scrollElementV(folderPath, btnARM, "scroll ");
+		scrollElementV(folderPath, btnARM, "scroll " , Evidencia);
 		time(1);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(2);
-		click(btnGenerarPDF,folderPath, "click xpath");
+		click(btnGenerarPDF,folderPath, "click xpath" , Evidencia);
 		time(8);
-		click(btnSalir,folderPath, "click xpath");
+		click(btnSalir,folderPath, "click xpath" , Evidencia);
 		time(4);
-		click(btnSi,folderPath, "click xpath");
+		click(btnSi,folderPath, "click xpath" , Evidencia);
 		time(10);
 
 		return this;
