@@ -17,44 +17,44 @@ public class RevisarFDCPage extends RevisarFDCMap  {
 	}
 
 	@Step("Crear FDC")
-    public RevisarFDCPage CrearFDC(File folderPath) throws Exception {
+    public RevisarFDCPage CrearFDC(File folderPath, String Evidencia) throws Exception {
 		
         time(2);
-        click(btnCrear,folderPath, "click xpath");
+        click(btnCrear,folderPath, "click xpath" , Evidencia);
 		time(1);
-        captureScreen(folderPath, "Capture screen");
+        captureScreen(folderPath, "Capture screen" , Evidencia);
         time(1);
         
         return this;
     }
 
 @Step("Revisar FDC")
-public RevisarFDCPage RevisarFDC(String resultado, File folderPath) throws Exception {
+public RevisarFDCPage RevisarFDC(String resultado, File folderPath, String Evidencia) throws Exception {
 	
 	time(1);
 	ByPixel();
 	time(1);
-	click(btnRevisar,folderPath, "click xpath");
+	click(btnRevisar,folderPath, "click xpath" , Evidencia);
 	time(4);
-    captureScreen(folderPath, "Capture screen");
+    captureScreen(folderPath, "Capture screen" , Evidencia);
     time(1);
 	Assert.assertEquals(getElement(lblResultadoRevisar).getText(),resultado);
-	captureScreen(folderPath, "Capture screen");
+	captureScreen(folderPath, "Capture screen" , Evidencia);
     time(6);
-    click(btnOk,folderPath, "click xpath");
-    captureScreen(folderPath, "Capture screen");
+    click(btnOk,folderPath, "click xpath" , Evidencia);
+    captureScreen(folderPath, "Capture screen" , Evidencia);
     time(2);
 	
 	return this;
 }
 
 @Step("Salir FDC")
-public RevisarFDCPage SalirFDC(File folderPath) throws Exception {
+public RevisarFDCPage SalirFDC(File folderPath, String Evidencia) throws Exception {
 	
 	time(1);
-	captureScreen(folderPath, "Capture screen");
+	captureScreen(folderPath, "Capture screen" , Evidencia);
 	time(1);
-	click(btnSalir,folderPath, "click xpath");
+	click(btnSalir,folderPath, "click xpath" , Evidencia);
 	time(8);
 	
 	return this;

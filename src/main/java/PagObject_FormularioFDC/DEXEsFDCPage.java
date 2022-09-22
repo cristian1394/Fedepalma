@@ -20,10 +20,10 @@ public class DEXEsFDCPage extends DEXEsFDCMap {
 	}
 
 	@Step("Crear DEX")
-    public DEXEsFDCPage CrearDEX(String resultado, File folderPath) throws Exception {
+    public DEXEsFDCPage CrearDEX(String resultado, File folderPath, String Evidencia) throws Exception {
         
     	time(3);
-        click(btnCrear,folderPath, "click xpath");
+        click(btnCrear,folderPath, "click xpath" , Evidencia);
         time(5);
         String [] Dex = {"1234567", "18190015",  "292929", "920012"};
         Random aleatorio = new Random();            
@@ -32,32 +32,32 @@ public class DEXEsFDCPage extends DEXEsFDCMap {
         String txtDex = String.valueOf(Dex[Dex2]);
         
         time(1);
-        writeText(txtDEX, txtDex, null, txtDex);
+        writeText(txtDEX, txtDex, null, txtDex, Evidencia);
         time(1);
-        click(btnConsultar,folderPath, "click xpath");
+        click(btnConsultar,folderPath, "click xpath" , Evidencia);
         time(3);
-        click(btnFiltro,folderPath, "click xpath");
+        click(btnFiltro,folderPath, "click xpath" , Evidencia);
         time(2);
-        click(btnSeleccion,folderPath, "click xpath");
+        click(btnSeleccion,folderPath, "click xpath" , Evidencia);
         time(2);
-        click(btnseleccion,folderPath, "click xpath");
+        click(btnseleccion,folderPath, "click xpath" , Evidencia);
         time(2);
         String Total = getElement(lblTotal).getText();
         time(2);
-        writeText(txtAsociar, Total, null, Total);
+        writeText(txtAsociar, Total, null, Total, Evidencia);
         time(3);
         String Totals = getElement(lblTotals).getText();
         time(2);
-        writeText(txtasociar, Totals, null, Totals);
+        writeText(txtasociar, Totals, null, Totals, Evidencia);
         time(1);
-        click(btnAdicionar,folderPath, "click xpath");
+        click(btnAdicionar,folderPath, "click xpath" , Evidencia);
         time(18);
 		Assert.assertEquals(getElement(lblResultadoAdicionar).getText(),resultado);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
         time(5);
-        click(btnOk,folderPath, "click xpath");
+        click(btnOk,folderPath, "click xpath" , Evidencia);
         time(1);
-        captureScreen(folderPath, "Capture screen");
+        captureScreen(folderPath, "Capture screen" , Evidencia);
         time(4);
         
         return this;

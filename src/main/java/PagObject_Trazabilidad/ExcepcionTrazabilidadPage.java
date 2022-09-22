@@ -18,35 +18,35 @@ public class ExcepcionTrazabilidadPage extends ExcepcionTrazabilidadMap {
 	}
 
 	@Step("Rellenar Trazabilidad")
-    public ExcepcionTrazabilidadPage RellenarTrazabilidad(File folderPath) throws Exception {
+    public ExcepcionTrazabilidadPage RellenarTrazabilidad(File folderPath, String Evidencia) throws Exception {
      
         time(1);
-        click(btnSMes,folderPath, "click xpath");
+        click(btnSMes,folderPath, "click xpath" , Evidencia);
         time(1);
-        click(btnMes,folderPath, "click xpath");
+        click(btnMes,folderPath, "click xpath" , Evidencia);
         time(1);
-        click(btnSAno,folderPath, "click xpath");
+        click(btnSAno,folderPath, "click xpath" , Evidencia);
         time(1);
-        click(btnAno,folderPath, "click xpath");
-		captureScreen(folderPath, "Capture screen");
+        click(btnAno,folderPath, "click xpath" , Evidencia);
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(1);
-		click(btnConsultar,folderPath, "click xpath");
+		click(btnConsultar,folderPath, "click xpath" , Evidencia);
         time(3);
-        captureScreen(folderPath, "Capture screen");
+        captureScreen(folderPath, "Capture screen" , Evidencia);
 
          
         return this;
     }
 	
 	@Step("Exportar Formulario Trazabiidad")
-    public ExcepcionTrazabilidadPage ValidarResultadoTrazabilidad(String resultado, File folderPath) throws Exception {
+    public ExcepcionTrazabilidadPage ValidarResultadoTrazabilidad(String resultado, File folderPath, String Evidencia) throws Exception {
 		
 		time(1);
 		Assert.assertEquals(getElement(lblResultadoTrazabilidad).getText(),resultado);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
         time(6);
-        click(btnOk,folderPath, "click xpath");
-        captureScreen(folderPath, "Capture screen");
+        click(btnOk,folderPath, "click xpath" , Evidencia);
+        captureScreen(folderPath, "Capture screen" , Evidencia);
         time(3);
          
         return this;

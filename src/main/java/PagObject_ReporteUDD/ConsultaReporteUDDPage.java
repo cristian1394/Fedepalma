@@ -14,7 +14,7 @@ public class ConsultaReporteUDDPage extends ConsultaReporteUDDMap {
 	}
 
 	@Step("Scroll vertibal abajo")
-	public ConsultaReporteUDDPage ScrollAbajo(File folderPath) throws InterruptedException {
+	public ConsultaReporteUDDPage ScrollAbajo(File folderPath, String Evidencia) throws InterruptedException {
 
 		time(1);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -25,7 +25,7 @@ public class ConsultaReporteUDDPage extends ConsultaReporteUDDMap {
 	}
 
 	@Step("Scroll vertibal abajo")
-	public ConsultaReporteUDDPage ScrollAbajo1(File folderPath) throws InterruptedException {
+	public ConsultaReporteUDDPage ScrollAbajo1(File folderPath, String Evidencia) throws InterruptedException {
 
 		time(1);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -36,261 +36,261 @@ public class ConsultaReporteUDDPage extends ConsultaReporteUDDMap {
 	}
 
 	@Step("Evidencia")
-	public ConsultaReporteUDDPage Evidencia(File folderPath) throws Exception {
+	public ConsultaReporteUDDPage Evidencia(File folderPath, String Evidencia) throws Exception {
 
 		time(3);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(3);
 
 		return this;
 	}
 
 	@Step("Iniciar Menu RYP")
-	public ConsultaReporteUDDPage MenuRUDD(File folderPath) throws Exception {
+	public ConsultaReporteUDDPage MenuRUDD(File folderPath, String Evidencia) throws Exception {
 		time(5);
-		scrollElementV(folderPath, btnDemostracionC, "scroll ");
+		scrollElementV(folderPath, btnDemostracionC, "scroll " , Evidencia);
 		time(1);
-		click(btnDemostracionC,folderPath, "click xpath");
+		click(btnDemostracionC,folderPath, "click xpath" , Evidencia);
 		time(2);
-		scrollElementV(folderPath, btnReporteUDD, "scroll ");
+		scrollElementV(folderPath, btnReporteUDD, "scroll " , Evidencia);
 		time(1);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(1);
-		click(btnReporteUDD,folderPath, "click xpath");
+		click(btnReporteUDD,folderPath, "click xpath" , Evidencia);
 		time(1);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(3);
 
 		return this;
 	}
 
 	@Step("Seleccionar Tipo de demostracion")
-	public ConsultaReporteUDDPage TD(File folderPath) throws Exception {
+	public ConsultaReporteUDDPage TD(File folderPath, String Evidencia) throws Exception {
 
 		time(2);
-		click(btnTipoD,folderPath, "click xpath");
+		click(btnTipoD,folderPath, "click xpath" , Evidencia);
 		time(2);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(2);
 
 		return this;
 	}
 
 	@Step("Seleccionar FMM")
-	public ConsultaReporteUDDPage FMM(File folderPath) throws Exception {
+	public ConsultaReporteUDDPage FMM(File folderPath, String Evidencia) throws Exception {
 
 		time(2);
-		click(btnFMM,folderPath, "click xpath");
+		click(btnFMM,folderPath, "click xpath" , Evidencia);
 		time(2);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(2);
 
 		return this;
 	}
 
 	@Step("Seleccionar Poliza")
-	public ConsultaReporteUDDPage Poliza(File folderPath) throws Exception {
+	public ConsultaReporteUDDPage Poliza(File folderPath, String Evidencia) throws Exception {
 
 		time(2);
-		click(btnPoliza,folderPath, "click xpath");
+		click(btnPoliza,folderPath, "click xpath" , Evidencia);
 		time(2);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(2);
 
 		return this;
 	}
 
 	@Step("Calendario")
-	public ConsultaReporteUDDPage Calendario(File folderPath) throws Exception {
+	public ConsultaReporteUDDPage Calendario(File folderPath, String Evidencia) throws Exception {
 
 		time(1);
-		click(btnCalendario,folderPath, "click xpath");
+		click(btnCalendario,folderPath, "click xpath" , Evidencia);
 		time(2);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(1);
 		return this;
 	}
 
 	@Step("Seleccionar Mes")
-	public ConsultaReporteUDDPage SeleccionarMes(File folderPath) throws Exception {
+	public ConsultaReporteUDDPage SeleccionarMes(File folderPath, String Evidencia) throws Exception {
 
 		time(1);
-		click(btnSMes,folderPath, "click xpath");
+		click(btnSMes,folderPath, "click xpath" , Evidencia);
 		time(1);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(1);
-		click(btnMes,folderPath, "click xpath");
+		click(btnMes,folderPath, "click xpath" , Evidencia);
 		time(1);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(1);
 
 		return this;
 	}
 
 	@Step("Seleccionar Dia")
-	public ConsultaReporteUDDPage SeleccionarDia(File folderPath) throws Exception {
+	public ConsultaReporteUDDPage SeleccionarDia(File folderPath, String Evidencia) throws Exception {
 
 		time(1);
-		click(btnDia,folderPath, "click xpath");
+		click(btnDia,folderPath, "click xpath" , Evidencia);
 		time(1);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(1);
 
 		return this;
 	}
 
 	@Step("Calendario")
-	public ConsultaReporteUDDPage Calendario1(File folderPath) throws Exception {
+	public ConsultaReporteUDDPage Calendario1(File folderPath, String Evidencia) throws Exception {
 
 		time(1);
-		click(btnCalendario1,folderPath, "click xpath");
+		click(btnCalendario1,folderPath, "click xpath" , Evidencia);
 		time(2);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(1);
 		return this;
 	}
 
 	@Step("Seleccionar Mes")
-	public ConsultaReporteUDDPage SeleccionarMes1(File folderPath) throws Exception {
+	public ConsultaReporteUDDPage SeleccionarMes1(File folderPath, String Evidencia) throws Exception {
 
 		time(1);
-		click(btnSMes1,folderPath, "click xpath");
+		click(btnSMes1,folderPath, "click xpath" , Evidencia);
 		time(1);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(1);
-		click(btnMes1,folderPath, "click xpath");
+		click(btnMes1,folderPath, "click xpath" , Evidencia);
 		time(1);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(1);
 
 		return this;
 	}
 
 	@Step("Seleccionar Dia")
-	public ConsultaReporteUDDPage SeleccionarDia1(File folderPath) throws Exception {
+	public ConsultaReporteUDDPage SeleccionarDia1(File folderPath, String Evidencia) throws Exception {
 
 		time(1);
-		click(btnDia1,folderPath, "click xpath");
+		click(btnDia1,folderPath, "click xpath" , Evidencia);
 		time(1);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(1);
 
 		return this;
 	}
 
 	@Step("Buscar")
-	public ConsultaReporteUDDPage Buscar(File folderPath) throws Exception {
+	public ConsultaReporteUDDPage Buscar(File folderPath, String Evidencia) throws Exception {
 
 		time(1);
-		click(btnBuscar,folderPath, "click xpath");
+		click(btnBuscar,folderPath, "click xpath" , Evidencia);
 		time(5);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(3);
 
 		return this;
 	}
 
 	@Step("Filtro Entidad")
-	public ConsultaReporteUDDPage FE(String Declarante,File folderPath ) throws Exception {
+	public ConsultaReporteUDDPage FE(String Declarante,File folderPath,String Evidencia ) throws Exception {
 
 		time(2);
-		click(btnFiltrarEntidad,folderPath, "click xpath");
+		click(btnFiltrarEntidad,folderPath, "click xpath" , Evidencia);
 		time(1);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(1);
-		click(FiltroEntidad, null, Declarante);
+		click(FiltroEntidad,folderPath, "click xpath" , Evidencia);
 		time(1);
-		click(btnEmpieza, null, Declarante);
+		click(btnEmpieza,folderPath, "click xpath" , Evidencia);
 		time(1);
-		writeText(txtEntidad, Declarante, null, Declarante);
+		writeText(txtEntidad, Declarante, null, Declarante, Evidencia);
 		time(1);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(1);
-		click(btnFiltroEntidad,folderPath, "click xpath");
+		click(btnFiltroEntidad,folderPath, "click xpath" , Evidencia);
 		time(1);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(2);
 
 		return this;
 	}
 
 	@Step("Filtro DCD")
-	public ConsultaReporteUDDPage FDCD(String Kg, File folderPath) throws Exception {
+	public ConsultaReporteUDDPage FDCD(String Kg, File folderPath, String Evidencia) throws Exception {
 
 		time(1);
-		click(btnFiltrarDCD,folderPath, "click xpath");
+		click(btnFiltrarDCD,folderPath, "click xpath" , Evidencia);
 		time(1);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(1);
-		click(FiltroDCD,folderPath, "click xpath");
+		click(FiltroDCD,folderPath, "click xpath" , Evidencia);
 		time(1);
-		click(btnNoContiene,folderPath, "click xpath");
+		click(btnNoContiene,folderPath, "click xpath" , Evidencia);
 		time(1);
-		writeText(txtDCD, Kg, folderPath, Kg);
+		writeText(txtDCD, Kg, folderPath, Kg, Evidencia);
 		time(1);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(1);
-		click(btnFiltroDCD,folderPath, "click xpath");
+		click(btnFiltroDCD,folderPath, "click xpath" , Evidencia);
 		time(1);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(2);
 
 		return this;
 	}
 
 	@Step("Filtro Producto")
-	public ConsultaReporteUDDPage FProducto(String Producto, File folderPath) throws Exception {
+	public ConsultaReporteUDDPage FProducto(String Producto, File folderPath, String Evidencia) throws Exception {
 
 		time(1);
-		click(btnFiltrarProducto,folderPath, "click xpath");
+		click(btnFiltrarProducto,folderPath, "click xpath" , Evidencia);
 		time(1);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(1);
-		click(FiltroProducto,folderPath, "click xpath");
+		click(FiltroProducto,folderPath, "click xpath" , Evidencia);
 		time(1);
-		click(btnContiene,folderPath, "click xpath");
+		click(btnContiene,folderPath, "click xpath" , Evidencia);
 		time(1);
-		writeText(txtProducto, Producto, null, Producto);
+		writeText(txtProducto, Producto, null, Producto, Evidencia);
 		time(1);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(1);
-		click(btnFiltroProducto,folderPath, "click xpath");
+		click(btnFiltroProducto,folderPath, "click xpath" , Evidencia);
 		time(1);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(2);
 
 		return this;
 	}
 
 	@Step("Filtro Pais")
-	public ConsultaReporteUDDPage FPais(String pais,File folderPath) throws Exception {
+	public ConsultaReporteUDDPage FPais(String pais,File folderPath, String Evidencia) throws Exception {
 
 		time(1);
-		click(btnFiltrarPais,folderPath, "click xpath");
+		click(btnFiltrarPais,folderPath, "click xpath" , Evidencia);
 		time(1);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(1);
-		click(FiltroPais,folderPath, "click xpath");
+		click(FiltroPais,folderPath, "click xpath" , Evidencia);
 		time(1);
-		writeText(txtPais, pais, null, pais);
+		writeText(txtPais, pais, null, pais, Evidencia);
 		time(1);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(1);
-		click(btnFiltroPais,folderPath, "click xpath");
+		click(btnFiltroPais,folderPath, "click xpath" , Evidencia);
 		time(1);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(2);
 
 		return this;
 	}
 
 	@Step("Exportar")
-	public ConsultaReporteUDDPage Exportar(File folderPath) throws Exception {
+	public ConsultaReporteUDDPage Exportar(File folderPath, String Evidencia) throws Exception {
 
 		time(1);
-		click(btnExportar,folderPath, "click xpath");
+		click(btnExportar,folderPath, "click xpath" , Evidencia);
 		time(5);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(3);
 
 		return this;

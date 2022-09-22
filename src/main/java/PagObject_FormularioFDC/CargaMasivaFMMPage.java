@@ -17,31 +17,31 @@ public class CargaMasivaFMMPage extends CargaMasivaFMMMap {
 	}
 
 	@Step("Carga Masiva FMM")
-	public CargaMasivaFMMPage CargaFMM(String exc, String resultado, File folderPath) throws Exception {
+	public CargaMasivaFMMPage CargaFMM(String exc, String resultado, File folderPath, String Evidencia) throws Exception {
 		time(1);
 
 		ByPixel();
 		time(1);
-		click(btnCargaFmm,folderPath, "click xpath");
+		click(btnCargaFmm,folderPath, "click xpath" , Evidencia);
 		time(3);
 		File file = new File(exc);
 		time(2);
 		WebElement ruta = driver.findElement(btnArchivoFmm);
 		ruta.sendKeys(file.getAbsolutePath());
 		time(1);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(3);
-		captureScreen(folderPath, "Capture screen");
-		click(btnCargar,folderPath, "click xpath");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
+		click(btnCargar,folderPath, "click xpath" , Evidencia);
 		time(6);
 		Assert.assertEquals(getElement(lblResultadoCarga).getText(), resultado);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(2);
-		click(btnOkey,folderPath, "click xpath");
-		captureScreen(folderPath, "Capture screen");
+		click(btnOkey,folderPath, "click xpath" , Evidencia);
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(1);
-		click(btnCancela,folderPath, "click xpath");
-		captureScreen(folderPath, "Capture screen");
+		click(btnCancela,folderPath, "click xpath" , Evidencia);
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(2);
 
 		return this;

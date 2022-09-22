@@ -21,15 +21,15 @@ public class LoginPage extends LoginMap  {
 	}
 
 	@Step("Ingresar Credenciales de Acceso")
-    public LoginPage ingresarCredenciales(String usuario, String password, File folderPath) throws Exception {
+    public LoginPage ingresarCredenciales(String usuario, String password, File folderPath, String Evidencia) throws Exception {
         time(2);
         
-        writeText(txtUsuario, usuario, folderPath, " escribe usuario");
+        writeText(txtUsuario, usuario, folderPath, " escribe usuario", Evidencia);
         time(1);
-        writeText(txtContrase_a, password, folderPath, " escribe contrase_a");
+        writeText(txtContrase_a, password, folderPath, " escribe contrase_a", Evidencia);
 		screenshot();
 		time(1);
-		click(btnLogin, folderPath, " click login");
+		click(btnLogin, folderPath, " click login" , Evidencia);
         time(5);
         return this;
     }

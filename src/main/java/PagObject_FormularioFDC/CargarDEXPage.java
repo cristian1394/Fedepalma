@@ -16,10 +16,10 @@ public class CargarDEXPage extends CargarDEXMap {
 	}
 
 	@Step("Cagar DEX")
-	public CargarDEXPage CargaDEX(String doc, String resultado, File folderPath) throws Exception {
+	public CargarDEXPage CargaDEX(String doc, String resultado, File folderPath, String Evidencia) throws Exception {
 		time(2);
 		
-		scrollElementV(folderPath, btnCargas, "scroll ");
+		scrollElementV(folderPath, btnCargas, "scroll " , Evidencia);
 		time(8);
 		File file = new File(doc);
 		time(3);
@@ -27,17 +27,17 @@ public class CargarDEXPage extends CargarDEXMap {
 		ruta.sendKeys(file.getAbsolutePath());
 		time(7);
 		Assert.assertEquals(getElement(lblResultadoAdicionar).getText(), resultado);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(3);
-		click(btnOk,folderPath, "click xpath");
-		captureScreen(folderPath, "Capture screen");
+		click(btnOk,folderPath, "click xpath" , Evidencia);
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(3);
 
 		return this;
 	}
 
 	@Step("Cagar FMM")
-	public CargarDEXPage CargaFMM(String doc, String resultado,File folderPath) throws Exception {
+	public CargarDEXPage CargaFMM(String doc, String resultado,File folderPath, String Evidencia) throws Exception {
 		time(8);
 		File file = new File(doc);
 		time(3);
@@ -45,17 +45,17 @@ public class CargarDEXPage extends CargarDEXMap {
 		ruta.sendKeys(file.getAbsolutePath());
 		time(7);
 		Assert.assertEquals(getElement(lblResultadoAdicionar).getText(), resultado);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(3);
-		click(btnOk,folderPath, "click xpath");
-		captureScreen(folderPath, "Capture screen");
+		click(btnOk,folderPath, "click xpath" , Evidencia);
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(3);
 
 		return this;
 	}
 
 	@Step("Cagar CD")
-	public CargarDEXPage CargaCD(String doc, String resultado,File folderPath) throws Exception {
+	public CargarDEXPage CargaCD(String doc, String resultado,File folderPath, String Evidencia) throws Exception {
 		time(8);
 		File file = new File(doc);
 		time(3);
@@ -63,16 +63,16 @@ public class CargarDEXPage extends CargarDEXMap {
 		ruta.sendKeys(file.getAbsolutePath());
 		time(7);
 		Assert.assertEquals(getElement(lblResultadoAdicionar).getText(), resultado);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(3);
-		click(btnOk,folderPath, "click xpath");
+		click(btnOk,folderPath, "click xpath" , Evidencia);
 		time(3);
 
 		return this;
 	}
 
 	@Step("Cagar Poliza")
-	public CargarDEXPage CargaPoliza(String doc, String resultado,File folderPath) throws Exception {
+	public CargarDEXPage CargaPoliza(String doc, String resultado,File folderPath, String Evidencia) throws Exception {
 		time(8);
 		File file = new File(doc);
 		time(3);
@@ -80,16 +80,16 @@ public class CargarDEXPage extends CargarDEXMap {
 		ruta.sendKeys(file.getAbsolutePath());
 		time(7);
 		Assert.assertEquals(getElement(lblResultadoAdicionar).getText(), resultado);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(3);
-		click(btnOk,folderPath, "click xpath");
+		click(btnOk,folderPath, "click xpath" , Evidencia);
 		time(3);
 
 		return this;
 	}
 
 	@Step("Cagar Incumplimiento")
-	public CargarDEXPage CargaIncumplimiento(String doc, String resultado,File folderPath) throws Exception {
+	public CargarDEXPage CargaIncumplimiento(String doc, String resultado,File folderPath, String Evidencia) throws Exception {
 		time(8);
 		File file = new File(doc);
 		time(3);
@@ -97,31 +97,31 @@ public class CargarDEXPage extends CargarDEXMap {
 		ruta.sendKeys(file.getAbsolutePath());
 		time(7);
 		Assert.assertEquals(getElement(lblResultadoAdicionar).getText(), resultado);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(3);
-		click(btnOk,folderPath, "click xpath");
+		click(btnOk,folderPath, "click xpath" , Evidencia);
 		time(3);
 
 		return this;
 	}
 
 	@Step("Revisar FDC")
-	public CargarDEXPage RevisarFDC(File folderPath) throws Exception {
+	public CargarDEXPage RevisarFDC(File folderPath, String Evidencia) throws Exception {
 
 		time(1);
-		click(btnRevisar,folderPath, "click xpath");
+		click(btnRevisar,folderPath, "click xpath" , Evidencia);
 		time(7);
 
 		return this;
 	}
 
 	@Step("Salir FDC")
-	public CargarDEXPage SalirFDC(File folderPath) throws Exception {
+	public CargarDEXPage SalirFDC(File folderPath, String Evidencia) throws Exception {
 
 		time(1);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(1);
-		click(btnSalir,folderPath, "click xpath");
+		click(btnSalir,folderPath, "click xpath" , Evidencia);
 		time(8);
 
 		return this;

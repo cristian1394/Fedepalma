@@ -16,7 +16,7 @@ public class ReporteCSancionesPage extends ReporteCSancionesMap {
 	}
 
 	@Step("Scroll vertibal abajo")
-	public ReporteCSancionesPage ScrollAbajo(File folderPath) throws InterruptedException {
+	public ReporteCSancionesPage ScrollAbajo(File folderPath, String Evidencia) throws InterruptedException {
 
 		time(1);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -27,201 +27,201 @@ public class ReporteCSancionesPage extends ReporteCSancionesMap {
 	}
 
 	@Step("Scroll vertibal abajo")
-	public ReporteCSancionesPage ScrollAbajo1(File folderPath) throws InterruptedException {
+	public ReporteCSancionesPage ScrollAbajo1(File folderPath, String Evidencia) throws InterruptedException {
 
 		time(1);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("window.scrollBy(0,1500)");
+		js.executeScript("window.scrollBy(0,1500)" );
 		time(1);
 
 		return this;
 	}
 
 	@Step("Deslizar Horizontal a la derecha")
-	public ReporteCSancionesPage ScrollDerecha(File folderPath) throws DocumentException, InterruptedException {
+	public ReporteCSancionesPage ScrollDerecha(File folderPath, String Evidencia) throws DocumentException, InterruptedException {
 		time(3);
-		scrollElementV(folderPath, btnSAP, "scroll ");
+		scrollElementV(folderPath, btnSAP, "scroll " , Evidencia);
 		time(1);
 
 		return this;
 	}
 
 	@Step("Deslizar Horizontal a la derecha")
-	public ReporteCSancionesPage ScrollDerecha1(File folderPath) throws DocumentException, InterruptedException {
+	public ReporteCSancionesPage ScrollDerecha1(File folderPath, String Evidencia) throws DocumentException, InterruptedException {
 		time(3);
-		scrollElementV(folderPath, btnFondo, "scroll ");
+		scrollElementV(folderPath, btnFondo, "scroll " , Evidencia);
 		time(1);
 
 		return this;
 	}
 
 	@Step("Evidencia")
-	public ReporteCSancionesPage Evidencia(File folderPath) throws Exception {
+	public ReporteCSancionesPage Evidencia(File folderPath, String Evidencia) throws Exception {
 
 		time(3);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(3);
 
 		return this;
 	}
 
 	@Step("Iniciar Menu RYP")
-	public ReporteCSancionesPage MenuRCCertificado(File folderPath) throws Exception {
+	public ReporteCSancionesPage MenuRCCertificado(File folderPath, String Evidencia) throws Exception {
 
 		time(5);
-		click(btnReportes,folderPath, "click xpath");
+		click(btnReportes,folderPath, "click xpath" , Evidencia);
 		time(2);
-		scrollElementV(folderPath, btnReporteCC, "scroll ");
+		scrollElementV(folderPath, btnReporteCC, "scroll " , Evidencia);
 		time(1);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(1);
-		click(btnReporteCC,folderPath, "click xpath");
+		click(btnReporteCC,folderPath, "click xpath" , Evidencia);
 		time(1);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(3);
 
 		return this;
 	}
 
 	@Step("Exportar")
-	public ReporteCSancionesPage Exportar( File folderPath) throws Exception {
+	public ReporteCSancionesPage Exportar( File folderPath, String Evidencia) throws Exception {
 
 		time(1);
-		click(btnExportar,folderPath, "click xpath");
+		click(btnExportar,folderPath, "click xpath" , Evidencia);
 		time(5);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(3);
 
 		return this;
 	}
 
 	@Step("Filtro Palmeros")
-	public ReporteCSancionesPage FP(String Declarante, File folderPath) throws Exception {
+	public ReporteCSancionesPage FP(String Declarante, File folderPath, String Evidencia) throws Exception {
 
 		time(2);
-		click(FiltroPalmeros,folderPath, "click xpath");
+		click(FiltroPalmeros,folderPath, "click xpath" , Evidencia);
 		time(1);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(1);
-		click(btnFiltrarPalmeros,folderPath, "click xpath");
+		click(btnFiltrarPalmeros,folderPath, "click xpath" , Evidencia);
 		time(1);
-		click(btnEmpieza,folderPath, "click xpath");
+		click(btnEmpieza,folderPath, "click xpath" , Evidencia);
 		time(1);
-		writeText(txtPalmeros, Declarante, folderPath, Declarante);
+		writeText(txtPalmeros, Declarante, folderPath, Declarante, Evidencia);
 		time(1);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(1);
-		click(btnFiltroPalmeros,folderPath, "click xpath");
+		click(btnFiltroPalmeros,folderPath, "click xpath" , Evidencia);
 		time(1);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(2);
 
 		return this;
 	}
 
 	@Step("Filtro NIT")
-	public ReporteCSancionesPage FNIT(String Kg,File folderPath) throws Exception {
+	public ReporteCSancionesPage FNIT(String Kg,File folderPath, String Evidencia) throws Exception {
 
 		time(1);
-		click(FiltroNit,folderPath, "click xpath");
+		click(FiltroNit,folderPath, "click xpath" , Evidencia);
 		time(1);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(1);
-		click(btnFiltrarNit,folderPath, "click xpath");
+		click(btnFiltrarNit,folderPath, "click xpath" , Evidencia);
 		time(1);
-		click(btnTermina,folderPath, "click xpath");
+		click(btnTermina,folderPath, "click xpath" , Evidencia);
 		time(1);
-		writeText(txtNIT, Kg, folderPath, Kg);
+		writeText(txtNIT, Kg, folderPath, Kg, Evidencia);
 		time(1);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(1);
-		click(btnFiltroNit,folderPath, "click xpath");
+		click(btnFiltroNit,folderPath, "click xpath" , Evidencia);
 		time(1);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(2);
 
 		return this;
 	}
 
 	@Step("Filtro Secuencia Cuota Palma")
-	public ReporteCSancionesPage FSCPalma(String Producto,File folderPath) throws Exception {
+	public ReporteCSancionesPage FSCPalma(String Producto,File folderPath, String Evidencia) throws Exception {
 
 		time(1);
-		click(FiltroSCPalma,folderPath, "click xpath");
+		click(FiltroSCPalma,folderPath, "click xpath" , Evidencia);
 		time(1);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(1);
-		click(btnFiltrarVPalma,folderPath, "click xpath");
+		click(btnFiltrarVPalma,folderPath, "click xpath" , Evidencia);
 		time(1);
-		click(btnContiene,folderPath, "click xpath");
+		click(btnContiene,folderPath, "click xpath" , Evidencia);
 		time(1);
-		writeText(txtSCPalma, Producto, folderPath, Producto);
+		writeText(txtSCPalma, Producto, folderPath, Producto, Evidencia);
 		time(1);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(1);
-		click(btnFiltroSCPalma,folderPath, "click xpath");
+		click(btnFiltroSCPalma,folderPath, "click xpath" , Evidencia);
 		time(1);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(2);
 
 		return this;
 	}
 
 	@Step("Filtro Secuencia Cuota Palmiste")
-	public ReporteCSancionesPage FSCPalmiste(String pais,File folderPath) throws Exception {
+	public ReporteCSancionesPage FSCPalmiste(String pais,File folderPath, String Evidencia) throws Exception {
 
 		time(1);
-		click(FiltroSCPalmiste,folderPath, "click xpath");
+		click(FiltroSCPalmiste,folderPath, "click xpath" , Evidencia);
 		time(1);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(1);
-		click(btnFiltrarVPalmaA,folderPath, "click xpath");
+		click(btnFiltrarVPalmaA,folderPath, "click xpath" , Evidencia);
 		time(1);
-		click(btnNoContiene,folderPath, "click xpath");
+		click(btnNoContiene,folderPath, "click xpath" , Evidencia);
 		time(1);
-		writeText(txtSCPalmiste, pais, folderPath, pais);
+		writeText(txtSCPalmiste, pais, folderPath, pais, Evidencia);
 		time(1);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(1);
-		click(btnFiltroSCPPalmiste,folderPath, "click xpath");
+		click(btnFiltroSCPPalmiste,folderPath, "click xpath" , Evidencia);
 		time(1);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(2);
 
 		return this;
 	}
 
 	@Step("Filtro NIT")
-	public ReporteCSancionesPage FNIT1(String Kg,File folderPath) throws Exception {
+	public ReporteCSancionesPage FNIT1(String Kg,File folderPath, String Evidencia) throws Exception {
 
 		time(1);
-		click(FiltroNit,folderPath, "click xpath");
+		click(FiltroNit,folderPath, "click xpath" , Evidencia);
 		time(1);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(1);
-		writeText(txtNIT, Kg, folderPath, Kg);
+		writeText(txtNIT, Kg, folderPath, Kg, Evidencia);
 		time(1);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(1);
-		click(btnFiltroNit,folderPath, "click xpath");
+		click(btnFiltroNit,folderPath, "click xpath" , Evidencia);
 		time(1);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(2);
 
 		return this;
 	}
 
 	@Step("Paginacion")
-	public ReporteCSancionesPage Paginacion(File folderPath) throws Exception {
+	public ReporteCSancionesPage Paginacion(File folderPath, String Evidencia) throws Exception {
 
 		time(1);
-		click(btnPagFinal,folderPath, "click xpath");
+		click(btnPagFinal,folderPath, "click xpath" , Evidencia);
 		time(1);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(1);
-		click(btnPagInicial,folderPath, "click xpath");
+		click(btnPagInicial,folderPath, "click xpath" , Evidencia);
 		time(1);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(2);
 
 		return this;

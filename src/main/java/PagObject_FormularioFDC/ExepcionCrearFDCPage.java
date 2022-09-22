@@ -17,17 +17,17 @@ public class ExepcionCrearFDCPage extends ExepcionCrearFDCMap {
 	}
 
 	@Step("Crear FDC")
-    public ExepcionCrearFDCPage CrearFDC(String resultado, File folderPath) throws Exception {
+    public ExepcionCrearFDCPage CrearFDC(String resultado, File folderPath, String Evidencia) throws Exception {
         time(8);
-		click(btnCrear,folderPath, "click xpath");
+		click(btnCrear,folderPath, "click xpath" , Evidencia);
 		time(1);
-        captureScreen(folderPath, "Capture screen");
+        captureScreen(folderPath, "Capture screen" , Evidencia);
         time(1);
 		Assert.assertEquals(getElement(lblResultadoCrear).getText(),resultado);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
         time(6);
-        click(btnOK,folderPath, "click xpath");
-        captureScreen(folderPath, "Capture screen");
+        click(btnOK,folderPath, "click xpath" , Evidencia);
+        captureScreen(folderPath, "Capture screen" , Evidencia);
         time(2);
         
         return this;

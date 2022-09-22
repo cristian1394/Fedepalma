@@ -19,88 +19,88 @@ public class PolizaFDCPage extends PolizaFDCMap {
 	}
 
 	@Step("Ingresar a creacion FDC")
-    public PolizaFDCPage CrearFDC(File folderPath) throws Exception {
+    public PolizaFDCPage CrearFDC(File folderPath, String Evidencia) throws Exception {
 	
 	time(2);
-    click(btnCrear,folderPath, "click xpath");
+    click(btnCrear,folderPath, "click xpath" , Evidencia);
     time(1);
-    captureScreen(folderPath, "Capture screen");
+    captureScreen(folderPath, "Capture screen" , Evidencia);
     time(4);
     
     return this;
 }
 	
 	@Step("Crear poliza")
-    public PolizaFDCPage CrearPoliza(String Aseguradora, String Fecha, String valor, File folderPath) throws Exception {
+    public PolizaFDCPage CrearPoliza(String Aseguradora, String Fecha, String valor, File folderPath, String Evidencia) throws Exception {
 		
         time(4);
         ByPixelA();
         time(1);
-        click(btnTDemo,folderPath, "click xpath");
+        click(btnTDemo,folderPath, "click xpath" , Evidencia);
         time(3);
-        click(btnPoliza,folderPath, "click xpath");
+        click(btnPoliza,folderPath, "click xpath" , Evidencia);
         time(1);
         numeroAleatorio();
         time(1);
-        click(btnAseguradora,folderPath, "click xpath");
+        click(btnAseguradora,folderPath, "click xpath" , Evidencia);
         time(1);
-        writeText(txtAseguradora, Aseguradora, folderPath, valor);
+        writeText(txtAseguradora, Aseguradora, folderPath, valor, Evidencia);
         time(4);
-        click(btnCalendario,folderPath, "click xpath");
+        click(btnCalendario,folderPath, "click xpath" , Evidencia);
         time(2);
-        writeText(txtFecha, Fecha, folderPath, valor);
+        writeText(txtFecha, Fecha, folderPath, valor, Evidencia);
         time(1);
-        click(btnValor,folderPath, "click xpath");
+        click(btnValor,folderPath, "click xpath" , Evidencia);
         time(1);
-        writeText(txtValor, valor, folderPath, valor);
+        writeText(txtValor, valor, folderPath, valor, Evidencia);
         time(1);
         
-        captureScreen(folderPath, "Capture screen");
+        captureScreen(folderPath, "Capture screen" , Evidencia);
         time(4);
         
         return this;
     }
         
     @Step("Ingresar poliza")
-    public PolizaFDCPage IngresarPoliza(String Asociar, String resultado, File folderPath) throws Exception {       
+    public PolizaFDCPage IngresarPoliza(String Asociar, String resultado, File folderPath, String Evidencia) throws Exception {       
         
         
-        click(btnProducto,folderPath, "click xpath");
+        click(btnProducto,folderPath, "click xpath" , Evidencia);
         time(1);
-        click(btnPalma,folderPath, "click xpath");
+        click(btnPalma,folderPath, "click xpath" , Evidencia);
         time(1);
-        click(btnConsulta,folderPath, "click xpath");
+        click(btnConsulta,folderPath, "click xpath" , Evidencia);
         time(1);
-        click(btnSelect,folderPath, "click xpath");
+        click(btnSelect,folderPath, "click xpath" , Evidencia);
         time(1);
         String Total = getElement(lblTotal).getText();
         time(1);
-        click(btnAsociar,folderPath, "click xpath");
+        click(btnAsociar,folderPath, "click xpath" , Evidencia);
         time(1);
-        writeText(txtAsociar, Total, folderPath, Total);
+        writeText(txtAsociar, Total, folderPath, Total, Evidencia);
         time(1);
-        click(btnDemo,folderPath, "click xpath");
+        click(btnDemo,folderPath, "click xpath" , Evidencia);
         time(1);
         String Asegurado = getElement(lblAsegurado).getText();
         time(1);
-        click(btnValor,folderPath, "click xpath");
+        click(btnValor,folderPath, "click xpath" , Evidencia);
         time(1);
-        clear(btnValor,folderPath, "click xpath");
+        clear(btnValor,folderPath, "click xpath" , Evidencia);
         time(1);
-        writeText(txtValor, Asegurado, folderPath, Asegurado);
+        writeText(txtValor, Asegurado, folderPath, Asegurado, Evidencia);
         time(1);
-        click(btnValorDispo,folderPath, "click xpath");
+        click(btnValorDispo,folderPath, "click xpath" , Evidencia);
         time(1);
-        click(btnAdicionar,folderPath, "click xpath");
+        click(btnAdicionar,folderPath, "click xpath" , Evidencia);
         time(20);
 		Assert.assertEquals(getElement(lblResultadoAdicionar).getText(),resultado);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
         time(5);
-        click(btnOkey,folderPath, "click xpath");
+        click(btnOkey,folderPath, "click xpath" , Evidencia);
         time(2);
     	ByPixel();
         time(1);
-        captureScreen(folderPath, "Capture screen");
+        captureScreen(folderPath, "Capture screen" , Evidencia);
         time(4);
         
         return this;

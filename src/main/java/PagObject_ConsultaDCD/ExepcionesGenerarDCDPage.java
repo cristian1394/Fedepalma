@@ -18,27 +18,27 @@ public class ExepcionesGenerarDCDPage extends ExepcionesGenerarDCDMap {
 	}
 
 	@Step("Revicion DCD")
-    public ExepcionesGenerarDCDPage GenerarDCD(File folderPath) throws Exception {
+    public ExepcionesGenerarDCDPage GenerarDCD(File folderPath, String Evidencia) throws Exception {
 		
 		time(1);
 		ByPixel();
 		time(1);
-		click(btnGenerar,folderPath, "click xpath");
+		click(btnGenerar,folderPath, "click xpath" , Evidencia);
 		time(1);
 		
 		return this;
 	}
 	
 	@Step("Validar Generacion DCD")
-    public ExepcionesGenerarDCDPage ValidarGeneracionDCD(String Resultado, File folderPath) throws Exception {
+    public ExepcionesGenerarDCDPage ValidarGeneracionDCD(String Resultado, File folderPath, String Evidencia) throws Exception {
 		
 		time(6);
 		Assert.assertEquals(getElement(lblResultadoGenerar).getText(),Resultado);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(1);
-		click(btnOk,folderPath, "click xpath");
+		click(btnOk,folderPath, "click xpath" , Evidencia);
         time(2);
-        captureScreen(folderPath, "Capture screen");
+        captureScreen(folderPath, "Capture screen" , Evidencia);
 		
 		return this;
 	}

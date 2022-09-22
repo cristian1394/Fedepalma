@@ -16,46 +16,46 @@ public class EditarFFPPage extends EditarFFPMap {
 	}
 
 	@Step("Edicion FFP")
-	public EditarFFPPage EditarFFP(String PropiosH, String InicialFrutoG, String InicialFrutoH, String BajaFrutoG, File folderPath) throws Exception {
+	public EditarFFPPage EditarFFP(String PropiosH, String InicialFrutoG, String InicialFrutoH, String BajaFrutoG, File folderPath, String Evidencia) throws Exception {
 
 		time(2);
-		click(btnEditar,folderPath, "click xpath");
+		click(btnEditar,folderPath, "click xpath" , Evidencia);
 		time(15);
 		clear(txtCultivosH);
 		time(1);
-		writeText(txtCultivosH, PropiosH, folderPath, BajaFrutoG);
+		writeText(txtCultivosH, PropiosH, folderPath, BajaFrutoG, Evidencia);
 		time(2);
 		clear(txtInicialFrutoG);
 		time(1);
-		writeText(txtInicialFrutoG, InicialFrutoG, folderPath, BajaFrutoG);
+		writeText(txtInicialFrutoG, InicialFrutoG, folderPath, BajaFrutoG, Evidencia);
 		time(1);
 		clear(txtInicialFrutoH);
 		time(1);
-		writeText(txtInicialFrutoH, InicialFrutoH, folderPath, BajaFrutoG);
+		writeText(txtInicialFrutoH, InicialFrutoH, folderPath, BajaFrutoG, Evidencia);
 		time(2);
 		clear(txtBajaFrutoG);
 		time(1);
-		writeText(txtBajaFrutoG, BajaFrutoG, folderPath, BajaFrutoG);
+		writeText(txtBajaFrutoG, BajaFrutoG, folderPath, BajaFrutoG, Evidencia);
 		time(1);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(1);
 
 		return this;
 	}
 
 	@Step("Proveedores de Almendra FFP")
-	public EditarFFPPage ProveedoresAlmendra(String DocRPA, String KG, File folderPath) throws Exception {
+	public EditarFFPPage ProveedoresAlmendra(String DocRPA, String KG, File folderPath, String Evidencia) throws Exception {
 
 		time(2);
-		click(btnCompraIngresada,folderPath, "click xpath");
+		click(btnCompraIngresada,folderPath, "click xpath" , Evidencia);
 		time(2);
-		click(btnSeleccion,folderPath, "click xpath");
+		click(btnSeleccion,folderPath, "click xpath" , Evidencia);
 		time(2);
-		scrollElementV(folderPath, btnEliminar, "scroll ");
+		scrollElementV(folderPath, btnEliminar, "scroll " , Evidencia);
 		time(1);
-		click(btnBorrar,folderPath, "click xpath");
+		click(btnBorrar,folderPath, "click xpath" , Evidencia);
 		time(2);
-		click(btnSi,folderPath, "click xpath");
+		click(btnSi,folderPath, "click xpath" , Evidencia);
 		time(1);
 		String[] Nit = { "10050467882", "6088235", "860002527", "2155004", "32005286" };
 		Random aleatorio = new Random();
@@ -64,38 +64,38 @@ public class EditarFFPPage extends EditarFFPMap {
 		String txtNit = String.valueOf(Nit[Nit2]);
 
 		time(1);
-		writeText(txtNitE, txtNit, folderPath, txtNit);
+		writeText(txtNitE, txtNit, folderPath, txtNit, Evidencia);
 		time(1);
-		writeText(txtkg, KG, folderPath, txtNit);
+		writeText(txtkg, KG, folderPath, txtNit, Evidencia);
 		time(1);
-		click(btnAdicionarRPA,folderPath, "click xpath");
+		click(btnAdicionarRPA,folderPath, "click xpath" , Evidencia);
 		time(3);
 		File file = new File(DocRPA);
 		time(2);
 		WebElement ruta = driver.findElement(btnCargaRPA);
 		ruta.sendKeys(file.getAbsolutePath());
 		time(1);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(3);
-		click(btnGuardarRPA,folderPath, "click xpath");
+		click(btnGuardarRPA,folderPath, "click xpath" , Evidencia);
 		time(2);
 
 		return this;
 	}
 
 	@Step("Almendra Recibida FFP")
-	public EditarFFPPage AlmendraRecibida(String DocARPM, String KG, String PalmisteRecibida,File folderPath) throws Exception {
+	public EditarFFPPage AlmendraRecibida(String DocARPM, String KG, String PalmisteRecibida,File folderPath, String Evidencia) throws Exception {
 
 		time(1);
-		click(btnRecibidaIngresada,folderPath, "click xpath");
+		click(btnRecibidaIngresada,folderPath, "click xpath" , Evidencia);
 		time(2);
-		click(btnSelector,folderPath, "click xpath");
+		click(btnSelector,folderPath, "click xpath" , Evidencia);
 		time(2);
-		scrollElementV(folderPath, btnEliminar, "scroll ");
+		scrollElementV(folderPath, btnEliminar, "scroll " , Evidencia);
 		time(1);
-		click(btnEliminar,folderPath, "click xpath");
+		click(btnEliminar,folderPath, "click xpath" , Evidencia);
 		time(2);
-		click(btnConfirmar,folderPath, "click xpath");
+		click(btnConfirmar,folderPath, "click xpath" , Evidencia);
 		time(1);
 		String[] Nit = { "12457001", "12516054", "816004403", "1093911400", "900754604" };
 		Random aleatorio = new Random();
@@ -103,24 +103,24 @@ public class EditarFFPPage extends EditarFFPMap {
 		System.out.println(Nit[Nit2]);
 		String txtNit = String.valueOf(Nit[Nit2]);
 		time(1);
-		writeText(txtNitF, txtNit, folderPath, txtNit);
+		writeText(txtNitF, txtNit, folderPath, txtNit, Evidencia);
 		time(1);
-		writeText(txtKg, KG, folderPath, txtNit);
+		writeText(txtKg, KG, folderPath, txtNit, Evidencia);
 		time(1);
-		click(btnAdicionarARPM,folderPath, "click xpath");
+		click(btnAdicionarARPM,folderPath, "click xpath" , Evidencia);
 		time(3);
 		File file = new File(DocARPM);
 		time(2);
 		WebElement ruta = driver.findElement(btnCargaARPM);
 		ruta.sendKeys(file.getAbsolutePath());
 		time(1);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(3);
-		click(btnGuardarARPM,folderPath, "click xpath");
+		click(btnGuardarARPM,folderPath, "click xpath" , Evidencia);
 		time(2);
-		clear(txtProducidaRecibida,folderPath, "click xpath");
+		clear(txtProducidaRecibida,folderPath, "click xpath" , Evidencia);
 		time(1);
-		writeText(txtProducidaRecibida, PalmisteRecibida, file, txtNit);
+		writeText(txtProducidaRecibida, PalmisteRecibida, file, txtNit, Evidencia);
 		time(1);
 
 		return this;

@@ -17,35 +17,35 @@ public class ExepcionCMDCDPage extends ExepcionCMDCDMap {
 	}
 
 	@Step("Carga Masiva DCD")
-	public ExepcionCMDCDPage CargaDCD(String DocACM, File folderPath) throws Exception {
+	public ExepcionCMDCDPage CargaDCD(String DocACM, File folderPath, String Evidencia) throws Exception {
 		time(1);
 
 		ByPixel();
 		time(1);
-		click(btnCarga,folderPath, "click xpath");
+		click(btnCarga,folderPath, "click xpath" , Evidencia);
 		time(3);
 		File file = new File(DocACM);
 		time(2);
 		WebElement ruta = driver.findElement(btnArchivo);
 		ruta.sendKeys(file.getAbsolutePath());
 		time(2);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(5);
-		click(btnOk,folderPath, "click xpath");
-		captureScreen(folderPath, "Capture screen");
+		click(btnOk,folderPath, "click xpath" , Evidencia);
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(8);
 
 		return this;
 	}
 
 	@Step("Resultado de la carga masiva del DCD")
-	public ExepcionCMDCDPage ValidarResultadoCargaDCD(String resultado, File folderPath) throws Exception {
+	public ExepcionCMDCDPage ValidarResultadoCargaDCD(String resultado, File folderPath, String Evidencia) throws Exception {
 
 		Assert.assertEquals(getElement(lblResultadoCargaArchivo).getText(), resultado);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(6);
-		click(btnOkey,folderPath, "click xpath");
-		captureScreen(folderPath, "Capture screen");
+		click(btnOkey,folderPath, "click xpath" , Evidencia);
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(2);
 
 		return this;

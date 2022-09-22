@@ -14,49 +14,49 @@ public class Editar_FDCPage extends Editar_FDCMap {
 	}
 
 	@Step("Consulta FDC")
-	public Editar_FDCPage FormularioFDC(File folderPath) throws Exception {
+	public Editar_FDCPage FormularioFDC(File folderPath, String Evidencia) throws Exception {
 		time(2);
-		scrollElementV(folderPath, btnDemostracion, "scroll ");
-		click(btnDemostracion,folderPath, "click xpath");
+		scrollElementV(folderPath, btnDemostracion, "scroll " , Evidencia);
+		click(btnDemostracion,folderPath, "click xpath" , Evidencia);
 		time(1);
-		click(btnFDC,folderPath, "click xpath");
+		click(btnFDC,folderPath, "click xpath" , Evidencia);
 		time(2);
-		click(btnEstado,folderPath, "click xpath");
+		click(btnEstado,folderPath, "click xpath" , Evidencia);
 		time(1);
-		click(btnBorrador,folderPath, "click xpath");
+		click(btnBorrador,folderPath, "click xpath" , Evidencia);
 		time(1);
-		click(btnSAno,folderPath, "click xpath");
+		click(btnSAno,folderPath, "click xpath" , Evidencia);
 		time(1);
-		click(btnAno,folderPath, "click xpath");
+		click(btnAno,folderPath, "click xpath" , Evidencia);
 		time(1);
-		click(btnSMes,folderPath, "click xpath");
+		click(btnSMes,folderPath, "click xpath" , Evidencia);
 		time(1);
-		click(btnMes, folderPath, "click xpath");
-		captureScreen(folderPath, "Capture screen");
+		click(btnMes, folderPath, "click xpath" , Evidencia);
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(1);
-		click(btnBuscar,folderPath, "click xpath");
+		click(btnBuscar,folderPath, "click xpath" , Evidencia);
 		time(4);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		return this;
 	}
 
 	@Step("Editar FDC")
-	public Editar_FDCPage EditarFDC(File folderPath) throws Exception {
+	public Editar_FDCPage EditarFDC(File folderPath, String Evidencia) throws Exception {
 		time(10);
 
-		click(btnEditar,folderPath, "click xpath");
-		captureScreen(folderPath, "Capture screen");
+		click(btnEditar,folderPath, "click xpath" , Evidencia);
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(10);
-		scrollElementV(folderPath, btnBarra, "scroll ");
+		scrollElementV(folderPath, btnBarra, "scroll " , Evidencia);
 		
 		time(3);
-		click(btnCP,folderPath, "click xpath");
+		click(btnCP,folderPath, "click xpath" , Evidencia);
 		time(2);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(1);
-		click(btnCP,folderPath, "click xpath");
+		click(btnCP,folderPath, "click xpath" , Evidencia);
 		time(1);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(1);
 
 		return this;

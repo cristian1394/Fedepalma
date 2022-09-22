@@ -15,14 +15,14 @@ public class Consulta_FFPPage extends Consulta_FFPMap {
 	}
 
 	@Step("Consulta FFP")
-	public Consulta_FFPPage ConsultaFFP(File folderPath) throws Exception {
+	public Consulta_FFPPage ConsultaFFP(File folderPath, String Evidencia) throws Exception {
 
 		time(5);
-		click(btnFFP,folderPath, "click xpath");
+		click(btnFFP,folderPath, "click xpath" , Evidencia);
 		time(3);
-		click(btnNuevoFFP,folderPath, "click xpath");
+		click(btnNuevoFFP,folderPath, "click xpath" , Evidencia);
 		time(1);
-		click(btnDeclarante,folderPath, "click xpath");
+		click(btnDeclarante,folderPath, "click xpath" , Evidencia);
 		time(1);
 
 		String[] Nit = { "860055557", "37875899", "16488358", "17328717", "57438591", "800135956", "800012375",
@@ -33,23 +33,23 @@ public class Consulta_FFPPage extends Consulta_FFPMap {
 		String txtNit = String.valueOf(Nit[Nit2]);
 
 		time(1);
-		writeText(txtDeclarante, txtNit, folderPath, txtNit);
+		writeText(txtDeclarante, txtNit, folderPath, txtNit, Evidencia);
 		time(2);
-		click(btnSMes,folderPath, "click xpath");
+		click(btnSMes,folderPath, "click xpath" , Evidencia);
 		time(1);
-		click(btnMes,folderPath, "click xpath");
+		click(btnMes,folderPath, "click xpath" , Evidencia);
 		time(1);
-		click(btnSAno,folderPath, "click xpath");
+		click(btnSAno,folderPath, "click xpath" , Evidencia);
 		time(1);
-		click(btnAno,folderPath, "click xpath");
+		click(btnAno,folderPath, "click xpath" , Evidencia);
 		time(1);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(1);
-		click(btnBuscar,folderPath, "click xpath");
+		click(btnBuscar,folderPath, "click xpath" , Evidencia);
 		time(4);
-		click(btnOk,folderPath, "click xpath");
+		click(btnOk,folderPath, "click xpath" , Evidencia);
 		time(1);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 
 		return this;
 	}

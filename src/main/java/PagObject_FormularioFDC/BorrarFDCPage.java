@@ -18,18 +18,18 @@ public class BorrarFDCPage extends BorrarFDCMap {
 	}
 
 	@Step("Eliminar FDC")
-    public BorrarFDCPage BorrarFDC(String resultado, File folderPath) throws Exception {
+    public BorrarFDCPage BorrarFDC(String resultado, File folderPath, String Evidencia) throws Exception {
         time(8);
-		click(btnBorrar,folderPath, "Capture screen");
-		captureScreen(folderPath, "Capture screen");
+		click(btnBorrar,folderPath, "Capture screen" , Evidencia);
+		captureScreen(folderPath, "Capture screen" , Evidencia);
         time(5);
-        click(btnOk,folderPath, "Capture screen");
+        click(btnOk,folderPath, "Capture screen" , Evidencia);
         time(1);
 		Assert.assertEquals(getElement(lblResultadoBorrar).getText(),resultado);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
         time(6);
-        click(btnOK,folderPath, "Capture screen");
-        captureScreen(folderPath, "Capture screen");;
+        click(btnOK,folderPath, "Capture screen" , Evidencia);
+        captureScreen(folderPath, "Capture screen" , Evidencia);;
         time(2);
         
         return this;

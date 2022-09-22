@@ -18,15 +18,15 @@ public class ObserverFDCPage extends ObserverFDCMap {
 	
 	
 	@Step("Ver FDC")
-    public ObserverFDCPage VerFDC(File folderPath) throws Exception {
+    public ObserverFDCPage VerFDC(File folderPath, String Evidencia) throws Exception {
         time(1);
         
-		click(btnVer,folderPath, "click xpath");
+		click(btnVer,folderPath, "click xpath" , Evidencia);
         time(23);
-        captureScreen(folderPath, "Capture screen");
+        captureScreen(folderPath, "Capture screen" , Evidencia);
         ByPixel();
         time(1);
-        captureScreen(folderPath, "Capture screen");
+        captureScreen(folderPath, "Capture screen" , Evidencia);
         time(2);
         
         return this;

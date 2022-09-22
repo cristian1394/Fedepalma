@@ -13,54 +13,54 @@ public class FiltrarFFPPage extends FiltrarFFPMap {
 	}
 
 	@Step("Filtros FFP")
-	public FiltrarFFPPage FiltrarFFP(String Termine, String Inicia, String Igual, File folderPath) throws Exception {
+	public FiltrarFFPPage FiltrarFFP(String Termine, String Inicia, String Igual, File folderPath, String Evidencia) throws Exception {
 
 		time(5);
-		click(btnFFP,folderPath, "click xpath");
+		click(btnFFP,folderPath, "click xpath" , Evidencia);
 		time(3);
-		click(btnNuevoFFP,folderPath, "click xpath");
+		click(btnNuevoFFP,folderPath, "click xpath" , Evidencia);
 		time(1);
-		click(btnSAno,folderPath, "click xpath");
+		click(btnSAno,folderPath, "click xpath" , Evidencia);
 		time(1);
-		click(btnAno,folderPath, "click xpath");
+		click(btnAno,folderPath, "click xpath" , Evidencia);
 		time(1);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(1);
-		click(btnBuscar,folderPath, "click xpath");
+		click(btnBuscar,folderPath, "click xpath" , Evidencia);
 		time(15);
 
-		click(btnExportar,folderPath, "click xpath");
+		click(btnExportar,folderPath, "click xpath" , Evidencia);
 
 		time(3);
-		click(btnFMes,folderPath, "click xpath");
+		click(btnFMes,folderPath, "click xpath" , Evidencia);
 		time(3);
-		click(btnFiltro,folderPath, "click xpath");
+		click(btnFiltro,folderPath, "click xpath" , Evidencia);
 		time(1);
-		click(btnTermina,folderPath, "click xpath");
+		click(btnTermina,folderPath, "click xpath" , Evidencia);
 		time(1);
-		writeText(txtMes, Termine, folderPath, Igual);
+		writeText(txtMes, Termine, folderPath, Igual, Evidencia);
 		time(1);
-		click(btnFiltrar,folderPath, "click xpath");
+		click(btnFiltrar,folderPath, "click xpath" , Evidencia);
 		time(2);
-		click(btnPalmero,folderPath, "click xpath");
+		click(btnPalmero,folderPath, "click xpath" , Evidencia);
 		time(1);
-		click(btnfiltro,folderPath, "click xpath");
+		click(btnfiltro,folderPath, "click xpath" , Evidencia);
 		time(1);
-		click(btnComienza,folderPath, "click xpath");
+		click(btnComienza,folderPath, "click xpath" , Evidencia);
 		time(1);
-		writeText(txtPalmero, Inicia, folderPath, Igual);
+		writeText(txtPalmero, Inicia, folderPath, Igual, Evidencia);
 		time(1);
-		click(btnfiltrar,folderPath, "click xpath");
+		click(btnfiltrar,folderPath, "click xpath" , Evidencia);
 		time(2);
-		click(btnTipo,folderPath, "click xpath");
+		click(btnTipo,folderPath, "click xpath" , Evidencia);
 		time(1);
-		writeText(txtTipo, Igual, folderPath, Igual);
+		writeText(txtTipo, Igual, folderPath, Igual, Evidencia);
 		time(1);
-		click(btnFiltrarA,folderPath, "click xpath");
+		click(btnFiltrarA,folderPath, "click xpath" , Evidencia);
 		time(1);
-		click(btnExportar,folderPath, "click xpath");
+		click(btnExportar,folderPath, "click xpath" , Evidencia);
 		time(5);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 
 		return this;
 	}

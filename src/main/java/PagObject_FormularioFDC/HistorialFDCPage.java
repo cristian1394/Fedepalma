@@ -16,13 +16,13 @@ public class HistorialFDCPage extends HistorialFDCMap {
 	}
 
 	@Step("Ver Historial FDC")
-    public HistorialFDCPage HistorialFDC(File folderPath) throws Exception {
+    public HistorialFDCPage HistorialFDC(File folderPath, String Evidencia) throws Exception {
 		
         time(5);
-		click(btnHistorial,folderPath, "click xpath");
+		click(btnHistorial,folderPath, "click xpath" , Evidencia);
         time(9);
-        captureScreen(folderPath, "Capture screen");
-        click(btnCerrar,folderPath, "click xpath");
+        captureScreen(folderPath, "Capture screen" , Evidencia);
+        click(btnCerrar,folderPath, "click xpath" , Evidencia);
         time(2);
         
         return this;

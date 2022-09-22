@@ -16,44 +16,44 @@ public class ObservarSTecnicaPage extends ObservarSTecnicaMap {
 	}
 
 	@Step("Observar Secretaria Tecnica")
-	public ObservarSTecnicaPage VerSTecnica(String Observacion,File folderPath) throws Exception {
+	public ObservarSTecnicaPage VerSTecnica(String Observacion,File folderPath, String Evidencia) throws Exception {
 
 		time(2);
-		click(btnDesplegar,folderPath, "click xpath");
+		click(btnDesplegar,folderPath, "click xpath" , Evidencia);
 		time(2);
 		ByPixel();
 		time(1);
-		scrollElementV(folderPath, btnObservacion, "scroll ");
+		scrollElementV(folderPath, btnObservacion, "scroll " , Evidencia);
 		time(1);
 		ByPixelA();
 		time(1);
-		click(btnRevisar,folderPath, "click xpath");
+		click(btnRevisar,folderPath, "click xpath" , Evidencia);
 		time(1);
-		click(btnObservacion,folderPath, "click xpath");
+		click(btnObservacion,folderPath, "click xpath" , Evidencia);
 		time(1);
-		writeText(txtObservacion, Observacion, folderPath, Observacion);
+		writeText(txtObservacion, Observacion, folderPath, Observacion, Evidencia);
 		time(1);
-		click(btnLupa,folderPath, "click xpath");
+		click(btnLupa,folderPath, "click xpath" , Evidencia);
 		time(3);
-		click(btnSalir,folderPath, "click xpath");
+		click(btnSalir,folderPath, "click xpath" , Evidencia);
 		time(1);
 		ByPixel();
 		time(1);
-		click(btnGuardar,folderPath, "click xpath");
+		click(btnGuardar,folderPath, "click xpath" , Evidencia);
 		time(4);
 
 		return this;
 	}
 
 	@Step("Resultado Guardar Secretaria Tecnica")
-	public ObservarSTecnicaPage ValidarGuardarRevicion(String resultado,File folderPath) throws Exception {
+	public ObservarSTecnicaPage ValidarGuardarRevicion(String resultado,File folderPath, String Evidencia) throws Exception {
 
 		time(1);
 		Assert.assertEquals(getElement(lblResultadoGuardar).getText(), resultado);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(2);
-		click(btnOk,folderPath, "click xpath");
-		captureScreen(folderPath, "Capture screen");
+		click(btnOk,folderPath, "click xpath" , Evidencia);
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(3);
 
 		return this;

@@ -19,93 +19,93 @@ public class Editar_DCDPage extends Editar_DCDMap {
 	}
 
 	@Step("Rellenar Formulario DCD")
-    public Editar_DCDPage RellenarDCD(File folderPath) throws Exception {
+    public Editar_DCDPage RellenarDCD(File folderPath, String Evidencia) throws Exception {
         
         time(1);
-        click(btnDemostracion,folderPath, "click xpath");
+        click(btnDemostracion,folderPath, "click xpath" , Evidencia);
         time(1);
-        captureScreen(folderPath, "Capture screen");
+        captureScreen(folderPath, "Capture screen" , Evidencia);
         time(1);
-        click(btnDCD,folderPath, "click xpath");
+        click(btnDCD,folderPath, "click xpath" , Evidencia);
         time(3);
-        click(btnEstado,folderPath, "click xpath");
+        click(btnEstado,folderPath, "click xpath" , Evidencia);
         time(1);
-        click(btnBorrador,folderPath, "click xpath");
+        click(btnBorrador,folderPath, "click xpath" , Evidencia);
         time(1);
-        click(btnSAno,folderPath, "click xpath");
+        click(btnSAno,folderPath, "click xpath" , Evidencia);
         time(1);
-        click(btnAno,folderPath, "click xpath");
+        click(btnAno,folderPath, "click xpath" , Evidencia);
         time(1);
-        click(btnMesN,folderPath, "click xpath");
+        click(btnMesN,folderPath, "click xpath" , Evidencia);
         time(1);
-        click(btnFebrero,folderPath, "click xpath");
-		captureScreen(folderPath, "Capture screen");
+        click(btnFebrero,folderPath, "click xpath" , Evidencia);
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(1);
-		click(btnBuscar,folderPath, "click xpath");
+		click(btnBuscar,folderPath, "click xpath" , Evidencia);
 		time(7);
-        captureScreen(folderPath, "Capture screen");
+        captureScreen(folderPath, "Capture screen" , Evidencia);
         
         return this;
     }
 	
 	@Step("Editar DCD")
-    public Editar_DCDPage EditarDCD(String kg, String CP, String kilos, File folderPath) throws Exception {
+    public Editar_DCDPage EditarDCD(String kg, String CP, String kilos, File folderPath, String Evidencia) throws Exception {
         time(26);
-		click(btnEditar,folderPath, "click xpath");
+		click(btnEditar,folderPath, "click xpath" , Evidencia);
 		time(1);
-		click(btnProductoA,folderPath, "click xpath");
+		click(btnProductoA,folderPath, "click xpath" , Evidencia);
 		time(1);
-		click(btnPalmiste,folderPath, "click xpath");
+		click(btnPalmiste,folderPath, "click xpath" , Evidencia);
 		time(1);
-		click(btnMercado,folderPath, "click xpath");
+		click(btnMercado,folderPath, "click xpath" , Evidencia);
 		time(1);
-		click(btnPais,folderPath, "click xpath");
+		click(btnPais,folderPath, "click xpath" , Evidencia);
 		time(1);
-		click(btnBorrar,folderPath, "click xpath");
+		click(btnBorrar,folderPath, "click xpath" , Evidencia);
 		time(1);
-		clear(btnBorrar,folderPath, "click xpath");
+		clear(btnBorrar,folderPath, "click xpath" , Evidencia);
 		time(1);
-		writeText(txtKilos, kg, folderPath, kilos);
+		writeText(txtKilos, kg, folderPath, kilos, Evidencia);
 		time(1);
 		ByPixel();
 		time(1);
-		click(btnCP,folderPath, "click xpath");
+		click(btnCP,folderPath, "click xpath" , Evidencia);
 		time(1);
-		writeText(txtCP, CP, folderPath, kilos);
+		writeText(txtCP, CP, folderPath, kilos, Evidencia);
 		time(1);
-		click(btnKg,folderPath, "click xpath");
+		click(btnKg,folderPath, "click xpath" , Evidencia);
 		time(1);
-		writeText(txtKg, kilos, folderPath, kilos);
+		writeText(txtKg, kilos, folderPath, kilos, Evidencia);
         time(3);
-		click(btnCalendario,folderPath, "click xpath");
+		click(btnCalendario,folderPath, "click xpath" , Evidencia);
 		time(1);
-		click(btnSelMes,folderPath, "click xpath");
+		click(btnSelMes,folderPath, "click xpath" , Evidencia);
 		time(1);
-		click(btnMes,folderPath, "click xpath");
+		click(btnMes,folderPath, "click xpath" , Evidencia);
 		time(1);
-		click(btnDia,folderPath, "click xpath");
+		click(btnDia,folderPath, "click xpath" , Evidencia);
 		time(1);
-		click(btnAdicionar,folderPath, "click xpath");
-		captureScreen(folderPath, "Capture screen");
+		click(btnAdicionar,folderPath, "click xpath" , Evidencia);
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		
         return this;
     }
 	
 	@Step("Validar Adicion CD")
-    public Editar_DCDPage ValidarAdicionCD(String resultado, File folderPath) throws Exception {
+    public Editar_DCDPage ValidarAdicionCD(String resultado, File folderPath, String Evidencia) throws Exception {
 		
 		time(10);
 		Assert.assertEquals(getElement(lblResultadoAdicion).getText(),resultado);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(6);
-		click(btnOk,folderPath, "click xpath");
-		captureScreen(folderPath, "Capture screen");
+		click(btnOk,folderPath, "click xpath" , Evidencia);
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		//Certificado Guardado Correctamente.
 		
 		return this;
 	}
 	
-	public Editar_DCDPage CargaCD(String EXC, File folderPath) throws InterruptedException {
+	public Editar_DCDPage CargaCD(String EXC, File folderPath, String Evidencia) throws InterruptedException {
 		
 		time(8);
 		 File file = new File(EXC);
@@ -118,30 +118,30 @@ public class Editar_DCDPage extends Editar_DCDMap {
 	}
 	
 	@Step("Validar Carga CD")
-    public Editar_DCDPage ValidarCargaCD(String resultado, File folderPath) throws Exception {
+    public Editar_DCDPage ValidarCargaCD(String resultado, File folderPath, String Evidencia) throws Exception {
 		
 		time(9);
 		Assert.assertEquals(getElement(lblResultadoCarga).getText(),resultado);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(1);
-		click(btnOkey,folderPath, "click xpath");
+		click(btnOkey,folderPath, "click xpath" , Evidencia);
 		ByPixel();
 		time(2);
-		click(btnGuardar,folderPath, "click xpath");
+		click(btnGuardar,folderPath, "click xpath" , Evidencia);
 		//Certificados Guardados Correctamente.
 		
 		return this;
 	}
 	
 	@Step("Validar Guardar CD")
-    public Editar_DCDPage ValidarGuardarDCD(String resultado, File folderPath) throws Exception {
+    public Editar_DCDPage ValidarGuardarDCD(String resultado, File folderPath, String Evidencia) throws Exception {
 		
 		time(9);
 		Assert.assertEquals(getElement(lblResultadoGuardar).getText(),resultado);
 		time(3);
-		click(btnOkay,folderPath, "click xpath");
+		click(btnOkay,folderPath, "click xpath" , Evidencia);
 		time(5);
-       captureScreen(folderPath, "Capture screen");
+       captureScreen(folderPath, "Capture screen" , Evidencia);
 		//Proceso realizado con éxito
 		
 		return this;

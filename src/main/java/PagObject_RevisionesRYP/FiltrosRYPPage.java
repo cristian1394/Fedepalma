@@ -15,75 +15,75 @@ public class FiltrosRYPPage extends FiltrosRYPMap {
 	}
 
 	@Step("Verificacion de Filtros RYP")
-    public FiltrosRYPPage ValidarFiltrosRYP(String Año, String inicial, String producto, String Grupo, File folderPath) throws Exception {
+    public FiltrosRYPPage ValidarFiltrosRYP(String Año, String inicial, String producto, String Grupo, File folderPath, String Evidencia) throws Exception {
 		
         time(2);
-        click(btnAño,folderPath, "click xpath");
+        click(btnAño,folderPath, "click xpath" , Evidencia);
         time(1);
-        writeText(txtAño, Año, folderPath, Grupo);
+        writeText(txtAño, Año, folderPath, Grupo, Evidencia);
         time(1);
-        click(btnFiltrar,folderPath, "click xpath");
+        click(btnFiltrar,folderPath, "click xpath" , Evidencia);
         time(1);
-        captureScreen(folderPath, "Capture screen");
+        captureScreen(folderPath, "Capture screen" , Evidencia);
         
         String Mes = getElement(lblMes).getText();
         time(1);
-        click(btnMes,folderPath, "click xpath");
+        click(btnMes,folderPath, "click xpath" , Evidencia);
         time(1);
-        click(btnFiltra,folderPath, "click xpath");
+        click(btnFiltra,folderPath, "click xpath" , Evidencia);
         time(1);
-        click(btnContiene,folderPath, "click xpath");
+        click(btnContiene,folderPath, "click xpath" , Evidencia);
         time(1);
-        writeText(txtMes, Mes, folderPath, Mes);
+        writeText(txtMes, Mes, folderPath, Mes, Evidencia);
         time(1);
-        click(btnfiltrar,folderPath, "click xpath");
+        click(btnfiltrar,folderPath, "click xpath" , Evidencia);
         time(1);
-        captureScreen(folderPath, "Capture screen");
+        captureScreen(folderPath, "Capture screen" , Evidencia);
 		
-        click(btnDeclarante,folderPath, "click xpath");
+        click(btnDeclarante,folderPath, "click xpath" , Evidencia);
         time(1);
-        click(btnFiltro,folderPath, "click xpath");
+        click(btnFiltro,folderPath, "click xpath" , Evidencia);
         time(1);
-        click(btnComienza,folderPath, "click xpath");
+        click(btnComienza,folderPath, "click xpath" , Evidencia);
         time(1);
-        writeText(txtInicial, inicial, folderPath, Mes);
+        writeText(txtInicial, inicial, folderPath, Mes, Evidencia);
         time(1);
-        click(btnFiltrarD,folderPath, "click xpath");
+        click(btnFiltrarD,folderPath, "click xpath" , Evidencia);
         time(1);
-        captureScreen(folderPath, "Capture screen");
+        captureScreen(folderPath, "Capture screen" , Evidencia);
         
-        click(btnProducto,folderPath, "click xpath");
+        click(btnProducto,folderPath, "click xpath" , Evidencia);
         time(1);
-        click(btnLista,folderPath, "click xpath");
+        click(btnLista,folderPath, "click xpath" , Evidencia);
         time(1);
-        click(btnNoContiene,folderPath, "click xpath");
+        click(btnNoContiene,folderPath, "click xpath" , Evidencia);
         time(1);
-        writeText(txtProducto, producto, folderPath, Mes);
+        writeText(txtProducto, producto, folderPath, Mes, Evidencia);
         time(1);
-        click(btnFiltrarP,folderPath, "click xpath");
+        click(btnFiltrarP,folderPath, "click xpath" , Evidencia);
         time(1);
-        captureScreen(folderPath, "Capture screen");
+        captureScreen(folderPath, "Capture screen" , Evidencia);
         
         
         time(1);
-        click(btnGrupoMercado,folderPath, "click xpath");
+        click(btnGrupoMercado,folderPath, "click xpath" , Evidencia);
         time(1);
-        writeText(txtTexto, Grupo, folderPath, Mes);
+        writeText(txtTexto, Grupo, folderPath, Mes, Evidencia);
         time(1);
-        click(btnfiltro,folderPath, "click xpath");
+        click(btnfiltro,folderPath, "click xpath" , Evidencia);
         time(1);
-        captureScreen(folderPath, "Capture screen");
+        captureScreen(folderPath, "Capture screen" , Evidencia);
         
         return this;
     }
 	
 	@Step("Verificacion de Exportacion")
-    public FiltrosRYPPage ExportacionExcel(File folderPath) throws Exception {
+    public FiltrosRYPPage ExportacionExcel(File folderPath, String Evidencia) throws Exception {
         
 		time(1);
-		click(btnExportar,folderPath, "click xpath");
+		click(btnExportar,folderPath, "click xpath" , Evidencia);
 		time(1);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(3);
 		
         return this;
