@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.Trazabilidad.test.TrazabilidadTest">
+      <class name="com.ConsultaDCD.test.CrearDCDTest">
         <methods>
+          <include name="CrearDCDPortalFedepalma"/>
           <include name="tearDown"/>
           <include name="inicializar"/>
-          <include name="TrazabilidadPortalFedepalma"/>
         </methods>
-      </class> <!-- com.Trazabilidad.test.TrazabilidadTest -->
+      </class> <!-- com.ConsultaDCD.test.CrearDCDTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

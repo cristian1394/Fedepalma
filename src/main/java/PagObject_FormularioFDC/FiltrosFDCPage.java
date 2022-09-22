@@ -98,7 +98,7 @@ public class FiltrosFDCPage extends FiltrosFDCMap {
         
 		time(1);
 		click(btnExportar,folderPath, "click xpath");
-		time(500);
+		time(1);
 		captureScreen(folderPath, "Capture screen");
 		time(3);
 		
