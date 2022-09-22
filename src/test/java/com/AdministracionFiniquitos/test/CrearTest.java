@@ -37,12 +37,9 @@ public class CrearTest extends BaseTest{
 	
 	public void Logeo(String nameTest, File folderPath) throws Exception {
 		
-	 GenerarReportePdf.setRutaImagen(getProperties().getProperty("routeImageReport"));
-		//File folderPath = BasePage.createFolder(getProperties().getProperty("nameFolder"),
-				//getProperties().getProperty("path"));
-
+	 GenerarReportePdf.setRutaImagen(getProperties().getProperty("routeImageReport"));		
 		GenerarReportePdf.createTemplate(folderPath, nameTest, getProperties().getProperty("analista"),
-				getProperties().getProperty("url"));
+				getProperties().getProperty("url"),getProperties().getProperty("Evidencia"));
 		
 		GenerarReportePdf.setImgContador(0);
 	}
@@ -58,20 +55,20 @@ public class CrearTest extends BaseTest{
 		//OBTENER EL NOMBRE DEL METODO A EJECUTAR
         String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();
 		
-		File folderPath = BasePage.createFolder(nomTest,getProperties().getProperty("path"));
+		File folderPath = BasePage.createFolder(nomTest,getProperties().getProperty("path"),getProperties().getProperty("Evidencia"));
 		
-		MyScreenRecorder.startRecording(nomTest, folderPath);
+		MyScreenRecorder.startRecording(nomTest, folderPath,getProperties().getProperty("Video"));
 
 		Logeo(nomTest,folderPath);
 		
 		home.irPortal(getProperties().getProperty("url"));
         Login.ingresarCredencialesConNit(getProperties().getProperty("NIT"), getProperties().getProperty("USR"),
-        		getProperties().getProperty("pwd"),folderPath);
-        FormularioFCP.FormularioFCP(folderPath).SeleccionarAño(folderPath).SeleccionarMes(folderPath).Buscar(folderPath);
+        		getProperties().getProperty("pwd"),folderPath,getProperties().getProperty("Evidencia"));
+        //FormularioFCP.FormularioFCP(folderPath).SeleccionarAño(folderPath).SeleccionarMes(folderPath).Buscar(folderPath);
         
-        MyScreenRecorder.stopRecording();
+        MyScreenRecorder.stopRecording(getProperties().getProperty("Video"));
         
-        GenerarReportePdf.closeTemplate("");
+        GenerarReportePdf.closeTemplate("",getProperties().getProperty("Evidencia"));
    
 	}
 	
@@ -81,6 +78,8 @@ public class CrearTest extends BaseTest{
     @Story("Crear FCP (DEX)")
     @TmsLink("XRPRJ-1")
     public void CrearDEXPortalFedepalma () throws Exception {
+		
+		// Error al consultar DCD
 		
 		//OBTENER EL NOMBRE DEL METODO A EJECUTAR
         String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();

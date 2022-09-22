@@ -534,14 +534,21 @@ public class BasePage {
 	}
 
 	// METODO PARA CREAR CARPETA PARA CAPTURA
-	public static File createFolder(String nameFolder, String path) {
+	public static File createFolder(String nameFolder, String path, String Evidencia) {
+		if (Evidencia.equals("SI")) {
 		String fecha = fechaSistema();
 		String nomCarpeta = nameFolder + " " + fecha;
 		File directorio = new File(path + nomCarpeta);
 		directorio.mkdir();
 		return directorio;
+	   }
+		else 
+		{
+			System.out.println("NO Evidencia");
+		}
+		return null;
 	}
-
+	
 	// METODO PARA ELIMINAR ARCHIVO
 	public void deleteFile(String rutaImagen) {
 		File fichero = new File(rutaImagen);

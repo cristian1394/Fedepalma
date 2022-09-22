@@ -142,14 +142,23 @@ public class BasePage {
 	}
 
 	// METODO PARA ESCRIBIR EN UN ELEMENTO
-	public void writeText(By elementLocation, String text, File folderPath, String steps) throws Exception {
+	
+	
+	public void writeText(By elementLocation, String text, File folderPath, String steps, String Evidencia) throws Exception {
+		if (Evidencia.equals("SI"))
 		try {
+			
 			visibilityOfElementLocated(elementLocation);
 			driver.findElement(elementLocation).sendKeys(text);
 			time(2);
 			captureScreen(folderPath, steps);
 		} catch (Exception e) {
-			GenerarReportePdf.closeTemplate(e.toString());
+			GenerarReportePdf.closeTemplate(e.toString(), Evidencia);
+		}
+		else
+		{
+			driver.findElement(elementLocation).sendKeys(text);
+			time(2);
 		}
 	}
 	
@@ -183,15 +192,23 @@ public class BasePage {
 	}
 
 	// METODO PARA DAR CLICK EN UN ELEMENTO  // modificar
-	public void click(By elementLocation, File folderPath, String steps) throws Exception {
+	public void click(By elementLocation, File folderPath, String steps, String Evidencia) throws Exception {
+		if (Evidencia.equals("SI"))
 		try {
 			visibilityOfElementLocated(elementLocation);
 			driver.findElement(elementLocation).click();
 			time(2);
 			captureScreen(folderPath, steps);
 		} catch (Exception e) {
-			GenerarReportePdf.closeTemplate(e.toString());
+			GenerarReportePdf.closeTemplate(e.toString(), Evidencia);
 		}
+		
+		else 
+		{
+			driver.findElement(elementLocation).click();
+			time(2);	
+		}
+			
 	}
 	
 
