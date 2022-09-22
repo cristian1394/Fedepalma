@@ -55,7 +55,7 @@ public class FMMEsFDCPage extends FMMEsFDCMap {
         String Total = getElement(lblTotal).getText();
         time(2);
         writeText(txtAsociar, Total, folderPath, Total);
-        time(1500);
+        time(2);
         click(btnSeleccionar,folderPath, "click xpath");
         time(1);
         String Totals = getElement(lblTotals).getText();
