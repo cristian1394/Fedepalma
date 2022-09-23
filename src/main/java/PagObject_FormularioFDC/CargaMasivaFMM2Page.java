@@ -2,59 +2,48 @@ package PagObject_FormularioFDC;
 
 import java.io.File;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 
-import com.demoautomatizacion.utils.Utilidades;
-
-import PagObject_demoautomatizacion.BasePage;
+import MapObject_FormularioFDC.CargaMasivaFMM2Map;
 import io.qameta.allure.Step;
 
-public class CargaMasivaFMM2Page extends BasePage {
+public class CargaMasivaFMM2Page extends CargaMasivaFMM2Map {
 
-	By btnCarga=By.id("btnCargaMasivaFmm");
-	By btnArchivo=By.id("fileCargueMasivoFmm");
-	By btnOk=By.id("CargaMasivaFmm");
-	By lblResultadoCarga=By.xpath("/html/body/div[8]/p");
-	By btnOkey=By.xpath("/html/body/div[8]/div[7]/div/button");
-	By btnCancelar=By.xpath("//*[@id=\"CargueMasivoFMM\"]/div/div/div[4]/button");
-	 
 	public CargaMasivaFMM2Page(WebDriver driver) {
 		super(driver);
-		
+		// TODO Auto-generated constructor stub
 	}
-	
+
 	@Step("Carga Masiva DEX")
-    public CargaMasivaFMM2Page CargaFMM(String DocACM, String resultado) {
-        Utilidades.time(1000);
-        
-		Utilidades.ByPixel();
-		Utilidades.time(1000);
-		click(btnCarga);
-		Utilidades.time(2500);
-		 File file = new File(DocACM);
-		 Utilidades.time(1200);
-		 WebElement ruta = driver.findElement(btnArchivo);
-		 ruta.sendKeys(file.getAbsolutePath()); 
-		 Utilidades.time(1000);
-		Utilidades.screenshot();
-		Utilidades.time(3000);
-		click(btnOk);
-		Utilidades.time(6000);
-		Assert.assertEquals(getElement(lblResultadoCarga).getText(),resultado);
-		Utilidades.screenshot();
-        Utilidades.time(9000);
-		click(btnOkey);
-        Utilidades.screenshot();
-        Utilidades.time(1000);
-        click(btnCancelar);
-        Utilidades.screenshot();
-        Utilidades.time(2000);
-        
-        return this;
-    }
-	
+	public CargaMasivaFMM2Page CargaFMM(String DocACM, String resultado, File folderPath, String Evidencia) throws Exception {
+		time(1);
+
+		ByPixel();
+		time(1);
+		click(btnCarga, folderPath, "click xpath" , Evidencia);
+		time(3);
+		File file = new File(DocACM);
+		time(2);
+		WebElement ruta = driver.findElement(btnArchivo);
+		ruta.sendKeys(file.getAbsolutePath());
+		time(1);
+		captureScreen(folderPath, "Capture screen" , Evidencia);
+		time(3);
+		click(btnOk, folderPath, "click xpath" , Evidencia);
+		time(6);
+		Assert.assertEquals(getElement(lblResultadoCarga).getText(), resultado);
+		captureScreen(folderPath, "Capture screen" , Evidencia);
+		time(9);
+		click(btnOkey, folderPath, "click xpath" , Evidencia);
+		captureScreen(folderPath, "Capture screen" , Evidencia);
+		time(1);
+		click(btnCancelar, folderPath, "click xpath" , Evidencia);
+		captureScreen(folderPath, "Capture screen" , Evidencia);
+		time(2);
+
+		return this;
+	}
+
 }

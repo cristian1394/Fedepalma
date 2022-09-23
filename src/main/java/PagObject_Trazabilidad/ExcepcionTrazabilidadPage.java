@@ -1,65 +1,53 @@
 package PagObject_Trazabilidad;
 
-import javax.swing.JScrollPane;
+import java.io.File;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 
-import com.demoautomatizacion.utils.Utilidades;
-
-import PagObject_demoautomatizacion.BasePage;
+import MapObject_Trazabilidad.ExcepcionTrazabilidadMap;
 import io.qameta.allure.Step;
 
-public class ExcepcionTrazabilidadPage extends BasePage {
+public class ExcepcionTrazabilidadPage extends ExcepcionTrazabilidadMap {
 	
-	By btnSMes=By.xpath("//*[@id=\"IdMes\"]");
-	By btnMes=By.xpath("//*[@id=\"IdMes\"]/option[2]");
-	By btnSAno=By.xpath("//*[@id=\"IdAnio\"]");
-	By btnAno=By.xpath("//*[@id=\"IdAnio\"]/option[3]");
 	
-	By btnConsultar=By.xpath("//*[@id=\"ConsultaTrazabilidad\"]");
-	By lblResultadoTrazabilidad=By.xpath("//p");
-	By btnOk=By.xpath("//div[7]/div/button");
 	
 	public ExcepcionTrazabilidadPage(WebDriver driver) {
 		super(driver);
+		// TODO Auto-generated constructor stub
 	}
-	
+
 	@Step("Rellenar Trazabilidad")
-    public ExcepcionTrazabilidadPage RellenarTrazabilidad() {
+    public ExcepcionTrazabilidadPage RellenarTrazabilidad(File folderPath, String Evidencia) throws Exception {
      
-        Utilidades.time(800);
-        click(btnSMes);
-        Utilidades.time(800);
-        click(btnMes);
-        Utilidades.time(800);
-        click(btnSAno);
-        Utilidades.time(800);
-        click(btnAno);
-		Utilidades.screenshot();
-		Utilidades.time(1000);
-		click(btnConsultar);
-        Utilidades.time(2500);
-        Utilidades.screenshot();
+        time(1);
+        click(btnSMes,folderPath, "click xpath" , Evidencia);
+        time(1);
+        click(btnMes,folderPath, "click xpath" , Evidencia);
+        time(1);
+        click(btnSAno,folderPath, "click xpath" , Evidencia);
+        time(1);
+        click(btnAno,folderPath, "click xpath" , Evidencia);
+		captureScreen(folderPath, "Capture screen" , Evidencia);
+		time(1);
+		click(btnConsultar,folderPath, "click xpath" , Evidencia);
+        time(3);
+        captureScreen(folderPath, "Capture screen" , Evidencia);
 
          
         return this;
     }
 	
 	@Step("Exportar Formulario Trazabiidad")
-    public ExcepcionTrazabilidadPage ValidarResultadoTrazabilidad(String resultado) {
+    public ExcepcionTrazabilidadPage ValidarResultadoTrazabilidad(String resultado, File folderPath, String Evidencia) throws Exception {
 		
-		Utilidades.time(1000);
+		time(1);
 		Assert.assertEquals(getElement(lblResultadoTrazabilidad).getText(),resultado);
-		Utilidades.screenshot();
-        Utilidades.time(6000);
-        click(btnOk);
-        Utilidades.screenshot();
-        Utilidades.time(2500);
+		captureScreen(folderPath, "Capture screen" , Evidencia);
+        time(6);
+        click(btnOk,folderPath, "click xpath" , Evidencia);
+        captureScreen(folderPath, "Capture screen" , Evidencia);
+        time(3);
          
         return this;
     }

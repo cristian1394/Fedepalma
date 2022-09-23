@@ -1,73 +1,61 @@
 package PagObject_FormularioFDC;
 
 import java.io.File;
-import java.util.Random;
-
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 
-import com.demoautomatizacion.utils.Utilidades;
-
-import PagObject_demoautomatizacion.BasePage;
+import MapObject_FormularioFDC.RevisarFDCMap;
 import io.qameta.allure.Step;
 
-public class RevisarFDCPage extends BasePage {
+public class RevisarFDCPage extends RevisarFDCMap  {
 
-	By btnCrear=By.id("btnCrear");
-	By btnRevisar=By.id("btnRevisarFdc");
-	By btnSalir=By.id("btnSalirFdc");
-	By lblResultadoRevisar=By.xpath("//div[17]/p");
-	By btnOk=By.xpath("//div[7]/div/button");
+	
 	
 	public RevisarFDCPage(WebDriver driver) {
 		super(driver);
-		
+		// TODO Auto-generated constructor stub
 	}
-	
+
 	@Step("Crear FDC")
-    public RevisarFDCPage CrearFDC() throws Exception {
+    public RevisarFDCPage CrearFDC(File folderPath, String Evidencia) throws Exception {
 		
-        Utilidades.time(2000);
-        click(btnCrear);
-		Utilidades.time(500);
-        Utilidades.screenshot();
-        Utilidades.time(1000);
+        time(2);
+        click(btnCrear,folderPath, "click xpath" , Evidencia);
+		time(1);
+        captureScreen(folderPath, "Capture screen" , Evidencia);
+        time(1);
         
         return this;
     }
 
 @Step("Revisar FDC")
-public RevisarFDCPage RevisarFDC(String resultado) {
+public RevisarFDCPage RevisarFDC(String resultado, File folderPath, String Evidencia) throws Exception {
 	
-	Utilidades.time(500);
-	Utilidades.ByPixel();
-	Utilidades.time(1000);
-	click(btnRevisar);
-	Utilidades.time(4000);
-    Utilidades.screenshot();
-    Utilidades.time(1000);
+	time(1);
+	ByPixel();
+	time(1);
+	click(btnRevisar,folderPath, "click xpath" , Evidencia);
+	time(4);
+    captureScreen(folderPath, "Capture screen" , Evidencia);
+    time(1);
 	Assert.assertEquals(getElement(lblResultadoRevisar).getText(),resultado);
-	Utilidades.screenshot();
-    Utilidades.time(6000);
-    click(btnOk);
-    Utilidades.screenshot();
-    Utilidades.time(2000);
+	captureScreen(folderPath, "Capture screen" , Evidencia);
+    time(6);
+    click(btnOk,folderPath, "click xpath" , Evidencia);
+    captureScreen(folderPath, "Capture screen" , Evidencia);
+    time(2);
 	
 	return this;
 }
 
 @Step("Salir FDC")
-public RevisarFDCPage SalirFDC() {
+public RevisarFDCPage SalirFDC(File folderPath, String Evidencia) throws Exception {
 	
-	Utilidades.time(500);
-	Utilidades.screenshot();
-	Utilidades.time(500);
-	click(btnSalir);
-	Utilidades.time(8000);
+	time(1);
+	captureScreen(folderPath, "Capture screen" , Evidencia);
+	time(1);
+	click(btnSalir,folderPath, "click xpath" , Evidencia);
+	time(8);
 	
 	return this;
 }

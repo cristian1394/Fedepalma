@@ -43,8 +43,9 @@ public class MyScreenRecorder extends ScreenRecorder {
 				name + "-" + dateFormat.format(new Date()) + "." + Registry.getInstance().getExtension(fileFormat));
 	}
 
-	public static void startRecording(String methodName, File rutaCarpeta) throws Exception {
+	public static void startRecording(String methodName, File rutaCarpeta,String Video) throws Exception {
 		// File file = new File("./recordings/");
+		if (Video.equals("SI")) {
 		System.out.println("Inicia proceso de grabacion");
 		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 		int width = screenSize.width;
@@ -64,10 +65,21 @@ public class MyScreenRecorder extends ScreenRecorder {
 				null, rutaCarpeta, methodName);
 
 		screenRecorder.start();
+	    }
+		else 
+		{
+			System.out.println("NO Evidencia");
+		}
 	}
 
-	public static void stopRecording() throws Exception {
+	public static void stopRecording(String Video) throws Exception {
+		if (Video.equals("SI")) {
 		screenRecorder.stop();
 		System.out.println("Finaliza proceso de grabacion");
 	}
+		else 
+		{
+			System.out.println("NO Evidencia");
+		}
+   }
 }

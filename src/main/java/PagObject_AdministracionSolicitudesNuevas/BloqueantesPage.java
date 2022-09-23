@@ -4,12 +4,10 @@ import java.io.File;
 
 import org.openqa.selenium.WebDriver;
 
-import com.demoautomatizacion.utils.Utilidades;
-
 import MapObject_AdministracionSolicitudesNuevas.BloqueantesMaps;
 import io.qameta.allure.Step;
 
-@SuppressWarnings("unused")
+
 public class BloqueantesPage extends BloqueantesMaps {
 
 	public BloqueantesPage(WebDriver driver) {
@@ -18,339 +16,339 @@ public class BloqueantesPage extends BloqueantesMaps {
 	}
 
 	@Step("Selecionar menu")
-	public BloqueantesPage SelecionarMenu(File folderPath) throws Exception {
+	public BloqueantesPage SelecionarMenu(File folderPath, String Evidencia) throws Exception {
 
 		time(2);
-		click(Seguridad,folderPath, "click xpath");
+		click(Seguridad,folderPath, "click xpath" , Evidencia);
 		time(1);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(1);
-		click(PUsuarios,folderPath, "click xpath");
+		click(PUsuarios,folderPath, "click xpath" , Evidencia);
 		time(1);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(1);
 
 		return this;
 	}
 
 	@Step("Selecionar el formulario y el perfil de la lista a bloquear")
-	public BloqueantesPage EscojerTabla(File folderPath) throws Exception {
+	public BloqueantesPage EscojerTabla(File folderPath, String Evidencia) throws Exception {
 
 		time(2);
-		click(Formulario,folderPath, "click xpath");
+		click(Formulario,folderPath, "click xpath" , Evidencia);
 		time(1);
-		click(SIFF,folderPath, "click xpath");
+		click(SIFF,folderPath, "click xpath" , Evidencia);
 		time(1);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(1);
-		click(Perfil,folderPath, "click xpath");
+		click(Perfil,folderPath, "click xpath" , Evidencia);
 		time(1);
-		click(Administrador,folderPath, "click xpath");
+		click(Administrador,folderPath, "click xpath" , Evidencia);
 		time(1);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(1);
 
 		return this;
 	}
 
 	@Step("Bloquear Email")
-	public BloqueantesPage BloquearEmail(File folderPath) throws Exception {
+	public BloqueantesPage BloquearEmail(File folderPath, String Evidencia) throws Exception {
 
 		time(1);
-		click(btnBloquearEmail, folderPath, null);
+		click(btnBloquearEmail, folderPath, "click xpath" , Evidencia);
 		time(1);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(1);
 
 		return this;
 	}
 
 	@Step("Bloquear Firma")
-	public BloqueantesPage BloquearFirma(File folderPath) throws Exception {
+	public BloqueantesPage BloquearFirma(File folderPath, String Evidencia) throws Exception {
 
 		time(1);
-		click(btnBloquearFirma,folderPath, "click xpath");
+		click(btnBloquearFirma,folderPath, "click xpath" , Evidencia);
 		time(1);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(1);
 
 		return this;
 	}
 
 	@Step("Bloquear Perfil")
-	public BloqueantesPage BloquearPerfil(File folderPath) throws Exception {
+	public BloqueantesPage BloquearPerfil(File folderPath, String Evidencia) throws Exception {
 
 		time(1);
-		click(btnBloquearPerfil,folderPath, "click xpath");
+		click(btnBloquearPerfil,folderPath, "click xpath" , Evidencia);
 		time(1);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(1);
 
 		return this;
 	}
 
 	@Step("Bloquear Eliminar")
-	public BloqueantesPage BloquearEliminar(File folderPath) throws Exception {
+	public BloqueantesPage BloquearEliminar(File folderPath, String Evidencia) throws Exception {
 
 		time(1);
-		click(btnBloquearEliminar,folderPath, "click xpath");
+		click(btnBloquearEliminar,folderPath, "click xpath" , Evidencia);
 		time(1);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(1);
 
 		return this;
 	}
 
 	@Step("Bloquear Usuario")
-	public BloqueantesPage BloquearUsuario(File folderPath) throws Exception {
+	public BloqueantesPage BloquearUsuario(File folderPath, String Evidencia) throws Exception {
 
 		time(1);
-		click(btnBloquearUsuario,folderPath, "click xpath");
+		click(btnBloquearUsuario,folderPath, "click xpath" , Evidencia);
 		time(1);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(1);
 
 		return this;
 	}
 
 	@Step("Selecionar menu")
-	public BloqueantesPage SelecionarMenu1(File folderPath) throws Exception {
+	public BloqueantesPage SelecionarMenu1(File folderPath, String Evidencia) throws Exception {
 
 		time(1);
-		click(btnMenu,folderPath, "click xpath");
+		click(btnMenu,folderPath, "click xpath" , Evidencia);
 		time(1);
-		click(Seguridad,folderPath, "click xpath");
+		click(Seguridad,folderPath, "click xpath" , Evidencia);
 		time(1);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(1);
-		click(SUsuariosN,folderPath, "click xpath");
+		click(SUsuariosN,folderPath, "click xpath" , Evidencia);
 		time(1);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(1);
 
 		return this;
 	}
 
 	@Step("Seleccionar Enviar")
-	public BloqueantesPage Email(File folderPath) throws Exception {
+	public BloqueantesPage Email(File folderPath, String Evidencia) throws Exception {
 
 		time(1);
-		click(btnEnviar,folderPath, "click xpath");
+		click(btnEnviar,folderPath, "click xpath" , Evidencia);
 		time(1);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(1);
 
 		return this;
 	}
 
 	@Step("Seleccionar Perfil")
-	public BloqueantesPage Perfil(File folderPath) throws Exception {
+	public BloqueantesPage Perfil(File folderPath, String Evidencia) throws Exception {
 
 		time(1);
-		click(btnPerfil,folderPath, "click xpath");
+		click(btnPerfil,folderPath, "click xpath" , Evidencia);
 		time(1);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(1);
 
 		return this;
 	}
 
 	@Step("Seleccionar Firma")
-	public BloqueantesPage Firma(File folderPath) throws Exception {
+	public BloqueantesPage Firma(File folderPath, String Evidencia) throws Exception {
 
 		time(1);
-		click(btnFirmar,folderPath, "click xpath");
+		click(btnFirmar,folderPath, "click xpath" , Evidencia);
 		time(1);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(1);
 
 		return this;
 	}
 
 	@Step("Seleccionar Bloquear Usuario")
-	public BloqueantesPage BUsuario(File folderPath) throws Exception {
+	public BloqueantesPage BUsuario(File folderPath, String Evidencia) throws Exception {
 
 		time(1);
-		click(btnBloqueo,folderPath, "click xpath");
+		click(btnBloqueo,folderPath, "click xpath" , Evidencia);
 		time(1);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(1);
 
 		return this;
 	}
 
 	@Step("Selecionar menu")
-	public BloqueantesPage SelecionarMenu2(File folderPath) throws Exception {
+	public BloqueantesPage SelecionarMenu2(File folderPath, String Evidencia) throws Exception {
 
 		time(1);
-		click(btnMenu,folderPath, "click xpath");
+		click(btnMenu,folderPath, "click xpath" , Evidencia);
 		time(1);
-		click(Seguridad,folderPath, "click xpath");
+		click(Seguridad,folderPath, "click xpath" , Evidencia);
 		time(1);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(1);
-		click(PUsuarios,folderPath, "click xpath");
+		click(PUsuarios,folderPath, "click xpath" , Evidencia);
 		time(1);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(1);
 
 		return this;
 	}
 
 	@Step("Quitar Bloqueo Email")
-	public BloqueantesPage QuitarBloqueoEmail(File folderPath) throws Exception {
+	public BloqueantesPage QuitarBloqueoEmail(File folderPath, String Evidencia) throws Exception {
 
 		time(1);
-		click(btnBloquearEmail,folderPath, "click xpath");
+		click(btnBloquearEmail,folderPath, "click xpath" , Evidencia);
 		time(1);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(1);
 
 		return this;
 	}
 
 	@Step("Quitar Bloqueo Firma")
-	public BloqueantesPage QuitarBloqueoFirma(File folderPath) throws Exception {
+	public BloqueantesPage QuitarBloqueoFirma(File folderPath, String Evidencia) throws Exception {
 
 		time(1);
-		click(btnBloquearFirma,folderPath, "click xpath");
+		click(btnBloquearFirma,folderPath, "click xpath" , Evidencia);
 		time(1);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(1);
 
 		return this;
 	}
 
 	@Step("Quitar Bloqueo Perfil")
-	public BloqueantesPage QuitarBloqueoPerfil(File folderPath) throws Exception {
+	public BloqueantesPage QuitarBloqueoPerfil(File folderPath, String Evidencia) throws Exception {
 
 		time(1);
-		click(btnBloquearPerfil,folderPath, "click xpath");
+		click(btnBloquearPerfil,folderPath, "click xpath" , Evidencia);
 		time(1);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(1);
 
 		return this;
 	}
 
 	@Step("Quitar Bloqueo Eliminar")
-	public BloqueantesPage QuitarBloqueoEliminar(File folderPath) throws Exception {
+	public BloqueantesPage QuitarBloqueoEliminar(File folderPath, String Evidencia) throws Exception {
 
 		time(1);
-		click(btnBloquearEliminar,folderPath, "click xpath");
+		click(btnBloquearEliminar,folderPath, "click xpath" , Evidencia);
 		time(1);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(1);
 
 		return this;
 	}
 
 	@Step("Quitar Bloqueo Usuario")
-	public BloqueantesPage QuitarBloqueoUsuario(File folderPath) throws Exception {
+	public BloqueantesPage QuitarBloqueoUsuario(File folderPath, String Evidencia) throws Exception {
 
 		time(1);
-		click(btnBloquearUsuario,folderPath, "click xpath");
+		click(btnBloquearUsuario,folderPath, "click xpath" , Evidencia);
 		time(1);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(1);
 
 		return this;
 	}
 
 	@Step("Enviar Correo")
-	public BloqueantesPage Enviar(File folderPath) throws Exception {
+	public BloqueantesPage Enviar(File folderPath, String Evidencia) throws Exception {
 
 		time(1);
-		click(btnEnviar,folderPath, "click xpath");
+		click(btnEnviar,folderPath, "click xpath" , Evidencia);
 		time(1);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(1);
-		click(btnAceptar,folderPath, "click xpath");
+		click(btnAceptar,folderPath, "click xpath" , Evidencia);
 		time(21);
-		click(btnOk,folderPath, "click xpath");
+		click(btnOk,folderPath, "click xpath" , Evidencia);
 		time(1);
 
 		return this;
 	}
 
 	@Step("Firmar Usuario")
-	public BloqueantesPage Firmar(File folderPath) throws Exception {
+	public BloqueantesPage Firmar(File folderPath, String Evidencia) throws Exception {
 
 		time(1);
-		click(btnFirmar,folderPath, "click xpath");
+		click(btnFirmar,folderPath, "click xpath" , Evidencia);
 		time(1);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(1);
 
 		return this;
 	}
 
 	@Step("Enviar Correo")
-	public BloqueantesPage BloquearUsuario1(File folderPath) throws Exception {
+	public BloqueantesPage BloquearUsuario1(File folderPath, String Evidencia) throws Exception {
 
 		time(1);
-		click(btnBloqueo,folderPath, "click xpath");
+		click(btnBloqueo,folderPath, "click xpath" , Evidencia);
 		time(1);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(1);
-		click(btnAceptar1,folderPath, "click xpath");
+		click(btnAceptar1,folderPath, "click xpath" , Evidencia);
 		time(10);
-		click(btnOk,folderPath, "click xpath");
+		click(btnOk,folderPath, "click xpath" , Evidencia);
 		time(1);
 
 		return this;
 	}
 
 	@Step("Editar Perfil")
-	public BloqueantesPage EditarPerfil(File folderPath) throws Exception {
+	public BloqueantesPage EditarPerfil(File folderPath, String Evidencia) throws Exception {
 
 		time(1);
-		click(btnPerfil,folderPath, "click xpath");
+		click(btnPerfil,folderPath, "click xpath" , Evidencia);
 		time(1);
-		click(btnlista,folderPath, "click xpath");
+		click(btnlista,folderPath, "click xpath" , Evidencia);
 		time(1);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(1);
-		click(btnAceptar,folderPath, "click xpath");
+		click(btnAceptar,folderPath, "click xpath" , Evidencia);
 		time(11);
-		click(btnOk,folderPath, "click xpath");
+		click(btnOk,folderPath, "click xpath" , Evidencia);
 		time(1);
 
 		return this;
 	}
 
 	@Step("Editar Perfil")
-	public BloqueantesPage EditarPerfil1(File folderPath) throws Exception {
+	public BloqueantesPage EditarPerfil1(File folderPath, String Evidencia) throws Exception {
 
 		time(1);
-		click(btnPerfil,folderPath, "click xpath");
+		click(btnPerfil,folderPath, "click xpath" , Evidencia);
 		time(1);
-		click(btnlista1,folderPath, "click xpath");
+		click(btnlista1,folderPath, "click xpath" , Evidencia);
 		time(1);
-		captureScreen(folderPath, "Capture screen");
+		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(1);
-		click(btnAceptar1,folderPath, "click xpath");
+		click(btnAceptar1,folderPath, "click xpath" , Evidencia);
 		time(10);
-		click(btnOk,folderPath, "click xpath");
+		click(btnOk,folderPath, "click xpath" , Evidencia);
 		time(1);
 
 		return this;
 	}
 
 	@Step("Desasociar Usuario")
-    public BloqueantesPage Desasociar(File folderPath) throws Exception {
+    public BloqueantesPage Desasociar(File folderPath, String Evidencia) throws Exception {
 		
-	        time(500);
-	        click(btnDesasociar,folderPath, "click xpath");
-	        time(200);
-	        captureScreen(folderPath, "Capture screen");
-	        time(800);
-	        click(btnAceptar,folderPath, "click xpath");
-	        time(28000);
-	        click(btnOk,folderPath, "click xpath");
-	        time(1000);
-	        captureScreen(folderPath, "Capture screen");
-	        time(6000);
+	        time(1);
+	        click(btnDesasociar,folderPath, "click xpath" , Evidencia);
+	        time(1);
+	        captureScreen(folderPath, "Capture screen" , Evidencia);
+	        time(1);
+	        click(btnAceptar,folderPath, "click xpath" , Evidencia);
+	        time(28);
+	        click(btnOk,folderPath, "click xpath" , Evidencia);
+	        time(1);
+	        captureScreen(folderPath, "Capture screen" , Evidencia);
+	        time(6);
         
         return this;
     }

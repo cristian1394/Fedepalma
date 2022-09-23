@@ -1,21 +1,8 @@
 package MapObject_FormularioNuevoFFP;
 
-import java.io.File;
-import java.util.ArrayList;
-import java.util.Random;
-
-import javax.swing.JScrollPane;
-
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.Select;
-import org.testng.Assert;
-
-import PagObject_ConsultaDCD.GenerarDCDPage;
 import PagObject_demoautomatizacion.BasePage;
-import io.qameta.allure.Step;
 
 public class BorrarFFPMap extends BasePage {
 	

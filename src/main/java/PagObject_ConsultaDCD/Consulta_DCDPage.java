@@ -1,68 +1,50 @@
 package PagObject_ConsultaDCD;
 
-import javax.swing.JScrollPane;
+import java.io.File;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.Select;
-import org.testng.Assert;
-
-import com.demoautomatizacion.utils.Utilidades;
-
-import PagObject_demoautomatizacion.BasePage;
+import MapObject_ConsultaDCD.Consulta_DCDMap;
 import io.qameta.allure.Step;
 
-public class Consulta_DCDPage extends BasePage {
+public class Consulta_DCDPage extends Consulta_DCDMap {
 	
-	By btnDemostracion=By.xpath("//*[@id=\"stacked-menu\"]/ul/li[5]/a/span");
-	By btnDCD=By.xpath("/html/body/div[1]/aside/div/section/nav/ul/li[5]/ul/li[4]/a");
-	By btnProveedor=By.xpath("//*[@id=\"idNitProveedor\"]");
-	By txtProveedor=By.id("idNitProveedor");//C.i. Tequendama S.A.S.
-	By btnCI=By.xpath("//*[@id=\"idNitProveedor_listbox\"]/li");
-	By btnSAno=By.xpath("//*[@id=\"idAnio\"]");
-	By btnAno=By.xpath("//*[@id=\"idAnio\"]/option[3]");
-	By btnSMes=By.xpath("//*[@id=\"idMes\"]");
-	By btnMes=By.xpath("//*[@id=\"idMes\"]/option[11]");
-	By btnProducto=By.xpath("//*[@id=\"idProductos\"]");
-	By btnPalma=By.xpath("//*[@id=\"idProductos\"]/option[2]");
-	By btnBuscar=By.xpath("//*[@id=\"btnSearch\"]");
+
 	
 	public Consulta_DCDPage(WebDriver driver) {
 		super(driver);
+		// TODO Auto-generated constructor stub
 	}
-	
+
 	@Step("Consulta DCD")
-    public Consulta_DCDPage ConsultaDCD(String Proveedor) {
+    public Consulta_DCDPage ConsultaDCD(String Proveedor, File folderPath, String Evidencia) throws Exception {
         
-        Utilidades.time(5000);
-        click(btnDemostracion);
-         Utilidades.time(3000);
-        click(btnDCD);
-        Utilidades.time(1000);
-        click(btnProveedor);
-        Utilidades.time(500);
-        writeText(txtProveedor, Proveedor);
-        Utilidades.time(1000);
-        click(btnCI);
-        Utilidades.time(1800);
-        click(btnSAno);
-        Utilidades.time(800);
-        click(btnAno);
-        Utilidades.time(800);
-        click(btnSMes);
-        Utilidades.time(800);
-        click(btnMes);
-        Utilidades.time(1000);
-        click(btnProducto);
-        Utilidades.time(800);
-        click(btnPalma);
-		Utilidades.screenshot();
-		Utilidades.time(1000);
-		click(btnBuscar);
-        Utilidades.time(3500);
-        Utilidades.screenshot();
+        time(5);
+        click(btnDemostracion,folderPath, "click xpath" , Evidencia);
+        time(3);
+        click(btnDCD,folderPath, "click xpath" , Evidencia);
+        time(1);
+        click(btnProveedor,folderPath, "click xpath" , Evidencia);
+        time(1);
+        writeText(txtProveedor, Proveedor, folderPath, "write" , Evidencia);
+        time(1);
+        click(btnCI,folderPath, "click xpath" , Evidencia);
+        time(2);
+        click(btnSAno,folderPath, "click xpath" , Evidencia);
+        time(1);
+        click(btnAno,folderPath, "click xpath" , Evidencia);
+        time(1);
+        click(btnSMes,folderPath, "click xpath" , Evidencia);
+        time(1);
+        click(btnMes,folderPath, "click xpath" , Evidencia);
+        time(1);
+        click(btnProducto,folderPath, "click xpath" , Evidencia);
+        time(1);
+        click(btnPalma,folderPath, "click xpath" , Evidencia);
+		
+		time(1);
+		click(btnBuscar,folderPath, "click xpath" , Evidencia);
+        time(4);
+        captureScreen(folderPath, "Capture screen" , Evidencia);
         return this;
     }
 	

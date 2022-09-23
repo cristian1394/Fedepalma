@@ -1,85 +1,63 @@
 package PagObject_FormularioFDC;
 
-import java.util.Random;
-
-import org.openqa.selenium.By;
+import java.io.File;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.Select;
-import org.testng.Assert;
-
-import com.demoautomatizacion.utils.Utilidades;
-
-import PagObject_demoautomatizacion.BasePage;
+import MapObject_FormularioFDC.IncumplimientoFDCMap;
 import io.qameta.allure.Step;
 
-public class IncumplimientoFDCPage extends BasePage {
+public class IncumplimientoFDCPage extends IncumplimientoFDCMap{
 	
-	By btnCrear=By.id("btnCrear");
-	
-	By btnTDemo=By.xpath("//*[@id=\"ddlTipoDemostracion\"]");
-	By btnIncumplimiento=By.xpath("//*[@id=\"ddlTipoDemostracion\"]/option[4]");
-	By btnConsulta=By.xpath("//*[@id=\"idconsultardcd\"]");
-	By btnFiltro=By.xpath("/html/body/div[1]/main/div/div/div[2]/section[8]/div/div[2]/div/table/thead/tr/th[8]/a[2]");
-	By btnSelect=By.xpath("/html/body/div[1]/main/div/div/div[2]/section[8]/div/div[2]/div/table/tbody/tr[1]/td[2]/input");
-	By lblTotal=By.xpath("/html/body/div[1]/main/div/div/div[2]/section[8]/div/div[2]/div/table/tbody/tr[1]/td[7]/label");
-	By txtAsociar=By.xpath("/html/body/div[1]/main/div/div/div[2]/section[8]/div/div[2]/div/table/tbody/tr[1]/td[9]/input");
-	By btnSeleccionar=By.xpath("/html/body/div[1]/main/div/div/div[2]/section[8]/div/div[2]/div/table/tbody/tr[2]/td[2]/input");
-	By lblTotals=By.xpath("/html/body/div[1]/main/div/div/div[2]/section[8]/div/div[2]/div/table/tbody/tr[2]/td[7]/label");
-	By txtasociar=By.xpath("/html/body/div[1]/main/div/div/div[2]/section[8]/div/div[2]/div/table/tbody/tr[2]/td[9]/input");//Asocia
-	By btnAdicionar=By.xpath("//*[@id=\"InsertarFormulario\"]");
-	By btnOkey=By.xpath("/html/body/div[17]/div[7]/div/button");
 
 	
-	public IncumplimientoFDCPage(WebDriver driver) {
+   	public IncumplimientoFDCPage(WebDriver driver) {
 		super(driver);
-		
+		// TODO Auto-generated constructor stub
 	}
+
+	@Step("Ingresar a creacion FDC")
+    public IncumplimientoFDCPage CrearFDC(File folderPath, String Evidencia) throws Exception {
 	
-   	@Step("Ingresar a creacion FDC")
-    public IncumplimientoFDCPage CrearFDC() throws Exception {
-	
-	Utilidades.time(2000);
-    click(btnCrear);
-    Utilidades.time(1000);
-    Utilidades.screenshot();
-    Utilidades.time(3500);
+	time(2);
+    click(btnCrear,folderPath, "click xpath" , Evidencia);
+    time(1);
+    captureScreen(folderPath, "Capture screen" , Evidencia);
+    time(4);
     
     return this;
 }
 	
 	@Step("Generar Incumplimiento")
-    public IncumplimientoFDCPage GenerarIncumplimiento(){
-        Utilidades.time(2000);
+    public IncumplimientoFDCPage GenerarIncumplimiento(File folderPath, String Evidencia) throws Exception{
+        time(2);
         
-        click(btnTDemo);
-        Utilidades.time(3000);
-        click(btnIncumplimiento);
-        Utilidades.time(2000);
-        click(btnConsulta);
-        Utilidades.time(1000);
-        click(btnFiltro);
-        Utilidades.time(1000);
-        click(btnSelect);
-        Utilidades.time(1000);
+        click(btnTDemo,folderPath, "click xpath" , Evidencia);
+        time(3);
+        click(btnIncumplimiento,folderPath, "click xpath" , Evidencia);
+        time(2);
+        click(btnConsulta,folderPath, "click xpath" , Evidencia);
+        time(1);
+        click(btnFiltro,folderPath, "click xpath" , Evidencia);
+        time(1);
+        click(btnSelect,folderPath, "click xpath" , Evidencia);
+        time(1);
         String Total = getElement(lblTotal).getText();
-        Utilidades.time(2000);
-        writeText(txtAsociar, Total);
-        Utilidades.time(1000);
-        click(btnSeleccionar);
-        Utilidades.time(1000);
+        time(2);
+        writeText(txtAsociar, Total, folderPath, Total, Evidencia);
+        time(1);
+        click(btnSeleccionar,folderPath, "click xpath" , Evidencia);
+        time(1);
         String Totals = getElement(lblTotals).getText();
-        Utilidades.time(2000);
-        writeText(txtasociar, Totals);
-        Utilidades.time(1000);
-        click(btnAdicionar);
-        Utilidades.time(20000);
-        click(btnOkey);
-        Utilidades.time(2000);
-    	Utilidades.ByPixel();
-        Utilidades.time(1000);
-        Utilidades.screenshot();
-        Utilidades.time(3500);
+        time(2);
+        writeText(txtasociar, Totals, folderPath, Totals, Evidencia);
+        time(1);
+        click(btnAdicionar,folderPath, "click xpath" , Evidencia);
+        time(20);
+        click(btnOkey,folderPath, "click xpath" , Evidencia);
+        time(2);
+    	ByPixel();
+        time(1);
+        captureScreen(folderPath, "Capture screen" , Evidencia);
+        time(4);
         
         return this;
     }

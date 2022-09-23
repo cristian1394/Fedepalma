@@ -5,6 +5,8 @@ import java.io.FileInputStream;
 import java.util.Properties;
 
 import io.qameta.allure.*;
+import utilities.GenerarReportePdf;
+import utilities.MyScreenRecorder;
 
 import org.openqa.selenium.By;
 import org.testng.annotations.Listeners;
@@ -12,6 +14,8 @@ import org.testng.annotations.Test;
 
 import com.demoautomatizacion.test.BaseTest;
 import com.demoautomatizacion.test.utils.Listeners.TestListener;
+
+import PagObject_demoautomatizacion.BasePage;
 
 
 @Listeners({ TestListener.class })
@@ -26,6 +30,16 @@ public class ConsultaReporteUDDTest extends BaseTest{
         fileprops.load(new FileInputStream(new File("src/test/resources/test.properties").getAbsolutePath()));
         return fileprops;
     }
+	
+	public void Logeo(String nameTest, File folderPath) throws Exception {
+
+		GenerarReportePdf.setRutaImagen(getProperties().getProperty("routeImageReport"));
+	
+		GenerarReportePdf.createTemplate(folderPath, nameTest, getProperties().getProperty("analista"),
+				getProperties().getProperty("url"), getProperties().getProperty("Evidencia"));
+
+		GenerarReportePdf.setImgContador(0);
+	}
 		
 	@Test(priority=0, description="Consulta Reporte Utilizacion Documentos de Demostracion")
     @Severity(SeverityLevel.NORMAL)
@@ -33,11 +47,22 @@ public class ConsultaReporteUDDTest extends BaseTest{
     @Story("Consultar RUDD (DEX)")
     @TmsLink("XRPRJ-1")
     public void ConsultarDEXPortalFedepalma () throws Exception {
+		
+		// OBTENER EL NOMBRE DEL METODO A EJECUTAR
+		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();
+
+		File folderPath = BasePage.createFolder(nomTest, getProperties().getProperty("path"), getProperties().getProperty("Evidencia"));
+		MyScreenRecorder.startRecording(nomTest, folderPath,getProperties().getProperty("Video"));
+
+		Logeo(nomTest, folderPath);
 		home.irPortal(getProperties().getProperty("url"));
         Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr"),
-        		getProperties().getProperty("pwd"));
-        ConsultaRUDD.MenuRUDD().Calendario().SeleccionarMes().SeleccionarDia().Calendario1().SeleccionarMes1()
-        .SeleccionarDia1().Buscar();
+        		getProperties().getProperty("pwd"), folderPath, getProperties().getProperty("Evidencia"));
+        ConsultaRUDD.MenuRUDD(folderPath, getProperties().getProperty("Evidencia")).Calendario(folderPath, getProperties().getProperty("Evidencia")).SeleccionarMes(folderPath, getProperties().getProperty("Evidencia")).SeleccionarDia(folderPath, getProperties().getProperty("Evidencia")).Calendario1(folderPath, getProperties().getProperty("Evidencia")).SeleccionarMes1(folderPath, getProperties().getProperty("Evidencia"))
+        .SeleccionarDia1(folderPath, getProperties().getProperty("Evidencia")).Buscar(folderPath, getProperties().getProperty("Evidencia"));
+        
+         MyScreenRecorder.stopRecording(getProperties().getProperty("Video"));
+     	GenerarReportePdf.closeTemplate("",getProperties().getProperty("Evidencia"));
        
 	}
 	
@@ -47,11 +72,22 @@ public class ConsultaReporteUDDTest extends BaseTest{
     @Story("Consultar RUDD (FMM)")
     @TmsLink("XRPRJ-1")
     public void ConsultarFMMPortalFedepalma () throws Exception {
+		
+		// OBTENER EL NOMBRE DEL METODO A EJECUTAR
+		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();
+
+		File folderPath = BasePage.createFolder(nomTest, getProperties().getProperty("path"), getProperties().getProperty("Evidencia"));
+		MyScreenRecorder.startRecording(nomTest, folderPath,getProperties().getProperty("Video"));
+
+		Logeo(nomTest, folderPath);
 		home.irPortal(getProperties().getProperty("url"));
         Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr"),
-        		getProperties().getProperty("pwd"));
-        ConsultaRUDD.MenuRUDD().TD().FMM().Calendario().SeleccionarMes().SeleccionarDia().Calendario1().SeleccionarMes1()
-        .SeleccionarDia1().Buscar();
+        		getProperties().getProperty("pwd"), folderPath, getProperties().getProperty("Evidencia"));
+        ConsultaRUDD.MenuRUDD(folderPath, getProperties().getProperty("Evidencia")).TD(folderPath, getProperties().getProperty("Evidencia")).FMM(folderPath, getProperties().getProperty("Evidencia")).Calendario(folderPath, getProperties().getProperty("Evidencia")).SeleccionarMes(folderPath, getProperties().getProperty("Evidencia")).SeleccionarDia(folderPath, getProperties().getProperty("Evidencia")).Calendario1(folderPath, getProperties().getProperty("Evidencia")).SeleccionarMes1(folderPath, getProperties().getProperty("Evidencia"))
+        .SeleccionarDia1(folderPath, getProperties().getProperty("Evidencia")).Buscar(folderPath, getProperties().getProperty("Evidencia"));
+        
+        MyScreenRecorder.stopRecording(getProperties().getProperty("Video"));
+     	GenerarReportePdf.closeTemplate("",getProperties().getProperty("Evidencia"));
         
 	}
 
@@ -61,11 +97,23 @@ public class ConsultaReporteUDDTest extends BaseTest{
     @Story("Consultar RUDD (Poliza)")
     @TmsLink("XRPRJ-1")
     public void ConsultarPolizaPortalFedepalma () throws Exception {
+		
+		// OBTENER EL NOMBRE DEL METODO A EJECUTAR
+		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();
+
+		File folderPath = BasePage.createFolder(nomTest, getProperties().getProperty("path"), getProperties().getProperty("Evidencia"));
+		MyScreenRecorder.startRecording(nomTest, folderPath,getProperties().getProperty("Video"));
+
+		Logeo(nomTest, folderPath);
+		
 		home.irPortal(getProperties().getProperty("url"));
         Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr"),
-        		getProperties().getProperty("pwd"));
-        ConsultaRUDD.MenuRUDD().TD().Poliza().Calendario().SeleccionarMes().SeleccionarDia().Calendario1().SeleccionarMes1()
-        .SeleccionarDia1().Buscar();
+        		getProperties().getProperty("pwd"), folderPath, getProperties().getProperty("Evidencia"));
+        ConsultaRUDD.MenuRUDD(folderPath, getProperties().getProperty("Evidencia")).TD(folderPath, getProperties().getProperty("Evidencia")).Poliza(folderPath, getProperties().getProperty("Evidencia")).Calendario(folderPath, getProperties().getProperty("Evidencia")).SeleccionarMes(folderPath, getProperties().getProperty("Evidencia")).SeleccionarDia(folderPath, getProperties().getProperty("Evidencia")).Calendario1(folderPath, getProperties().getProperty("Evidencia")).SeleccionarMes1(folderPath, getProperties().getProperty("Evidencia"))
+        .SeleccionarDia1(folderPath, getProperties().getProperty("Evidencia")).Buscar(folderPath, getProperties().getProperty("Evidencia"));
+        
+        MyScreenRecorder.stopRecording(getProperties().getProperty("Video"));
+     	GenerarReportePdf.closeTemplate("",getProperties().getProperty("Evidencia"));
 		
 	}
 	
@@ -75,11 +123,23 @@ public class ConsultaReporteUDDTest extends BaseTest{
     @Story("Filtros RUDD")
     @TmsLink("XRPRJ-1")
     public void FiltrosRUDDPortalFedepalma () throws Exception {
+		
+		// OBTENER EL NOMBRE DEL METODO A EJECUTAR
+		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();
+
+		File folderPath = BasePage.createFolder(nomTest, getProperties().getProperty("path"), getProperties().getProperty("Evidencia"));
+		MyScreenRecorder.startRecording(nomTest, folderPath,getProperties().getProperty("Video"));
+
+		Logeo(nomTest, folderPath);
+		
 		home.irPortal(getProperties().getProperty("url"));
         Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr"),
-        		getProperties().getProperty("pwd"));
-        ConsultaRUDD.MenuRUDD().Buscar().FE(getProperties().getProperty("Declarante")).FDCD(getProperties().getProperty("Kg"))
-        .FProducto(getProperties().getProperty("Producto")).FPais(getProperties().getProperty("pais"));
+        		getProperties().getProperty("pwd"), folderPath, getProperties().getProperty("Evidencia"));
+        ConsultaRUDD.MenuRUDD(folderPath, getProperties().getProperty("Evidencia")).Buscar(folderPath, getProperties().getProperty("Evidencia")).FE(getProperties().getProperty("Declarante"), folderPath, getProperties().getProperty("Evidencia")).FDCD(getProperties().getProperty("Kg"), folderPath, getProperties().getProperty("Evidencia"))
+        .FProducto(getProperties().getProperty("Producto"), folderPath, getProperties().getProperty("Evidencia")).FPais(getProperties().getProperty("pais"), folderPath, getProperties().getProperty("Evidencia"));
+        
+        MyScreenRecorder.stopRecording(getProperties().getProperty("Video"));
+     	GenerarReportePdf.closeTemplate("",getProperties().getProperty("Evidencia"));
 		
 	}
 	
@@ -89,10 +149,21 @@ public class ConsultaReporteUDDTest extends BaseTest{
     @Story("Exportar RUDD")
     @TmsLink("XRPRJ-1")
     public void ExportarRUDDPortalFedepalma () throws Exception {
+		
+		// OBTENER EL NOMBRE DEL METODO A EJECUTAR
+		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();
+
+		File folderPath = BasePage.createFolder(nomTest, getProperties().getProperty("path"), getProperties().getProperty("Evidencia"));
+		MyScreenRecorder.startRecording(nomTest, folderPath,getProperties().getProperty("Video"));
+
+		Logeo(nomTest, folderPath);
 		home.irPortal(getProperties().getProperty("url"));
         Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr"),
-        		getProperties().getProperty("pwd"));
-        ConsultaRUDD.MenuRUDD().TD().Poliza().Buscar().FPais(getProperties().getProperty("pais")).Exportar();
+        		getProperties().getProperty("pwd"), folderPath, getProperties().getProperty("Evidencia"));
+        ConsultaRUDD.MenuRUDD(folderPath, getProperties().getProperty("Evidencia")).TD(folderPath, getProperties().getProperty("Evidencia")).Poliza(folderPath, getProperties().getProperty("Evidencia")).Buscar(folderPath, getProperties().getProperty("Evidencia")).FPais(getProperties().getProperty("pais"), folderPath, getProperties().getProperty("Evidencia")).Exportar(folderPath, getProperties().getProperty("Evidencia"));
+        
+        MyScreenRecorder.stopRecording(getProperties().getProperty("Video"));
+     	GenerarReportePdf.closeTemplate("",getProperties().getProperty("Evidencia"));
 		
 	}
 	

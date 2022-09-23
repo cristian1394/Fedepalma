@@ -2,150 +2,105 @@ package PagObject_FormularioFDC;
 
 import java.io.File;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.Select;
-import org.testng.Assert;
-
-import com.demoautomatizacion.utils.Utilidades;
-
-import PagObject_ConsultaDCD.FiltrosDCDPage;
-import PagObject_demoautomatizacion.BasePage;
+import MapObject_FormularioFDC.FiltrosFDCMap;
 import io.qameta.allure.Step;
 
-public class FiltrosFDCPage extends BasePage {
+public class FiltrosFDCPage extends FiltrosFDCMap {
 
-	By btnDemostracion=By.xpath("//*[@id=\"stacked-menu\"]/ul/li[5]/a/span");
-	By btnFDC=By.xpath("/html/body/div[1]/aside/div/section/nav/ul/li[5]/ul/li[4]/a");
-	By btnBuscar=By.xpath("//*[@id=\"btnSearch\"]");
 	
-	By btnNumero=By.xpath("/html/body/div[1]/main/div/div/div[2]/div[4]/div/table/thead/tr/th[6]/a[1]/span");
-	By btnFiltra=By.xpath("/html/body/div[6]/form/div[1]/span/span/span[1]");
-	By btnComienza=By.xpath("/html/body/div[6]/form/div[2]/div/div[2]/ul/li[5]");
-	By txtNumero=By.xpath("/html/body/div[6]/form/div[1]/input");//2
-	By btnFiltrar=By.xpath("/html/body/div[6]/form/div[1]/div[2]/button[1]");
-	
-	By btnKgPalma=By.xpath("/html/body/div[1]/main/div/div/div[2]/div[4]/div/table/thead/tr/th[7]/a[1]/span");
-	By txtKG=By.xpath("/html/body/div[7]/form/div[1]/input");//0
-	By btnfiltrar=By.xpath("/html/body/div[7]/form/div[1]/div[2]/button[1]");
-	
-	By btnKgPalmiste=By.xpath("/html/body/div[1]/main/div/div/div[2]/div[4]/div/table/thead/tr/th[8]/a[1]/span");
-	By btnLista=By.xpath("/html/body/div[8]/form/div[1]/span/span/span[2]/span");
-	By btnDiferente=By.xpath("/html/body/div[8]/form/div[2]/div/div[2]/ul/li[2]");
-	By txtKg=By.xpath("/html/body/div[8]/form/div[1]/input");//0
-	By btnFiltrarP=By.xpath("/html/body/div[8]/form/div[1]/div[2]/button[1]");
-	
-	By btnCreacion=By.xpath("/html/body/div[1]/main/div/div/div[2]/div[4]/div/table/thead/tr/th[10]/a[1]/span");
-	By btnlista=By.xpath("/html/body/div[9]/form/div[1]/span/span/span[2]/span");
-	By btnTermina=By.xpath("/html/body/div[9]/form/div[2]/div/div[2]/ul/li[6]");
-	By txtTermina=By.xpath("/html/body/div[9]/form/div[1]/input");//1
-	By btnFiltrarC=By.xpath("/html/body/div[9]/form/div[1]/div[2]/button[1]");
-	
-	By btnEstado=By.xpath("/html/body/div[1]/main/div/div/div[2]/div[4]/div/table/thead/tr/th[12]/a[1]/span");
-	By btnfiltra=By.xpath("/html/body/div[10]/form/div[1]/span/span/span[2]/span");
-	By btnNoContiene=By.xpath("/html/body/div[10]/form/div[2]/div/div[2]/ul/li[4]");
-	By txtBorrador=By.xpath("/html/body/div[10]/form/div[1]/input");//Texto
-	By btnfiltro=By.xpath("/html/body/div[10]/form/div[1]/div[2]/button[1]");
-	
-	By btnExportar=By.xpath("/html/body/div[1]/main/div/div/div[2]/div[4]/div/div[1]/a");
 	
 	public FiltrosFDCPage(WebDriver driver) {
 		super(driver);
-		
+		// TODO Auto-generated constructor stub
 	}
-	
+
 	@Step("Validar Filtros FDC")
-    public FiltrosFDCPage ValidarFiltrosFDC(String numero, String Kg, String Creacion, String Estado) {
+    public FiltrosFDCPage ValidarFiltrosFDC(String numero, String Kg, String Creacion, String Estado,File folderPath, String Evidencia) throws Exception {
         
-        Utilidades.time(5000);
- 	   WebElement Element = driver.findElement(btnDemostracion);
-       JavascriptExecutor js = (JavascriptExecutor) driver;
-       js.executeScript("arguments[0].scrollIntoView();", Element);
-        Utilidades.time(2000);
-        click(btnDemostracion);
-        Utilidades.time(1000);
-        WebElement Elements = driver.findElement(btnFDC);
-        JavascriptExecutor Js = (JavascriptExecutor) driver;
-        Js.executeScript("arguments[0].scrollIntoView();", Elements);
-        Utilidades.time(1000);
-        click(btnFDC);
-         Utilidades.time(800);
-		Utilidades.screenshot();
-		Utilidades.time(10000);
-		click(btnBuscar);
-		Utilidades.time(1500);
-        Utilidades.screenshot();
+        time(5);
+        scrollElementV(folderPath, btnDemostracion, "scroll " , Evidencia);
+        time(2);
+        click(btnDemostracion,folderPath, "click xpath" , Evidencia);
+        time(1);
+        scrollElementV(folderPath, btnFDC, "scroll " , Evidencia);
+        time(1);
+        click(btnFDC,folderPath, "click xpath" , Evidencia);
+         time(1);
+		captureScreen(folderPath, "Capture screen" , Evidencia);
+		time(10);
+		click(btnBuscar,folderPath, "click xpath" , Evidencia);
+		time(2);
+        captureScreen(folderPath, "Capture screen" , Evidencia);
         
-        click(btnNumero);
-        Utilidades.time(1000);
-        click(btnFiltra);
-        Utilidades.time(1000);
-        click(btnComienza);
-        Utilidades.time(800);
-        writeText(txtNumero, numero);
-        Utilidades.time(1000);
-        click(btnFiltrar);
-        Utilidades.time(1000);
-        Utilidades.screenshot();
+        click(btnNumero,folderPath, "click xpath" , Evidencia);
+        time(1);
+        click(btnFiltra,folderPath, "click xpath" , Evidencia);
+        time(1);
+        click(btnComienza,folderPath, "click xpath" , Evidencia);
+        time(1);
+        writeText(txtNumero, numero, folderPath, Estado, Evidencia);
+        time(1);
+        click(btnFiltrar,folderPath, "click xpath" , Evidencia);
+        time(1);
+        captureScreen(folderPath, "Capture screen" , Evidencia);
         
-        click(btnKgPalma);
-        Utilidades.time(900);
-        writeText(txtKG, Kg);
-        Utilidades.time(1000);
-        click(btnfiltrar);
-        Utilidades.time(1000);
-        Utilidades.screenshot();
+        click(btnKgPalma,folderPath, "click xpath" , Evidencia);
+        time(1);
+        writeText(txtKG, Kg, folderPath, Estado, Evidencia);
+        time(1);
+        click(btnfiltrar,folderPath, "click xpath" , Evidencia);
+        time(1);
+        captureScreen(folderPath, "Capture screen" , Evidencia);
         
-        click(btnKgPalmiste);
-        Utilidades.time(1000);
-        click(btnLista);
-        Utilidades.time(1000);
-        click(btnDiferente);
-        Utilidades.time(800);
-        writeText(txtKg, Kg);
-        Utilidades.time(1000);
-        click(btnFiltrarP);
-        Utilidades.time(1000);
-        Utilidades.screenshot();
+        click(btnKgPalmiste,folderPath, "click xpath" , Evidencia);
+        time(1);
+        click(btnLista,folderPath, "click xpath" , Evidencia);
+        time(1);
+        click(btnDiferente,folderPath, "click xpath" , Evidencia);
+        time(1);
+        writeText(txtKg, Kg, folderPath, Estado, Evidencia);
+        time(1);
+        click(btnFiltrarP,folderPath, "click xpath" , Evidencia);
+        time(1);
+        captureScreen(folderPath, "Capture screen" , Evidencia);
         
-        click(btnCreacion);
-        Utilidades.time(1000);
-        click(btnlista);
-        Utilidades.time(1000);
-        click(btnTermina);
-        Utilidades.time(800);
-        writeText(txtTermina, Creacion);
-        Utilidades.time(1000);
-        click(btnFiltrarC);
-        Utilidades.time(1000);
-        Utilidades.screenshot();
+        click(btnCreacion,folderPath, "click xpath" , Evidencia);
+        time(1);
+        click(btnlista,folderPath, "click xpath" , Evidencia);
+        time(1);
+        click(btnTermina,folderPath, "click xpath" , Evidencia);
+        time(1);
+        writeText(txtTermina, Creacion, folderPath, Estado, Evidencia);
+        time(1);
+        click(btnFiltrarC,folderPath, "click xpath" , Evidencia);
+        time(1);
+        captureScreen(folderPath, "Capture screen" , Evidencia);
         
-        click(btnEstado);
-        Utilidades.time(1000);
-        click(btnfiltra);
-        Utilidades.time(1000);
-        click(btnNoContiene);
-        Utilidades.time(900);
-        writeText(txtBorrador, Estado);
-        Utilidades.time(1000);
-        click(btnfiltro);
-        Utilidades.time(1000);
-        Utilidades.screenshot();
+        click(btnEstado,folderPath, "click xpath" , Evidencia);
+        time(1);
+        click(btnfiltra,folderPath, "click xpath" , Evidencia);
+        time(1);
+        click(btnNoContiene,folderPath, "click xpath" , Evidencia);
+        time(1);
+        writeText(txtBorrador, Estado, folderPath, Estado, Evidencia);
+        time(1);
+        click(btnfiltro,folderPath, "click xpath" , Evidencia);
+        time(1);
+        captureScreen(folderPath, "Capture screen" , Evidencia);
         
         
         return this;
     }
 	
 	@Step("Verificacion de Exportacion FDC")
-    public FiltrosFDCPage ExportacionExcel() {
+    public FiltrosFDCPage ExportacionExcel(File folderPath, String Evidencia) throws Exception {
         
-		Utilidades.time(1000);
-		click(btnExportar);
-		Utilidades.time(500);
-		Utilidades.screenshot();
-		Utilidades.time(3000);
+		time(1);
+		click(btnExportar,folderPath, "click xpath" , Evidencia);
+		time(1);
+		captureScreen(folderPath, "Capture screen" , Evidencia);
+		time(3);
 		
         return this;
     }

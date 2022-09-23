@@ -5,6 +5,8 @@ import java.io.FileInputStream;
 import java.util.Properties;
 
 import io.qameta.allure.*;
+import utilities.GenerarReportePdf;
+import utilities.MyScreenRecorder;
 
 import org.openqa.selenium.By;
 import org.testng.annotations.Listeners;
@@ -12,6 +14,8 @@ import org.testng.annotations.Test;
 
 import com.demoautomatizacion.test.BaseTest;
 import com.demoautomatizacion.test.utils.Listeners.TestListener;
+
+import PagObject_demoautomatizacion.BasePage;
 
 
 
@@ -27,6 +31,16 @@ public class Editar_FDCTest extends BaseTest{
         fileprops.load(new FileInputStream(new File("src/test/resources/test.properties").getAbsolutePath()));
         return fileprops;
     }
+	
+	public void Logeo(String nameTest, File folderPath) throws Exception {
+
+		GenerarReportePdf.setRutaImagen(getProperties().getProperty("routeImageReport"));
+	
+		GenerarReportePdf.createTemplate(folderPath, nameTest, getProperties().getProperty("analista"),
+				getProperties().getProperty("url"), getProperties().getProperty("Evidencia"));
+
+		GenerarReportePdf.setImgContador(0);
+	}
 		
 	@Test(priority=0, description="Editar FDC Portal Fedepalma")
     @Severity(SeverityLevel.NORMAL)
@@ -34,16 +48,27 @@ public class Editar_FDCTest extends BaseTest{
     @Story("Editar FDC Estado Borrador")
     @TmsLink("XRPRJ-1")
     public void EditarEstadoBorradorPortalFedepalma () throws Exception {
+		
+		// OBTENER EL NOMBRE DEL METODO A EJECUTAR
+		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();
+
+		File folderPath = BasePage.createFolder(nomTest, getProperties().getProperty("path"), getProperties().getProperty("Evidencia"));
+		MyScreenRecorder.startRecording(nomTest, folderPath,getProperties().getProperty("Video"));
+
+		Logeo(nomTest, folderPath);
+		
 		home.irPortal(getProperties().getProperty("url"));
         Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr1"),
-        		getProperties().getProperty("pwd"));      
-        Editar_FDC.FormularioFDC().EditarFDC();
-        Carga.CargaDEX(getProperties().getProperty("doc"),"Se cargo el archivo correctamente").CargaFMM(getProperties().getProperty("doc"),
-        		"Se cargo el archivo correctamente")
-        	  .CargaCD(getProperties().getProperty("doc"),"Se cargo el archivo correctamente").CargaPoliza(getProperties().getProperty("doc"),
-        		"Se cargo el archivo correctamente")
-        	  .CargaIncumplimiento(getProperties().getProperty("doc"),"Se cargo el archivo correctamente").RevisarFDC().SalirFDC();
+        		getProperties().getProperty("pwd"), folderPath, getProperties().getProperty("Evidencia"));      
+        Editar_FDC.FormularioFDC(folderPath, getProperties().getProperty("Evidencia")).EditarFDC(folderPath, getProperties().getProperty("Evidencia"));
+        Carga.CargaDEX(getProperties().getProperty("doc"),"Se cargo el archivo correctamente", folderPath, getProperties().getProperty("Evidencia")).CargaFMM(getProperties().getProperty("doc"),
+        		"Se cargo el archivo correctamente", folderPath, getProperties().getProperty("Evidencia"))
+        	  .CargaCD(getProperties().getProperty("doc"),"Se cargo el archivo correctamente", folderPath, getProperties().getProperty("Evidencia")).CargaPoliza(getProperties().getProperty("doc"),
+        		"Se cargo el archivo correctamente", folderPath, getProperties().getProperty("Evidencia"))
+        	  .CargaIncumplimiento(getProperties().getProperty("doc"),"Se cargo el archivo correctamente", folderPath, getProperties().getProperty("Evidencia")).RevisarFDC(folderPath, getProperties().getProperty("Evidencia")).SalirFDC(folderPath, getProperties().getProperty("Evidencia"));
         
+        MyScreenRecorder.stopRecording(getProperties().getProperty("Video"));
+     	GenerarReportePdf.closeTemplate("",getProperties().getProperty("Evidencia"));
     }
 	
 }

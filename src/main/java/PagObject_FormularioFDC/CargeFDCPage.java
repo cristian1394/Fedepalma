@@ -1,109 +1,88 @@
 package PagObject_FormularioFDC;
 
 import java.io.File;
-import java.util.Random;
-
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.Select;
-import org.testng.Assert;
-
-import com.demoautomatizacion.utils.Utilidades;
-
-import PagObject_demoautomatizacion.BasePage;
+import MapObject_FormularioFDC.CargeFDCMap;
 import io.qameta.allure.Step;
 
-public class CargeFDCPage extends BasePage {
+public class CargeFDCPage extends CargeFDCMap {
 
-	By btnCargaDEX=By.id("CargarDex");
-	By btnOk=By.xpath("/html/body/div[17]/div[7]/div/button");
-	
-	By btnCargaFMM=By.id("CargarDex");
-	By btnOkey=By.xpath("/html/body/div[17]/div[7]/div/button");
-	
-	By btnCargaCD=By.id("CargarDex");
-	By btnOkay=By.xpath("/html/body/div[17]/div[7]/div/button");
-	
-	By btnCargaPoliza=By.id("CargarDex");
-	By btnOK=By.xpath("/html/body/div[17]/div[7]/div/button");
-	By btnRevisar=By.xpath("//*[@id=\"btnRevisarFdc\"]");
-	
 	public CargeFDCPage(WebDriver driver) {
 		super(driver);
-		
+		// TODO Auto-generated constructor stub
 	}
-	
+
 	@Step("Cagar DEX")
-    public CargeFDCPage CagarDEX(String doc) throws Exception {
-        Utilidades.time(2000);
-        
-        Utilidades.time(8000);
-		 File file = new File(doc);
-		 Utilidades.time(3000);
-		 WebElement ruta = driver.findElement(btnCargaDEX);
-		 ruta.sendKeys(file.getAbsolutePath()); 
-		 Utilidades.time(1000);
-		Utilidades.screenshot();
-		Utilidades.time(3000);
-		click(btnOk);
-        Utilidades.time(800);
-        click(btnOkey);
-        Utilidades.screenshot();
-        Utilidades.time(2500);
-        
-        return this;
-    }
-	
-@Step("Cagar FMM")
-public CargeFDCPage CargaFMM(String doc) {
-    Utilidades.time(8000);
-	 File file = new File(doc);
-	 Utilidades.time(3000);
-	 WebElement ruta = driver.findElement(btnCargaFMM);
-	 ruta.sendKeys(file.getAbsolutePath()); 
-	 Utilidades.time(1000);
-	Utilidades.screenshot();
-	Utilidades.time(3000);
-	click(btnOk);
-	Utilidades.screenshot();
-	Utilidades.time(2500);
-		
-	return this;
-}
+	public CargeFDCPage CagarDEX(String doc, File folderPath, String Evidencia) throws Exception {
+		time(2);
 
-@Step("Cagar CD")
-public CargeFDCPage CargaCD(String doc) {
-    Utilidades.time(8000);
-	 File file = new File(doc);
-	 Utilidades.time(3000);
-	 WebElement ruta = driver.findElement(btnCargaCD);
-	 ruta.sendKeys(file.getAbsolutePath()); 
-	 Utilidades.time(1000);
-	Utilidades.screenshot();
-	Utilidades.time(3000);
-	click(btnOk);
-	Utilidades.time(2500);
-	
-	return this;	
-}
+		time(8);
+		File file = new File(doc);
+		time(3);
+		WebElement ruta = driver.findElement(btnCargaDEX);
+		ruta.sendKeys(file.getAbsolutePath());
+		time(1);
+		captureScreen(folderPath, "Capture screen" , Evidencia);
+		time(3);
+		click(btnOk,folderPath, "click xpath" , Evidencia);
+		time(1);
+		click(btnOkey,folderPath, "click xpath" , Evidencia);
+		captureScreen(folderPath, "Capture screen" , Evidencia);
+		time(3);
 
-@Step("Cagar Poliza")
-public CargeFDCPage CargaPoliza(String doc) {
-    Utilidades.time(8000);
-	 File file = new File(doc);
-	 Utilidades.time(3000);
-	 WebElement ruta = driver.findElement(btnCargaPoliza);
-	 ruta.sendKeys(file.getAbsolutePath()); 
-	 Utilidades.time(1000);
-	Utilidades.screenshot();
-	Utilidades.time(3000);
-	click(btnOk);
-	Utilidades.time(2500);
-	click(btnRevisar);
-	Utilidades.time(2500);
-		
-	return this;
-}
-	
+		return this;
+	}
+
+	@Step("Cagar FMM")
+	public CargeFDCPage CargaFMM(String doc, File folderPath, String Evidencia) throws Exception {
+		time(8);
+		File file = new File(doc);
+		time(3);
+		WebElement ruta = driver.findElement(btnCargaFMM);
+		ruta.sendKeys(file.getAbsolutePath());
+		time(1);
+		captureScreen(folderPath, "Capture screen" , Evidencia);
+		time(3);
+		click(btnOk,folderPath, "click xpath" , Evidencia);
+		captureScreen(folderPath, "Capture screen" , Evidencia);
+		time(3);
+
+		return this;
+	}
+
+	@Step("Cagar CD")
+	public CargeFDCPage CargaCD(String doc, File folderPath, String Evidencia) throws Exception {
+		time(8);
+		File file = new File(doc);
+		time(3);
+		WebElement ruta = driver.findElement(btnCargaCD);
+		ruta.sendKeys(file.getAbsolutePath());
+		time(1);
+		captureScreen(folderPath, "Capture screen" , Evidencia);
+		time(3);
+		click(btnOk,folderPath, "click xpath" , Evidencia);
+		time(3);
+
+		return this;
+	}
+
+	@Step("Cagar Poliza")
+	public CargeFDCPage CargaPoliza(String doc, File folderPath, String Evidencia) throws Exception {
+		time(8);
+		File file = new File(doc);
+		time(3);
+		WebElement ruta = driver.findElement(btnCargaPoliza);
+		ruta.sendKeys(file.getAbsolutePath());
+		time(1);
+		captureScreen(folderPath, "Capture screen" , Evidencia);
+		time(3);
+		click(btnOk,folderPath, "click xpath" , Evidencia);
+		time(3);
+		click(btnRevisar,folderPath, "click xpath" , Evidencia);
+		time(3);
+
+		return this;
+	}
+
 }

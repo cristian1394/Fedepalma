@@ -2,43 +2,35 @@ package PagObject_FormularioFDC;
 
 import java.io.File;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 
-import com.demoautomatizacion.utils.Utilidades;
-
-import PagObject_demoautomatizacion.BasePage;
+import MapObject_FormularioFDC.BorrarFDCMap;
 import io.qameta.allure.Step;
 
-public class BorrarFDCPage extends BasePage {
+public class BorrarFDCPage extends BorrarFDCMap {
 
-	By btnBorrar=By.xpath("/html/body/div[1]/main/div/div/div[2]/div[4]/div/table/tbody/tr[1]/td[4]/div/i");
-	By btnOk=By.xpath("/html/body/div[7]/div[7]/div/button");
-	By btnOK=By.xpath("/html/body/div[6]/div[7]/div/button");
-	By lblResultadoBorrar=By.xpath("//div[6]/h2");
-	 
+	
+	
 	public BorrarFDCPage(WebDriver driver) {
 		super(driver);
-		
+		// TODO Auto-generated constructor stub
 	}
-	
+
 	@Step("Eliminar FDC")
-    public BorrarFDCPage BorrarFDC(String resultado) {
-        Utilidades.time(8000);
-		click(btnBorrar);
-        Utilidades.screenshot();
-        Utilidades.time(5000);
-        click(btnOk);
-        Utilidades.time(1000);
+    public BorrarFDCPage BorrarFDC(String resultado, File folderPath, String Evidencia) throws Exception {
+        time(8);
+		click(btnBorrar,folderPath, "Capture screen" , Evidencia);
+		captureScreen(folderPath, "Capture screen" , Evidencia);
+        time(5);
+        click(btnOk,folderPath, "Capture screen" , Evidencia);
+        time(1);
 		Assert.assertEquals(getElement(lblResultadoBorrar).getText(),resultado);
-		Utilidades.screenshot();
-        Utilidades.time(6000);
-        click(btnOK);
-        Utilidades.screenshot();
-        Utilidades.time(2000);
+		captureScreen(folderPath, "Capture screen" , Evidencia);
+        time(6);
+        click(btnOK,folderPath, "Capture screen" , Evidencia);
+        captureScreen(folderPath, "Capture screen" , Evidencia);;
+        time(2);
         
         return this;
     }

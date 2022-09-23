@@ -2,50 +2,32 @@ package PagObject_SecretariaTecnica;
 
 import java.io.File;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.Select;
-import org.testng.Assert;
-
-import com.demoautomatizacion.utils.Utilidades;
-
-import PagObject_ConsultaDCD.BorrarDCDPage;
-import PagObject_demoautomatizacion.BasePage;
+import MapObject_SecretariaTecnica.IniciacionSTMap;
 import io.qameta.allure.Step;
 
-public class IniciacionSTPage extends BasePage {
+public class IniciacionSTPage extends IniciacionSTMap {
 
-	By btnDemostracion=By.xpath("//*[@id=\"stacked-menu\"]/ul/li[25]/a");
-	By btnSTecnica=By.xpath("/html/body/div[1]/aside/div/section/nav/ul/li[25]/ul/li[7]/a");
-	 
 	public IniciacionSTPage(WebDriver driver) {
 		super(driver);
-		
+		// TODO Auto-generated constructor stub
 	}
-	
+
 	@Step("Iniciar Menu Secretaria Tecnica")
-    public IniciacionSTPage IniciarST() {
-        Utilidades.time(5000);
-        
-        Utilidades.time(2000);
-  	   WebElement Element = driver.findElement(btnDemostracion);
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("arguments[0].scrollIntoView();", Element);
-         Utilidades.time(1000);
-         click(btnDemostracion);
-         Utilidades.time(2000);
-         WebElement Elements = driver.findElement(btnSTecnica);
-         JavascriptExecutor Js = (JavascriptExecutor) driver;
-         Js.executeScript("arguments[0].scrollIntoView();", Elements);
-          Utilidades.time(1000);
-         click(btnSTecnica);
-         Utilidades.time(800);
- 		Utilidades.screenshot();
-         Utilidades.time(2000);
-         
-        return this;
-    }
+	public IniciacionSTPage IniciarST(File folderPath, String Evidencia) throws Exception {
+		time(5);
+		time(2);
+		scrollElementV(folderPath, btnDemostracion, "scroll " , Evidencia);
+		click(btnDemostracion,folderPath, "click xpath" , Evidencia);
+		time(2);
+		scrollElementV(folderPath, btnSTecnica, "scroll " , Evidencia);
+		time(1);
+		click(btnSTecnica,folderPath, "click xpath" , Evidencia);
+		time(1);
+		captureScreen(folderPath, "Capture screen" , Evidencia);
+		time(2);
+
+		return this;
+	}
 
 }

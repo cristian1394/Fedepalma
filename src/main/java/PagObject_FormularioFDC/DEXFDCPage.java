@@ -1,156 +1,120 @@
 package PagObject_FormularioFDC;
 
+import java.io.File;
 import java.util.Random;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 
-import com.demoautomatizacion.utils.Utilidades;
-
-import PagObject_demoautomatizacion.BasePage;
+import MapObject_FormularioFDC.DEXFDCMap;
 import io.qameta.allure.Step;
 
-public class DEXFDCPage extends BasePage {
+public class DEXFDCPage extends DEXFDCMap {
 	
-
-	By btnConsultar=By.xpath("//*[@id=\"idconsultardcd\"]");
-	By lblTotal=By.xpath("/html/body/div[1]/main/div/div/div[2]/section[8]/div/div[2]/div/table/tbody/tr[1]/td[7]/label");
-
-	By btnDemostrados=By.xpath("/html/body/div[1]/main/div/div/div[2]/section[8]/div/div[2]/div/table/thead/tr/th[8]/a[2]");
-	By btnSAS=By.xpath("/html/body/div[1]/main/div/div/div[2]/section[8]/div/div[2]/div/table/tbody/tr[1]/td[2]/input");
-	By btnAsociar=By.xpath("/html/body/div[1]/main/div/div/div[2]/section[8]/div/div[2]/div/table/tbody/tr[1]/td[9]/input");
-	
-	By txtAsociar=By.xpath("/html/body/div[1]/main/div/div/div[2]/section[8]/div/div[2]/div/table/tbody/tr[1]/td[9]/input");//kg
-	By btnAdi=By.xpath("//*[@id=\"InsertarFormulario\"]");
-	By btnOk=By.xpath("/html/body/div[17]/div[7]/div/button");
-	
-	By btnDEX=By.xpath("//*[@id=\"numeroDEX\"]");
-	By btnCalendario=By.xpath("//*[@id=\"FechaEmbarqueDEX_div\"]/span/span/span/span");
-	By btnSMes=By.xpath("/html/body/div[9]/div/div/div[1]/a[2]");
-	By btnAño=By.xpath("/html/body/div[9]/div/div/div[1]/a[1]");
-	By btnMes=By.xpath("/html/body/div[9]/div/div/div[2]/table/tbody/tr[3]/td[2]/a");
-	By btnDia=By.xpath("/html/body/div[9]/div/div/div[2]/table/tbody/tr[3]/td[5]/a");
-	By btnPais=By.xpath("//*[@id=\"PaisDEX\"]");
-	By txtPais=By.xpath("//*[@id=\"PaisDEX\"]");//Pais
-	By btnPExpo=By.xpath("//*[@id=\"Productos\"]");
-	By btnProducto=By.xpath("//*[@id=\"ProductoProveedor\"]");
-	By txtProducto=By.xpath("//*[@id=\"ProductoProveedor\"]");//producto
-	By btnPalmiste=By.xpath("//*[@id=\"ProductoProveedor_listbox\"]/li[2]");
-	By btnKg=By.xpath("//*[@id=\"kgExportados\"]");
-	By txtKg=By.xpath("//*[@id=\"kgExportados\"]");//kg
-	By btnAdicionar=By.xpath("//*[@id=\"btnAdicionar\"]");
-	By btnGuardar=By.xpath("//*[@id=\"btnAceptarProExp\"]");
-	
-	By btnTipoProd=By.xpath("//*[@id=\"idProducto\"]");
-	By btnpalmiste=By.xpath("//*[@id=\"idProducto\"]/option[3]");
-	By lblResultadoAdicionar=By.xpath("//div[17]/p");
-
 
 	
 	public DEXFDCPage(WebDriver driver) {
 		super(driver);
-		
+		// TODO Auto-generated constructor stub
 	}
-	
+
+
 	@Step("Ingresar DEX Palma")
-    public DEXFDCPage IngresarDEXPalma() {
-        Utilidades.time(2000);
+    public DEXFDCPage IngresarDEXPalma(File folderPath, String Evidencia) throws Exception {
+        time(2);
         
-        click(btnSAS);
-        Utilidades.time(1000);
-        click(btnAsociar);
-        Utilidades.time(1000);
+        click(btnSAS,folderPath, "click xpath" , Evidencia);
+        time(1);
+        click(btnAsociar,folderPath, "click xpath" , Evidencia);
+        time(1);
         
         String Total = getElement(lblTotal).getText();
-        Utilidades.time(1000);
-        click(btnAsociar);
-        writeText(txtAsociar, Total);
-        Utilidades.time(1000);
-        click(btnAdi);
-        Utilidades.time(20000);
-        click(btnOk);
-        Utilidades.time(2000);
+        time(1);
+        click(btnAsociar,folderPath, "click xpath" , Evidencia);
+        writeText(txtAsociar, Total, folderPath, Total, Evidencia);
+        time(1);
+        click(btnAdi,folderPath, "click xpath" , Evidencia);
+        time(20);
+        click(btnOk,folderPath, "click xpath" , Evidencia);
+        time(2);
         
         return this;
     }
         
         
     @Step("Crear DEX Palmiste")
-    public DEXFDCPage CrearDEXPalmiste(String Pais, String Producto) throws Exception {
+    public DEXFDCPage CrearDEXPalmiste(String Pais, String Producto, File folderPath, String Evidencia) throws Exception {
         
-    	Utilidades.time(5000);
-    	click(btnDEX);
-    	Utilidades.time(2000);
+    	time(5);
+    	click(btnDEX,folderPath, "click xpath" , Evidencia);
+    	time(2);
         numeroAleatorio();
-        Utilidades.time(2000);
-        click(btnCalendario);
-        Utilidades.time(1000);
-        click(btnSMes);
-        Utilidades.time(1000);
-        click(btnAño);
-        Utilidades.time(1000);
-        click(btnMes);
-        Utilidades.time(1000);
-        click(btnDia);
-        Utilidades.time(1000);
-        click(btnPais);
-        Utilidades.time(1000);
-        writeText(txtPais, Pais);
-        Utilidades.screenshot();
-        Utilidades.time(2000);
-        click(btnTipoProd);
-        Utilidades.time(1000);
-        click(btnpalmiste);
-        Utilidades.time(1000);
-        click(btnConsultar);
-        Utilidades.time(5000);
-        click(btnDemostrados);
-        Utilidades.time(1000);
+        time(2);
+        click(btnCalendario,folderPath, "click xpath" , Evidencia);
+        time(1);
+        click(btnSMes,folderPath, "click xpath" , Evidencia);
+        time(1);
+        click(btnAño,folderPath, "click xpath" , Evidencia);
+        time(1);
+        click(btnMes,folderPath, "click xpath" , Evidencia);
+        time(1);
+        click(btnDia,folderPath, "click xpath" , Evidencia);
+        time(1);
+        click(btnPais,folderPath, "click xpath" , Evidencia);
+        time(1);
+        writeText(txtPais, Pais, folderPath, Producto, Evidencia);
+        captureScreen(folderPath, "Capture screen" , Evidencia);
+        time(2);
+        click(btnTipoProd,folderPath, "click xpath" , Evidencia);
+        time(1);
+        click(btnpalmiste,folderPath, "click xpath" , Evidencia);
+        time(1);
+        click(btnConsultar,folderPath, "click xpath" , Evidencia);
+        time(5);
+        click(btnDemostrados,folderPath, "click xpath" , Evidencia);
+        time(1);
         String Totales = getElement(lblTotal).getText();
         
-        Utilidades.time(1000);
-        click(btnPExpo);
-        Utilidades.time(1000);
-        click(btnProducto);
-        Utilidades.time(1000);
-        writeText(txtProducto, Producto);
-        Utilidades.time(1000);
-        click(btnPalmiste);
-        Utilidades.time(1000);
-        click(btnKg);
-        Utilidades.time(1000);
-        writeText(txtKg, Totales);
-        Utilidades.time(1000);
-        click(btnAdicionar);
-        Utilidades.time(800);
-        click(btnGuardar);
+        time(1);
+        click(btnPExpo,folderPath, "click xpath" , Evidencia);
+        time(1);
+        click(btnProducto,folderPath, "click xpath" , Evidencia);
+        time(1);
+        writeText(txtProducto, Producto, folderPath, Totales, Evidencia);
+        time(1);
+        click(btnPalmiste,folderPath, "click xpath" , Evidencia);
+        time(1);
+        click(btnKg,folderPath, "click xpath" , Evidencia);
+        time(1);
+        writeText(txtKg, Totales, folderPath, Totales, Evidencia);
+        time(1);
+        click(btnAdicionar,folderPath, "click xpath" , Evidencia);
+        time(1);
+        click(btnGuardar,folderPath, "click xpath" , Evidencia);
         
-        Utilidades.screenshot();
-        Utilidades.time(3500);
+        captureScreen(folderPath, "Capture screen" , Evidencia);
+        time(4);
         
         return this;
     }
 	
 	@Step("Ingresar DEX Palmiste")
-    public DEXFDCPage IngresarDEXPalmiste(String resultado) {
+    public DEXFDCPage IngresarDEXPalmiste(String resultado, File folderPath, String Evidencia) throws Exception {
 		
-        Utilidades.time(4000);
-        click(btnSAS);
-        Utilidades.time(1000);
+        time(4);
+        click(btnSAS,folderPath, "click xpath" , Evidencia);
+        time(1);
         String Totals = getElement(lblTotal).getText();
-        Utilidades.time(1000);
-        click(btnAsociar);
-        writeText(txtAsociar, Totals);
-        Utilidades.time(1000);
-        click(btnAdi);
-        Utilidades.time(20000);
+        time(1);
+        click(btnAsociar,folderPath, "click xpath" , Evidencia);
+        writeText(txtAsociar, Totals, folderPath, Totals, Evidencia);
+        time(1);
+        click(btnAdi,folderPath, "click xpath" , Evidencia);
+        time(20);
 		Assert.assertEquals(getElement(lblResultadoAdicionar).getText(),resultado);
-		Utilidades.screenshot();
-        Utilidades.time(5000);
-        click(btnOk);
+		captureScreen(folderPath, "Capture screen" , Evidencia);
+        time(5);
+        click(btnOk,folderPath, "click xpath" , Evidencia);
         
         return this;
 	}

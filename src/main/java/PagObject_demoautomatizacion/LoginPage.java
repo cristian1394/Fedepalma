@@ -8,31 +8,28 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 
+import MapObject_demoautomatizacion.LoginMap;
 import io.qameta.allure.Step;
 
-public class LoginPage extends BasePage {
-	
-	By txtUsuario=By.id("Usuario");
-	By txtContrase_a=By.xpath("//*[@id=\"Contrase_a\"]");
-	By btnLogin=By.xpath("//*[@id=\"btnSave\"]");
+public class LoginPage extends LoginMap  {
 	
 	
 	
 	public LoginPage(WebDriver driver) {
 		super(driver);
-		
+		// TODO Auto-generated constructor stub
 	}
-	
+
 	@Step("Ingresar Credenciales de Acceso")
-    public LoginPage ingresarCredenciales(String usuario, String password, File folderPath) throws Exception {
+    public LoginPage ingresarCredenciales(String usuario, String password, File folderPath, String Evidencia) throws Exception {
         time(2);
         
-        writeText(txtUsuario, usuario, folderPath, " escribe usuario");
+        writeText(txtUsuario, usuario, folderPath, " escribe usuario", Evidencia);
         time(1);
-        writeText(txtContrase_a, password, folderPath, " escribe contrase_a");
+        writeText(txtContrase_a, password, folderPath, " escribe contrase_a", Evidencia);
 		screenshot();
 		time(1);
-		click(btnLogin, folderPath, " click login");
+		click(btnLogin, folderPath, " click login" , Evidencia);
         time(5);
         return this;
     }

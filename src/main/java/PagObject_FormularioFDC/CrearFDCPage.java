@@ -1,104 +1,75 @@
 package PagObject_FormularioFDC;
 
+import java.io.File;
 import java.util.Random;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.Select;
-import org.testng.Assert;
-
-import com.demoautomatizacion.utils.Utilidades;
-
-import PagObject_demoautomatizacion.BasePage;
+import MapObject_FormularioFDC.CrearFDCMap;
 import io.qameta.allure.Step;
 
-public class CrearFDCPage extends BasePage {
+public class CrearFDCPage extends CrearFDCMap {
 	
-	By btnCrear=By.xpath("//*[@id=\"btnCrear\"]");
-	By btnDEX=By.xpath("//*[@id=\"numeroDEX\"]");
-	By btnCalendario=By.xpath("//*[@id=\"FechaEmbarqueDEX_div\"]/span/span/span/span");
-	By btnSMes=By.xpath("/html/body/div[9]/div/div/div[1]/a[2]");
-	By btnAño=By.xpath("/html/body/div[9]/div/div/div[1]/a[1]");
-	By btnMes=By.xpath("/html/body/div[9]/div/div/div[2]/table/tbody/tr[3]/td[2]/a");
-	By btnDia=By.xpath("/html/body/div[9]/div/div/div[2]/table/tbody/tr[3]/td[5]/a");
-	By btnPais=By.xpath("//*[@id=\"PaisDEX\"]");
-	By txtPais=By.xpath("//*[@id=\"PaisDEX\"]");
-	By btnTipoPro=By.xpath("//*[@id=\"idProducto\"]");
-	By btnSPalma=By.xpath("//*[@id=\"idProducto\"]/option[2]");
-	By btnConsultar=By.xpath("//*[@id=\"idconsultardcd\"]");
-	By btnDemostrados=By.xpath("/html/body/div[1]/main/div/div/div[2]/section[8]/div/div[2]/div/table/thead/tr/th[8]/a[2]");
-	By lblTotal=By.xpath("/html/body/div[1]/main/div/div/div[2]/section[8]/div/div[2]/div/table/tbody/tr[1]/td[7]/label");
 	
-	By btnPExpo=By.xpath("//*[@id=\"Productos\"]");
-	By btnProducto=By.xpath("//*[@id=\"ProductoProveedor\"]");
-	By txtProducto=By.xpath("//*[@id=\"ProductoProveedor\"]");//Producto
-	By btnPalma=By.xpath("//*[@id=\"ProductoProveedor_listbox\"]/li[1]");
-	By btnKilos=By.xpath("//*[@id=\"kgExportados\"]");
-	By txtKilos=By.xpath("//*[@id=\"kgExportados\"]");
-	By btnAdicionar=By.xpath("//*[@id=\"btnAdicionar\"]");
-	By btnGuardar=By.xpath("//*[@id=\"btnAceptarProExp\"]");
-
 	
 	public CrearFDCPage(WebDriver driver) {
 		super(driver);
-		
+		// TODO Auto-generated constructor stub
 	}
-	
+
 	@Step("Crear FDC")
-    public CrearFDCPage CrearFDC(String Pais, String Producto) throws Exception {
-        Utilidades.time(2000);
+    public CrearFDCPage CrearFDC(String Pais, String Producto, File folderPath, String Evidencia) throws Exception {
+        time(2);
         
-        click(btnCrear);
-        Utilidades.time(3000);
-        click(btnDEX);
-        Utilidades.time(1000);
+        click(btnCrear,folderPath, "click xpath" , Evidencia);
+        time(3);
+        click(btnDEX,folderPath, "click xpath" , Evidencia);
+        time(1);
         numeroAleatorio();
-        Utilidades.time(1000);
-        click(btnCalendario);
-        Utilidades.time(1000);
-        click(btnSMes);
-        Utilidades.time(1000);
-        click(btnAño);
-        Utilidades.time(1000);
-        click(btnMes);
-        Utilidades.time(500);
-        click(btnDia);
-        Utilidades.time(1500);
-        click(btnPais);
-        Utilidades.time(1000);
-        writeText(txtPais, Pais);
-        Utilidades.time(1000);
-        click(btnTipoPro);
-        Utilidades.time(4000);
-        click(btnSPalma);
-        Utilidades.time(1000);
-        click(btnConsultar);
-        Utilidades.time(2000);
-        click(btnDemostrados);
-        Utilidades.time(1000);
+        time(1);
+        click(btnCalendario,folderPath, "click xpath" , Evidencia);
+        time(1);
+        click(btnSMes,folderPath, "click xpath" , Evidencia);
+        time(1);
+        click(btnAño,folderPath, "click xpath" , Evidencia);
+        time(1);
+        click(btnMes,folderPath, "click xpath" , Evidencia);
+        time(1);
+        click(btnDia,folderPath, "click xpath" , Evidencia);
+        time(2);
+        click(btnPais,folderPath, "click xpath" , Evidencia);
+        time(1);
+        writeText(txtPais, Pais, folderPath, Producto, Evidencia);
+        time(1);
+        click(btnTipoPro,folderPath, "click xpath" , Evidencia);
+        time(4);
+        click(btnSPalma,folderPath, "click xpath" , Evidencia);
+        time(1);
+        click(btnConsultar,folderPath, "click xpath" , Evidencia);
+        time(2);
+        click(btnDemostrados,folderPath, "click xpath" , Evidencia);
+        time(1);
         String Total = getElement(lblTotal).getText();
         
-        click(btnPExpo);
-        Utilidades.time(1000);
-        click(btnProducto);
-        Utilidades.time(1000);
-        writeText(txtProducto, Producto);
-        Utilidades.time(1000);
-        click(btnPalma);
-        Utilidades.time(1000);
-        click(btnKilos);
-        Utilidades.time(1000);
-        writeText(txtKilos, Total);
-        Utilidades.time(1000);
-        click(btnAdicionar);
-        Utilidades.time(800);
-        click(btnGuardar);
-        Utilidades.screenshot();
+        click(btnPExpo,folderPath, "click xpath" , Evidencia);
+        time(1);
+        click(btnProducto,folderPath, "click xpath" , Evidencia);
+        time(1);
+        writeText(txtProducto, Producto, folderPath, Total, Evidencia);
+        time(1);
+        click(btnPalma,folderPath, "click xpath" , Evidencia);
+        time(1);
+        click(btnKilos,folderPath, "click xpath" , Evidencia);
+        time(1);
+        writeText(txtKilos, Total, folderPath, Total, Evidencia);
+        time(1);
+        click(btnAdicionar,folderPath, "click xpath" , Evidencia);
+        time(1);
+        click(btnGuardar,folderPath, "click xpath" , Evidencia);
+       captureScreen(folderPath, "Capture screen" , Evidencia);
        
         
-        Utilidades.screenshot();
-        Utilidades.time(3500);
+       captureScreen(folderPath, "Capture screen" , Evidencia);
+        time(4);
         
         return this;
     }

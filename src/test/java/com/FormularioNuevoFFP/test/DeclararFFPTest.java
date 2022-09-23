@@ -5,13 +5,16 @@ import java.io.FileInputStream;
 import java.util.Properties;
 
 import io.qameta.allure.*;
+import utilities.GenerarReportePdf;
+import utilities.MyScreenRecorder;
 
-import org.openqa.selenium.By;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import com.demoautomatizacion.test.BaseTest;
 import com.demoautomatizacion.test.utils.Listeners.TestListener;
+
+import PagObject_demoautomatizacion.BasePage;
 
 
 
@@ -27,6 +30,17 @@ public class DeclararFFPTest extends BaseTest{
         fileprops.load(new FileInputStream(new File("src/test/resources/test.properties").getAbsolutePath()));
         return fileprops;
     }
+	
+	
+	public void Logeo(String nameTest, File folderPath) throws Exception {
+
+		GenerarReportePdf.setRutaImagen(getProperties().getProperty("routeImageReport"));
+	
+		GenerarReportePdf.createTemplate(folderPath, nameTest, getProperties().getProperty("analista"),
+				getProperties().getProperty("url"), getProperties().getProperty("Evidencia"));
+
+		GenerarReportePdf.setImgContador(0);
+	}
 		
 	@Test(priority=0, description="Declarar FFP Portal Fedepalma")
     @Severity(SeverityLevel.NORMAL)
@@ -34,32 +48,42 @@ public class DeclararFFPTest extends BaseTest{
     @Story("Declarar FFP")
     @TmsLink("XRPRJ-1")
     public void DeclararFFP () throws Exception {
+		
+		// OBTENER EL NOMBRE DEL METODO A EJECUTAR
+		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();
+
+		File folderPath = BasePage.createFolder(nomTest, getProperties().getProperty("path"), getProperties().getProperty("Evidencia"));
+		MyScreenRecorder.startRecording(nomTest, folderPath,getProperties().getProperty("Video"));
+
+		Logeo(nomTest, folderPath);
+		
 		home.irPortal(getProperties().getProperty("url"));
 		Login.ingresarCredencialesConNit(getProperties().getProperty("NitA"), getProperties().getProperty("UsrF"),
-        		getProperties().getProperty("pwd"));
-        ConsultarFFP.Consulta_FFP();
+        		getProperties().getProperty("pwd"), folderPath, getProperties().getProperty("Evidencia"));
+        ConsultarFFP.Consulta_FFP(folderPath, getProperties().getProperty("Evidencia"));
         NuevaDeclaracionE.NuevaDeclaracionFFP(getProperties().getProperty("DocRPF"),getProperties().getProperty("PropiosG"),
-        		getProperties().getProperty("PropiosH"),getProperties().getProperty("RPFG"), getProperties().getProperty("RPFH"))
-        		.FrutoVendidoFFP(getProperties().getProperty("InicialFrutoG"), getProperties().getProperty("InicialFrutoH"))
+        		getProperties().getProperty("PropiosH"),getProperties().getProperty("RPFG"), getProperties().getProperty("RPFH"), folderPath, getProperties().getProperty("Evidencia"))
+        		.FrutoVendidoFFP(getProperties().getProperty("InicialFrutoG"), getProperties().getProperty("InicialFrutoH"), folderPath, getProperties().getProperty("Evidencia"))
         		.FrutoEnviadoFFP(getProperties().getProperty("BajaFrutoG"), getProperties().getProperty("BajaFrutoH"), 
-                getProperties().getProperty("NoProcesadoG"))
+                getProperties().getProperty("NoProcesadoG"), folderPath, getProperties().getProperty("Evidencia"))
         		.ProveedoresAlmendra(getProperties().getProperty("DocRPA"),getProperties().getProperty("PPalmaIngresada"),
-                getProperties().getProperty("RPalmaIngresada"),getProperties().getProperty("KG"))
+                getProperties().getProperty("RPalmaIngresada"),getProperties().getProperty("KG"), folderPath, getProperties().getProperty("Evidencia"))
         		.AlmendraRecibida(getProperties().getProperty("DocARPM"),getProperties().getProperty("KG"),
                 getProperties().getProperty("PalmaProcesada"),getProperties().getProperty("PalmaRecibida"),
-                getProperties().getProperty("PalmisteRecibida"));
+                getProperties().getProperty("PalmisteRecibida"), folderPath, getProperties().getProperty("Evidencia"));
         Inventarios.AceitePalma(getProperties().getProperty("Palma"),getProperties().getProperty("PalmaA"),
-                getProperties().getProperty("PalmaB"),getProperties().getProperty("PalmaC"), getProperties().getProperty("PalmaD"))
+                getProperties().getProperty("PalmaB"),getProperties().getProperty("PalmaC"), getProperties().getProperty("PalmaD"), folderPath, getProperties().getProperty("Evidencia"))
         		.AceitePalmaOPalmiste(getProperties().getProperty("PalmaoPalmiste"),getProperties().getProperty("PalmaoPalmisteA"),
                 getProperties().getProperty("PalmaoPalmisteB"),getProperties().getProperty("PalmaoPalmisteC"), 
-                getProperties().getProperty("PalmaoPalmisteD"))
+                getProperties().getProperty("PalmaoPalmisteD"), folderPath, getProperties().getProperty("Evidencia"))
         		.AceitePalmiste(getProperties().getProperty("Palmiste"),getProperties().getProperty("PalmisteA"),
-                getProperties().getProperty("PalmisteB"),getProperties().getProperty("PalmisteC"), getProperties().getProperty("PalmisteD"))
-        		.Total_Plama(getProperties().getProperty("TotalPalma"));
-        DeclararFFPF.DeclararFFP().Firma(getProperties().getProperty("Firma"),"Formularios firmados exitosamente.")
-        		.confirmar("Se ha realizado el cambio de estado");
+                getProperties().getProperty("PalmisteB"),getProperties().getProperty("PalmisteC"), getProperties().getProperty("PalmisteD"), folderPath, getProperties().getProperty("Evidencia"))
+        		.Total_Plama(getProperties().getProperty("TotalPalma"), folderPath, getProperties().getProperty("Evidencia"));
+        DeclararFFPF.DeclararFFP(folderPath, getProperties().getProperty("Evidencia")).Firma(getProperties().getProperty("Firma"),"Formularios firmados exitosamente.", folderPath, getProperties().getProperty("Evidencia"))
+        		.confirmar("Se ha realizado el cambio de estado", folderPath, getProperties().getProperty("Evidencia"));
 
-     
+        MyScreenRecorder.stopRecording(getProperties().getProperty("Video"));
+     	GenerarReportePdf.closeTemplate("",getProperties().getProperty("Evidencia"));
     }
 	
 }

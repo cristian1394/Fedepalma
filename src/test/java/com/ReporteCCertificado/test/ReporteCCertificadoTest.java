@@ -5,13 +5,16 @@ import java.io.FileInputStream;
 import java.util.Properties;
 
 import io.qameta.allure.*;
+import utilities.GenerarReportePdf;
+import utilities.MyScreenRecorder;
 
-import org.openqa.selenium.By;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import com.demoautomatizacion.test.BaseTest;
 import com.demoautomatizacion.test.utils.Listeners.TestListener;
+
+import PagObject_demoautomatizacion.BasePage;
 
 
 @Listeners({ TestListener.class })
@@ -26,6 +29,16 @@ public class ReporteCCertificadoTest extends BaseTest{
         fileprops.load(new FileInputStream(new File("src/test/resources/test.properties").getAbsolutePath()));
         return fileprops;
     }
+	
+	public void Logeo(String nameTest, File folderPath) throws Exception {
+
+		GenerarReportePdf.setRutaImagen(getProperties().getProperty("routeImageReport"));
+	
+		GenerarReportePdf.createTemplate(folderPath, nameTest, getProperties().getProperty("analista"),
+				getProperties().getProperty("url"), getProperties().getProperty("Evidencia"));
+
+		GenerarReportePdf.setImgContador(0);
+	}
 		
 	@Test(priority=0, description="Validar la interfaz de Reporte Comparativo - Cuotas")
     @Severity(SeverityLevel.NORMAL)
@@ -33,10 +46,22 @@ public class ReporteCCertificadoTest extends BaseTest{
     @Story("Validar la interfaz de Reporte Comparativo - Cuotas")
     @TmsLink("XRPRJ-1")
     public void PortalFedepalma1 () throws Exception {
+		
+		// OBTENER EL NOMBRE DEL METODO A EJECUTAR
+		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();
+
+		File folderPath = BasePage.createFolder(nomTest, getProperties().getProperty("path"), getProperties().getProperty("Evidencia"));
+		MyScreenRecorder.startRecording(nomTest, folderPath,getProperties().getProperty("Video"));
+
+		Logeo(nomTest, folderPath);
+		
 		home.irPortal(getProperties().getProperty("url"));
         Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr"),
-        		getProperties().getProperty("pwd"));
-        ReporteCCertificado.MenuRCCertificado();
+        		getProperties().getProperty("pwd"), folderPath, getProperties().getProperty("Evidencia"));
+        ReporteCCertificado.MenuRCCertificado(folderPath, getProperties().getProperty("Evidencia"));
+        
+        MyScreenRecorder.stopRecording(getProperties().getProperty("Video"));
+     	GenerarReportePdf.closeTemplate("",getProperties().getProperty("Evidencia"));
        
 	}
 	
@@ -46,10 +71,22 @@ public class ReporteCCertificadoTest extends BaseTest{
     @Story("Validar que en la interfaz de Reporte Comparativo - Cuotas se encuentre el boton Exportary validar su funcionalidad")
     @TmsLink("XRPRJ-1")
     public void PortalFedepalma2 () throws Exception {
+		
+		// OBTENER EL NOMBRE DEL METODO A EJECUTAR
+		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();
+
+		File folderPath = BasePage.createFolder(nomTest, getProperties().getProperty("path"), getProperties().getProperty("Evidencia"));
+		MyScreenRecorder.startRecording(nomTest, folderPath,getProperties().getProperty("Video"));
+
+		Logeo(nomTest, folderPath);
+		
 		home.irPortal(getProperties().getProperty("url"));
         Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr"),
-        		getProperties().getProperty("pwd"));
-        ReporteCCertificado.MenuRCCertificado().Exportar();
+        		getProperties().getProperty("pwd"), folderPath, getProperties().getProperty("Evidencia"));
+        ReporteCCertificado.MenuRCCertificado(folderPath, getProperties().getProperty("Evidencia")).Exportar(folderPath, getProperties().getProperty("Evidencia"));
+        
+        MyScreenRecorder.stopRecording(getProperties().getProperty("Video"));
+     	GenerarReportePdf.closeTemplate("",getProperties().getProperty("Evidencia"));
         
 	}
 
@@ -59,11 +96,22 @@ public class ReporteCCertificadoTest extends BaseTest{
     @Story("Validar que todas las columnas de saldos deben tener separación de miles con 0 decimales")
     @TmsLink("XRPRJ-1")
     public void PortalFedepalma3 () throws Exception {
+		
+		// OBTENER EL NOMBRE DEL METODO A EJECUTAR
+		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();
+
+		File folderPath = BasePage.createFolder(nomTest, getProperties().getProperty("path"), getProperties().getProperty("Evidencia"));
+		MyScreenRecorder.startRecording(nomTest, folderPath,getProperties().getProperty("Video"));
+
+		Logeo(nomTest, folderPath);
+		
 		home.irPortal(getProperties().getProperty("url"));
         Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr"),
-        		getProperties().getProperty("pwd"));
-        ReporteCCertificado.MenuRCCertificado().FNIT1(getProperties().getProperty("NitReporteCC")).ScrollDerecha().Evidencia();
+        		getProperties().getProperty("pwd"), folderPath, getProperties().getProperty("Evidencia"));
+        ReporteCCertificado.MenuRCCertificado(folderPath, getProperties().getProperty("Evidencia")).FNIT1(getProperties().getProperty("NitReporteCC"), folderPath, getProperties().getProperty("Evidencia")).ScrollDerecha(folderPath, getProperties().getProperty("Evidencia")).Evidencia(folderPath, getProperties().getProperty("Evidencia"));
 		
+        MyScreenRecorder.stopRecording(getProperties().getProperty("Video"));
+     	GenerarReportePdf.closeTemplate("",getProperties().getProperty("Evidencia"));
 	}
 	
 	@Test(priority=3, description="Validar que las columnas de Fecha deben visualizarse sin la hora")
@@ -72,11 +120,22 @@ public class ReporteCCertificadoTest extends BaseTest{
     @Story("Validar que las columnas de Fecha deben visualizarse sin la hora")
     @TmsLink("XRPRJ-1")
     public void PortalFedepalma4 () throws Exception {
+		
+		// OBTENER EL NOMBRE DEL METODO A EJECUTAR
+		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();
+
+		File folderPath = BasePage.createFolder(nomTest, getProperties().getProperty("path"), getProperties().getProperty("Evidencia"));
+		MyScreenRecorder.startRecording(nomTest, folderPath,getProperties().getProperty("Video"));
+
+		Logeo(nomTest, folderPath);
+		
 		home.irPortal(getProperties().getProperty("url"));
         Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr"),
-        		getProperties().getProperty("pwd"));
-        ReporteCCertificado.MenuRCCertificado().FNIT1(getProperties().getProperty("NitReporteCC")).ScrollDerecha1().Evidencia();
+        		getProperties().getProperty("pwd"), folderPath, getProperties().getProperty("Evidencia"));
+        ReporteCCertificado.MenuRCCertificado(folderPath, getProperties().getProperty("Evidencia")).FNIT1(getProperties().getProperty("NitReporteCC"), folderPath, getProperties().getProperty("Evidencia")).ScrollDerecha1(folderPath, getProperties().getProperty("Evidencia")).Evidencia(folderPath, getProperties().getProperty("Evidencia"));
 		
+        MyScreenRecorder.stopRecording(getProperties().getProperty("Video"));
+     	GenerarReportePdf.closeTemplate("",getProperties().getProperty("Evidencia"));
 	}
 	
 	@Test(priority=4, description="Validar los filtros que muestra la interfaz")
@@ -85,12 +144,23 @@ public class ReporteCCertificadoTest extends BaseTest{
     @Story("Validar los filtros que muestra la interfaz")
     @TmsLink("XRPRJ-1")
     public void PortalFedepalma5 () throws Exception {
+		
+		// OBTENER EL NOMBRE DEL METODO A EJECUTAR
+		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();
+
+		File folderPath = BasePage.createFolder(nomTest, getProperties().getProperty("path"), getProperties().getProperty("Evidencia"));
+		MyScreenRecorder.startRecording(nomTest, folderPath,getProperties().getProperty("Video"));
+
+		Logeo(nomTest, folderPath);
+		
 		home.irPortal(getProperties().getProperty("url"));
         Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr"),
-        		getProperties().getProperty("pwd"));
-        ReporteCCertificado.MenuRCCertificado().FP(getProperties().getProperty("Inicial")).FNIT(getProperties().getProperty("Kg"))
-        .FSCPalma(getProperties().getProperty("Creacion")).FSCPalmiste(getProperties().getProperty("Kg")).ScrollDerecha1().Evidencia();
+        		getProperties().getProperty("pwd"), folderPath, getProperties().getProperty("Evidencia"));
+        ReporteCCertificado.MenuRCCertificado(folderPath, getProperties().getProperty("Evidencia")).FP(getProperties().getProperty("Inicial"), folderPath, getProperties().getProperty("Evidencia")).FNIT(getProperties().getProperty("Kg"), folderPath, getProperties().getProperty("Evidencia"))
+        .FSCPalma(getProperties().getProperty("Creacion"), folderPath, getProperties().getProperty("Evidencia")).FSCPalmiste(getProperties().getProperty("Kg"), folderPath, getProperties().getProperty("Evidencia")).ScrollDerecha1(folderPath, getProperties().getProperty("Evidencia")).Evidencia(folderPath, getProperties().getProperty("Evidencia"));
 		
+        MyScreenRecorder.stopRecording(getProperties().getProperty("Video"));
+     	GenerarReportePdf.closeTemplate("",getProperties().getProperty("Evidencia"));
 	}
 	
 	@Test(priority=5, description="Validar la paginacion de la interfaz")
@@ -99,10 +169,22 @@ public class ReporteCCertificadoTest extends BaseTest{
     @Story("Validar la paginacion de la interfaz")
     @TmsLink("XRPRJ-1")
     public void PortalFedepalma6 () throws Exception {
+		
+		// OBTENER EL NOMBRE DEL METODO A EJECUTAR
+		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();
+
+		File folderPath = BasePage.createFolder(nomTest, getProperties().getProperty("path"), getProperties().getProperty("Evidencia"));
+		MyScreenRecorder.startRecording(nomTest, folderPath,getProperties().getProperty("Video"));
+
+		Logeo(nomTest, folderPath);
+		
 		home.irPortal(getProperties().getProperty("url"));
         Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr"),
-        		getProperties().getProperty("pwd"));
-        ReporteCCertificado.MenuRCCertificado().ScrollAbajo1().Paginacion();
+        		getProperties().getProperty("pwd"), folderPath, getProperties().getProperty("Evidencia"));
+        ReporteCCertificado.MenuRCCertificado(folderPath, getProperties().getProperty("Evidencia")).ScrollAbajo1(folderPath, getProperties().getProperty("Evidencia")).Paginacion(folderPath, getProperties().getProperty("Evidencia"));
+        
+        MyScreenRecorder.stopRecording(getProperties().getProperty("Video"));
+     	GenerarReportePdf.closeTemplate("",getProperties().getProperty("Evidencia"));
 		
 	}
 }

@@ -6,6 +6,7 @@ import java.util.Properties;
 
 import io.qameta.allure.*;
 import utilities.GenerarReportePdf;
+import utilities.MyScreenRecorder;
 
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
@@ -42,7 +43,7 @@ public class CreacionSolicitudTest extends BaseTest{
 		// getProperties().getProperty("path"));
 
 		GenerarReportePdf.createTemplate(folderPath, nameTest, getProperties().getProperty("analista"),
-				getProperties().getProperty("url"));
+				getProperties().getProperty("url"), getProperties().getProperty("Evidencia"));
 
 		GenerarReportePdf.setImgContador(0);
 	}
@@ -55,19 +56,19 @@ public class CreacionSolicitudTest extends BaseTest{
     public void CreacionCompleta () throws Exception {
 		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();
 
-		File folderPath = BasePage.createFolder(nomTest, getProperties().getProperty("path"));
+		File folderPath = BasePage.createFolder(nomTest, getProperties().getProperty("path"), getProperties().getProperty("Evidencia"));
 
-		// MyScreenRecorder.startRecording(nomTest, folderPath);
+		MyScreenRecorder.startRecording(nomTest, folderPath,getProperties().getProperty("Video"));
 
 		Logeo(nomTest, folderPath);
 		home.irPortal(getProperties().getProperty("url"));
 		Login.ingresarCredencialesConNit(getProperties().getProperty("NitB"), getProperties().getProperty("Usuario"),
-        	 getProperties().getProperty("pwd"), folderPath);
-        CrearSolicitud.SelecionarMenu(folderPath).Crear(folderPath).Identificacion(folderPath, getProperties().getProperty("Id")).Creacion(folderPath)
-        	 .Observacion(folderPath, getProperties().getProperty("observacion")).ConfirmarCreacion(folderPath, "Tarea generada con exito");
-        // MyScreenRecorder.stopRecording();
+        	 getProperties().getProperty("pwd"), folderPath, getProperties().getProperty("Evidencia"));
+        CrearSolicitud.SelecionarMenu(folderPath, getProperties().getProperty("Evidencia")).Crear(folderPath, getProperties().getProperty("Evidencia")).Identificacion(folderPath, getProperties().getProperty("Id"), getProperties().getProperty("Evidencia")).Creacion(folderPath, getProperties().getProperty("Evidencia"))
+        	 .Observacion(folderPath, getProperties().getProperty("observacion"), getProperties().getProperty("Evidencia")).ConfirmarCreacion(folderPath, "Tarea generada con exito", getProperties().getProperty("Evidencia"));
+        MyScreenRecorder.stopRecording(getProperties().getProperty("Video"));
 
- 		GenerarReportePdf.closeTemplate("");
+ 		GenerarReportePdf.closeTemplate("",getProperties().getProperty("Evidencia"));
     }
 	
 	@Test(priority=1, description="El usuario externo realiza la solicitud de una cedula que ya tiene usuario, pero cuando le pregunta que si desea realizar la solicitud le dice “No”, le debe mostrar el mensaje y borrar la identificación.")
@@ -78,19 +79,19 @@ public class CreacionSolicitudTest extends BaseTest{
     public void CancelarCreacion () throws Exception {
 		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();
 
-		File folderPath = BasePage.createFolder(nomTest, getProperties().getProperty("path"));
+		File folderPath = BasePage.createFolder(nomTest, getProperties().getProperty("path"), getProperties().getProperty("Evidencia"));
 
-		// MyScreenRecorder.startRecording(nomTest, folderPath);
+		MyScreenRecorder.startRecording(nomTest, folderPath,getProperties().getProperty("Video"));
 
 		Logeo(nomTest, folderPath);
 		home.irPortal(getProperties().getProperty("url"));
 		Login.ingresarCredencialesConNit(getProperties().getProperty("NitB"), getProperties().getProperty("Usuario"),
-        	 getProperties().getProperty("pwd"), folderPath);
-        CrearSolicitud.SelecionarMenu(folderPath).Crear(folderPath).Identificacion(folderPath, getProperties().getProperty("Id")).CancelarCreacion(folderPath)
-        	 .CancelacionCreciona(folderPath, "No se creó la solicitud"); 
-        // MyScreenRecorder.stopRecording();
+        	 getProperties().getProperty("pwd"), folderPath, getProperties().getProperty("Evidencia"));
+        CrearSolicitud.SelecionarMenu(folderPath, getProperties().getProperty("Evidencia")).Crear(folderPath, getProperties().getProperty("Evidencia")).Identificacion(folderPath, getProperties().getProperty("Id"), getProperties().getProperty("Evidencia")).CancelarCreacion(folderPath, getProperties().getProperty("Evidencia"))
+        	 .CancelacionCreciona(folderPath, "No se creó la solicitud", getProperties().getProperty("Evidencia")); 
+        MyScreenRecorder.stopRecording(getProperties().getProperty("Video"));
 
- 		GenerarReportePdf.closeTemplate("");
+ 		GenerarReportePdf.closeTemplate("",getProperties().getProperty("Evidencia"));
     }
 	
 	@Test(priority=2, description="Si el usuario externo no ingresa la observación, le indica que el campo es obligatorio.")
@@ -101,19 +102,19 @@ public class CreacionSolicitudTest extends BaseTest{
     public void ObservacioObligatorio () throws Exception {
 		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();
 
-		File folderPath = BasePage.createFolder(nomTest, getProperties().getProperty("path"));
+		File folderPath = BasePage.createFolder(nomTest, getProperties().getProperty("path"), getProperties().getProperty("Evidencia"));
 
-		// MyScreenRecorder.startRecording(nomTest, folderPath);
+		MyScreenRecorder.startRecording(nomTest, folderPath,getProperties().getProperty("Video"));
 
 		Logeo(nomTest, folderPath);
 		home.irPortal(getProperties().getProperty("url"));
 		Login.ingresarCredencialesConNit(getProperties().getProperty("NitB"), getProperties().getProperty("Usuario"),
-	         getProperties().getProperty("pwd"), folderPath);
-	    CrearSolicitud.SelecionarMenu(folderPath).Crear(folderPath).Identificacion(folderPath, getProperties().getProperty("Id")).Creacion(folderPath)
-	    	 .Observacion2(folderPath);
-	    // MyScreenRecorder.stopRecording();
+	         getProperties().getProperty("pwd"), folderPath, getProperties().getProperty("Evidencia"));
+	    CrearSolicitud.SelecionarMenu(folderPath, getProperties().getProperty("Evidencia")).Crear(folderPath, getProperties().getProperty("Evidencia")).Identificacion(folderPath, getProperties().getProperty("Id"), getProperties().getProperty("Evidencia")).Creacion(folderPath, getProperties().getProperty("Evidencia"))
+	    	 .Observacion2(folderPath, getProperties().getProperty("Evidencia"));
+	    MyScreenRecorder.stopRecording(getProperties().getProperty("Video"));
 
- 		GenerarReportePdf.closeTemplate("");
+ 		GenerarReportePdf.closeTemplate("",getProperties().getProperty("Evidencia"));
         
     }
 	
@@ -125,20 +126,20 @@ public class CreacionSolicitudTest extends BaseTest{
     public void ValidacionDeCreacionDeUsuarios () throws Exception {
 		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();
 
-		File folderPath = BasePage.createFolder(nomTest, getProperties().getProperty("path"));
+		File folderPath = BasePage.createFolder(nomTest, getProperties().getProperty("path"), getProperties().getProperty("Evidencia"));
 
-		// MyScreenRecorder.startRecording(nomTest, folderPath);
+		MyScreenRecorder.startRecording(nomTest, folderPath,getProperties().getProperty("Video"));
 
 		Logeo(nomTest, folderPath);
 		home.irPortal(getProperties().getProperty("url"));
 		Login.ingresarCredencialesConNit(getProperties().getProperty("NitB"), getProperties().getProperty("Usuario"),
-	         getProperties().getProperty("pwd"), folderPath);
-	    CrearSolicitud1.SelecionarMenu(folderPath).Crear(folderPath).Informacion(getProperties().getProperty("nombre"), getProperties().getProperty("apellido"),
-		     getProperties().getProperty("correo"), folderPath).SelecionarTU(folderPath).EnviarSolicitud("La soliciud fue envíada con éxito", folderPath)
-	    	 .Notificacion(folderPath).EliminarCreacion(folderPath);
-	    // MyScreenRecorder.stopRecording();
+	         getProperties().getProperty("pwd"), folderPath, getProperties().getProperty("Evidencia"));
+	    CrearSolicitud1.SelecionarMenu(folderPath, getProperties().getProperty("Evidencia")).Crear(folderPath, getProperties().getProperty("Evidencia")).Informacion(getProperties().getProperty("nombre"), getProperties().getProperty("apellido"),
+		     getProperties().getProperty("correo"), folderPath, getProperties().getProperty("Evidencia")).SelecionarTU(folderPath, getProperties().getProperty("Evidencia")).EnviarSolicitud("La soliciud fue envíada con éxito", folderPath, getProperties().getProperty("Evidencia"))
+	    	 .Notificacion(folderPath, getProperties().getProperty("Evidencia")).EliminarCreacion(folderPath, getProperties().getProperty("Evidencia"));
+	    MyScreenRecorder.stopRecording(getProperties().getProperty("Video"));
 
- 		GenerarReportePdf.closeTemplate("");
+ 		GenerarReportePdf.closeTemplate("",getProperties().getProperty("Evidencia"));
     }
 	
 }
