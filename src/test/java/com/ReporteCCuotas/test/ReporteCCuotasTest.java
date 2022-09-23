@@ -6,6 +6,7 @@ import java.util.Properties;
 
 import io.qameta.allure.*;
 import utilities.GenerarReportePdf;
+import utilities.MyScreenRecorder;
 
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
@@ -34,7 +35,7 @@ public class ReporteCCuotasTest extends BaseTest{
 		GenerarReportePdf.setRutaImagen(getProperties().getProperty("routeImageReport"));
 	
 		GenerarReportePdf.createTemplate(folderPath, nameTest, getProperties().getProperty("analista"),
-				getProperties().getProperty("url"));
+				getProperties().getProperty("url"), getProperties().getProperty("Evidencia"));
 
 		GenerarReportePdf.setImgContador(0);
 	}
@@ -49,18 +50,18 @@ public class ReporteCCuotasTest extends BaseTest{
 		// OBTENER EL NOMBRE DEL METODO A EJECUTAR
 		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();
 
-		File folderPath = BasePage.createFolder(nomTest, getProperties().getProperty("path"));
-		// MyScreenRecorder.startRecording(nomTest, folderPath);
+		File folderPath = BasePage.createFolder(nomTest, getProperties().getProperty("path"), getProperties().getProperty("Evidencia"));
+		MyScreenRecorder.startRecording(nomTest, folderPath,getProperties().getProperty("Video"));
 
 		Logeo(nomTest, folderPath);
 		
 		home.irPortal(getProperties().getProperty("url"));
         Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr"),
         		getProperties().getProperty("pwd"), folderPath);
-        ReporteCCuotas.MenuRCCuotas(folderPath);
+        ReporteCCuotas.MenuRCCuotas(folderPath, getProperties().getProperty("Evidencia"));
         
-        // MyScreenRecorder.stopRecording();
-     	GenerarReportePdf.closeTemplate("");
+        MyScreenRecorder.stopRecording(getProperties().getProperty("Video"));
+     	GenerarReportePdf.closeTemplate("",getProperties().getProperty("Evidencia"));
 	}
 	
 	@Test(priority=1, description="Validar que en la interfaz de Reporte Comparativo - Cuotas se encuentre el boton Exportary validar su funcionalidad")
@@ -73,18 +74,18 @@ public class ReporteCCuotasTest extends BaseTest{
 		// OBTENER EL NOMBRE DEL METODO A EJECUTAR
 		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();
 
-		File folderPath = BasePage.createFolder(nomTest, getProperties().getProperty("path"));
-		// MyScreenRecorder.startRecording(nomTest, folderPath);
+		File folderPath = BasePage.createFolder(nomTest, getProperties().getProperty("path"), getProperties().getProperty("Evidencia"));
+		MyScreenRecorder.startRecording(nomTest, folderPath,getProperties().getProperty("Video"));
 
 		Logeo(nomTest, folderPath);
 		
 		home.irPortal(getProperties().getProperty("url"));
         Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr"),
         		getProperties().getProperty("pwd"), folderPath);
-        ReporteCCuotas.MenuRCCuotas(folderPath).Exportar(folderPath);
+        ReporteCCuotas.MenuRCCuotas(folderPath, getProperties().getProperty("Evidencia")).Exportar(folderPath, getProperties().getProperty("Evidencia"));
         
-        // MyScreenRecorder.stopRecording();
-     	GenerarReportePdf.closeTemplate("");
+        MyScreenRecorder.stopRecording(getProperties().getProperty("Video"));
+     	GenerarReportePdf.closeTemplate("",getProperties().getProperty("Evidencia"));
         
 	}
 
@@ -98,18 +99,18 @@ public class ReporteCCuotasTest extends BaseTest{
 		// OBTENER EL NOMBRE DEL METODO A EJECUTAR
 		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();
 
-		File folderPath = BasePage.createFolder(nomTest, getProperties().getProperty("path"));
-		// MyScreenRecorder.startRecording(nomTest, folderPath);
+		File folderPath = BasePage.createFolder(nomTest, getProperties().getProperty("path"), getProperties().getProperty("Evidencia"));
+		MyScreenRecorder.startRecording(nomTest, folderPath,getProperties().getProperty("Video"));
 
 		Logeo(nomTest, folderPath);
 		
 		home.irPortal(getProperties().getProperty("url"));
         Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr"),
         		getProperties().getProperty("pwd"), folderPath);
-        ReporteCCuotas.MenuRCCuotas(folderPath).FNIT1(getProperties().getProperty("nitReporteCC"), folderPath).ScrollDerecha(folderPath).Evidencia(folderPath);
+        ReporteCCuotas.MenuRCCuotas(folderPath, getProperties().getProperty("Evidencia")).FNIT1(getProperties().getProperty("nitReporteCC"), folderPath).ScrollDerecha(folderPath, getProperties().getProperty("Evidencia")).Evidencia(folderPath, getProperties().getProperty("Evidencia"));
         
-        // MyScreenRecorder.stopRecording();
-     	GenerarReportePdf.closeTemplate("");
+        MyScreenRecorder.stopRecording(getProperties().getProperty("Video"));
+     	GenerarReportePdf.closeTemplate("",getProperties().getProperty("Evidencia"));
 		
 	}
 	
@@ -123,18 +124,18 @@ public class ReporteCCuotasTest extends BaseTest{
 		// OBTENER EL NOMBRE DEL METODO A EJECUTAR
 		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();
 
-		File folderPath = BasePage.createFolder(nomTest, getProperties().getProperty("path"));
-		// MyScreenRecorder.startRecording(nomTest, folderPath);
+		File folderPath = BasePage.createFolder(nomTest, getProperties().getProperty("path"), getProperties().getProperty("Evidencia"));
+		MyScreenRecorder.startRecording(nomTest, folderPath,getProperties().getProperty("Video"));
 
 		Logeo(nomTest, folderPath);
 		
 		home.irPortal(getProperties().getProperty("url"));
         Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr"),
         		getProperties().getProperty("pwd"), folderPath);
-        ReporteCCuotas.MenuRCCuotas(folderPath).FNIT1(getProperties().getProperty("nitReporteCC1"), folderPath).ScrollDerecha1(folderPath).Evidencia(folderPath);
+        ReporteCCuotas.MenuRCCuotas(folderPath, getProperties().getProperty("Evidencia")).FNIT1(getProperties().getProperty("nitReporteCC1"), folderPath).ScrollDerecha1(folderPath, getProperties().getProperty("Evidencia")).Evidencia(folderPath, getProperties().getProperty("Evidencia"));
         
-        // MyScreenRecorder.stopRecording();
-     	GenerarReportePdf.closeTemplate("");
+        MyScreenRecorder.stopRecording(getProperties().getProperty("Video"));
+     	GenerarReportePdf.closeTemplate("",getProperties().getProperty("Evidencia"));
 	}
 	
 	@Test(priority=4, description="Validar los filtros que muestra la interfaz")
@@ -147,19 +148,19 @@ public class ReporteCCuotasTest extends BaseTest{
 		// OBTENER EL NOMBRE DEL METODO A EJECUTAR
 		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();
 
-		File folderPath = BasePage.createFolder(nomTest, getProperties().getProperty("path"));
-		// MyScreenRecorder.startRecording(nomTest, folderPath);
+		File folderPath = BasePage.createFolder(nomTest, getProperties().getProperty("path"), getProperties().getProperty("Evidencia"));
+		MyScreenRecorder.startRecording(nomTest, folderPath,getProperties().getProperty("Video"));
 
 		Logeo(nomTest, folderPath);
 		
 		home.irPortal(getProperties().getProperty("url"));
         Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr"),
         		getProperties().getProperty("pwd"), folderPath);
-        ReporteCCuotas.MenuRCCuotas(folderPath).FP(getProperties().getProperty("Inicia"), folderPath).FNIT(getProperties().getProperty("numero"), folderPath)
-        .FSCPalma(getProperties().getProperty("contiene"), folderPath).FSCPalmiste(getProperties().getProperty("Kg"), folderPath).ScrollDerecha1(folderPath).Evidencia(folderPath);
+        ReporteCCuotas.MenuRCCuotas(folderPath, getProperties().getProperty("Evidencia")).FP(getProperties().getProperty("Inicia"), folderPath).FNIT(getProperties().getProperty("numero"), folderPath)
+        .FSCPalma(getProperties().getProperty("contiene"), folderPath).FSCPalmiste(getProperties().getProperty("Kg"), folderPath).ScrollDerecha1(folderPath, getProperties().getProperty("Evidencia")).Evidencia(folderPath, getProperties().getProperty("Evidencia"));
 		
-        // MyScreenRecorder.stopRecording();
-     	GenerarReportePdf.closeTemplate("");
+        MyScreenRecorder.stopRecording(getProperties().getProperty("Video"));
+     	GenerarReportePdf.closeTemplate("",getProperties().getProperty("Evidencia"));
 	}
 	
 	@Test(priority=5, description="Validar la paginacion de la interfaz")
@@ -172,17 +173,17 @@ public class ReporteCCuotasTest extends BaseTest{
 		// OBTENER EL NOMBRE DEL METODO A EJECUTAR
 		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();
 
-		File folderPath = BasePage.createFolder(nomTest, getProperties().getProperty("path"));
-		// MyScreenRecorder.startRecording(nomTest, folderPath);
+		File folderPath = BasePage.createFolder(nomTest, getProperties().getProperty("path"), getProperties().getProperty("Evidencia"));
+		MyScreenRecorder.startRecording(nomTest, folderPath,getProperties().getProperty("Video"));
 
 		Logeo(nomTest, folderPath);
 		
 		home.irPortal(getProperties().getProperty("url"));
         Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr"),
         		getProperties().getProperty("pwd"), folderPath);
-        ReporteCCuotas.MenuRCCuotas(folderPath).ScrollAbajo1().Paginacion(folderPath);
+        ReporteCCuotas.MenuRCCuotas(folderPath, getProperties().getProperty("Evidencia")).ScrollAbajo1().Paginacion(folderPath, getProperties().getProperty("Evidencia"));
 		
-        // MyScreenRecorder.stopRecording();
-     	GenerarReportePdf.closeTemplate("");
+        MyScreenRecorder.stopRecording(getProperties().getProperty("Video"));
+     	GenerarReportePdf.closeTemplate("",getProperties().getProperty("Evidencia"));
 	}
 }

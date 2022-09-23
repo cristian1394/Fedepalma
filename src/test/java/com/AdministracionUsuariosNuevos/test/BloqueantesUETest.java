@@ -6,6 +6,7 @@ import java.util.Properties;
 
 import io.qameta.allure.*;
 import utilities.GenerarReportePdf;
+import utilities.MyScreenRecorder;
 
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
@@ -38,7 +39,7 @@ public class BloqueantesUETest extends BaseTest {
 		// getProperties().getProperty("path"));
 
 		GenerarReportePdf.createTemplate(folderPath, nameTest, getProperties().getProperty("analista"),
-				getProperties().getProperty("url"));
+				getProperties().getProperty("url"), getProperties().getProperty("Evidencia"));
 
 		GenerarReportePdf.setImgContador(0);
 	}
@@ -52,20 +53,20 @@ public class BloqueantesUETest extends BaseTest {
 
 		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();
 
-		File folderPath = BasePage.createFolder(nomTest, getProperties().getProperty("path"));
+		File folderPath = BasePage.createFolder(nomTest, getProperties().getProperty("path"), getProperties().getProperty("Evidencia"));
 
-		// MyScreenRecorder.startRecording(nomTest, folderPath);
+		MyScreenRecorder.startRecording(nomTest, folderPath,getProperties().getProperty("Video"));
 
 		Logeo(nomTest, folderPath);
 		home.irPortal(getProperties().getProperty("url"));
 		Login.ingresarCredencialesConNit(getProperties().getProperty("NitB"), getProperties().getProperty("Usuario"),
 				getProperties().getProperty("pwd"), folderPath);
-		Bloqueante.SelecionarMenu(folderPath).EscojerTabla(folderPath).BloquearEmail(folderPath)
-				.SelecionarMenu1(folderPath).SelecionarMenu2(folderPath).EscojerTabla(folderPath)
-				.QuitarBloqueoEmail(folderPath);
-		// MyScreenRecorder.stopRecording();
+		Bloqueante.SelecionarMenu(folderPath, getProperties().getProperty("Evidencia")).EscojerTabla(folderPath, getProperties().getProperty("Evidencia")).BloquearEmail(folderPath, getProperties().getProperty("Evidencia"))
+				.SelecionarMenu1(folderPath, getProperties().getProperty("Evidencia")).SelecionarMenu2(folderPath, getProperties().getProperty("Evidencia")).EscojerTabla(folderPath, getProperties().getProperty("Evidencia"))
+				.QuitarBloqueoEmail(folderPath, getProperties().getProperty("Evidencia"));
+		MyScreenRecorder.stopRecording(getProperties().getProperty("Video"));
 
-		GenerarReportePdf.closeTemplate("");
+		GenerarReportePdf.closeTemplate("",getProperties().getProperty("Evidencia"));
 	}
 
 	@Test(priority = 1, description = "Al quitar el permiso de enviar firma, aunque muestre la imagen del check, el clic no permite quitar o poner.")
@@ -77,21 +78,21 @@ public class BloqueantesUETest extends BaseTest {
 
 		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();
 
-		File folderPath = BasePage.createFolder(nomTest, getProperties().getProperty("path"));
+		File folderPath = BasePage.createFolder(nomTest, getProperties().getProperty("path"), getProperties().getProperty("Evidencia"));
 
-		// MyScreenRecorder.startRecording(nomTest, folderPath);
+		MyScreenRecorder.startRecording(nomTest, folderPath,getProperties().getProperty("Video"));
 
 		Logeo(nomTest, folderPath);
 
 		home.irPortal(getProperties().getProperty("url"));
 		Login.ingresarCredencialesConNit(getProperties().getProperty("NitB"), getProperties().getProperty("Usuario"),
 				getProperties().getProperty("pwd"), folderPath);
-		Bloqueante.SelecionarMenu(folderPath).EscojerTabla(folderPath).BloquearFirma(folderPath)
-				.SelecionarMenu1(folderPath).SelecionarMenu2(folderPath).EscojerTabla(folderPath)
-				.QuitarBloqueoFirma(folderPath);
-		// MyScreenRecorder.stopRecording();
+		Bloqueante.SelecionarMenu(folderPath, getProperties().getProperty("Evidencia")).EscojerTabla(folderPath, getProperties().getProperty("Evidencia")).BloquearFirma(folderPath, getProperties().getProperty("Evidencia"))
+				.SelecionarMenu1(folderPath, getProperties().getProperty("Evidencia")).SelecionarMenu2(folderPath, getProperties().getProperty("Evidencia")).EscojerTabla(folderPath, getProperties().getProperty("Evidencia"))
+				.QuitarBloqueoFirma(folderPath, getProperties().getProperty("Evidencia"));
+		MyScreenRecorder.stopRecording(getProperties().getProperty("Video"));
 
-		GenerarReportePdf.closeTemplate("");
+		GenerarReportePdf.closeTemplate("",getProperties().getProperty("Evidencia"));
 	}
 
 	@Test(priority = 2, description = "Validar que se puede Dasasociar un usuario")
@@ -103,21 +104,21 @@ public class BloqueantesUETest extends BaseTest {
 
 		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();
 
-		File folderPath = BasePage.createFolder(nomTest, getProperties().getProperty("path"));
+		File folderPath = BasePage.createFolder(nomTest, getProperties().getProperty("path"), getProperties().getProperty("Evidencia"));
 
-		// MyScreenRecorder.startRecording(nomTest, folderPath);
+		MyScreenRecorder.startRecording(nomTest, folderPath,getProperties().getProperty("Video"));
 
 		Logeo(nomTest, folderPath);
 
 		home.irPortal(getProperties().getProperty("url"));
 		Login.ingresarCredencialesConNit(getProperties().getProperty("NitB"), getProperties().getProperty("Usuario"),
 				getProperties().getProperty("pwd"), folderPath);
-		Bloqueante.SelecionarMenu(folderPath).EscojerTabla(folderPath).SelecionarMenu1(folderPath)
-				.Desasociar(folderPath);
+		Bloqueante.SelecionarMenu(folderPath, getProperties().getProperty("Evidencia")).EscojerTabla(folderPath, getProperties().getProperty("Evidencia")).SelecionarMenu1(folderPath, getProperties().getProperty("Evidencia"))
+				.Desasociar(folderPath, getProperties().getProperty("Evidencia"));
 
-		// MyScreenRecorder.stopRecording();
+		MyScreenRecorder.stopRecording(getProperties().getProperty("Video"));
 
-		GenerarReportePdf.closeTemplate("");
+		GenerarReportePdf.closeTemplate("",getProperties().getProperty("Evidencia"));
 
 	}
 
@@ -129,21 +130,21 @@ public class BloqueantesUETest extends BaseTest {
 	public void QuitarPermisoBoqueoUE() throws Exception {
 		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();
 
-		File folderPath = BasePage.createFolder(nomTest, getProperties().getProperty("path"));
+		File folderPath = BasePage.createFolder(nomTest, getProperties().getProperty("path"), getProperties().getProperty("Evidencia"));
 
-		// MyScreenRecorder.startRecording(nomTest, folderPath);
+		MyScreenRecorder.startRecording(nomTest, folderPath,getProperties().getProperty("Video"));
 
 		Logeo(nomTest, folderPath);
 		home.irPortal(getProperties().getProperty("url"));
 		Login.ingresarCredencialesConNit(getProperties().getProperty("NitB"), getProperties().getProperty("Usuario"),
 				getProperties().getProperty("pwd"), folderPath);
-		Bloqueante.SelecionarMenu(folderPath).EscojerTabla(folderPath).BloquearUsuario(folderPath)
-				.SelecionarMenu1(folderPath).SelecionarMenu2(folderPath).EscojerTabla(folderPath)
-				.QuitarBloqueoUsuario(folderPath);
+		Bloqueante.SelecionarMenu(folderPath, getProperties().getProperty("Evidencia")).EscojerTabla(folderPath, getProperties().getProperty("Evidencia")).BloquearUsuario(folderPath, getProperties().getProperty("Evidencia"))
+				.SelecionarMenu1(folderPath, getProperties().getProperty("Evidencia")).SelecionarMenu2(folderPath, getProperties().getProperty("Evidencia")).EscojerTabla(folderPath, getProperties().getProperty("Evidencia"))
+				.QuitarBloqueoUsuario(folderPath, getProperties().getProperty("Evidencia"));
 
-		// MyScreenRecorder.stopRecording();
+		MyScreenRecorder.stopRecording(getProperties().getProperty("Video"));
 
-		GenerarReportePdf.closeTemplate("");
+		GenerarReportePdf.closeTemplate("",getProperties().getProperty("Evidencia"));
 
 	}
 
@@ -156,22 +157,22 @@ public class BloqueantesUETest extends BaseTest {
 
 		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();
 
-		File folderPath = BasePage.createFolder(nomTest, getProperties().getProperty("path"));
+		File folderPath = BasePage.createFolder(nomTest, getProperties().getProperty("path"), getProperties().getProperty("Evidencia"));
 
-		// MyScreenRecorder.startRecording(nomTest, folderPath);
+		MyScreenRecorder.startRecording(nomTest, folderPath,getProperties().getProperty("Video"));
 
 		Logeo(nomTest, folderPath);
 
 		home.irPortal(getProperties().getProperty("url"));
 		Login.ingresarCredencialesConNit(getProperties().getProperty("NitB"), getProperties().getProperty("Usuario"),
 				getProperties().getProperty("pwd"), folderPath);
-		Bloqueante.SelecionarMenu(folderPath).EscojerTabla(folderPath).BloquearFirma(folderPath)
-				.SelecionarMenu1(folderPath).Enviar(folderPath).BloquearUsuario1(folderPath).SelecionarMenu2(folderPath)
-				.EscojerTabla(folderPath).QuitarBloqueoFirma(folderPath);
+		Bloqueante.SelecionarMenu(folderPath, getProperties().getProperty("Evidencia")).EscojerTabla(folderPath, getProperties().getProperty("Evidencia")).BloquearFirma(folderPath, getProperties().getProperty("Evidencia"))
+				.SelecionarMenu1(folderPath, getProperties().getProperty("Evidencia")).Enviar(folderPath, getProperties().getProperty("Evidencia")).BloquearUsuario1(folderPath, getProperties().getProperty("Evidencia")).SelecionarMenu2(folderPath, getProperties().getProperty("Evidencia"))
+				.EscojerTabla(folderPath, getProperties().getProperty("Evidencia")).QuitarBloqueoFirma(folderPath, getProperties().getProperty("Evidencia"));
 
-		// MyScreenRecorder.stopRecording();
+		MyScreenRecorder.stopRecording(getProperties().getProperty("Video"));
 
-		GenerarReportePdf.closeTemplate("");
+		GenerarReportePdf.closeTemplate("",getProperties().getProperty("Evidencia"));
 
 	}
 
@@ -184,20 +185,20 @@ public class BloqueantesUETest extends BaseTest {
 
 		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();
 
-		File folderPath = BasePage.createFolder(nomTest, getProperties().getProperty("path"));
+		File folderPath = BasePage.createFolder(nomTest, getProperties().getProperty("path"), getProperties().getProperty("Evidencia"));
 
-		// MyScreenRecorder.startRecording(nomTest, folderPath);
+		MyScreenRecorder.startRecording(nomTest, folderPath,getProperties().getProperty("Video"));
 
 		Logeo(nomTest, folderPath);
 		home.irPortal(getProperties().getProperty("url"));
 		Login.ingresarCredencialesConNit(getProperties().getProperty("NitB"), getProperties().getProperty("Usuario"),
 				getProperties().getProperty("pwd"), folderPath);
-		Bloqueante.SelecionarMenu(folderPath).EscojerTabla(folderPath).SelecionarMenu1(folderPath)
-				.EditarPerfil1(folderPath).Enviar(folderPath).Firmar(folderPath).Desasociar(folderPath)
-				.BloquearUsuario1(folderPath);
-		// MyScreenRecorder.stopRecording();
+		Bloqueante.SelecionarMenu(folderPath, getProperties().getProperty("Evidencia")).EscojerTabla(folderPath, getProperties().getProperty("Evidencia")).SelecionarMenu1(folderPath, getProperties().getProperty("Evidencia"))
+				.EditarPerfil1(folderPath, getProperties().getProperty("Evidencia")).Enviar(folderPath, getProperties().getProperty("Evidencia")).Firmar(folderPath, getProperties().getProperty("Evidencia")).Desasociar(folderPath, getProperties().getProperty("Evidencia"))
+				.BloquearUsuario1(folderPath, getProperties().getProperty("Evidencia"));
+		MyScreenRecorder.stopRecording(getProperties().getProperty("Video"));
 
-		GenerarReportePdf.closeTemplate("");
+		GenerarReportePdf.closeTemplate("",getProperties().getProperty("Evidencia"));
 	}
 
 }

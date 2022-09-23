@@ -6,6 +6,7 @@ import java.util.Properties;
 
 import io.qameta.allure.*;
 import utilities.GenerarReportePdf;
+import utilities.MyScreenRecorder;
 
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
@@ -38,7 +39,7 @@ public class CrearDCDTest extends BaseTest{
 		// getProperties().getProperty("path"));
 
 		GenerarReportePdf.createTemplate(folderPath, nameTest, getProperties().getProperty("analista"),
-				getProperties().getProperty("url"));
+				getProperties().getProperty("url"), getProperties().getProperty("Evidencia"));
 
 		GenerarReportePdf.setImgContador(0);
 	}
@@ -52,9 +53,9 @@ public class CrearDCDTest extends BaseTest{
 		
 		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();
 
-		File folderPath = BasePage.createFolder(nomTest, getProperties().getProperty("path"));
+		File folderPath = BasePage.createFolder(nomTest, getProperties().getProperty("path"), getProperties().getProperty("Evidencia"));
 
-		// MyScreenRecorder.startRecording(nomTest, folderPath);
+		MyScreenRecorder.startRecording(nomTest, folderPath,getProperties().getProperty("Video"));
 		Logeo(nomTest, folderPath);
 		
 		home.irPortal(getProperties().getProperty("url"));
@@ -64,16 +65,16 @@ public class CrearDCDTest extends BaseTest{
         CrearDCD.CrearDCD(getProperties().getProperty("nit"), getProperties().getProperty("Proveedor"), 
         		getProperties().getProperty("kilos"), folderPath).ValidarCreacionDCD("Proceso realizado con éxito", folderPath);
         EditarDCD.EditarDCD(getProperties().getProperty("Proveedor1"), getProperties().getProperty("CP"), 
-        		getProperties().getProperty("kilos"), folderPath).ValidarAdicionCD("Certificado Guardado Correctamente.", folderPath).RevisarDCD(folderPath)
+        		getProperties().getProperty("kilos"), folderPath).ValidarAdicionCD("Certificado Guardado Correctamente.", folderPath).RevisarDCD(folderPath, getProperties().getProperty("Evidencia"))
         		.ValidarRevicionDCD("Proceso realizado exitosamente!", folderPath).FirmarDCD(getProperties().getProperty("Firma"),"Formulario firmado exitosamente.", folderPath)
         		.ValidarGenerarDCD("Proceso realizado exitosamente!", folderPath);
         
         //String validar=consultaBD("select acc_nombre from C_ACCIONES where acc_nombre='ADMINISTRACION_CLIENTES'");
         //Assert.assertEquals(validar, getProperties().getProperty("nit"));
 
-		// MyScreenRecorder.stopRecording();
+		MyScreenRecorder.stopRecording(getProperties().getProperty("Video"));
 
-		GenerarReportePdf.closeTemplate("");
+		GenerarReportePdf.closeTemplate("",getProperties().getProperty("Evidencia"));
     }
 	
 }

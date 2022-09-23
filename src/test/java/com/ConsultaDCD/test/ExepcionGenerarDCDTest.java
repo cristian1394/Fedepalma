@@ -6,6 +6,7 @@ import java.util.Properties;
 
 import io.qameta.allure.*;
 import utilities.GenerarReportePdf;
+import utilities.MyScreenRecorder;
 
 import org.openqa.selenium.By;
 import org.testng.Assert;
@@ -40,7 +41,7 @@ public class ExepcionGenerarDCDTest extends BaseTest{
 		// getProperties().getProperty("path"));
 
 		GenerarReportePdf.createTemplate(folderPath, nameTest, getProperties().getProperty("analista"),
-				getProperties().getProperty("url"));
+				getProperties().getProperty("url"), getProperties().getProperty("Evidencia"));
 
 		GenerarReportePdf.setImgContador(0);
 	}
@@ -53,23 +54,23 @@ public class ExepcionGenerarDCDTest extends BaseTest{
     public void ExepcionesGenerarDCDPortalFedepalma () throws Exception {
 		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();
 
-		File folderPath = BasePage.createFolder(nomTest, getProperties().getProperty("path"));
+		File folderPath = BasePage.createFolder(nomTest, getProperties().getProperty("path"), getProperties().getProperty("Evidencia"));
 
-		// MyScreenRecorder.startRecording(nomTest, folderPath);
+		MyScreenRecorder.startRecording(nomTest, folderPath,getProperties().getProperty("Video"));
 		Logeo(nomTest, folderPath);
 		
 		home.irPortal(getProperties().getProperty("url"));
         Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr1"),
         		getProperties().getProperty("pwd"), folderPath);
-        RDCD.ConsultaDCD(folderPath);    
-        GDCD.GenerarDCD(folderPath).ValidarGeneracionDCD("Debe seleccionar una consulta.", folderPath);
+        RDCD.ConsultaDCD(folderPath, getProperties().getProperty("Evidencia"));    
+        GDCD.GenerarDCD(folderPath, getProperties().getProperty("Evidencia")).ValidarGeneracionDCD("Debe seleccionar una consulta.", folderPath);
     
         //String validar=consultaBD("select acc_nombre from C_ACCIONES where acc_nombre='ADMINISTRACION_CLIENTES'");
         //Assert.assertEquals(validar, getProperties().getProperty("nit"));
 
-		// MyScreenRecorder.stopRecording();
+		MyScreenRecorder.stopRecording(getProperties().getProperty("Video"));
 
-		GenerarReportePdf.closeTemplate("");
+		GenerarReportePdf.closeTemplate("",getProperties().getProperty("Evidencia"));
     }
 	
 }

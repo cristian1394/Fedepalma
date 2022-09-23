@@ -6,6 +6,7 @@ import java.util.Properties;
 
 import io.qameta.allure.*;
 import utilities.GenerarReportePdf;
+import utilities.MyScreenRecorder;
 
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
@@ -36,7 +37,7 @@ public class DeclararFFPTest extends BaseTest{
 		GenerarReportePdf.setRutaImagen(getProperties().getProperty("routeImageReport"));
 	
 		GenerarReportePdf.createTemplate(folderPath, nameTest, getProperties().getProperty("analista"),
-				getProperties().getProperty("url"));
+				getProperties().getProperty("url"), getProperties().getProperty("Evidencia"));
 
 		GenerarReportePdf.setImgContador(0);
 	}
@@ -51,15 +52,15 @@ public class DeclararFFPTest extends BaseTest{
 		// OBTENER EL NOMBRE DEL METODO A EJECUTAR
 		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();
 
-		File folderPath = BasePage.createFolder(nomTest, getProperties().getProperty("path"));
-		// MyScreenRecorder.startRecording(nomTest, folderPath);
+		File folderPath = BasePage.createFolder(nomTest, getProperties().getProperty("path"), getProperties().getProperty("Evidencia"));
+		MyScreenRecorder.startRecording(nomTest, folderPath,getProperties().getProperty("Video"));
 
 		Logeo(nomTest, folderPath);
 		
 		home.irPortal(getProperties().getProperty("url"));
 		Login.ingresarCredencialesConNit(getProperties().getProperty("NitA"), getProperties().getProperty("UsrF"),
         		getProperties().getProperty("pwd"), folderPath);
-        ConsultarFFP.Consulta_FFP(folderPath);
+        ConsultarFFP.Consulta_FFP(folderPath, getProperties().getProperty("Evidencia"));
         NuevaDeclaracionE.NuevaDeclaracionFFP(getProperties().getProperty("DocRPF"),getProperties().getProperty("PropiosG"),
         		getProperties().getProperty("PropiosH"),getProperties().getProperty("RPFG"), getProperties().getProperty("RPFH"), folderPath)
         		.FrutoVendidoFFP(getProperties().getProperty("InicialFrutoG"), getProperties().getProperty("InicialFrutoH"), folderPath)
@@ -78,11 +79,11 @@ public class DeclararFFPTest extends BaseTest{
         		.AceitePalmiste(getProperties().getProperty("Palmiste"),getProperties().getProperty("PalmisteA"),
                 getProperties().getProperty("PalmisteB"),getProperties().getProperty("PalmisteC"), getProperties().getProperty("PalmisteD"), folderPath)
         		.Total_Plama(getProperties().getProperty("TotalPalma"), folderPath);
-        DeclararFFPF.DeclararFFP(folderPath).Firma(getProperties().getProperty("Firma"),"Formularios firmados exitosamente.", folderPath)
+        DeclararFFPF.DeclararFFP(folderPath, getProperties().getProperty("Evidencia")).Firma(getProperties().getProperty("Firma"),"Formularios firmados exitosamente.", folderPath)
         		.confirmar("Se ha realizado el cambio de estado", folderPath);
 
-        // MyScreenRecorder.stopRecording();
-     	GenerarReportePdf.closeTemplate("");
+        MyScreenRecorder.stopRecording(getProperties().getProperty("Video"));
+     	GenerarReportePdf.closeTemplate("",getProperties().getProperty("Evidencia"));
     }
 	
 }

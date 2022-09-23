@@ -6,6 +6,7 @@ import java.util.Properties;
 
 import io.qameta.allure.*;
 import utilities.GenerarReportePdf;
+import utilities.MyScreenRecorder;
 
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
@@ -34,7 +35,7 @@ public class ReporteCSancionesTest extends BaseTest{
 		GenerarReportePdf.setRutaImagen(getProperties().getProperty("routeImageReport"));
 	
 		GenerarReportePdf.createTemplate(folderPath, nameTest, getProperties().getProperty("analista"),
-				getProperties().getProperty("url"));
+				getProperties().getProperty("url"), getProperties().getProperty("Evidencia"));
 
 		GenerarReportePdf.setImgContador(0);
 	}
@@ -50,18 +51,18 @@ public class ReporteCSancionesTest extends BaseTest{
 		// OBTENER EL NOMBRE DEL METODO A EJECUTAR
 		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();
 
-		File folderPath = BasePage.createFolder(nomTest, getProperties().getProperty("path"));
-		// MyScreenRecorder.startRecording(nomTest, folderPath);
+		File folderPath = BasePage.createFolder(nomTest, getProperties().getProperty("path"), getProperties().getProperty("Evidencia"));
+		MyScreenRecorder.startRecording(nomTest, folderPath,getProperties().getProperty("Video"));
 
 		Logeo(nomTest, folderPath);
 		
 		home.irPortal(getProperties().getProperty("url"));
         Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr"),
         		getProperties().getProperty("pwd"), folderPath);
-        ReporteCCertificado.MenuRCCertificado(folderPath);
+        ReporteCCertificado.MenuRCCertificado(folderPath, getProperties().getProperty("Evidencia"));
         
-        // MyScreenRecorder.stopRecording();
-     	GenerarReportePdf.closeTemplate("");
+        MyScreenRecorder.stopRecording(getProperties().getProperty("Video"));
+     	GenerarReportePdf.closeTemplate("",getProperties().getProperty("Evidencia"));
        
 	}
 	
@@ -75,18 +76,18 @@ public class ReporteCSancionesTest extends BaseTest{
 		// OBTENER EL NOMBRE DEL METODO A EJECUTAR
 		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();
 
-		File folderPath = BasePage.createFolder(nomTest, getProperties().getProperty("path"));
-		// MyScreenRecorder.startRecording(nomTest, folderPath);
+		File folderPath = BasePage.createFolder(nomTest, getProperties().getProperty("path"), getProperties().getProperty("Evidencia"));
+		MyScreenRecorder.startRecording(nomTest, folderPath,getProperties().getProperty("Video"));
 
 		Logeo(nomTest, folderPath);
 		
 		home.irPortal(getProperties().getProperty("url"));
         Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr"),
         		getProperties().getProperty("pwd"), folderPath);
-        ReporteCCertificado.MenuRCCertificado(folderPath).Exportar(folderPath);
+        ReporteCCertificado.MenuRCCertificado(folderPath, getProperties().getProperty("Evidencia")).Exportar(folderPath, getProperties().getProperty("Evidencia"));
         
-        // MyScreenRecorder.stopRecording();
-     	GenerarReportePdf.closeTemplate("");
+        MyScreenRecorder.stopRecording(getProperties().getProperty("Video"));
+     	GenerarReportePdf.closeTemplate("",getProperties().getProperty("Evidencia"));
         
 	}
 
@@ -100,19 +101,19 @@ public class ReporteCSancionesTest extends BaseTest{
 		// OBTENER EL NOMBRE DEL METODO A EJECUTAR
 		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();
 
-		File folderPath = BasePage.createFolder(nomTest, getProperties().getProperty("path"));
-		// MyScreenRecorder.startRecording(nomTest, folderPath);
+		File folderPath = BasePage.createFolder(nomTest, getProperties().getProperty("path"), getProperties().getProperty("Evidencia"));
+		MyScreenRecorder.startRecording(nomTest, folderPath,getProperties().getProperty("Video"));
 
 		Logeo(nomTest, folderPath);
 		
 		home.irPortal(getProperties().getProperty("url"));
         Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr"),
         		getProperties().getProperty("pwd"), folderPath);
-        ReporteCCertificado.MenuRCCertificado(folderPath).FNIT1(getProperties().getProperty("nitReporteCS"), folderPath)
-        .ScrollDerecha(folderPath).Evidencia(folderPath);
+        ReporteCCertificado.MenuRCCertificado(folderPath, getProperties().getProperty("Evidencia")).FNIT1(getProperties().getProperty("nitReporteCS"), folderPath)
+        .ScrollDerecha(folderPath, getProperties().getProperty("Evidencia")).Evidencia(folderPath, getProperties().getProperty("Evidencia"));
 		
-        // MyScreenRecorder.stopRecording();
-     	GenerarReportePdf.closeTemplate("");
+        MyScreenRecorder.stopRecording(getProperties().getProperty("Video"));
+     	GenerarReportePdf.closeTemplate("",getProperties().getProperty("Evidencia"));
 	}
 	
 	@Test(priority=3, description="Validar que las columnas de Fecha deben visualizarse sin la hora")
@@ -125,19 +126,19 @@ public class ReporteCSancionesTest extends BaseTest{
 		// OBTENER EL NOMBRE DEL METODO A EJECUTAR
 		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();
 
-		File folderPath = BasePage.createFolder(nomTest, getProperties().getProperty("path"));
-		// MyScreenRecorder.startRecording(nomTest, folderPath);
+		File folderPath = BasePage.createFolder(nomTest, getProperties().getProperty("path"), getProperties().getProperty("Evidencia"));
+		MyScreenRecorder.startRecording(nomTest, folderPath,getProperties().getProperty("Video"));
 
 		Logeo(nomTest, folderPath);
 		
 		home.irPortal(getProperties().getProperty("url"));
         Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr"),
         		getProperties().getProperty("pwd"), folderPath);
-        ReporteCCertificado.MenuRCCertificado(folderPath).FNIT1(getProperties().getProperty("nitReporteCS"), folderPath)
-        .ScrollDerecha1(folderPath).Evidencia(folderPath);
+        ReporteCCertificado.MenuRCCertificado(folderPath, getProperties().getProperty("Evidencia")).FNIT1(getProperties().getProperty("nitReporteCS"), folderPath)
+        .ScrollDerecha1(folderPath, getProperties().getProperty("Evidencia")).Evidencia(folderPath, getProperties().getProperty("Evidencia"));
 		
-        // MyScreenRecorder.stopRecording();
-     	GenerarReportePdf.closeTemplate("");
+        MyScreenRecorder.stopRecording(getProperties().getProperty("Video"));
+     	GenerarReportePdf.closeTemplate("",getProperties().getProperty("Evidencia"));
 	}
 	
 	@Test(priority=4, description="Validar los filtros que muestra la interfaz")
@@ -150,21 +151,21 @@ public class ReporteCSancionesTest extends BaseTest{
 		// OBTENER EL NOMBRE DEL METODO A EJECUTAR
 		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();
 
-		File folderPath = BasePage.createFolder(nomTest, getProperties().getProperty("path"));
-		// MyScreenRecorder.startRecording(nomTest, folderPath);
+		File folderPath = BasePage.createFolder(nomTest, getProperties().getProperty("path"), getProperties().getProperty("Evidencia"));
+		MyScreenRecorder.startRecording(nomTest, folderPath,getProperties().getProperty("Video"));
 
 		Logeo(nomTest, folderPath);
 		
 		home.irPortal(getProperties().getProperty("url"));
         Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr"),
         		getProperties().getProperty("pwd"), folderPath);
-        ReporteCCertificado.MenuRCCertificado(folderPath).FP(getProperties().getProperty("Inicial"), folderPath).
+        ReporteCCertificado.MenuRCCertificado(folderPath, getProperties().getProperty("Evidencia")).FP(getProperties().getProperty("Inicial"), folderPath).
         FNIT(getProperties().getProperty("Finaliza"), folderPath)
         .FSCPalma(getProperties().getProperty("contiene"), folderPath).FSCPalmiste(getProperties().getProperty("Kg"), folderPath).
-        ScrollDerecha1(folderPath).Evidencia(folderPath);
+        ScrollDerecha1(folderPath, getProperties().getProperty("Evidencia")).Evidencia(folderPath, getProperties().getProperty("Evidencia"));
 		
-        // MyScreenRecorder.stopRecording();
-     	GenerarReportePdf.closeTemplate("");
+        MyScreenRecorder.stopRecording(getProperties().getProperty("Video"));
+     	GenerarReportePdf.closeTemplate("",getProperties().getProperty("Evidencia"));
 	}
 	
 	@Test(priority=5, description="Validar la paginacion de la interfaz")
@@ -177,17 +178,17 @@ public class ReporteCSancionesTest extends BaseTest{
 		// OBTENER EL NOMBRE DEL METODO A EJECUTAR
 		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();
 
-		File folderPath = BasePage.createFolder(nomTest, getProperties().getProperty("path"));
-		// MyScreenRecorder.startRecording(nomTest, folderPath);
+		File folderPath = BasePage.createFolder(nomTest, getProperties().getProperty("path"), getProperties().getProperty("Evidencia"));
+		MyScreenRecorder.startRecording(nomTest, folderPath,getProperties().getProperty("Video"));
 
 		Logeo(nomTest, folderPath);
 		
 		home.irPortal(getProperties().getProperty("url"));
         Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr"),
         		getProperties().getProperty("pwd"), folderPath);
-        ReporteCCertificado.MenuRCCertificado(folderPath).ScrollAbajo1(folderPath).Paginacion(folderPath);
+        ReporteCCertificado.MenuRCCertificado(folderPath, getProperties().getProperty("Evidencia")).ScrollAbajo1(folderPath, getProperties().getProperty("Evidencia")).Paginacion(folderPath, getProperties().getProperty("Evidencia"));
         
-        // MyScreenRecorder.stopRecording();
-     	GenerarReportePdf.closeTemplate("");
+        MyScreenRecorder.stopRecording(getProperties().getProperty("Video"));
+     	GenerarReportePdf.closeTemplate("",getProperties().getProperty("Evidencia"));
 	}
 }

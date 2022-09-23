@@ -6,6 +6,7 @@ import java.util.Properties;
 
 import io.qameta.allure.*;
 import utilities.GenerarReportePdf;
+import utilities.MyScreenRecorder;
 
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
@@ -35,7 +36,7 @@ public class EdicionFFPTest extends BaseTest{
 		GenerarReportePdf.setRutaImagen(getProperties().getProperty("routeImageReport"));
 	
 		GenerarReportePdf.createTemplate(folderPath, nameTest, getProperties().getProperty("analista"),
-				getProperties().getProperty("url"));
+				getProperties().getProperty("url"), getProperties().getProperty("Evidencia"));
 
 		GenerarReportePdf.setImgContador(0);
 	}
@@ -50,8 +51,8 @@ public class EdicionFFPTest extends BaseTest{
 		// OBTENER EL NOMBRE DEL METODO A EJECUTAR
 		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();
 
-		File folderPath = BasePage.createFolder(nomTest, getProperties().getProperty("path"));
-		// MyScreenRecorder.startRecording(nomTest, folderPath);
+		File folderPath = BasePage.createFolder(nomTest, getProperties().getProperty("path"), getProperties().getProperty("Evidencia"));
+		MyScreenRecorder.startRecording(nomTest, folderPath,getProperties().getProperty("Video"));
 
 		Logeo(nomTest, folderPath);
 		
@@ -70,11 +71,11 @@ public class EdicionFFPTest extends BaseTest{
                 getProperties().getProperty("PalmaoPalmisteD"), folderPath)
         		.AceitePalmiste(getProperties().getProperty("Palmiste"),getProperties().getProperty("PalmisteA"),
                 getProperties().getProperty("PalmisteB"),getProperties().getProperty("PalmisteC"), getProperties().getProperty("PalmisteD"), folderPath)
-        		.PresentarDeclaracion(folderPath)
-        		.GuardarEdicion(folderPath);
+        		.PresentarDeclaracion(folderPath, getProperties().getProperty("Evidencia"))
+        		.GuardarEdicion(folderPath, getProperties().getProperty("Evidencia"));
 
-        // MyScreenRecorder.stopRecording();
-     	GenerarReportePdf.closeTemplate("");
+        MyScreenRecorder.stopRecording(getProperties().getProperty("Video"));
+     	GenerarReportePdf.closeTemplate("",getProperties().getProperty("Evidencia"));
     }
 	
 }
