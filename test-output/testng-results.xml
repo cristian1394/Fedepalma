@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="10" total="11" passed="1" failed="0" skipped="0">
+<testng-results ignored="5" total="6" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-09-22T20:41:21Z" name="Default suite" finished-at="2022-09-22T20:42:44Z" duration-ms="82444">
+  <suite started-at="2022-09-23T18:27:54Z" name="Default suite" finished-at="2022-09-23T18:31:01Z" duration-ms="187592">
     <groups>
     </groups>
-    <test started-at="2022-09-22T20:41:21Z" name="Default test" finished-at="2022-09-22T20:42:44Z" duration-ms="82444">
-      <class name="com.AdministracionFiniquitos.test.CrearTest">
-        <test-method is-config="true" signature="inicializar()[pri:0, instance:com.AdministracionFiniquitos.test.CrearTest@70e13fa]" started-at="2022-09-22T20:41:21Z" name="inicializar" finished-at="2022-09-22T20:41:25Z" duration-ms="3439" status="PASS">
+    <test started-at="2022-09-23T18:27:54Z" name="Default test" finished-at="2022-09-23T18:31:01Z" duration-ms="187592">
+      <class name="com.AdministracionUsuariosNuevos.test.BloqueantesUETest">
+        <test-method is-config="true" signature="inicializar()[pri:0, instance:com.AdministracionUsuariosNuevos.test.BloqueantesUETest@f446158]" started-at="2022-09-23T18:27:54Z" name="inicializar" finished-at="2022-09-23T18:27:57Z" duration-ms="3571" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- inicializar -->
-        <test-method signature="ConsultarFCPPortalFedepalma()[pri:0, instance:com.AdministracionFiniquitos.test.CrearTest@70e13fa]" started-at="2022-09-22T20:41:25Z" name="ConsultarFCPPortalFedepalma" description="Consultar Formulario Administracion FCP" finished-at="2022-09-22T20:42:43Z" duration-ms="78213" status="PASS">
+        <test-method signature="QuitarPermisoEmailUE()[pri:0, instance:com.AdministracionUsuariosNuevos.test.BloqueantesUETest@f446158]" started-at="2022-09-23T18:27:58Z" name="QuitarPermisoEmailUE" description="Al quitar el permiso de enviar email, aunque muestre la imagen, el clic no permite enviar el correo." finished-at="2022-09-23T18:31:01Z" duration-ms="183492" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- ConsultarFCPPortalFedepalma -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.AdministracionFiniquitos.test.CrearTest@70e13fa]" started-at="2022-09-22T20:42:43Z" name="tearDown" finished-at="2022-09-22T20:42:44Z" duration-ms="381" status="PASS">
+        </test-method> <!-- QuitarPermisoEmailUE -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.AdministracionUsuariosNuevos.test.BloqueantesUETest@f446158]" started-at="2022-09-23T18:31:01Z" name="tearDown" finished-at="2022-09-23T18:31:01Z" duration-ms="192" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- com.AdministracionFiniquitos.test.CrearTest -->
+      </class> <!-- com.AdministracionUsuariosNuevos.test.BloqueantesUETest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

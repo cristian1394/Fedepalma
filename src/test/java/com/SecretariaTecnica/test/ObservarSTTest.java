@@ -14,7 +14,7 @@ import org.testng.annotations.Test;
 import com.demoautomatizacion.test.BaseTest;
 import com.demoautomatizacion.test.utils.Listeners.TestListener;
 
-import MapObject_demoautomatizacion.BasePage;
+import PagObject_demoautomatizacion.BasePage;
 
 
 
@@ -57,9 +57,9 @@ public class ObservarSTTest extends BaseTest{
 		Logeo(nomTest, folderPath);
 		
 		home.irPortal(getProperties().getProperty("url"));
-		login.ingresarCredenciales(getProperties().getProperty("usuario"),getProperties().getProperty("password"), folderPath);
+		login.ingresarCredenciales(getProperties().getProperty("usuario"),getProperties().getProperty("password"), folderPath, getProperties().getProperty("Evidencia"));
         MenuST.IniciarST(folderPath, getProperties().getProperty("Evidencia"));  
-        VerSTecnica.VerSTecnica(getProperties().getProperty("Observacion"), folderPath).ValidarGuardarRevicion("El proceso se realizo correctamente.", folderPath);
+        VerSTecnica.VerSTecnica(getProperties().getProperty("Observacion"), folderPath, getProperties().getProperty("Evidencia")).ValidarGuardarRevicion("El proceso se realizo correctamente.", folderPath, getProperties().getProperty("Evidencia"));
         
         MyScreenRecorder.stopRecording(getProperties().getProperty("Video"));
      	GenerarReportePdf.closeTemplate("",getProperties().getProperty("Evidencia"));

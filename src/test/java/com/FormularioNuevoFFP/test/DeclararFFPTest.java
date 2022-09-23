@@ -59,28 +59,28 @@ public class DeclararFFPTest extends BaseTest{
 		
 		home.irPortal(getProperties().getProperty("url"));
 		Login.ingresarCredencialesConNit(getProperties().getProperty("NitA"), getProperties().getProperty("UsrF"),
-        		getProperties().getProperty("pwd"), folderPath);
+        		getProperties().getProperty("pwd"), folderPath, getProperties().getProperty("Evidencia"));
         ConsultarFFP.Consulta_FFP(folderPath, getProperties().getProperty("Evidencia"));
         NuevaDeclaracionE.NuevaDeclaracionFFP(getProperties().getProperty("DocRPF"),getProperties().getProperty("PropiosG"),
-        		getProperties().getProperty("PropiosH"),getProperties().getProperty("RPFG"), getProperties().getProperty("RPFH"), folderPath)
-        		.FrutoVendidoFFP(getProperties().getProperty("InicialFrutoG"), getProperties().getProperty("InicialFrutoH"), folderPath)
+        		getProperties().getProperty("PropiosH"),getProperties().getProperty("RPFG"), getProperties().getProperty("RPFH"), folderPath, getProperties().getProperty("Evidencia"))
+        		.FrutoVendidoFFP(getProperties().getProperty("InicialFrutoG"), getProperties().getProperty("InicialFrutoH"), folderPath, getProperties().getProperty("Evidencia"))
         		.FrutoEnviadoFFP(getProperties().getProperty("BajaFrutoG"), getProperties().getProperty("BajaFrutoH"), 
-                getProperties().getProperty("NoProcesadoG"), folderPath)
+                getProperties().getProperty("NoProcesadoG"), folderPath, getProperties().getProperty("Evidencia"))
         		.ProveedoresAlmendra(getProperties().getProperty("DocRPA"),getProperties().getProperty("PPalmaIngresada"),
-                getProperties().getProperty("RPalmaIngresada"),getProperties().getProperty("KG"), folderPath)
+                getProperties().getProperty("RPalmaIngresada"),getProperties().getProperty("KG"), folderPath, getProperties().getProperty("Evidencia"))
         		.AlmendraRecibida(getProperties().getProperty("DocARPM"),getProperties().getProperty("KG"),
                 getProperties().getProperty("PalmaProcesada"),getProperties().getProperty("PalmaRecibida"),
-                getProperties().getProperty("PalmisteRecibida"), folderPath);
+                getProperties().getProperty("PalmisteRecibida"), folderPath, getProperties().getProperty("Evidencia"));
         Inventarios.AceitePalma(getProperties().getProperty("Palma"),getProperties().getProperty("PalmaA"),
-                getProperties().getProperty("PalmaB"),getProperties().getProperty("PalmaC"), getProperties().getProperty("PalmaD"), folderPath)
+                getProperties().getProperty("PalmaB"),getProperties().getProperty("PalmaC"), getProperties().getProperty("PalmaD"), folderPath, getProperties().getProperty("Evidencia"))
         		.AceitePalmaOPalmiste(getProperties().getProperty("PalmaoPalmiste"),getProperties().getProperty("PalmaoPalmisteA"),
                 getProperties().getProperty("PalmaoPalmisteB"),getProperties().getProperty("PalmaoPalmisteC"), 
-                getProperties().getProperty("PalmaoPalmisteD"), folderPath)
+                getProperties().getProperty("PalmaoPalmisteD"), folderPath, getProperties().getProperty("Evidencia"))
         		.AceitePalmiste(getProperties().getProperty("Palmiste"),getProperties().getProperty("PalmisteA"),
-                getProperties().getProperty("PalmisteB"),getProperties().getProperty("PalmisteC"), getProperties().getProperty("PalmisteD"), folderPath)
-        		.Total_Plama(getProperties().getProperty("TotalPalma"), folderPath);
-        DeclararFFPF.DeclararFFP(folderPath, getProperties().getProperty("Evidencia")).Firma(getProperties().getProperty("Firma"),"Formularios firmados exitosamente.", folderPath)
-        		.confirmar("Se ha realizado el cambio de estado", folderPath);
+                getProperties().getProperty("PalmisteB"),getProperties().getProperty("PalmisteC"), getProperties().getProperty("PalmisteD"), folderPath, getProperties().getProperty("Evidencia"))
+        		.Total_Plama(getProperties().getProperty("TotalPalma"), folderPath, getProperties().getProperty("Evidencia"));
+        DeclararFFPF.DeclararFFP(folderPath, getProperties().getProperty("Evidencia")).Firma(getProperties().getProperty("Firma"),"Formularios firmados exitosamente.", folderPath, getProperties().getProperty("Evidencia"))
+        		.confirmar("Se ha realizado el cambio de estado", folderPath, getProperties().getProperty("Evidencia"));
 
         MyScreenRecorder.stopRecording(getProperties().getProperty("Video"));
      	GenerarReportePdf.closeTemplate("",getProperties().getProperty("Evidencia"));

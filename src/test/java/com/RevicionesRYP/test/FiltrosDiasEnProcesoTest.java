@@ -57,9 +57,9 @@ public class FiltrosDiasEnProcesoTest extends BaseTest{
 		Logeo(nomTest, folderPath);
 		
 		home.irPortal(getProperties().getProperty("url"));
-        login.ingresarCredenciales(getProperties().getProperty("usuario"),getProperties().getProperty("password"), folderPath);
+        login.ingresarCredenciales(getProperties().getProperty("usuario"),getProperties().getProperty("password"), folderPath, getProperties().getProperty("Evidencia"));
         MenuRYP.IniciarRYP(folderPath, getProperties().getProperty("Evidencia"));
-        FiltroDiasP.ValidarFiltroDiasP(getProperties().getProperty("DiasP"), folderPath);
+        FiltroDiasP.ValidarFiltroDiasP(getProperties().getProperty("DiasP"), folderPath, getProperties().getProperty("Evidencia"));
 
         MyScreenRecorder.stopRecording(getProperties().getProperty("Video"));
      	GenerarReportePdf.closeTemplate("",getProperties().getProperty("Evidencia"));

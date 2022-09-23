@@ -58,7 +58,7 @@ public class AprobadasTrazabilidadTest extends BaseTest{
 		Logeo(nomTest, folderPath);
 		
 		home.irPortal(getProperties().getProperty("url"));
-		login.ingresarCredenciales(getProperties().getProperty("usuario"),getProperties().getProperty("password"), folderPath);
+		login.ingresarCredenciales(getProperties().getProperty("usuario"),getProperties().getProperty("password"), folderPath, getProperties().getProperty("Evidencia"));
         MenuTrazabilidad.IniciarTrazabilidad(folderPath, getProperties().getProperty("Evidencia"));
         Aprobadas.AprobadasTrazabilidad(folderPath, getProperties().getProperty("Evidencia"))
         		.VerTrazabilidad(folderPath, getProperties().getProperty("Evidencia"));

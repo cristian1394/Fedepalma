@@ -57,10 +57,10 @@ public class FiltrosSTTest extends BaseTest{
 		Logeo(nomTest, folderPath);
 		
 		home.irPortal(getProperties().getProperty("url"));
-		login.ingresarCredenciales(getProperties().getProperty("usuario"),getProperties().getProperty("password"), folderPath);
+		login.ingresarCredenciales(getProperties().getProperty("usuario"),getProperties().getProperty("password"), folderPath, getProperties().getProperty("Evidencia"));
         MenuST.IniciarST(folderPath, getProperties().getProperty("Evidencia"));
         FiltrosST.ValidarFiltrosST(getProperties().getProperty("Termina"), getProperties().getProperty("Declarante"),
-        		getProperties().getProperty("DCD"), folderPath).ExportacionExcel(folderPath, getProperties().getProperty("Evidencia"));
+        		getProperties().getProperty("DCD"), folderPath, getProperties().getProperty("Evidencia")).ExportacionExcel(folderPath, getProperties().getProperty("Evidencia"));
      
         MyScreenRecorder.stopRecording(getProperties().getProperty("Video"));
      	GenerarReportePdf.closeTemplate("",getProperties().getProperty("Evidencia"));

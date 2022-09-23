@@ -57,9 +57,9 @@ public class ExepcionObservacionSTTest extends BaseTest{
 		Logeo(nomTest, folderPath);
 		
 		home.irPortal(getProperties().getProperty("url"));
-		login.ingresarCredenciales(getProperties().getProperty("usuario"),getProperties().getProperty("password"), folderPath);
+		login.ingresarCredenciales(getProperties().getProperty("usuario"),getProperties().getProperty("password"), folderPath, getProperties().getProperty("Evidencia"));
         MenuST.IniciarST(folderPath, getProperties().getProperty("Evidencia"));   
-        STecnica.RevicionSTecnica(folderPath, getProperties().getProperty("Evidencia")).GuardarRevicion(folderPath, getProperties().getProperty("Evidencia")).ValidarGuardarRevicion1("¡Advertencia!", folderPath);
+        STecnica.RevicionSTecnica(folderPath, getProperties().getProperty("Evidencia")).GuardarRevicion(folderPath, getProperties().getProperty("Evidencia")).ValidarGuardarRevicion1("¡Advertencia!", folderPath, getProperties().getProperty("Evidencia"));
         
         MyScreenRecorder.stopRecording(getProperties().getProperty("Video"));
      	GenerarReportePdf.closeTemplate("",getProperties().getProperty("Evidencia"));

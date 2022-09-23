@@ -57,10 +57,10 @@ public class ObservarRevicionesTest extends BaseTest{
 		Logeo(nomTest, folderPath);
 		
 		home.irPortal(getProperties().getProperty("url"));
-		login.ingresarCredenciales(getProperties().getProperty("usuario"),getProperties().getProperty("password"), folderPath);   
+		login.ingresarCredenciales(getProperties().getProperty("usuario"),getProperties().getProperty("password"), folderPath, getProperties().getProperty("Evidencia"));   
         MenuRYP.IniciarRYP(folderPath, getProperties().getProperty("Evidencia"));
-        Reviciones.VerRevicion(getProperties().getProperty("Observacion"),getProperties().getProperty("Grupo"), folderPath)
-        		  .ValidarGuardarRevicion("El proceso se realizo correctamente.", folderPath);
+        Reviciones.VerRevicion(getProperties().getProperty("Observacion"),getProperties().getProperty("Grupo"), folderPath, getProperties().getProperty("Evidencia"))
+        		  .ValidarGuardarRevicion("El proceso se realizo correctamente.", folderPath, getProperties().getProperty("Evidencia"));
         
         MyScreenRecorder.stopRecording(getProperties().getProperty("Video"));
      	GenerarReportePdf.closeTemplate("",getProperties().getProperty("Evidencia"));

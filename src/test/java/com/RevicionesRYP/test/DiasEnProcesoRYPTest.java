@@ -57,7 +57,7 @@ public class DiasEnProcesoRYPTest extends BaseTest{
 		Logeo(nomTest, folderPath);
 		
 		home.irPortal(getProperties().getProperty("url"));
-        login.ingresarCredenciales(getProperties().getProperty("usuario"),getProperties().getProperty("password"), folderPath);
+        login.ingresarCredenciales(getProperties().getProperty("usuario"),getProperties().getProperty("password"), folderPath, getProperties().getProperty("Evidencia"));
         MenuRYP.IniciarRYP(folderPath, getProperties().getProperty("Evidencia"));
         DiasPRYP.ValidarDiasEnProceso(folderPath, getProperties().getProperty("Evidencia"));
         

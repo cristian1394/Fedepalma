@@ -58,9 +58,9 @@ public class BorrarFFPTest extends BaseTest{
 		
 		home.irPortal(getProperties().getProperty("url"));
 		Login.ingresarCredencialesConNit(getProperties().getProperty("NitA"), getProperties().getProperty("UsrG"),
-        		getProperties().getProperty("pwd"), folderPath);
+        		getProperties().getProperty("pwd"), folderPath, getProperties().getProperty("Evidencia"));
         BorrarFFP.BorrarFFP(folderPath, getProperties().getProperty("NoProcesadoH"), getProperties().getProperty("PalmisteE"),
-        		getProperties().getProperty("KGH"), getProperties().getProperty("TPalma"));
+        		getProperties().getProperty("KGH"), getProperties().getProperty("TPalma"), getProperties().getProperty("Evidencia"));
         
         MyScreenRecorder.stopRecording(getProperties().getProperty("Video"));
      	GenerarReportePdf.closeTemplate("",getProperties().getProperty("Evidencia"));

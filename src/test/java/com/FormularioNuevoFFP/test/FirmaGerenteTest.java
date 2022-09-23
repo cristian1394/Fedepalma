@@ -58,9 +58,9 @@ public class FirmaGerenteTest extends BaseTest{
 		
 		home.irPortal(getProperties().getProperty("url"));
 		Login.ingresarCredencialesConNit(getProperties().getProperty("NitA"), getProperties().getProperty("UsrG"),
-        		getProperties().getProperty("pwd"), folderPath);
+        		getProperties().getProperty("pwd"), folderPath, getProperties().getProperty("Evidencia"));
         FirmaG.DeclararFFP(getProperties().getProperty("RPFH"), getProperties().getProperty("PalmisteE"),
-        		getProperties().getProperty("PPalmaIngresada"), folderPath).Firma(getProperties().getProperty("Firma"), folderPath)
+        		getProperties().getProperty("PPalmaIngresada"), folderPath, getProperties().getProperty("Evidencia")).Firma(getProperties().getProperty("Firma"), folderPath, getProperties().getProperty("Evidencia"))
         		.confirmar(folderPath, getProperties().getProperty("Evidencia"));
         
         MyScreenRecorder.stopRecording(getProperties().getProperty("Video"));

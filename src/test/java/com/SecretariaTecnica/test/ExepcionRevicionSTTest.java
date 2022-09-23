@@ -57,9 +57,9 @@ public class ExepcionRevicionSTTest extends BaseTest{
 		Logeo(nomTest, folderPath);
 		
 		home.irPortal(getProperties().getProperty("url"));
-		login.ingresarCredenciales(getProperties().getProperty("usuario"),getProperties().getProperty("password"), folderPath);
+		login.ingresarCredenciales(getProperties().getProperty("usuario"),getProperties().getProperty("password"), folderPath, getProperties().getProperty("Evidencia"));
         MenuST.IniciarST(folderPath, getProperties().getProperty("Evidencia"));   
-        STecnica.GuardarRevicion(folderPath, getProperties().getProperty("Evidencia")).ValidarGuardarRevicion("No se encontraron compensaciones para validar.", folderPath);
+        STecnica.GuardarRevicion(folderPath, getProperties().getProperty("Evidencia")).ValidarGuardarRevicion("No se encontraron compensaciones para validar.", folderPath, getProperties().getProperty("Evidencia"));
         
         MyScreenRecorder.stopRecording(getProperties().getProperty("Video"));
      	GenerarReportePdf.closeTemplate("",getProperties().getProperty("Evidencia"));

@@ -57,26 +57,26 @@ public class CreacionNuevaDeclaracion2Test extends BaseTest{
 		Logeo(nomTest, folderPath);
 		
 		home.irPortal(getProperties().getProperty("url"));
-        login.ingresarCredenciales(getProperties().getProperty("usuario"),getProperties().getProperty("password"), folderPath);
+        login.ingresarCredenciales(getProperties().getProperty("usuario"),getProperties().getProperty("password"), folderPath, getProperties().getProperty("Evidencia"));
         Consulta_FFP.ConsultaFFP(folderPath, getProperties().getProperty("Evidencia"));
         NuevaDeclaracionE.NuevaDeclaracionFFP1(getProperties().getProperty("DocRPF"),getProperties().getProperty("PropiosG"),
-        		getProperties().getProperty("PropiosH"),getProperties().getProperty("RPFG"), getProperties().getProperty("RPFH"), folderPath)
-        		.FrutoVendidoFFP(getProperties().getProperty("InicialFrutoG"), getProperties().getProperty("InicialFrutoH"), folderPath)
+        		getProperties().getProperty("PropiosH"),getProperties().getProperty("RPFG"), getProperties().getProperty("RPFH"), folderPath, getProperties().getProperty("Evidencia"))
+        		.FrutoVendidoFFP(getProperties().getProperty("InicialFrutoG"), getProperties().getProperty("InicialFrutoH"), folderPath, getProperties().getProperty("Evidencia"))
         		.FrutoEnviadoFFP(getProperties().getProperty("BajaFrutoG"), getProperties().getProperty("BajaFrutoH"), 
-                getProperties().getProperty("NoProcesadoG"), folderPath)
+                getProperties().getProperty("NoProcesadoG"), folderPath, getProperties().getProperty("Evidencia"))
         		.ProveedoresAlmendra(getProperties().getProperty("DocRPA"),getProperties().getProperty("PPalmaIngresada"),
-                getProperties().getProperty("RPalmaIngresada"),getProperties().getProperty("KG"), folderPath)
+                getProperties().getProperty("RPalmaIngresada"),getProperties().getProperty("KG"), folderPath, getProperties().getProperty("Evidencia"))
         		.AlmendraRecibida(getProperties().getProperty("DocARPM"),getProperties().getProperty("KG"),
                 getProperties().getProperty("PalmaProcesada"),getProperties().getProperty("PalmaRecibida"),
-                getProperties().getProperty("PalmisteRecibida"), folderPath);
+                getProperties().getProperty("PalmisteRecibida"), folderPath, getProperties().getProperty("Evidencia"));
         Inventarios.AceitePalma(getProperties().getProperty("Palma"),getProperties().getProperty("PalmaA"),
-                getProperties().getProperty("PalmaB"),getProperties().getProperty("PalmaC"), getProperties().getProperty("PalmaD"), folderPath)
+                getProperties().getProperty("PalmaB"),getProperties().getProperty("PalmaC"), getProperties().getProperty("PalmaD"), folderPath, getProperties().getProperty("Evidencia"))
         		.AceitePalmaOPalmiste(getProperties().getProperty("PalmaoPalmiste"),getProperties().getProperty("PalmaoPalmisteA"),
                 getProperties().getProperty("PalmaoPalmisteB"),getProperties().getProperty("PalmaoPalmisteC"), 
-                getProperties().getProperty("PalmaoPalmisteD"), folderPath)
+                getProperties().getProperty("PalmaoPalmisteD"), folderPath, getProperties().getProperty("Evidencia"))
         		.AceitePalmiste(getProperties().getProperty("Palmiste"),getProperties().getProperty("PalmisteA"),
-                getProperties().getProperty("PalmisteB"),getProperties().getProperty("PalmisteC"), getProperties().getProperty("PalmisteD"), folderPath)
-        		.Total_Plama1(getProperties().getProperty("TotalPalma"), folderPath);
+                getProperties().getProperty("PalmisteB"),getProperties().getProperty("PalmisteC"), getProperties().getProperty("PalmisteD"), folderPath, getProperties().getProperty("Evidencia"))
+        		.Total_Plama1(getProperties().getProperty("TotalPalma"), folderPath, getProperties().getProperty("Evidencia"));
 
          MyScreenRecorder.stopRecording(getProperties().getProperty("Video"));
      	 GenerarReportePdf.closeTemplate("",getProperties().getProperty("Evidencia"));

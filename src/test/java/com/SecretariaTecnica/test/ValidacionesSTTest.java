@@ -57,7 +57,7 @@ public class ValidacionesSTTest extends BaseTest{
 		Logeo(nomTest, folderPath);
 		
 		home.irPortal(getProperties().getProperty("url"));
-        login.ingresarCredenciales(getProperties().getProperty("usuario"),getProperties().getProperty("password"), folderPath);
+        login.ingresarCredenciales(getProperties().getProperty("usuario"),getProperties().getProperty("password"), folderPath, getProperties().getProperty("Evidencia"));
         MenuST.IniciarST(folderPath, getProperties().getProperty("Evidencia"));
         ValidarST.ValidarST(folderPath, getProperties().getProperty("Evidencia"));
         
