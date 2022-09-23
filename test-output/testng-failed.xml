@@ -3,13 +3,23 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
+<<<<<<< HEAD
       <class name="com.ConsultaDCD.test.RevisarDCDTest">
         <methods>
+=======
+      <class name="com.AdministracionUsuariosNuevos.test.BloqueantesUETest">
+        <methods>
+          <include name="QuitarPermisoEmailUE"/>
+>>>>>>> a5b718a5085655fe616131c9055e168f0b189a6a
           <include name="tearDown"/>
           <include name="RevisarDCDPortalFedepalma"/>
           <include name="inicializar"/>
         </methods>
+<<<<<<< HEAD
       </class> <!-- com.ConsultaDCD.test.RevisarDCDTest -->
+=======
+      </class> <!-- com.AdministracionUsuariosNuevos.test.BloqueantesUETest -->
+>>>>>>> a5b718a5085655fe616131c9055e168f0b189a6a
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

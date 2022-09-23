@@ -57,20 +57,20 @@ public class EdicionFFPTest extends BaseTest{
 		Logeo(nomTest, folderPath);
 		
 		home.irPortal(getProperties().getProperty("url"));
-        login.ingresarCredenciales(getProperties().getProperty("usuario"),getProperties().getProperty("password"), folderPath);
-        ConsultaFFP.Consulta_FFP(getProperties().getProperty("NitFFP"), folderPath);
+        login.ingresarCredenciales(getProperties().getProperty("usuario"),getProperties().getProperty("password"), folderPath, getProperties().getProperty("Evidencia"));
+        ConsultaFFP.Consulta_FFP(getProperties().getProperty("NitFFP"), folderPath, getProperties().getProperty("Evidencia"));
         EditarFFP.EditarFFP(getProperties().getProperty("PropiosH"),getProperties().getProperty("InicialFrutoG"),
-                getProperties().getProperty("InicialFrutoH"),getProperties().getProperty("BajaFrutoG"), folderPath)
-        		.ProveedoresAlmendra(getProperties().getProperty("DocRPA"),getProperties().getProperty("KG"), folderPath)
+                getProperties().getProperty("InicialFrutoH"),getProperties().getProperty("BajaFrutoG"), folderPath, getProperties().getProperty("Evidencia"))
+        		.ProveedoresAlmendra(getProperties().getProperty("DocRPA"),getProperties().getProperty("KG"), folderPath, getProperties().getProperty("Evidencia"))
         		.AlmendraRecibida(getProperties().getProperty("DocARPM"),getProperties().getProperty("KG"), 
-                getProperties().getProperty("PalmisteRecibida"), folderPath);
+                getProperties().getProperty("PalmisteRecibida"), folderPath, getProperties().getProperty("Evidencia"));
         InventariosEdicion.AceitePalma(getProperties().getProperty("Palma"),getProperties().getProperty("PalmaA"),
-                getProperties().getProperty("PalmaB"),getProperties().getProperty("PalmaC"), getProperties().getProperty("PalmaD"), folderPath)
+                getProperties().getProperty("PalmaB"),getProperties().getProperty("PalmaC"), getProperties().getProperty("PalmaD"), folderPath, getProperties().getProperty("Evidencia"))
         		.AceitePalmaOPalmiste(getProperties().getProperty("PalmaoPalmiste"),getProperties().getProperty("PalmaoPalmisteA"),
                 getProperties().getProperty("PalmaoPalmisteB"),getProperties().getProperty("PalmaoPalmisteC"), 
-                getProperties().getProperty("PalmaoPalmisteD"), folderPath)
+                getProperties().getProperty("PalmaoPalmisteD"), folderPath, getProperties().getProperty("Evidencia"))
         		.AceitePalmiste(getProperties().getProperty("Palmiste"),getProperties().getProperty("PalmisteA"),
-                getProperties().getProperty("PalmisteB"),getProperties().getProperty("PalmisteC"), getProperties().getProperty("PalmisteD"), folderPath)
+                getProperties().getProperty("PalmisteB"),getProperties().getProperty("PalmisteC"), getProperties().getProperty("PalmisteD"), folderPath, getProperties().getProperty("Evidencia"))
         		.PresentarDeclaracion(folderPath, getProperties().getProperty("Evidencia"))
         		.GuardarEdicion(folderPath, getProperties().getProperty("Evidencia"));
 

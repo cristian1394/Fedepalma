@@ -57,11 +57,11 @@ public class FiltrosTrazabilidadTest extends BaseTest{
 		Logeo(nomTest, folderPath);
 		
 		home.irPortal(getProperties().getProperty("url"));
-		login.ingresarCredenciales(getProperties().getProperty("usuario"),getProperties().getProperty("password"), folderPath);
+		login.ingresarCredenciales(getProperties().getProperty("usuario"),getProperties().getProperty("password"), folderPath, getProperties().getProperty("Evidencia"));
         MenuTrazabilidad.IniciarTrazabilidad(folderPath, getProperties().getProperty("Evidencia"));
         FiltroTrazabilidad.ValidarFiltrosTrazabilidad(getProperties().getProperty("Inicia"), getProperties().getProperty("Declarante"),
         		getProperties().getProperty("Contiene"),getProperties().getProperty("Dcd"),
-        		getProperties().getProperty("Grupo"), folderPath);
+        		getProperties().getProperty("Grupo"), folderPath, getProperties().getProperty("Evidencia"));
      
         MyScreenRecorder.stopRecording(getProperties().getProperty("Video"));
      	GenerarReportePdf.closeTemplate("",getProperties().getProperty("Evidencia"));

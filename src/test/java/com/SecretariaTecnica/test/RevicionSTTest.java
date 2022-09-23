@@ -57,10 +57,10 @@ public class RevicionSTTest extends BaseTest{
 		Logeo(nomTest, folderPath);
 		
 		home.irPortal(getProperties().getProperty("url"));
-		login.ingresarCredenciales(getProperties().getProperty("usuario"),getProperties().getProperty("password"), folderPath);
+		login.ingresarCredenciales(getProperties().getProperty("usuario"),getProperties().getProperty("password"), folderPath, getProperties().getProperty("Evidencia"));
         MenuST.IniciarST(folderPath, getProperties().getProperty("Evidencia"));   
-        STecnica.RevicionSTecnica(folderPath, getProperties().getProperty("Evidencia")).ObservarST(getProperties().getProperty("Observacion"), folderPath).GuardarRevicion(folderPath, getProperties().getProperty("Evidencia"))
-        	.ValidarGuardarRevicion("El proceso se realizo correctamente.", folderPath);
+        STecnica.RevicionSTecnica(folderPath, getProperties().getProperty("Evidencia")).ObservarST(getProperties().getProperty("Observacion"), folderPath, getProperties().getProperty("Evidencia")).GuardarRevicion(folderPath, getProperties().getProperty("Evidencia"))
+        	.ValidarGuardarRevicion("El proceso se realizo correctamente.", folderPath, getProperties().getProperty("Evidencia"));
         
         MyScreenRecorder.stopRecording(getProperties().getProperty("Video"));
      	GenerarReportePdf.closeTemplate("",getProperties().getProperty("Evidencia"));  
@@ -82,10 +82,10 @@ public class RevicionSTTest extends BaseTest{
 		Logeo(nomTest, folderPath);
 		
 		home.irPortal(getProperties().getProperty("url"));
-		login.ingresarCredenciales(getProperties().getProperty("usuario"),getProperties().getProperty("password"), folderPath);
+		login.ingresarCredenciales(getProperties().getProperty("usuario"),getProperties().getProperty("password"), folderPath, getProperties().getProperty("Evidencia"));
         MenuST.IniciarST(folderPath, getProperties().getProperty("Evidencia"));   
-        STecnica.RevicionSTecnica1(folderPath, getProperties().getProperty("Evidencia")).ObservarST(getProperties().getProperty("Observacion"), folderPath).GuardarRevicion(folderPath, getProperties().getProperty("Evidencia"))
-        	.ValidarGuardarRevicion("El proceso se realizo correctamente.", folderPath);
+        STecnica.RevicionSTecnica1(folderPath, getProperties().getProperty("Evidencia")).ObservarST(getProperties().getProperty("Observacion"), folderPath, getProperties().getProperty("Evidencia")).GuardarRevicion(folderPath, getProperties().getProperty("Evidencia"))
+        	.ValidarGuardarRevicion("El proceso se realizo correctamente.", folderPath, getProperties().getProperty("Evidencia"));
         
         MyScreenRecorder.stopRecording(getProperties().getProperty("Video"));
      	GenerarReportePdf.closeTemplate("",getProperties().getProperty("Evidencia"));

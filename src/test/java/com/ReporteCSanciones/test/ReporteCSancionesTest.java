@@ -58,7 +58,7 @@ public class ReporteCSancionesTest extends BaseTest{
 		
 		home.irPortal(getProperties().getProperty("url"));
         Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr"),
-        		getProperties().getProperty("pwd"), folderPath);
+        		getProperties().getProperty("pwd"), folderPath, getProperties().getProperty("Evidencia"));
         ReporteCCertificado.MenuRCCertificado(folderPath, getProperties().getProperty("Evidencia"));
         
         MyScreenRecorder.stopRecording(getProperties().getProperty("Video"));
@@ -83,7 +83,7 @@ public class ReporteCSancionesTest extends BaseTest{
 		
 		home.irPortal(getProperties().getProperty("url"));
         Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr"),
-        		getProperties().getProperty("pwd"), folderPath);
+        		getProperties().getProperty("pwd"), folderPath, getProperties().getProperty("Evidencia"));
         ReporteCCertificado.MenuRCCertificado(folderPath, getProperties().getProperty("Evidencia")).Exportar(folderPath, getProperties().getProperty("Evidencia"));
         
         MyScreenRecorder.stopRecording(getProperties().getProperty("Video"));
@@ -108,8 +108,8 @@ public class ReporteCSancionesTest extends BaseTest{
 		
 		home.irPortal(getProperties().getProperty("url"));
         Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr"),
-        		getProperties().getProperty("pwd"), folderPath);
-        ReporteCCertificado.MenuRCCertificado(folderPath, getProperties().getProperty("Evidencia")).FNIT1(getProperties().getProperty("nitReporteCS"), folderPath)
+        		getProperties().getProperty("pwd"), folderPath, getProperties().getProperty("Evidencia"));
+        ReporteCCertificado.MenuRCCertificado(folderPath, getProperties().getProperty("Evidencia")).FNIT1(getProperties().getProperty("nitReporteCS"), folderPath, getProperties().getProperty("Evidencia"))
         .ScrollDerecha(folderPath, getProperties().getProperty("Evidencia")).Evidencia(folderPath, getProperties().getProperty("Evidencia"));
 		
         MyScreenRecorder.stopRecording(getProperties().getProperty("Video"));
@@ -133,8 +133,8 @@ public class ReporteCSancionesTest extends BaseTest{
 		
 		home.irPortal(getProperties().getProperty("url"));
         Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr"),
-        		getProperties().getProperty("pwd"), folderPath);
-        ReporteCCertificado.MenuRCCertificado(folderPath, getProperties().getProperty("Evidencia")).FNIT1(getProperties().getProperty("nitReporteCS"), folderPath)
+        		getProperties().getProperty("pwd"), folderPath, getProperties().getProperty("Evidencia"));
+        ReporteCCertificado.MenuRCCertificado(folderPath, getProperties().getProperty("Evidencia")).FNIT1(getProperties().getProperty("nitReporteCS"), folderPath, getProperties().getProperty("Evidencia"))
         .ScrollDerecha1(folderPath, getProperties().getProperty("Evidencia")).Evidencia(folderPath, getProperties().getProperty("Evidencia"));
 		
         MyScreenRecorder.stopRecording(getProperties().getProperty("Video"));
@@ -158,10 +158,10 @@ public class ReporteCSancionesTest extends BaseTest{
 		
 		home.irPortal(getProperties().getProperty("url"));
         Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr"),
-        		getProperties().getProperty("pwd"), folderPath);
-        ReporteCCertificado.MenuRCCertificado(folderPath, getProperties().getProperty("Evidencia")).FP(getProperties().getProperty("Inicial"), folderPath).
-        FNIT(getProperties().getProperty("Finaliza"), folderPath)
-        .FSCPalma(getProperties().getProperty("contiene"), folderPath).FSCPalmiste(getProperties().getProperty("Kg"), folderPath).
+        		getProperties().getProperty("pwd"), folderPath, getProperties().getProperty("Evidencia"));
+        ReporteCCertificado.MenuRCCertificado(folderPath, getProperties().getProperty("Evidencia")).FP(getProperties().getProperty("Inicial"), folderPath, getProperties().getProperty("Evidencia")).
+        FNIT(getProperties().getProperty("Finaliza"), folderPath, getProperties().getProperty("Evidencia"))
+        .FSCPalma(getProperties().getProperty("contiene"), folderPath, getProperties().getProperty("Evidencia")).FSCPalmiste(getProperties().getProperty("Kg"), folderPath, getProperties().getProperty("Evidencia")).
         ScrollDerecha1(folderPath, getProperties().getProperty("Evidencia")).Evidencia(folderPath, getProperties().getProperty("Evidencia"));
 		
         MyScreenRecorder.stopRecording(getProperties().getProperty("Video"));
@@ -185,7 +185,7 @@ public class ReporteCSancionesTest extends BaseTest{
 		
 		home.irPortal(getProperties().getProperty("url"));
         Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr"),
-        		getProperties().getProperty("pwd"), folderPath);
+        		getProperties().getProperty("pwd"), folderPath, getProperties().getProperty("Evidencia"));
         ReporteCCertificado.MenuRCCertificado(folderPath, getProperties().getProperty("Evidencia")).ScrollAbajo1(folderPath, getProperties().getProperty("Evidencia")).Paginacion(folderPath, getProperties().getProperty("Evidencia"));
         
         MyScreenRecorder.stopRecording(getProperties().getProperty("Video"));

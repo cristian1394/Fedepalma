@@ -57,10 +57,10 @@ public class ValidacionesFiltrosTest extends BaseTest{
 		Logeo(nomTest, folderPath);
 		
 		home.irPortal(getProperties().getProperty("url"));
-        login.ingresarCredenciales(getProperties().getProperty("usuario"),getProperties().getProperty("password"), folderPath);
+        login.ingresarCredenciales(getProperties().getProperty("usuario"),getProperties().getProperty("password"), folderPath, getProperties().getProperty("Evidencia"));
         MenuRYP.IniciarRYP(folderPath, getProperties().getProperty("Evidencia"));
-        ValidarFiltros.ValidarFiltros(getProperties().getProperty("Decla"), folderPath).ValidarFormulario(folderPath, getProperties().getProperty("Evidencia"))
-        .ValidarFiltro(getProperties().getProperty("Decla1"), folderPath).DeplegarRYP(folderPath, getProperties().getProperty("Evidencia"));
+        ValidarFiltros.ValidarFiltros(getProperties().getProperty("Decla"), folderPath, getProperties().getProperty("Evidencia")).ValidarFormulario(folderPath, getProperties().getProperty("Evidencia"))
+        .ValidarFiltro(getProperties().getProperty("Decla1"), folderPath, getProperties().getProperty("Evidencia")).DeplegarRYP(folderPath, getProperties().getProperty("Evidencia"));
         
         MyScreenRecorder.stopRecording(getProperties().getProperty("Video"));
      	GenerarReportePdf.closeTemplate("",getProperties().getProperty("Evidencia"));
