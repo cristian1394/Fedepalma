@@ -57,10 +57,10 @@ public class FiltrosRYPTest extends BaseTest{
 		Logeo(nomTest, folderPath);
 		
 		home.irPortal(getProperties().getProperty("url"));
-		login.ingresarCredenciales(getProperties().getProperty("usuario"),getProperties().getProperty("password"), folderPath);
+		login.ingresarCredenciales(getProperties().getProperty("usuario"),getProperties().getProperty("password"), folderPath, getProperties().getProperty("Evidencia"));
         MenuRYP.IniciarRYP(folderPath, getProperties().getProperty("Evidencia"));
         FiltrosRYP.ValidarFiltrosRYP(getProperties().getProperty("Año"), getProperties().getProperty("inicial"),
-        		getProperties().getProperty("producto"),getProperties().getProperty("Grupo1"), folderPath).ExportacionExcel(folderPath, getProperties().getProperty("Evidencia"));
+        		getProperties().getProperty("producto"),getProperties().getProperty("Grupo1"), folderPath, getProperties().getProperty("Evidencia")).ExportacionExcel(folderPath, getProperties().getProperty("Evidencia"));
 
         MyScreenRecorder.stopRecording(getProperties().getProperty("Video"));
      	GenerarReportePdf.closeTemplate("",getProperties().getProperty("Evidencia"));

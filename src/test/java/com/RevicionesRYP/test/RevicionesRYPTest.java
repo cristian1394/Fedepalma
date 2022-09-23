@@ -57,10 +57,10 @@ public class RevicionesRYPTest extends BaseTest{
 		Logeo(nomTest, folderPath);
 		
 		home.irPortal(getProperties().getProperty("url"));
-		login.ingresarCredenciales(getProperties().getProperty("usuario"),getProperties().getProperty("password"), folderPath);  
+		login.ingresarCredenciales(getProperties().getProperty("usuario"),getProperties().getProperty("password"), folderPath, getProperties().getProperty("Evidencia"));  
         MenuRYP.IniciarRYP(folderPath, getProperties().getProperty("Evidencia"));
-        RYP.FiltarRYP(getProperties().getProperty("Grupo"), folderPath).RevicionRYP(folderPath, getProperties().getProperty("Evidencia")).ObservarRYP(getProperties().getProperty("Observacion"), folderPath)
-        	.GuardarRevicion(folderPath, getProperties().getProperty("Evidencia")).ValidarGuardarRevicion("El proceso se realizo correctamente.", folderPath);
+        RYP.FiltarRYP(getProperties().getProperty("Grupo"), folderPath, getProperties().getProperty("Evidencia")).RevicionRYP(folderPath, getProperties().getProperty("Evidencia")).ObservarRYP(getProperties().getProperty("Observacion"), folderPath, getProperties().getProperty("Evidencia"))
+        	.GuardarRevicion(folderPath, getProperties().getProperty("Evidencia")).ValidarGuardarRevicion("El proceso se realizo correctamente.", folderPath, getProperties().getProperty("Evidencia"));
         
         MyScreenRecorder.stopRecording(getProperties().getProperty("Video"));
      	GenerarReportePdf.closeTemplate("",getProperties().getProperty("Evidencia"));

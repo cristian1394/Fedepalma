@@ -57,9 +57,9 @@ public class ExepcionTrazabilidadTest extends BaseTest{
 		Logeo(nomTest, folderPath);
 		
 		home.irPortal(getProperties().getProperty("url"));
-		login.ingresarCredenciales(getProperties().getProperty("usuario"),getProperties().getProperty("password"), folderPath);
+		login.ingresarCredenciales(getProperties().getProperty("usuario"),getProperties().getProperty("password"), folderPath, getProperties().getProperty("Evidencia"));
 		MenuTrazabilidad.IniciarTrazabilidad(folderPath, getProperties().getProperty("Evidencia"));
-		ETrazabilidad.RellenarTrazabilidad(folderPath, getProperties().getProperty("Evidencia")).ValidarResultadoTrazabilidad("No se encontraron datos.", folderPath);
+		ETrazabilidad.RellenarTrazabilidad(folderPath, getProperties().getProperty("Evidencia")).ValidarResultadoTrazabilidad("No se encontraron datos.", folderPath, getProperties().getProperty("Evidencia"));
         
 		MyScreenRecorder.stopRecording(getProperties().getProperty("Video"));
      	GenerarReportePdf.closeTemplate("",getProperties().getProperty("Evidencia"));

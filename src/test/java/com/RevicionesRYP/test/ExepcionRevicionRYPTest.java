@@ -57,9 +57,9 @@ public class ExepcionRevicionRYPTest extends BaseTest{
 		Logeo(nomTest, folderPath);
 		
 		home.irPortal(getProperties().getProperty("url"));
-		login.ingresarCredenciales(getProperties().getProperty("usuario"),getProperties().getProperty("password"), folderPath);  
+		login.ingresarCredenciales(getProperties().getProperty("usuario"),getProperties().getProperty("password"), folderPath, getProperties().getProperty("Evidencia"));  
         MenuRYP.IniciarRYP(folderPath, getProperties().getProperty("Evidencia"));
-        RYP.GuardarRevicion(folderPath, getProperties().getProperty("Evidencia")).ValidarGuardarRevicion1("No se encontraron compensaciones para validar.", folderPath);
+        RYP.GuardarRevicion(folderPath, getProperties().getProperty("Evidencia")).ValidarGuardarRevicion1("No se encontraron compensaciones para validar.", folderPath, getProperties().getProperty("Evidencia"));
         
         MyScreenRecorder.stopRecording(getProperties().getProperty("Video"));
      	GenerarReportePdf.closeTemplate("",getProperties().getProperty("Evidencia"));

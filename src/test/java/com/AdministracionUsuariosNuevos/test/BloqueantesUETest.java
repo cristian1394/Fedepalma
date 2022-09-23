@@ -61,9 +61,11 @@ public class BloqueantesUETest extends BaseTest {
 		home.irPortal(getProperties().getProperty("url"));
 		Login.ingresarCredencialesConNit(getProperties().getProperty("NitB"), getProperties().getProperty("Usuario"),
 				getProperties().getProperty("pwd"), folderPath, getProperties().getProperty("Evidencia"));
+		
 		Bloqueante.SelecionarMenu(folderPath, getProperties().getProperty("Evidencia")).EscojerTabla(folderPath, getProperties().getProperty("Evidencia")).BloquearEmail(folderPath, getProperties().getProperty("Evidencia"))
 				.SelecionarMenu1(folderPath, getProperties().getProperty("Evidencia")).SelecionarMenu2(folderPath, getProperties().getProperty("Evidencia")).EscojerTabla(folderPath, getProperties().getProperty("Evidencia"))
 				.QuitarBloqueoEmail(folderPath, getProperties().getProperty("Evidencia"));
+		
 		MyScreenRecorder.stopRecording(getProperties().getProperty("Video"));
 
 		GenerarReportePdf.closeTemplate("",getProperties().getProperty("Evidencia"));

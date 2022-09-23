@@ -57,7 +57,7 @@ public class ConsultarFFPTest extends BaseTest{
 		Logeo(nomTest, folderPath);
 		
 		home.irPortal(getProperties().getProperty("url"));
-        login.ingresarCredenciales(getProperties().getProperty("usuario"),getProperties().getProperty("password"), folderPath);
+        login.ingresarCredenciales(getProperties().getProperty("usuario"),getProperties().getProperty("password"), folderPath, getProperties().getProperty("Evidencia"));
         ConsultaFFP.ConsultaFFP(folderPath, getProperties().getProperty("Evidencia"));
         MirarFFP.MirarFFP(folderPath, getProperties().getProperty("Evidencia"));
         

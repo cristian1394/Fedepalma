@@ -57,9 +57,9 @@ public class ExepcionObservacionRYPTest extends BaseTest{
 		Logeo(nomTest, folderPath);
 		
 		home.irPortal(getProperties().getProperty("url"));
-		login.ingresarCredenciales(getProperties().getProperty("usuario"),getProperties().getProperty("password"), folderPath);
+		login.ingresarCredenciales(getProperties().getProperty("usuario"),getProperties().getProperty("password"), folderPath, getProperties().getProperty("Evidencia"));
 		MenuRYP.IniciarRYP(folderPath, getProperties().getProperty("Evidencia")); 
-        RYP.RevicionRYP(folderPath, getProperties().getProperty("Evidencia")).GuardarRevicion(folderPath, getProperties().getProperty("Evidencia")).ValidarGuardarRevicion2("¡Advertencia!", folderPath);
+        RYP.RevicionRYP(folderPath, getProperties().getProperty("Evidencia")).GuardarRevicion(folderPath, getProperties().getProperty("Evidencia")).ValidarGuardarRevicion2("¡Advertencia!", folderPath, getProperties().getProperty("Evidencia"));
         
         MyScreenRecorder.stopRecording(getProperties().getProperty("Video"));
      	GenerarReportePdf.closeTemplate("",getProperties().getProperty("Evidencia"));

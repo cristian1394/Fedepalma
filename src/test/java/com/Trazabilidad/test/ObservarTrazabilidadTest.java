@@ -57,7 +57,7 @@ public class ObservarTrazabilidadTest extends BaseTest{
 		Logeo(nomTest, folderPath);
 		
 		home.irPortal(getProperties().getProperty("url"));
-		login.ingresarCredenciales(getProperties().getProperty("usuario"),getProperties().getProperty("password"), folderPath);
+		login.ingresarCredenciales(getProperties().getProperty("usuario"),getProperties().getProperty("password"), folderPath, getProperties().getProperty("Evidencia"));
         Trazabilidad.Trazabilidad(folderPath, getProperties().getProperty("Evidencia"));      
         VerTrazabilidad.VerTrazabilidad(folderPath, getProperties().getProperty("Evidencia"));
         
