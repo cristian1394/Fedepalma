@@ -57,10 +57,10 @@ public class ExepcionesCrearDCDTest extends BaseTest{
 		Logeo(nomTest, folderPath);
 		home.irPortal(getProperties().getProperty("url"));
         Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr1"),
-        		getProperties().getProperty("pwd"), folderPath);
+        		getProperties().getProperty("pwd"), folderPath, getProperties().getProperty("Evidencia"));
         RDCD.ConsultaDCD(folderPath, getProperties().getProperty("Evidencia"));
-        ECrearDCD.CrearDCD(getProperties().getProperty("nitcrear"),getProperties().getProperty("kilos"), folderPath)
-        	.ValidarCreacionDCD("Por favor complete el formulario.", folderPath);
+        ECrearDCD.CrearDCD(getProperties().getProperty("nitcrear"),getProperties().getProperty("kilos"), folderPath, getProperties().getProperty("Evidencia"))
+        	.ValidarCreacionDCD("Por favor complete el formulario.", folderPath, getProperties().getProperty("Evidencia"));
 
 		MyScreenRecorder.stopRecording(getProperties().getProperty("Video"));
 

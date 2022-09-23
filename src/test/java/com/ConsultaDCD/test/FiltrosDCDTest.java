@@ -58,8 +58,8 @@ public class FiltrosDCDTest extends BaseTest{
 		Logeo(nomTest, folderPath);
 		home.irPortal(getProperties().getProperty("url"));
         Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr1"),
-        		getProperties().getProperty("pwd"), folderPath);
-        FiltrosDCD.VerificacionFiltrosDCD(getProperties().getProperty("Decla"), folderPath).ExportacionExcel(folderPath, getProperties().getProperty("Evidencia"));
+        		getProperties().getProperty("pwd"), folderPath, getProperties().getProperty("Evidencia"));
+        FiltrosDCD.VerificacionFiltrosDCD(getProperties().getProperty("Decla"), folderPath, getProperties().getProperty("Evidencia")).ExportacionExcel(folderPath, getProperties().getProperty("Evidencia"));
 
 		MyScreenRecorder.stopRecording(getProperties().getProperty("Video"));
 

@@ -59,8 +59,8 @@ public class ExepcionConsultarDCDTest extends BaseTest{
 		Logeo(nomTest, folderPath);
 		home.irPortal(getProperties().getProperty("url"));
         Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr1"),
-        		getProperties().getProperty("pwd"), folderPath);
-        EDCD.ConsultaDCD(folderPath, getProperties().getProperty("Evidencia")).ValidarResultadoDCD("No se encontraron datos.", folderPath);      
+        		getProperties().getProperty("pwd"), folderPath, getProperties().getProperty("Evidencia"));
+        EDCD.ConsultaDCD(folderPath, getProperties().getProperty("Evidencia")).ValidarResultadoDCD("No se encontraron datos.", folderPath, getProperties().getProperty("Evidencia"));      
     
         //String validar=consultaBD("select acc_nombre from C_ACCIONES where acc_nombre='ADMINISTRACION_CLIENTES'");
         //Assert.assertEquals(validar, getProperties().getProperty("nit"));

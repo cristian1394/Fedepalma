@@ -59,7 +59,7 @@ public class BloqueantesUITest extends BaseTest{
 
 		Logeo(nomTest, folderPath);
 		home.irPortal(getProperties().getProperty("url"));
-		login.ingresarCredenciales(getProperties().getProperty("usuario"),getProperties().getProperty("password"), null);
+		login.ingresarCredenciales(getProperties().getProperty("usuario"),getProperties().getProperty("password"), folderPath, getProperties().getProperty("Evidencia"));
         Bloqueantes.SelecionarMenu(folderPath, getProperties().getProperty("Evidencia")).EscojerTabla(folderPath, getProperties().getProperty("Evidencia")).BloquearEmail(folderPath, getProperties().getProperty("Evidencia")).SelecionarMenu1(folderPath, getProperties().getProperty("Evidencia")).SelecionarMenu2(folderPath, getProperties().getProperty("Evidencia")).EscojerTabla(folderPath, getProperties().getProperty("Evidencia"))
         		   .QuitarBloqueoEmail(folderPath, getProperties().getProperty("Evidencia"));
       MyScreenRecorder.stopRecording(getProperties().getProperty("Video"));
@@ -82,7 +82,7 @@ public class BloqueantesUITest extends BaseTest{
 
 		Logeo(nomTest, folderPath);
 		home.irPortal(getProperties().getProperty("url"));
-		login.ingresarCredenciales(getProperties().getProperty("usuario"),getProperties().getProperty("password"), folderPath);
+		login.ingresarCredenciales(getProperties().getProperty("usuario"),getProperties().getProperty("password"), folderPath, getProperties().getProperty("Evidencia"));
         Bloqueantes.SelecionarMenu(folderPath, getProperties().getProperty("Evidencia")).EscojerTabla(folderPath, getProperties().getProperty("Evidencia")).BloquearFirma(folderPath, getProperties().getProperty("Evidencia")).SelecionarMenu1(folderPath, getProperties().getProperty("Evidencia")).SelecionarMenu2(folderPath, getProperties().getProperty("Evidencia"))
         		   .EscojerTabla(folderPath, getProperties().getProperty("Evidencia")).QuitarBloqueoFirma(folderPath, getProperties().getProperty("Evidencia"));
       MyScreenRecorder.stopRecording(getProperties().getProperty("Video"));
@@ -104,7 +104,7 @@ public class BloqueantesUITest extends BaseTest{
 
 		Logeo(nomTest, folderPath);
 		home.irPortal(getProperties().getProperty("url"));
-		login.ingresarCredenciales(getProperties().getProperty("usuario"),getProperties().getProperty("password"), folderPath);
+		login.ingresarCredenciales(getProperties().getProperty("usuario"),getProperties().getProperty("password"), folderPath, getProperties().getProperty("Evidencia"));
         Bloqueantes.SelecionarMenu(folderPath, getProperties().getProperty("Evidencia")).EscojerTabla(folderPath, getProperties().getProperty("Evidencia")).BloquearPerfil(folderPath, getProperties().getProperty("Evidencia")).SelecionarMenu1(folderPath, getProperties().getProperty("Evidencia")).SelecionarMenu2(folderPath, getProperties().getProperty("Evidencia"))
         		   .EscojerTabla(folderPath, getProperties().getProperty("Evidencia")).QuitarBloqueoPerfil(folderPath, getProperties().getProperty("Evidencia"));
       MyScreenRecorder.stopRecording(getProperties().getProperty("Video"));
@@ -127,7 +127,7 @@ public class BloqueantesUITest extends BaseTest{
 
 		Logeo(nomTest, folderPath);
 		home.irPortal(getProperties().getProperty("url"));
-		login.ingresarCredenciales(getProperties().getProperty("usuario"),getProperties().getProperty("password"), folderPath);
+		login.ingresarCredenciales(getProperties().getProperty("usuario"),getProperties().getProperty("password"), folderPath, getProperties().getProperty("Evidencia"));
         Bloqueantes.SelecionarMenu(folderPath, getProperties().getProperty("Evidencia")).EscojerTabla(folderPath, getProperties().getProperty("Evidencia")).BloquearUsuario(folderPath, getProperties().getProperty("Evidencia")).SelecionarMenu1(folderPath, getProperties().getProperty("Evidencia")).SelecionarMenu2(folderPath, getProperties().getProperty("Evidencia"))
         		   .EscojerTabla(folderPath, getProperties().getProperty("Evidencia")).QuitarBloqueoUsuario(folderPath, getProperties().getProperty("Evidencia"));
         
@@ -152,7 +152,7 @@ public class BloqueantesUITest extends BaseTest{
 
 		Logeo(nomTest, folderPath);
 		home.irPortal(getProperties().getProperty("url"));
-		login.ingresarCredenciales(getProperties().getProperty("usuario"),getProperties().getProperty("password"), folderPath);
+		login.ingresarCredenciales(getProperties().getProperty("usuario"),getProperties().getProperty("password"), folderPath, getProperties().getProperty("Evidencia"));
         Bloqueantes.SelecionarMenu(folderPath, getProperties().getProperty("Evidencia")).EscojerTabla(folderPath, getProperties().getProperty("Evidencia")).BloquearFirma(folderPath, getProperties().getProperty("Evidencia")).SelecionarMenu1(folderPath, getProperties().getProperty("Evidencia")).EditarPerfil(folderPath, getProperties().getProperty("Evidencia")).Enviar(folderPath, getProperties().getProperty("Evidencia"))
         		   .BloquearUsuario1(folderPath, getProperties().getProperty("Evidencia")).SelecionarMenu2(folderPath, getProperties().getProperty("Evidencia")).EscojerTabla(folderPath, getProperties().getProperty("Evidencia")).QuitarBloqueoFirma(folderPath, getProperties().getProperty("Evidencia"));
         
@@ -177,7 +177,7 @@ public class BloqueantesUITest extends BaseTest{
 
 		Logeo(nomTest, folderPath);
 		home.irPortal(getProperties().getProperty("url"));
-		login.ingresarCredenciales(getProperties().getProperty("usuario"),getProperties().getProperty("password"), folderPath);
+		login.ingresarCredenciales(getProperties().getProperty("usuario"),getProperties().getProperty("password"), folderPath, getProperties().getProperty("Evidencia"));
         Bloqueantes.SelecionarMenu(folderPath, getProperties().getProperty("Evidencia")).EscojerTabla(folderPath, getProperties().getProperty("Evidencia")).SelecionarMenu1(folderPath, getProperties().getProperty("Evidencia")).EditarPerfil1(folderPath, getProperties().getProperty("Evidencia")).Enviar(folderPath, getProperties().getProperty("Evidencia")).Firmar(folderPath, getProperties().getProperty("Evidencia"))
         		   .BloquearUsuario1(folderPath, getProperties().getProperty("Evidencia"));
       MyScreenRecorder.stopRecording(getProperties().getProperty("Video"));

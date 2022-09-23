@@ -59,9 +59,9 @@ public class CargaMasivaFDCTest extends BaseTest{
 		
 		home.irPortal(getProperties().getProperty("url"));
         Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr1"),
-        		getProperties().getProperty("pwd"), folderPath);
+        		getProperties().getProperty("pwd"), folderPath, getProperties().getProperty("Evidencia"));
         FDC.FormularioFDC(folderPath, getProperties().getProperty("Evidencia"));      
-        CargaDEX.CargaDEX(getProperties().getProperty("exc"), "Se cargaron los registros correctamente.", folderPath);
+        CargaDEX.CargaDEX(getProperties().getProperty("exc"), "Se cargaron los registros correctamente.", folderPath, getProperties().getProperty("Evidencia"));
         
         MyScreenRecorder.stopRecording(getProperties().getProperty("Video"));
      	GenerarReportePdf.closeTemplate("",getProperties().getProperty("Evidencia"));
@@ -85,9 +85,9 @@ public class CargaMasivaFDCTest extends BaseTest{
 			
 			home.irPortal(getProperties().getProperty("url"));
 	        Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr1"),
-	        		getProperties().getProperty("pwd"), folderPath);
+	        		getProperties().getProperty("pwd"), folderPath, getProperties().getProperty("Evidencia"));
 	        FDC.FormularioFDC(folderPath, getProperties().getProperty("Evidencia"));      
-	        CargaFMM.CargaFMM(getProperties().getProperty("exc"), "Se cargaron los registros correctamente.", folderPath);
+	        CargaFMM.CargaFMM(getProperties().getProperty("exc"), "Se cargaron los registros correctamente.", folderPath, getProperties().getProperty("Evidencia"));
 	        
 	        MyScreenRecorder.stopRecording(getProperties().getProperty("Video"));
 	     	GenerarReportePdf.closeTemplate("",getProperties().getProperty("Evidencia"));

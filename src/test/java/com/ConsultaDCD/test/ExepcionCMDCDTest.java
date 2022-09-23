@@ -58,9 +58,9 @@ public class ExepcionCMDCDTest extends BaseTest{
 		
 		home.irPortal(getProperties().getProperty("url"));
         Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr1"),
-        		getProperties().getProperty("pwd"), folderPath);
+        		getProperties().getProperty("pwd"), folderPath, getProperties().getProperty("Evidencia"));
         RDCD.ConsultaDCD(folderPath, getProperties().getProperty("Evidencia"));     
-        CMDCD.CargaDCD(getProperties().getProperty("DocACM"), folderPath).ValidarResultadoCargaDCD("Ocurrió un error inesperado en la aplicación.", folderPath);
+        CMDCD.CargaDCD(getProperties().getProperty("DocACM"), folderPath, getProperties().getProperty("Evidencia")).ValidarResultadoCargaDCD("Ocurrió un error inesperado en la aplicación.", folderPath, getProperties().getProperty("Evidencia"));
 
 		MyScreenRecorder.stopRecording(getProperties().getProperty("Video"));
 
