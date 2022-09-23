@@ -29,7 +29,14 @@ public class BloqueantePage extends BloqueanteMaps {
         captureScreen(folderPath, "captura Evidencia" , Evidencia);
         time(3);
         click(PUsuarios, folderPath, "texto prueba" , Evidencia);
+<<<<<<< HEAD
+        time(1);
         time(2);
+       
+
+=======
+        time(2);
+>>>>>>> a5b718a5085655fe616131c9055e168f0b189a6a
         captureScreen(folderPath, "captura Evidencia" , Evidencia);
         time(5);
         
