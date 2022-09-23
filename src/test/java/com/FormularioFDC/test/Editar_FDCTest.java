@@ -59,13 +59,13 @@ public class Editar_FDCTest extends BaseTest{
 		
 		home.irPortal(getProperties().getProperty("url"));
         Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr1"),
-        		getProperties().getProperty("pwd"), folderPath);      
+        		getProperties().getProperty("pwd"), folderPath, getProperties().getProperty("Evidencia"));      
         Editar_FDC.FormularioFDC(folderPath, getProperties().getProperty("Evidencia")).EditarFDC(folderPath, getProperties().getProperty("Evidencia"));
-        Carga.CargaDEX(getProperties().getProperty("doc"),"Se cargo el archivo correctamente", folderPath).CargaFMM(getProperties().getProperty("doc"),
-        		"Se cargo el archivo correctamente", folderPath)
-        	  .CargaCD(getProperties().getProperty("doc"),"Se cargo el archivo correctamente", folderPath).CargaPoliza(getProperties().getProperty("doc"),
-        		"Se cargo el archivo correctamente", folderPath)
-        	  .CargaIncumplimiento(getProperties().getProperty("doc"),"Se cargo el archivo correctamente", folderPath).RevisarFDC(folderPath, getProperties().getProperty("Evidencia")).SalirFDC(folderPath, getProperties().getProperty("Evidencia"));
+        Carga.CargaDEX(getProperties().getProperty("doc"),"Se cargo el archivo correctamente", folderPath, getProperties().getProperty("Evidencia")).CargaFMM(getProperties().getProperty("doc"),
+        		"Se cargo el archivo correctamente", folderPath, getProperties().getProperty("Evidencia"))
+        	  .CargaCD(getProperties().getProperty("doc"),"Se cargo el archivo correctamente", folderPath, getProperties().getProperty("Evidencia")).CargaPoliza(getProperties().getProperty("doc"),
+        		"Se cargo el archivo correctamente", folderPath, getProperties().getProperty("Evidencia"))
+        	  .CargaIncumplimiento(getProperties().getProperty("doc"),"Se cargo el archivo correctamente", folderPath, getProperties().getProperty("Evidencia")).RevisarFDC(folderPath, getProperties().getProperty("Evidencia")).SalirFDC(folderPath, getProperties().getProperty("Evidencia"));
         
         MyScreenRecorder.stopRecording(getProperties().getProperty("Video"));
      	GenerarReportePdf.closeTemplate("",getProperties().getProperty("Evidencia"));

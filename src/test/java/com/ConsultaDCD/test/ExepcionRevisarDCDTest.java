@@ -60,8 +60,8 @@ public class ExepcionRevisarDCDTest extends BaseTest{
 		Logeo(nomTest, folderPath);
 		home.irPortal(getProperties().getProperty("url"));
         Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr1"),
-        		getProperties().getProperty("pwd"), folderPath);
-        RDCD.ConsultaDCD(folderPath, getProperties().getProperty("Evidencia")).RevicionDCD(folderPath, getProperties().getProperty("Evidencia")).ValidarRevicionDCD("Debe seleccionar una consulta.", folderPath);      
+        		getProperties().getProperty("pwd"), folderPath, getProperties().getProperty("Evidencia"));
+        RDCD.ConsultaDCD(folderPath, getProperties().getProperty("Evidencia")).RevicionDCD(folderPath, getProperties().getProperty("Evidencia")).ValidarRevicionDCD("Debe seleccionar una consulta.", folderPath, getProperties().getProperty("Evidencia"));      
 
 
 		MyScreenRecorder.stopRecording(getProperties().getProperty("Video"));

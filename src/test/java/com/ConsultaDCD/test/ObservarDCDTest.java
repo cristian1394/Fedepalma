@@ -59,7 +59,7 @@ public class ObservarDCDTest extends BaseTest{
 		Logeo(nomTest, folderPath);
 		home.irPortal(getProperties().getProperty("url"));
         Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr1"),
-        		getProperties().getProperty("pwd"), folderPath);
+        		getProperties().getProperty("pwd"), folderPath, getProperties().getProperty("Evidencia"));
         Rellenar.RellenarDCD(folderPath, getProperties().getProperty("Evidencia"));
         Observar.ObservarDCD(folderPath, getProperties().getProperty("Evidencia"));
 

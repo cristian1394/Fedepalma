@@ -173,7 +173,7 @@ public class CrearTest extends BaseTest{
 		
 		FormularioFCP.FormularioFCP(folderPath, getProperties().getProperty("Evidencia")).SeleccionarAño(folderPath, getProperties().getProperty("Evidencia")).SeleccionarMes(folderPath, getProperties().getProperty("Evidencia")).CrearFCP(folderPath, getProperties().getProperty("Evidencia")).DigitarIncumplimiento(folderPath, getProperties().getProperty("Evidencia")).
 		ConsultarDCD(folderPath, getProperties().getProperty("Evidencia")).FiltroD(folderPath, getProperties().getProperty("Evidencia")).Check(folderPath, getProperties().getProperty("Evidencia")).Asociar(folderPath, getProperties().getProperty("Evidencia")).AdicionarFCP(folderPath, getProperties().getProperty("Evidencia")).
-		CargaIncumplimiento(folderPath, getProperties().getProperty("doc"), "Se cargo el archivo correctamente").
+		CargaIncumplimiento(folderPath, getProperties().getProperty("doc"), "Se cargo el archivo correctamente" , getProperties().getProperty("Evidencia")).
 		RevisarFCP(folderPath, getProperties().getProperty("Evidencia")).SalirFCP(folderPath, getProperties().getProperty("Evidencia"));
 		
 		MyScreenRecorder.stopRecording(getProperties().getProperty("Video"));
@@ -196,9 +196,9 @@ public class CrearTest extends BaseTest{
 		
 		home.irPortal(getProperties().getProperty("url"));
 		Login.ingresarCredencialesConNit(getProperties().getProperty("NIT"), getProperties().getProperty("USR"),
-        		getProperties().getProperty("pwd"), folderPath);
+        		getProperties().getProperty("pwd"), folderPath, getProperties().getProperty("Evidencia"));
 		FormularioFCP.FormularioFCP(folderPath, getProperties().getProperty("Evidencia")).SeleccionarEstado(folderPath, getProperties().getProperty("Evidencia")).SeleccionarAño(folderPath, getProperties().getProperty("Evidencia")).SeleccionarMes(folderPath, getProperties().getProperty("Evidencia")).Buscar(folderPath, getProperties().getProperty("Evidencia"));
-		ConsultarFCP.Eliminar(folderPath, "Operación Exitosa");
+		ConsultarFCP.Eliminar(folderPath, "Operación Exitosa", getProperties().getProperty("Evidencia"));
 		
 		MyScreenRecorder.stopRecording(getProperties().getProperty("Video"));
 		GenerarReportePdf.closeTemplate("",getProperties().getProperty("Evidencia"));
@@ -220,7 +220,7 @@ public class CrearTest extends BaseTest{
 		
 		home.irPortal(getProperties().getProperty("url"));
 		Login.ingresarCredencialesConNit(getProperties().getProperty("NIT"), getProperties().getProperty("USR"),
-        		getProperties().getProperty("pwd"), folderPath);
+        		getProperties().getProperty("pwd"), folderPath, getProperties().getProperty("Evidencia"));
 		FormularioFCP.FormularioFCP(folderPath, getProperties().getProperty("Evidencia")).Evidencia(folderPath, getProperties().getProperty("Evidencia")).Buscar(folderPath, getProperties().getProperty("Evidencia"));
 		ConsultarFCP.Historial(folderPath, getProperties().getProperty("Evidencia"));
 		
@@ -244,7 +244,7 @@ public class CrearTest extends BaseTest{
 		
 		home.irPortal(getProperties().getProperty("url"));
 		Login.ingresarCredencialesConNit(getProperties().getProperty("NIT"), getProperties().getProperty("USR"),
-        		getProperties().getProperty("pwd"), folderPath);
+        		getProperties().getProperty("pwd"), folderPath, getProperties().getProperty("Evidencia"));
 		FormularioFCP.FormularioFCP(folderPath, getProperties().getProperty("Evidencia")).Evidencia(folderPath, getProperties().getProperty("Evidencia")).Buscar(folderPath, getProperties().getProperty("Evidencia"));
 		ConsultarFCP.VerFDC(folderPath, getProperties().getProperty("Evidencia"));
 		
@@ -268,7 +268,7 @@ public class CrearTest extends BaseTest{
 		
 		home.irPortal(getProperties().getProperty("url"));
 		Login.ingresarCredencialesConNit(getProperties().getProperty("NIT"), getProperties().getProperty("USR"),
-        		getProperties().getProperty("pwd"), folderPath);
+        		getProperties().getProperty("pwd"), folderPath, getProperties().getProperty("Evidencia"));
 		FormularioFCP.FormularioFCP(folderPath, getProperties().getProperty("Evidencia")).Evidencia(folderPath, getProperties().getProperty("Evidencia")).Buscar(folderPath, getProperties().getProperty("Evidencia"));
 		ConsultarFCP.Editar(folderPath, getProperties().getProperty("Evidencia")).SeleccionarCausales(folderPath, getProperties().getProperty("Evidencia")).Observar(folderPath, getProperties().getProperty("Evidencia")).Lupa(folderPath, getProperties().getProperty("Evidencia")).Salir(folderPath, getProperties().getProperty("Evidencia"));
 		
@@ -292,21 +292,21 @@ public class CrearTest extends BaseTest{
 		
 		home.irPortal(getProperties().getProperty("url"));
 		Login.ingresarCredencialesConNit(getProperties().getProperty("NIT"), getProperties().getProperty("USR"),
-        		getProperties().getProperty("pwd"), folderPath);
+        		getProperties().getProperty("pwd"), folderPath, getProperties().getProperty("Evidencia"));
 		FormularioFCP.FormularioFCP(folderPath, getProperties().getProperty("Evidencia")).SeleccionarAño(folderPath, getProperties().getProperty("Evidencia")).SeleccionarMes(folderPath, getProperties().getProperty("Evidencia")).CrearFCP(folderPath, getProperties().getProperty("Evidencia")).DigitarDex(folderPath, getProperties().getProperty("Evidencia"))
-		.Calendario(folderPath, getProperties().getProperty("Evidencia")).Pais(folderPath, getProperties().getProperty("Pais")).ProductosExportados(folderPath, getProperties().getProperty("Evidencia"))
-		.DigitarProducto(folderPath, getProperties().getProperty("Producto")).KilosExportados(folderPath, getProperties().getProperty("kilosExpo"))
-		.Adicionar(folderPath, getProperties().getProperty("Evidencia")).DigitarProducto(folderPath, getProperties().getProperty("producto")).KilosExportados(folderPath, getProperties().getProperty("kilosExpo"))
+		.Calendario(folderPath, getProperties().getProperty("Evidencia")).Pais(folderPath, getProperties().getProperty("Pais"), getProperties().getProperty("Evidencia")).ProductosExportados(folderPath, getProperties().getProperty("Evidencia"))
+		.DigitarProducto(folderPath, getProperties().getProperty("Producto"), getProperties().getProperty("Evidencia")).KilosExportados(folderPath, getProperties().getProperty("kilosExpo"), getProperties().getProperty("Evidencia"))
+		.Adicionar(folderPath, getProperties().getProperty("Evidencia")).DigitarProducto(folderPath, getProperties().getProperty("producto"), getProperties().getProperty("Evidencia")).KilosExportados(folderPath, getProperties().getProperty("kilosExpo"), getProperties().getProperty("Evidencia"))
 		.Adicionar(folderPath, getProperties().getProperty("Evidencia")).Guardar(folderPath, getProperties().getProperty("Evidencia")).ConsultarDCD(folderPath, getProperties().getProperty("Evidencia")).FiltroD(folderPath, getProperties().getProperty("Evidencia")).Check(folderPath, getProperties().getProperty("Evidencia")).Asociar(folderPath, getProperties().getProperty("Evidencia")).AdicionarFCP(folderPath, getProperties().getProperty("Evidencia"))
-		.DigitarFmm(folderPath, getProperties().getProperty("Evidencia")).Calendario1(folderPath, getProperties().getProperty("Evidencia")).Pais1(folderPath, getProperties().getProperty("Pais")).ProductosRelacionados(folderPath, getProperties().getProperty("Evidencia"))
-		.DigitarProducto(folderPath, getProperties().getProperty("Producto")).KilosExportados(folderPath, getProperties().getProperty("kilosExpo"))
-		.Adicionar(folderPath, getProperties().getProperty("Evidencia")).DigitarProducto(folderPath, getProperties().getProperty("producto")).KilosExportados(folderPath, getProperties().getProperty("kilosExpo"))
+		.DigitarFmm(folderPath, getProperties().getProperty("Evidencia")).Calendario1(folderPath, getProperties().getProperty("Evidencia")).Pais1(folderPath, getProperties().getProperty("Pais"), getProperties().getProperty("Evidencia")).ProductosRelacionados(folderPath, getProperties().getProperty("Evidencia"))
+		.DigitarProducto(folderPath, getProperties().getProperty("Producto"), getProperties().getProperty("Evidencia")).KilosExportados(folderPath, getProperties().getProperty("kilosExpo"), getProperties().getProperty("Evidencia"))
+		.Adicionar(folderPath, getProperties().getProperty("Evidencia")).DigitarProducto(folderPath, getProperties().getProperty("producto"), getProperties().getProperty("Evidencia")).KilosExportados(folderPath, getProperties().getProperty("kilosExpo"), getProperties().getProperty("Evidencia"))
 		.Adicionar(folderPath, getProperties().getProperty("Evidencia")).Guardar(folderPath, getProperties().getProperty("Evidencia")).ConsultarDCD(folderPath, getProperties().getProperty("Evidencia")).FiltroD(folderPath, getProperties().getProperty("Evidencia")).Check(folderPath, getProperties().getProperty("Evidencia")).Asociar(folderPath, getProperties().getProperty("Evidencia")).AdicionarFCP(folderPath, getProperties().getProperty("Evidencia"))
 		.DigitarIncumplimiento(folderPath, getProperties().getProperty("Evidencia")).ConsultarDCD(folderPath, getProperties().getProperty("Evidencia")).FiltroD(folderPath, getProperties().getProperty("Evidencia")).Check(folderPath, getProperties().getProperty("Evidencia")).Asociar(folderPath, getProperties().getProperty("Evidencia")).AdicionarFCP(folderPath, getProperties().getProperty("Evidencia"))
-		.CargaDEX(folderPath, getProperties().getProperty("doc"), "Se cargo el archivo correctamente")
-		.CargaFMM(folderPath, getProperties().getProperty("doc"), "Se cargo el archivo correctamente")
-		.CargaIncumplimiento(folderPath, getProperties().getProperty("doc"), "Se cargo el archivo correctamente").
-		RevisarFCP(folderPath, getProperties().getProperty("Evidencia")).RadicarFCP(folderPath, getProperties().getProperty("Evidencia")).FirmarFCP(folderPath, getProperties().getProperty("Firma")).SalirFCP(folderPath, getProperties().getProperty("Evidencia"));
+		.CargaDEX(folderPath, getProperties().getProperty("doc"), "Se cargo el archivo correctamente", getProperties().getProperty("Evidencia"))
+		.CargaFMM(folderPath, getProperties().getProperty("doc"), "Se cargo el archivo correctamente", getProperties().getProperty("Evidencia"))
+		.CargaIncumplimiento(folderPath, getProperties().getProperty("doc"), "Se cargo el archivo correctamente", getProperties().getProperty("Evidencia")).
+		RevisarFCP(folderPath, getProperties().getProperty("Evidencia")).RadicarFCP(folderPath, getProperties().getProperty("Evidencia")).FirmarFCP(folderPath, getProperties().getProperty("Firma"), getProperties().getProperty("Evidencia")).SalirFCP(folderPath, getProperties().getProperty("Evidencia"));
 		
 		MyScreenRecorder.stopRecording(getProperties().getProperty("Video"));
 		GenerarReportePdf.closeTemplate("",getProperties().getProperty("Evidencia"));
@@ -327,13 +327,13 @@ public class CrearTest extends BaseTest{
 		Logeo(nomTest,folderPath);
 		
 		home.irPortal(getProperties().getProperty("url"));
-		login.ingresarCredenciales(getProperties().getProperty("usuario"),getProperties().getProperty("password"), folderPath);
+		login.ingresarCredenciales(getProperties().getProperty("usuario"),getProperties().getProperty("password"), folderPath, getProperties().getProperty("Evidencia"));
 		
-		FormularioFCP.FormularioFCP(folderPath, getProperties().getProperty("Evidencia")).Evidencia(folderPath, getProperties().getProperty("Evidencia")).Comprador(folderPath, getProperties().getProperty("NIT")).SComprador(folderPath, getProperties().getProperty("Evidencia")).Buscar(folderPath, getProperties().getProperty("Evidencia")).FNumeroDCD(folderPath, getProperties().getProperty("Evidencia"));
-		ConsultarFCP.Revisar(folderPath, getProperties().getProperty("Evidencia")).SCorreo(folderPath, getProperties().getProperty("Evidencia")).ACorreo(folderPath, getProperties().getProperty("Correo")).IngresarAVIncompleto(folderPath, getProperties().getProperty("Evidencia"))
+		FormularioFCP.FormularioFCP(folderPath, getProperties().getProperty("Evidencia")).Evidencia(folderPath, getProperties().getProperty("Evidencia")).Comprador(folderPath, getProperties().getProperty("NIT"), getProperties().getProperty("Evidencia")).SComprador(folderPath, getProperties().getProperty("Evidencia")).Buscar(folderPath, getProperties().getProperty("Evidencia")).FNumeroDCD(folderPath, getProperties().getProperty("Evidencia"));
+		ConsultarFCP.Revisar(folderPath, getProperties().getProperty("Evidencia")).SCorreo(folderPath, getProperties().getProperty("Evidencia")).ACorreo(folderPath, getProperties().getProperty("Correo"), getProperties().getProperty("Evidencia")).IngresarAVIncompleto(folderPath, getProperties().getProperty("Evidencia"))
 		.VerCausales(folderPath, getProperties().getProperty("Evidencia")).SeleccionarCausal(folderPath, getProperties().getProperty("Evidencia")).Observar(folderPath,getProperties().getProperty("Observacion")).GuardarFCP(folderPath, getProperties().getProperty("Evidencia")).
-		VGuardarFCP(folderPath, getProperties().getProperty("NIT"),getProperties().getProperty("USR"),getProperties().getProperty("pwd"))
-		.EditarFCP(folderPath, getProperties().getProperty("Evidencia")).AVEnviar(folderPath, getProperties().getProperty("Evidencia")).CargaOtros(folderPath, getProperties().getProperty("doc"), "Se cargo el archivo correctamente")
+		VGuardarFCP(folderPath, getProperties().getProperty("NIT"),getProperties().getProperty("USR"),getProperties().getProperty("pwd"), getProperties().getProperty("Evidencia"))
+		.EditarFCP(folderPath, getProperties().getProperty("Evidencia")).AVEnviar(folderPath, getProperties().getProperty("Evidencia")).CargaOtros(folderPath, getProperties().getProperty("doc"), "Se cargo el archivo correctamente", getProperties().getProperty("Evidencia"))
 		.GuardarFCP(folderPath, getProperties().getProperty("Evidencia")).Salir(folderPath, getProperties().getProperty("Evidencia"));
 		
 		MyScreenRecorder.stopRecording(getProperties().getProperty("Video"));
@@ -355,15 +355,15 @@ public class CrearTest extends BaseTest{
 		Logeo(nomTest,folderPath);
 		
 		home.irPortal(getProperties().getProperty("url"));
-		login.ingresarCredenciales(getProperties().getProperty("usuario"),getProperties().getProperty("password"), folderPath);
-		FormularioFCP.FormularioFCP(folderPath, getProperties().getProperty("Evidencia")).Evidencia(folderPath, getProperties().getProperty("Evidencia")).Comprador(folderPath, getProperties().getProperty("NIT")).SComprador(folderPath, getProperties().getProperty("Evidencia")).SeleccionarAño(folderPath, getProperties().getProperty("Evidencia"))
+		login.ingresarCredenciales(getProperties().getProperty("usuario"),getProperties().getProperty("password"), folderPath, getProperties().getProperty("Evidencia"));
+		FormularioFCP.FormularioFCP(folderPath, getProperties().getProperty("Evidencia")).Evidencia(folderPath, getProperties().getProperty("Evidencia")).Comprador(folderPath, getProperties().getProperty("NIT"), getProperties().getProperty("Evidencia")).SComprador(folderPath, getProperties().getProperty("Evidencia")).SeleccionarAño(folderPath, getProperties().getProperty("Evidencia"))
 		.SeleccionarMes(folderPath, getProperties().getProperty("Evidencia")).Buscar(folderPath, getProperties().getProperty("Evidencia"));
-		ConsultarFCP.Revisar(folderPath, getProperties().getProperty("Evidencia")).SCorreo(folderPath, getProperties().getProperty("Evidencia")).ACorreo(folderPath, getProperties().getProperty("Correo")).IngresarAVRechazar(folderPath, getProperties().getProperty("Evidencia"))
+		ConsultarFCP.Revisar(folderPath, getProperties().getProperty("Evidencia")).SCorreo(folderPath, getProperties().getProperty("Evidencia")).ACorreo(folderPath, getProperties().getProperty("Correo"), getProperties().getProperty("Evidencia")).IngresarAVRechazar(folderPath, getProperties().getProperty("Evidencia"))
 		.VerCausales(folderPath, getProperties().getProperty("Evidencia")).SeleccionarCausal(folderPath, getProperties().getProperty("Evidencia")).Observar(folderPath,getProperties().getProperty("Observacion")).GuardarFCP(folderPath, getProperties().getProperty("Evidencia"))
-		.VGuardarFCP1(folderPath, getProperties().getProperty("NIT"),getProperties().getProperty("USR"),getProperties().getProperty("pwd"));
+		.VGuardarFCP1(folderPath, getProperties().getProperty("NIT"),getProperties().getProperty("USR"),getProperties().getProperty("pwd"), getProperties().getProperty("Evidencia"));
 		FormularioFCP.ConsultarDCD(folderPath, getProperties().getProperty("Evidencia")).FiltroD(folderPath, getProperties().getProperty("Evidencia")).Check(folderPath, getProperties().getProperty("Evidencia")).Asociar(folderPath, getProperties().getProperty("Evidencia")).AdicionarFCP(folderPath, getProperties().getProperty("Evidencia"))
-		.CargaDEX(folderPath, getProperties().getProperty("doc"), "Se cargo el archivo correctamente")
-		.CargaIncumplimiento(folderPath, getProperties().getProperty("doc"), "Se cargo el archivo correctamente")
+		.CargaDEX(folderPath, getProperties().getProperty("doc"), "Se cargo el archivo correctamente", getProperties().getProperty("Evidencia"))
+		.CargaIncumplimiento(folderPath, getProperties().getProperty("doc"), "Se cargo el archivo correctamente", getProperties().getProperty("Evidencia"))
 		.RevisarFCP(folderPath, getProperties().getProperty("Evidencia")).SalirFCP(folderPath, getProperties().getProperty("Evidencia"));
 		
 		MyScreenRecorder.stopRecording(getProperties().getProperty("Video"));

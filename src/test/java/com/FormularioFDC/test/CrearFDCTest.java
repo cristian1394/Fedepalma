@@ -59,20 +59,20 @@ public class CrearFDCTest extends BaseTest{
 		
 		home.irPortal(getProperties().getProperty("url"));
         Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr1"),
-        		getProperties().getProperty("pwd"), folderPath);
+        		getProperties().getProperty("pwd"), folderPath, getProperties().getProperty("Evidencia"));
         FDC.FormularioFDC(folderPath, getProperties().getProperty("Evidencia"));      
-        CrearFDC.CrearFDC(getProperties().getProperty("Pais"), getProperties().getProperty("Producto"), folderPath);
-        DEX.IngresarDEXPalma(folderPath, getProperties().getProperty("Evidencia")).CrearDEXPalmiste(getProperties().getProperty("Pais"),getProperties().getProperty("producto"), folderPath)
-        	.IngresarDEXPalmiste("El formulario se guardo correctamente.", folderPath);
-        FMM.CrearFMM(getProperties().getProperty("Pais"),getProperties().getProperty("Producto"), folderPath).IngresarFMMPalma("El formulario se guardo correctamente.", folderPath);
+        CrearFDC.CrearFDC(getProperties().getProperty("Pais"), getProperties().getProperty("Producto"), folderPath, getProperties().getProperty("Evidencia"));
+        DEX.IngresarDEXPalma(folderPath, getProperties().getProperty("Evidencia")).CrearDEXPalmiste(getProperties().getProperty("Pais"),getProperties().getProperty("producto"), folderPath, getProperties().getProperty("Evidencia"))
+        	.IngresarDEXPalmiste("El formulario se guardo correctamente.", folderPath, getProperties().getProperty("Evidencia"));
+        FMM.CrearFMM(getProperties().getProperty("Pais"),getProperties().getProperty("Producto"), folderPath, getProperties().getProperty("Evidencia")).IngresarFMMPalma("El formulario se guardo correctamente.", folderPath, getProperties().getProperty("Evidencia"));
         Poliza.CrearPoliza(getProperties().getProperty("Aseguradora"), getProperties().getProperty("Fecha"),
-        		getProperties().getProperty("valor"), folderPath).IngresarPoliza( getProperties().getProperty("Asociar"), "El formulario se guardo correctamente.", folderPath);
-        Cargas.CargaDEX(getProperties().getProperty("doc"),"Se cargo el archivo correctamente", folderPath).CargaFMM(getProperties().getProperty("doc"),
-        		"Se cargo el archivo correctamente", folderPath)
-        	  .CargaCD(getProperties().getProperty("doc"),"Se cargo el archivo correctamente", folderPath).CargaPoliza(getProperties().getProperty("doc"),
-        		"Se cargo el archivo correctamente", folderPath)
-        	  .CargaIncumplimiento(getProperties().getProperty("doc"),"Se cargo el archivo correctamente", folderPath).RevisarFDC(folderPath, getProperties().getProperty("Evidencia"));
-        Radicar.RadicarFDC(folderPath, getProperties().getProperty("Evidencia")).FirmarFDC(getProperties().getProperty("Firma"), folderPath).SalirFDC(folderPath, getProperties().getProperty("Evidencia"));
+        		getProperties().getProperty("valor"), folderPath, getProperties().getProperty("Evidencia")).IngresarPoliza( getProperties().getProperty("Asociar"), "El formulario se guardo correctamente.", folderPath, getProperties().getProperty("Evidencia"));
+        Cargas.CargaDEX(getProperties().getProperty("doc"),"Se cargo el archivo correctamente", folderPath, getProperties().getProperty("Evidencia")).CargaFMM(getProperties().getProperty("doc"),
+        		"Se cargo el archivo correctamente", folderPath, getProperties().getProperty("Evidencia"))
+        	  .CargaCD(getProperties().getProperty("doc"),"Se cargo el archivo correctamente", folderPath, getProperties().getProperty("Evidencia")).CargaPoliza(getProperties().getProperty("doc"),
+        		"Se cargo el archivo correctamente", folderPath, getProperties().getProperty("Evidencia"))
+        	  .CargaIncumplimiento(getProperties().getProperty("doc"),"Se cargo el archivo correctamente", folderPath, getProperties().getProperty("Evidencia")).RevisarFDC(folderPath, getProperties().getProperty("Evidencia"));
+        Radicar.RadicarFDC(folderPath, getProperties().getProperty("Evidencia")).FirmarFDC(getProperties().getProperty("Firma"), folderPath, getProperties().getProperty("Evidencia")).SalirFDC(folderPath, getProperties().getProperty("Evidencia"));
         
         MyScreenRecorder.stopRecording(getProperties().getProperty("Video"));
      	GenerarReportePdf.closeTemplate("",getProperties().getProperty("Evidencia"));

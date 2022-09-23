@@ -59,7 +59,7 @@ public class HistorialFDCTest extends BaseTest{
 		
 		home.irPortal(getProperties().getProperty("url"));
         Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr1"),
-        		getProperties().getProperty("pwd"), folderPath);
+        		getProperties().getProperty("pwd"), folderPath, getProperties().getProperty("Evidencia"));
         FDC.FormularioFDC(folderPath, getProperties().getProperty("Evidencia"));      
         HistorialFDC.HistorialFDC(folderPath, getProperties().getProperty("Evidencia"));
         

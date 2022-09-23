@@ -59,18 +59,18 @@ public class CrearEsFDCTest extends BaseTest{
 		
 		home.irPortal(getProperties().getProperty("url"));
 		Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr1"),
-        		getProperties().getProperty("pwd"), folderPath);
+        		getProperties().getProperty("pwd"), folderPath, getProperties().getProperty("Evidencia"));
         FDC.FormularioFDC(folderPath, getProperties().getProperty("Evidencia"));
-        DEXFDC.CrearDEX("El formulario se guardo correctamente.", folderPath);
-        FMMFDC.CrearFMM("El formulario se guardo correctamente.", folderPath);
-        PolizaFDC.CrearPoliza("El formulario se guardo correctamente.", folderPath);
-        Incumplimiento.GenerarIncumplimiento(getProperties().getProperty("Asocia"), folderPath);
-        Cargas.CargaDEX(getProperties().getProperty("doc"),"Se cargo el archivo correctamente", folderPath).CargaFMM(getProperties().getProperty("doc"),
-        		"Se cargo el archivo correctamente", folderPath)
-        	  .CargaCD(getProperties().getProperty("doc"), "Se cargo el archivo correctamente", folderPath).CargaPoliza(getProperties().getProperty("doc"),
-        		"Se cargo el archivo correctamente", folderPath)
-        	  .CargaIncumplimiento(getProperties().getProperty("doc"),"Se cargo el archivo correctamente", folderPath).RevisarFDC(folderPath, getProperties().getProperty("Evidencia"));
-        Radicar.RadicarFDC(folderPath, getProperties().getProperty("Evidencia")).FirmarFDC(getProperties().getProperty("Firma"), folderPath).SalirFDC(folderPath, getProperties().getProperty("Evidencia"));
+        DEXFDC.CrearDEX("El formulario se guardo correctamente.", folderPath, getProperties().getProperty("Evidencia"));
+        FMMFDC.CrearFMM("El formulario se guardo correctamente.", folderPath, getProperties().getProperty("Evidencia"));
+        PolizaFDC.CrearPoliza("El formulario se guardo correctamente.", folderPath, getProperties().getProperty("Evidencia"));
+        Incumplimiento.GenerarIncumplimiento(getProperties().getProperty("Asocia"), folderPath, getProperties().getProperty("Evidencia"));
+        Cargas.CargaDEX(getProperties().getProperty("doc"),"Se cargo el archivo correctamente", folderPath, getProperties().getProperty("Evidencia")).CargaFMM(getProperties().getProperty("doc"),
+        		"Se cargo el archivo correctamente", folderPath, getProperties().getProperty("Evidencia"))
+        	  .CargaCD(getProperties().getProperty("doc"), "Se cargo el archivo correctamente", folderPath, getProperties().getProperty("Evidencia")).CargaPoliza(getProperties().getProperty("doc"),
+        		"Se cargo el archivo correctamente", folderPath, getProperties().getProperty("Evidencia"))
+        	  .CargaIncumplimiento(getProperties().getProperty("doc"),"Se cargo el archivo correctamente", folderPath, getProperties().getProperty("Evidencia")).RevisarFDC(folderPath, getProperties().getProperty("Evidencia"));
+        Radicar.RadicarFDC(folderPath, getProperties().getProperty("Evidencia")).FirmarFDC(getProperties().getProperty("Firma"), folderPath, getProperties().getProperty("Evidencia")).SalirFDC(folderPath, getProperties().getProperty("Evidencia"));
         
         MyScreenRecorder.stopRecording(getProperties().getProperty("Video"));
      	GenerarReportePdf.closeTemplate("",getProperties().getProperty("Evidencia"));  

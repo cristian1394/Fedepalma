@@ -58,9 +58,9 @@ public class CargaMasivaFDC2Test extends BaseTest{
 		Logeo(nomTest, folderPath);
 		home.irPortal(getProperties().getProperty("url"));
         Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr1"),
-        		getProperties().getProperty("pwd"), folderPath);
+        		getProperties().getProperty("pwd"), folderPath, getProperties().getProperty("Evidencia"));
         FDC.FormularioFDC(folderPath, getProperties().getProperty("Evidencia"));      
-        CMDEX.CargaDEX(getProperties().getProperty("DocACM"), "Se encontraron errores en el archivo por favor validar.", folderPath);
+        CMDEX.CargaDEX(getProperties().getProperty("DocACM"), "Se encontraron errores en el archivo por favor validar.", folderPath, getProperties().getProperty("Evidencia"));
         
         MyScreenRecorder.stopRecording(getProperties().getProperty("Video"));
      	GenerarReportePdf.closeTemplate("",getProperties().getProperty("Evidencia"));
@@ -83,9 +83,9 @@ public class CargaMasivaFDC2Test extends BaseTest{
 			
 			home.irPortal(getProperties().getProperty("url"));
 	        Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr1"),
-	        		getProperties().getProperty("pwd"), folderPath);
+	        		getProperties().getProperty("pwd"), folderPath, getProperties().getProperty("Evidencia"));
 	        FDC.FormularioFDC(folderPath, getProperties().getProperty("Evidencia"));      
-	        CMFMM.CargaFMM(getProperties().getProperty("DocACM"), "Se encontraron errores en el archivo por favor validar.", folderPath);
+	        CMFMM.CargaFMM(getProperties().getProperty("DocACM"), "Se encontraron errores en el archivo por favor validar.", folderPath, getProperties().getProperty("Evidencia"));
 	        
 	        MyScreenRecorder.stopRecording(getProperties().getProperty("Video"));
 	     	GenerarReportePdf.closeTemplate("",getProperties().getProperty("Evidencia"));

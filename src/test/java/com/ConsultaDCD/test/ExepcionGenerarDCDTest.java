@@ -61,9 +61,9 @@ public class ExepcionGenerarDCDTest extends BaseTest{
 		
 		home.irPortal(getProperties().getProperty("url"));
         Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr1"),
-        		getProperties().getProperty("pwd"), folderPath);
+        		getProperties().getProperty("pwd"), folderPath, getProperties().getProperty("Evidencia"));
         RDCD.ConsultaDCD(folderPath, getProperties().getProperty("Evidencia"));    
-        GDCD.GenerarDCD(folderPath, getProperties().getProperty("Evidencia")).ValidarGeneracionDCD("Debe seleccionar una consulta.", folderPath);
+        GDCD.GenerarDCD(folderPath, getProperties().getProperty("Evidencia")).ValidarGeneracionDCD("Debe seleccionar una consulta.", folderPath, getProperties().getProperty("Evidencia"));
     
         //String validar=consultaBD("select acc_nombre from C_ACCIONES where acc_nombre='ADMINISTRACION_CLIENTES'");
         //Assert.assertEquals(validar, getProperties().getProperty("nit"));

@@ -59,8 +59,8 @@ public class RevisarDCDTest extends BaseTest{
 		Logeo(nomTest, folderPath);
 		home.irPortal(getProperties().getProperty("url"));
         Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr1"),
-        		getProperties().getProperty("pwd"), folderPath);
-        Revisar.RevisarDCD(getProperties().getProperty("Proveedor"), folderPath).ValidarRevicionDCD("Se ha realizado el cambio de estado", folderPath);
+        		getProperties().getProperty("pwd"), folderPath, getProperties().getProperty("Evidencia"));
+        Revisar.RevisarDCD(getProperties().getProperty("Proveedor"), folderPath, getProperties().getProperty("Evidencia")).ValidarRevicionDCD("Se ha realizado el cambio de estado", folderPath, getProperties().getProperty("Evidencia"));
 
 		MyScreenRecorder.stopRecording(getProperties().getProperty("Video"));
 

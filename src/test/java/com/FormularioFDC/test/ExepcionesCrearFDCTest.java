@@ -59,12 +59,12 @@ public class ExepcionesCrearFDCTest extends BaseTest{
 		
 		home.irPortal(getProperties().getProperty("url"));
         Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr1"),
-        		getProperties().getProperty("pwd"), folderPath);
+        		getProperties().getProperty("pwd"), folderPath, getProperties().getProperty("Evidencia"));
         FDC.FormularioFDC(folderPath, getProperties().getProperty("Evidencia"));      
-        CrearFDC.CrearFDC(getProperties().getProperty("Pais"), getProperties().getProperty("Producto"), folderPath);
-        DEX.IngresarDEXPalma(folderPath, getProperties().getProperty("Evidencia")).CrearDEXPalmiste(getProperties().getProperty("Pais"),getProperties().getProperty("producto"), folderPath)
-        	.IngresarDEXPalmiste("El formulario se guardo correctamente.", folderPath);
-        Cargas.CargaDEX(getProperties().getProperty("EXC"),"Solo se pueden cargar archivos con formato .pdf", folderPath);
+        CrearFDC.CrearFDC(getProperties().getProperty("Pais"), getProperties().getProperty("Producto"), folderPath, getProperties().getProperty("Evidencia"));
+        DEX.IngresarDEXPalma(folderPath, getProperties().getProperty("Evidencia")).CrearDEXPalmiste(getProperties().getProperty("Pais"),getProperties().getProperty("producto"), folderPath, getProperties().getProperty("Evidencia"))
+        	.IngresarDEXPalmiste("El formulario se guardo correctamente.", folderPath, getProperties().getProperty("Evidencia"));
+        Cargas.CargaDEX(getProperties().getProperty("EXC"),"Solo se pueden cargar archivos con formato .pdf", folderPath, getProperties().getProperty("Evidencia"));
       
         MyScreenRecorder.stopRecording(getProperties().getProperty("Video"));
      	GenerarReportePdf.closeTemplate("",getProperties().getProperty("Evidencia"));

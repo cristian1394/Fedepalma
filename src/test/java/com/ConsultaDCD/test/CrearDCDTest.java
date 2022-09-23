@@ -60,14 +60,14 @@ public class CrearDCDTest extends BaseTest{
 		
 		home.irPortal(getProperties().getProperty("url"));
         Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr1"),
-        		getProperties().getProperty("pwd"), folderPath);
-        DCD.ConsultaDCD(getProperties().getProperty("Proveedor"), folderPath);      
+        		getProperties().getProperty("pwd"), folderPath, getProperties().getProperty("Evidencia"));
+        DCD.ConsultaDCD(getProperties().getProperty("Proveedor"), folderPath, getProperties().getProperty("Evidencia"));      
         CrearDCD.CrearDCD(getProperties().getProperty("nit"), getProperties().getProperty("Proveedor"), 
-        		getProperties().getProperty("kilos"), folderPath).ValidarCreacionDCD("Proceso realizado con éxito", folderPath);
+        		getProperties().getProperty("kilos"), folderPath, getProperties().getProperty("Evidencia")).ValidarCreacionDCD("Proceso realizado con éxito", folderPath, getProperties().getProperty("Evidencia"));
         EditarDCD.EditarDCD(getProperties().getProperty("Proveedor1"), getProperties().getProperty("CP"), 
-        		getProperties().getProperty("kilos"), folderPath).ValidarAdicionCD("Certificado Guardado Correctamente.", folderPath).RevisarDCD(folderPath, getProperties().getProperty("Evidencia"))
-        		.ValidarRevicionDCD("Proceso realizado exitosamente!", folderPath).FirmarDCD(getProperties().getProperty("Firma"),"Formulario firmado exitosamente.", folderPath)
-        		.ValidarGenerarDCD("Proceso realizado exitosamente!", folderPath);
+        		getProperties().getProperty("kilos"), folderPath, getProperties().getProperty("Evidencia")).ValidarAdicionCD("Certificado Guardado Correctamente.", folderPath, getProperties().getProperty("Evidencia")).RevisarDCD(folderPath, getProperties().getProperty("Evidencia"))
+        		.ValidarRevicionDCD("Proceso realizado exitosamente!", folderPath, getProperties().getProperty("Evidencia")).FirmarDCD(getProperties().getProperty("Firma"),"Formulario firmado exitosamente.", folderPath, getProperties().getProperty("Evidencia"))
+        		.ValidarGenerarDCD("Proceso realizado exitosamente!", folderPath, getProperties().getProperty("Evidencia"));
         
         //String validar=consultaBD("select acc_nombre from C_ACCIONES where acc_nombre='ADMINISTRACION_CLIENTES'");
         //Assert.assertEquals(validar, getProperties().getProperty("nit"));

@@ -58,11 +58,11 @@ public class EditarDCDTest extends BaseTest{
 		
 		home.irPortal(getProperties().getProperty("url"));
         Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr1"),
-        		getProperties().getProperty("pwd"), folderPath);
+        		getProperties().getProperty("pwd"), folderPath, getProperties().getProperty("Evidencia"));
         Editar.RellenarDCD(folderPath, getProperties().getProperty("Evidencia")).EditarDCD(getProperties().getProperty("kg"), getProperties().getProperty("CP"), 
-        		getProperties().getProperty("kilos"), folderPath).ValidarAdicionCD("Certificado Guardado Correctamente.", folderPath)
-        		.CargaCD(getProperties().getProperty("EXC"), folderPath).ValidarCargaCD("Certificados Guardados Correctamente.", folderPath)
-        		.ValidarGuardarDCD("Proceso realizado con éxito", folderPath);
+        		getProperties().getProperty("kilos"), folderPath, getProperties().getProperty("Evidencia")).ValidarAdicionCD("Certificado Guardado Correctamente.", folderPath, getProperties().getProperty("Evidencia"))
+        		.CargaCD(getProperties().getProperty("EXC"), folderPath, getProperties().getProperty("Evidencia")).ValidarCargaCD("Certificados Guardados Correctamente.", folderPath, getProperties().getProperty("Evidencia"))
+        		.ValidarGuardarDCD("Proceso realizado con éxito", folderPath, getProperties().getProperty("Evidencia"));
 
 		MyScreenRecorder.stopRecording(getProperties().getProperty("Video"));
 

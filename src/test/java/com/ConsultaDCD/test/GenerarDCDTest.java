@@ -58,8 +58,8 @@ public class GenerarDCDTest extends BaseTest{
 		Logeo(nomTest, folderPath);
 		home.irPortal(getProperties().getProperty("url"));
         Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr1"),
-        		getProperties().getProperty("pwd"), folderPath);
-        Generar.GenerarDCD(folderPath, getProperties().getProperty("Evidencia")).Firma(getProperties().getProperty("Firma"),"Formularios firmados exitosamente.", folderPath).confirmar("Se ha realizado el cambio de estado", folderPath);
+        		getProperties().getProperty("pwd"), folderPath, getProperties().getProperty("Evidencia"));
+        Generar.GenerarDCD(folderPath, getProperties().getProperty("Evidencia")).Firma(getProperties().getProperty("Firma"),"Formularios firmados exitosamente.", folderPath, getProperties().getProperty("Evidencia")).confirmar("Se ha realizado el cambio de estado", folderPath, getProperties().getProperty("Evidencia"));
 
 		MyScreenRecorder.stopRecording(getProperties().getProperty("Video"));
 

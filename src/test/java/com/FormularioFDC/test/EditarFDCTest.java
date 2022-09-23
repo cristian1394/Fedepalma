@@ -59,8 +59,8 @@ public class EditarFDCTest extends BaseTest{
 		
 		home.irPortal(getProperties().getProperty("url"));
         Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr1"),
-        		getProperties().getProperty("pwd"), folderPath);      
-        EditarFDC.FormularioFDC(folderPath, getProperties().getProperty("Evidencia")).EditarFDC(getProperties().getProperty("doc"), folderPath);
+        		getProperties().getProperty("pwd"), folderPath, getProperties().getProperty("Evidencia"));      
+        EditarFDC.FormularioFDC(folderPath, getProperties().getProperty("Evidencia")).EditarFDC(getProperties().getProperty("doc"), folderPath, getProperties().getProperty("Evidencia"));
         
         MyScreenRecorder.stopRecording(getProperties().getProperty("Video"));
      	GenerarReportePdf.closeTemplate("",getProperties().getProperty("Evidencia"));

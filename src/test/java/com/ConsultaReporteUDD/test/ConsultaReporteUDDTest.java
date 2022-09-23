@@ -57,7 +57,7 @@ public class ConsultaReporteUDDTest extends BaseTest{
 		Logeo(nomTest, folderPath);
 		home.irPortal(getProperties().getProperty("url"));
         Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr"),
-        		getProperties().getProperty("pwd"), folderPath);
+        		getProperties().getProperty("pwd"), folderPath, getProperties().getProperty("Evidencia"));
         ConsultaRUDD.MenuRUDD(folderPath, getProperties().getProperty("Evidencia")).Calendario(folderPath, getProperties().getProperty("Evidencia")).SeleccionarMes(folderPath, getProperties().getProperty("Evidencia")).SeleccionarDia(folderPath, getProperties().getProperty("Evidencia")).Calendario1(folderPath, getProperties().getProperty("Evidencia")).SeleccionarMes1(folderPath, getProperties().getProperty("Evidencia"))
         .SeleccionarDia1(folderPath, getProperties().getProperty("Evidencia")).Buscar(folderPath, getProperties().getProperty("Evidencia"));
         
@@ -82,7 +82,7 @@ public class ConsultaReporteUDDTest extends BaseTest{
 		Logeo(nomTest, folderPath);
 		home.irPortal(getProperties().getProperty("url"));
         Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr"),
-        		getProperties().getProperty("pwd"), folderPath);
+        		getProperties().getProperty("pwd"), folderPath, getProperties().getProperty("Evidencia"));
         ConsultaRUDD.MenuRUDD(folderPath, getProperties().getProperty("Evidencia")).TD(folderPath, getProperties().getProperty("Evidencia")).FMM(folderPath, getProperties().getProperty("Evidencia")).Calendario(folderPath, getProperties().getProperty("Evidencia")).SeleccionarMes(folderPath, getProperties().getProperty("Evidencia")).SeleccionarDia(folderPath, getProperties().getProperty("Evidencia")).Calendario1(folderPath, getProperties().getProperty("Evidencia")).SeleccionarMes1(folderPath, getProperties().getProperty("Evidencia"))
         .SeleccionarDia1(folderPath, getProperties().getProperty("Evidencia")).Buscar(folderPath, getProperties().getProperty("Evidencia"));
         
@@ -108,7 +108,7 @@ public class ConsultaReporteUDDTest extends BaseTest{
 		
 		home.irPortal(getProperties().getProperty("url"));
         Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr"),
-        		getProperties().getProperty("pwd"), folderPath);
+        		getProperties().getProperty("pwd"), folderPath, getProperties().getProperty("Evidencia"));
         ConsultaRUDD.MenuRUDD(folderPath, getProperties().getProperty("Evidencia")).TD(folderPath, getProperties().getProperty("Evidencia")).Poliza(folderPath, getProperties().getProperty("Evidencia")).Calendario(folderPath, getProperties().getProperty("Evidencia")).SeleccionarMes(folderPath, getProperties().getProperty("Evidencia")).SeleccionarDia(folderPath, getProperties().getProperty("Evidencia")).Calendario1(folderPath, getProperties().getProperty("Evidencia")).SeleccionarMes1(folderPath, getProperties().getProperty("Evidencia"))
         .SeleccionarDia1(folderPath, getProperties().getProperty("Evidencia")).Buscar(folderPath, getProperties().getProperty("Evidencia"));
         
@@ -134,9 +134,9 @@ public class ConsultaReporteUDDTest extends BaseTest{
 		
 		home.irPortal(getProperties().getProperty("url"));
         Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr"),
-        		getProperties().getProperty("pwd"), folderPath);
-        ConsultaRUDD.MenuRUDD(folderPath, getProperties().getProperty("Evidencia")).Buscar(folderPath, getProperties().getProperty("Evidencia")).FE(getProperties().getProperty("Declarante"), folderPath).FDCD(getProperties().getProperty("Kg"), folderPath)
-        .FProducto(getProperties().getProperty("Producto"), folderPath).FPais(getProperties().getProperty("pais"), folderPath);
+        		getProperties().getProperty("pwd"), folderPath, getProperties().getProperty("Evidencia"));
+        ConsultaRUDD.MenuRUDD(folderPath, getProperties().getProperty("Evidencia")).Buscar(folderPath, getProperties().getProperty("Evidencia")).FE(getProperties().getProperty("Declarante"), folderPath, getProperties().getProperty("Evidencia")).FDCD(getProperties().getProperty("Kg"), folderPath, getProperties().getProperty("Evidencia"))
+        .FProducto(getProperties().getProperty("Producto"), folderPath, getProperties().getProperty("Evidencia")).FPais(getProperties().getProperty("pais"), folderPath, getProperties().getProperty("Evidencia"));
         
         MyScreenRecorder.stopRecording(getProperties().getProperty("Video"));
      	GenerarReportePdf.closeTemplate("",getProperties().getProperty("Evidencia"));
@@ -159,8 +159,8 @@ public class ConsultaReporteUDDTest extends BaseTest{
 		Logeo(nomTest, folderPath);
 		home.irPortal(getProperties().getProperty("url"));
         Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr"),
-        		getProperties().getProperty("pwd"), folderPath);
-        ConsultaRUDD.MenuRUDD(folderPath, getProperties().getProperty("Evidencia")).TD(folderPath, getProperties().getProperty("Evidencia")).Poliza(folderPath, getProperties().getProperty("Evidencia")).Buscar(folderPath, getProperties().getProperty("Evidencia")).FPais(getProperties().getProperty("pais"), folderPath).Exportar(folderPath, getProperties().getProperty("Evidencia"));
+        		getProperties().getProperty("pwd"), folderPath, getProperties().getProperty("Evidencia"));
+        ConsultaRUDD.MenuRUDD(folderPath, getProperties().getProperty("Evidencia")).TD(folderPath, getProperties().getProperty("Evidencia")).Poliza(folderPath, getProperties().getProperty("Evidencia")).Buscar(folderPath, getProperties().getProperty("Evidencia")).FPais(getProperties().getProperty("pais"), folderPath, getProperties().getProperty("Evidencia")).Exportar(folderPath, getProperties().getProperty("Evidencia"));
         
         MyScreenRecorder.stopRecording(getProperties().getProperty("Video"));
      	GenerarReportePdf.closeTemplate("",getProperties().getProperty("Evidencia"));

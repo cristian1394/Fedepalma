@@ -60,10 +60,10 @@ public class CargaMasivaDCDTest extends BaseTest{
 		
 		home.irPortal(getProperties().getProperty("url"));
 		Login.ingresarCredencialesConNit(getProperties().getProperty("nit"), getProperties().getProperty("usr1"),
-        		getProperties().getProperty("pwd"), folderPath);
-        DCD.ConsultaDCD(getProperties().getProperty("Proveedor"), folderPath);      
-        CargaMasiva.CargaDCD(getProperties().getProperty("Doc"), folderPath)
-        .ValidarResultadoCargaDCD("Carga Masiva Exitosa!", folderPath);
+        		getProperties().getProperty("pwd"), folderPath, getProperties().getProperty("Evidencia"));
+        DCD.ConsultaDCD(getProperties().getProperty("Proveedor"), folderPath, getProperties().getProperty("Evidencia"));      
+        CargaMasiva.CargaDCD(getProperties().getProperty("Doc"), folderPath, getProperties().getProperty("Evidencia"))
+        .ValidarResultadoCargaDCD("Carga Masiva Exitosa!", folderPath, getProperties().getProperty("Evidencia"));
 
 		MyScreenRecorder.stopRecording(getProperties().getProperty("Video"));
 
