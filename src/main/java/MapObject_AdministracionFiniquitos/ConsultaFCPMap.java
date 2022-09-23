@@ -13,6 +13,7 @@ public class ConsultaFCPMap extends BasePage {
 	}
 	// com
 	// f
+	// test
 	protected By btnVer=By.xpath("/html/body/div[1]/main/div/div/div[2]/div[4]/div/table/tbody/tr[1]/td[2]/div/i");
 	protected By btnBajar=By.xpath("/html/body/div[1]/main/div/div/section[3]/div/div/div/div/div[1]/section[15]/div/div/div[2]/div/div/div/label");
 	
